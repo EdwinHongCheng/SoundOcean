@@ -1,3 +1,3 @@
-#SoundOcean
+SoundOcean
 
 A clone of SoundCloud.
