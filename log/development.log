@@ -9,3 +9,10 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 1996ms (Views: 1989.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-02-08 13:40:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 1879ms (Views: 1862.3ms | ActiveRecord: 0.0ms)
+
+
