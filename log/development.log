@@ -1,0 +1,11 @@
+  [1m[35m (289.9ms)[0m  [1m[35mCREATE DATABASE "SoundOcean_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (177.8ms)[0m  [1m[35mCREATE DATABASE "SoundOcean_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-02-08 13:03:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 1996ms (Views: 1989.0ms | ActiveRecord: 0.0ms)
+
+
