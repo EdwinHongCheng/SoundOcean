@@ -11,6 +11,9 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        // Demo Log In Bind
+        this.demoLogIn = this.demoLogIn.bind(this)
     }
 
     update(field) {
@@ -23,6 +26,14 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    // Demo Log In
+    demoLogIn(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const guest = { username: 'guest', password: '123456' }
+        this.props.processForm(guest);
     }
 
     renderErrors() {
@@ -39,10 +50,10 @@ class SessionForm extends React.Component {
 
     render() {
 
-        let test = (<div></div>)
+        let email = (<div></div>)
 
         if (this.props.formType === 'signup') { 
-            test = (
+            email = (
                 <>
                     <label>Email:
                         <input type="text"
@@ -61,22 +72,21 @@ class SessionForm extends React.Component {
             button_text = "Sign Up"
         }
 
+        // Demo Button
+        let demo = (<></>)
+        if (this.props.formType === 'login') {
+            demo = (<button onClick={this.demoLogIn}>Demo Log In</button>)
+        }
+
 
         return (
-
             <div className="login-form-container">
-
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-
                     Welcome to SoundOcean (from session_form.jsx)!
                     <br />
-
                     Please {this.props.formType} or {this.props.navLink}
-
                     {this.renderErrors()}
-
                     <div className="login-form">
-
                         <br />
                         <label>Username:
                             <input type="text"
@@ -86,9 +96,7 @@ class SessionForm extends React.Component {
                             />
                         </label>
                         <br />
-
-                        {test}
-
+                        {email}
                         <label>Password:
                             <input type="password"
                                 value={this.state.password}
@@ -97,14 +105,12 @@ class SessionForm extends React.Component {
                             />
                         </label>
                         <br />
-
-
                         <input className="session-submit" type="submit" value={button_text} />
-
+                        <br />
                     </div>
-
+                    {/* DEMO LOG IN - not sure if it works */}
+                    {demo}
                 </form>
-
             </div>
         );
     }
