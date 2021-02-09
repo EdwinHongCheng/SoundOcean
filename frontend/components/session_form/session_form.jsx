@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
 
-        // Demo Log In Bind
+        // Demo Log In - Bind
         this.demoLogIn = this.demoLogIn.bind(this)
     }
 
@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to SoundOcean (from session_form.jsx)!
+                    Welcome to SoundOcean!
                     <br />
                     Please {this.props.formType} or {this.props.navLink}
                     {this.renderErrors()}

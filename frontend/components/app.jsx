@@ -17,7 +17,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
     <div>
         <header>
-            <h1>SoundOcean (from app.jsx)</h1>
+            <h1>SoundOcean</h1>
             <GreetingContainer />
         </header>
 
