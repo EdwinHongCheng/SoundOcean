@@ -83,12 +83,17 @@ class SessionForm extends React.Component {
             )
         }
 
+        let test = 'Create account'
+        if (this.props.formType === 'login') {
+            test = 'Sign in'
+        }
+
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     Welcome to SoundOcean!
                     <br />
-                    Please {this.props.formType} or {this.props.navLink}
+                    {test} or {this.props.navLink}
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
