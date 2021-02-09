@@ -97,6 +97,8 @@ class SessionForm extends React.Component {
                     {/* SoundCloud doesn't have this lol */}
                     {/* {texty} or {this.props.otherForm} */}
 
+                    {texty}
+
                     <div onClick={this.props.closeModal} className="close-x">X</div>
                     {this.renderErrors()}
                     <div className="login-form">
