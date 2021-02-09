@@ -84,15 +84,19 @@ class SessionForm extends React.Component {
             )
         }
 
-        let test = 'Create account'
+        let texty = 'Create account'
         if (this.props.formType === 'login') {
-            test = 'Sign in'
+            texty = 'Sign in'
         }
 
         return (
             <div className="login-form-container">
+
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    {test} or {this.props.otherForm}
+
+                    {/* SoundCloud doesn't have this lol */}
+                    {/* {texty} or {this.props.otherForm} */}
+
                     <div onClick={this.props.closeModal} className="close-x">X</div>
                     {this.renderErrors()}
                     <div className="login-form">
