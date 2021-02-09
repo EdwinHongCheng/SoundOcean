@@ -67,9 +67,9 @@ class SessionForm extends React.Component {
             )
         }
 
-        let button_text = "Log In"
+        let button_text = "Sign in"
         if (this.props.formType === 'signup') {
-            button_text = "Sign Up"
+            button_text = "Sign up"
         }
 
         // Demo Button
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'login') {
             demo = (
             <>
-                <button onClick={this.demoLogIn}>Demo Log In</button>
+                <button onClick={this.demoLogIn}>Demo Log in</button>
                 <br />
             </>
             )
