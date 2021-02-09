@@ -75,9 +75,13 @@ class SessionForm extends React.Component {
         // Demo Button
         let demo = (<></>)
         if (this.props.formType === 'login') {
-            demo = (<button onClick={this.demoLogIn}>Demo Log In</button>)
+            demo = (
+            <>
+                <button onClick={this.demoLogIn}>Demo Log In</button>
+                <br />
+            </>
+            )
         }
-
 
         return (
             <div className="login-form-container">
