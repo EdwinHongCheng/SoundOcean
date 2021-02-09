@@ -13,3 +13,188 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+/* from AA Times Part 2 Solutions */
+
+/* PHASE 0: Reset */
+
+/* html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+} */
+
+/* input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
+
+/* button,
+input[type="submit"] {
+  cursor: pointer;
+} */
+
+/* Clearfix */
+
+/* .group:after {
+  content: "";
+  display: block;
+  clear: both;
+} */
+
+
+
+
+body {
+  font-family: 'Abel', sans-serif;
+}
+
+.content {
+  height: 100%;
+}
+.map {
+  width: 500px;
+  height: 500px;
+  float: left;
+  position: relative;
+}
+.user-pane {
+  display: flex;
+  justify-content: center;
+}
+.right-half {
+  width: 400px;
+  margin-left: 50px;
+  margin-top: 40px;
+  height: 480px;
+  overflow-y: scroll;
+  padding: 0 20px 20px 20px;
+}
+.right-half.bench-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.index-item-info {
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.index-item-category {
+  font-weight: bold;
+}
+.index-item-copy {
+  margin-left: 15px;
+}
+header {
+  margin-left: 5%;
+}
+h1, h5 {
+  margin-bottom: 0px;
+}
+.index-image {
+  max-height: 200px;
+  max-width: 100px;
+}
+.review-button, .review-form {
+  width: 100px;
+  margin-top: 20px;
+}
+.review-button {
+  /* padding-top: 1px; */
+}
+.header-name {
+  margin: 7px 0 0 0;
+}
+.header-favorites {
+  margin: 4px 0 4px 0;
+  font-size: 14px;
+}
+.button-holder {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.login-form-container {
+  display: flex;
+  justify-content: center;
+}
+.login-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.login-input {
+  margin-left: 20px;
+}
+.login-form-box {
+  outline: 1px solid black;
+  padding: 20px;
+  background: white;
+  position: relative;
+}
+.filter {
+  font-weight: bold;
+}
+.header-link {
+  text-decoration: none;
+  color: black;
+}
+hr {
+  border-bottom: 1px solid grey;
+}
+.session-submit {
+  text-transform: capitalize;
+}
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.close-x {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}

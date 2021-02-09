@@ -10,14 +10,24 @@ import {
 import GreetingContainer from "./greeting/greeting_container";
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
-// prob have to import others later, use BenchBnB as Solution
-
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
+// Modal Stuff
+import Modal from './modal/modal';
+
+
 
 const App = () => (
     <div>
+
+        {/* Testing Modal */}
+        <Modal />
+
         <header>
-            <h1>SoundOcean</h1>
+            <h1>
+                <Link to="/">SoundOcean</Link>
+            </h1>
+            
             <GreetingContainer />
         </header>
 
