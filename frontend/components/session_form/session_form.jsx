@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
                         placeholder="Your Password"
                     />
                 </label>
-                <br />
+                {/* <br /> */}
             </>
         )
         // Email Input Field (for Create Account)
@@ -128,9 +128,19 @@ class SessionForm extends React.Component {
         // Sign In/Create Account Button
         let signInOrCreateAccountButton;
         if (this.props.formType === 'signup') {
-            signInOrCreateAccountButton = (<input className="session-submit" type="submit" value="Create account" />)
+            signInOrCreateAccountButton = (
+            <>
+                <br />
+                <input className="session-submit" type="submit" value="Create account" />
+            </>
+            )
         } else if (this.props.formType === 'login' && this.state.cont_state) {
-            signInOrCreateAccountButton = (<input className="session-submit" type="submit" value="Sign in" />)     
+            signInOrCreateAccountButton = (
+                <>
+                    <br />
+                    <input className="session-submit" type="submit" value="Sign In" />
+                </>
+            ) 
         }
 
         return (
@@ -138,7 +148,7 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
 
                     {/* SoundCloud doesn't have this lol */}
-                    {/* {texty} or {this.props.otherForm} */}
+                    {/* {} or {this.props.otherForm} */}
 
                     <div onClick={this.props.closeModal} className="close-x">X</div>
 
