@@ -1,5 +1,6 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
+import { receiveErrors } from '../../actions/session_actions'
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
@@ -36,7 +37,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => { 
+            dispatch(closeModal())
+            dispatch(receiveErrors([])) // clears Session Errors when modal = closed
+        }
     };
 };
 
