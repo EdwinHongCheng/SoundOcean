@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { receiveErrors } from '../../actions/session_actions'
 
 const mSTP = ({ errors }) => {
     return {
@@ -21,7 +22,10 @@ const mDTP = dispatch => {
                 Create account
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => {
+            dispatch(closeModal())
+            dispatch(receiveErrors([])) // clears Session Errors when modal = closed
+        }
     };
 };
 
