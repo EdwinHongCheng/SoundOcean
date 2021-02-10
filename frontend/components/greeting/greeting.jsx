@@ -39,7 +39,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
 
                 {/* [TEST] DropDown Button - from w3schools: How TO - Clickable Dropdown  */}
                 <div className="dropdown">
-                    <button onClick={myFunction} className="dropbtn">Hi, {currentUser.username}!</button>
+                    <button onClick={myFunction} className="dropbtn">Hello, {currentUser.username}</button>
                     <div id="myDropdown" className="dropdown-content">
 
                         <button className="header-button" onClick={logout}>Sign out</button>
