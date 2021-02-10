@@ -138,7 +138,7 @@ class SessionForm extends React.Component {
             signInOrCreateAccountButton = (
                 <>
                     <br />
-                    <input className="session-submit" type="submit" value="Sign In" />
+                    <input className="session-submit" type="submit" value="Sign in" />
                 </>
             ) 
         }
