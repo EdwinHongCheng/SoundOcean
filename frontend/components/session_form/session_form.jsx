@@ -63,14 +63,17 @@ class SessionForm extends React.Component {
     render() {
         // Password Input Field
         let passwordInputField = (
-            <label>Password:
-                <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    className="login-input"
-                    placeholder="Your Password"
-                />
-            </label>
+            <>
+                <label>Password:
+                    <input type="password"
+                        value={this.state.password}
+                        onChange={this.update('password')}
+                        className="login-input"
+                        placeholder="Your Password"
+                    />
+                </label>
+                <br />
+            </>
         )
         // Email Input Field (for Create Account)
         let email;
@@ -111,7 +114,6 @@ class SessionForm extends React.Component {
             contButton = (
                     <>
                         <button onClick={this.contMethod}>Continue</button>
-                        <br />
                     </>
             )
         }
@@ -159,7 +161,6 @@ class SessionForm extends React.Component {
                         {email}
                         {/* Continue Button*/}
                         {contButton}
-                        <br />
                         {signInOrCreateAccountButton}
                     </div>
                 </form>
