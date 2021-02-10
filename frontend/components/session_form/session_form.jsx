@@ -122,9 +122,9 @@ class SessionForm extends React.Component {
                         <br />
                         <input className="session-submit" type="submit" value={button_text} />
                         <br />
+                        {/* DEMO LOG IN */}
+                        {demo}
                     </div>
-                    {/* DEMO LOG IN */}
-                    {demo}
                 </form>
             </div>
         );
