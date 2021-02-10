@@ -18,7 +18,10 @@ module.exports = {
                         presets: ['@babel/env', '@babel/react']
                     }
                 },
-            }
+            },
+            // Image not loading :(
+            { test: /\.(gif|svg|jpg|png)$/,
+            loader: "file-loader", },
         ]
     },
     devtool: 'source-map',
