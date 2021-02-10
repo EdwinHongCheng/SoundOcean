@@ -1,16 +1,14 @@
-// Remove underline from SoundOcean header link
-a:link {
-  text-decoration: none;
-}
+
 
 
 // from CSS Friends
 
-// .header-nav {
-//   display: flex;
-//   justify-content: space-between;
-//   margin: 0 auto;
-//   width: 900px;
-//   border-left: 1px solid #ccc;
-//   border-right: 1px solid #ccc;
-// }
+.navbar-login-signup {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.signin-button-navbar {
+  margin-right: 10px;
+}

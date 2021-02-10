@@ -15,21 +15,21 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // Modal Stuff
 import Modal from './modal/modal';
 
-
-
 const App = () => (
     <div>
-
-        {/* Testing Modal */}
         <Modal />
 
         <header>
-            <h1>
+            <h1 className="navbar-Left">
                 <Link to="/">SoundOcean</Link>
             </h1>
             
-            <GreetingContainer />
+            <div className="navbar-Right">
+                <GreetingContainer />
+            </div>
         </header>
+
+        <h2>~ where SoundWaves never end (◠‿◠✿) ~</h2>
 
         {/* <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
