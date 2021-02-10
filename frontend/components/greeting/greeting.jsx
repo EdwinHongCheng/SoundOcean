@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 const Greeting = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <>
+            <br />
             <h2>~ where SoundWaves never end (◠‿◠✿) ~</h2>
+            <br />
             <nav className="login-signup">
                 <button onClick={() => openModal('login')}>Sign in</button>
+                <span> </span>
                 <button onClick={() => openModal('signup')}>Create account</button>
             </nav>
         </>
