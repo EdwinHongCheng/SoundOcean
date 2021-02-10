@@ -9,8 +9,7 @@ class SessionForm extends React.Component {
             username: '',
             password: '',
             email: '',
-            cont_name: '',
-            cont_state: false
+            cont_state: false // NOTE: "Continue State" - if "Continue" buttons shows or not
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,8 +43,7 @@ class SessionForm extends React.Component {
     contMethod(e) {
         e.preventDefault();
         e.stopPropagation();
-        this.state.cont_name = this.state.username
-        if (this.state.cont_name.length > 0) {
+        if (this.state.username.length > 0) {
             this.setState({ cont_state: true })
         }
     }
@@ -63,7 +61,18 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        // Email + Password Input Fields (for Create Account)
+        // Password Input Field
+        let passwordInputField = (
+            <label>Password:
+                <input type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input"
+                    placeholder="Your Password"
+                />
+            </label>
+        )
+        // Email Input Field (for Create Account)
         let email;
         if (this.props.formType === 'signup') { 
             email = (
@@ -73,27 +82,22 @@ class SessionForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             className="login-input"
+                            placeholder="Your Email Address"
                         />
                     </label>
                     <br />
-                    <label>Password:
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            className="login-input"
-                        />
-                    </label>
+                    {passwordInputField}
                 </>
             )
         }
 
         // Demo Button
-        let demo;
-        if (this.props.formType === 'login') {
-            demo = (
+        let demoLoginButton;
+        if (this.props.formType === 'login' && !this.state.cont_state) {
+            demoLoginButton = (
             <>
                 <button onClick={this.demoSignIn}>Demo Sign in</button>
-                <br />
+                <p>--------------------- or ---------------------</p>
             </>
             )
         }
@@ -105,21 +109,13 @@ class SessionForm extends React.Component {
                     <>
                         <button onClick={this.contMethod}>Continue</button>
                         <br />
-                        {/* DEMO SIGN IN */}
-                        {demo}
                     </>
             )
         }
         if (this.state.cont_state === true) {
             contButton = (
                 <div>
-                    <label>Password:
-                            <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            className="login-input"
-                        />
-                    </label>
+                    {passwordInputField}
                 </div>
             )
         }
@@ -131,12 +127,6 @@ class SessionForm extends React.Component {
         } else if (this.props.formType === 'login' && this.state.cont_state) {
             signInOrCreateAccountButton = (<input className="session-submit" type="submit" value="Sign in" />)     
         }
-        
-        // Texty (for Modal form - don't really need though - delete from "form" later?)
-        let texty = 'Create account'
-        if (this.props.formType === 'login') {
-            texty = 'Sign in'
-        }
 
         return (
             <div className="login-form-container">
@@ -144,19 +134,22 @@ class SessionForm extends React.Component {
 
                     {/* SoundCloud doesn't have this lol */}
                     {/* {texty} or {this.props.otherForm} */}
-                    {texty}
 
                     <div onClick={this.props.closeModal} className="close-x">X</div>
 
                     {this.renderErrors()}
 
                     <div className="login-form">
-                        <br />
+                        {/* DEMO SIGN IN */}
+                        {demoLoginButton}
+                        {/* <br/> */}
+                        {/* Username Input Field (always shows) */}
                         <label>Username:
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="login-input"
+                                placeholder="Your Username"
                             />
                         </label>
                         <br />
