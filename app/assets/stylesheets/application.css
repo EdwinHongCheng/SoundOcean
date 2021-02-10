@@ -120,7 +120,7 @@ a:link {
   cursor: pointer;
 }
 
-/* Straight Line (nothing works yet, WIP) */
+/* Straight Line (for the "or" in Demo Log In Button (session_form.jsx) */
 .straightline {
    width: 100%; 
    text-align: center; 
