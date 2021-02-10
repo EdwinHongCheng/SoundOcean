@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
             )
         }
 
-        // Demo Button
+        // Demo Login Button
         let demoLoginButton;
         if (this.props.formType === 'login' && !this.state.cont_state) {
             demoLoginButton = (
@@ -101,7 +101,6 @@ class SessionForm extends React.Component {
                 <p className="straightline">
                     <span>or</span>
                 </p>
-                {/* <p>--------------------  or  --------------------</p> */}
             </>
             )
         }
@@ -146,7 +145,6 @@ class SessionForm extends React.Component {
                     <div className="login-form">
                         {/* DEMO SIGN IN */}
                         {demoLoginButton}
-                        {/* <br/> */}
                         {/* Username Input Field (always shows) */}
                         <label>Username:
                             <input type="text"
@@ -157,6 +155,7 @@ class SessionForm extends React.Component {
                             />
                         </label>
                         <br />
+                        {/* Email Input Field*/}
                         {email}
                         {/* Continue Button*/}
                         {contButton}
