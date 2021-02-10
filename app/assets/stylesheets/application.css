@@ -71,7 +71,9 @@ input[type="submit"] {
 } */
 
 
-
+a:link {
+    text-decoration: none;
+}
 
 
 .login-form-container {
