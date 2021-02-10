@@ -97,7 +97,11 @@ class SessionForm extends React.Component {
             demoLoginButton = (
             <>
                 <button onClick={this.demoSignIn}>Demo Sign in</button>
-                <p>--------------------- or ---------------------</p>
+                <br />
+                <p className="straightline">
+                    <span>or</span>
+                </p>
+                {/* <p>--------------------  or  --------------------</p> */}
             </>
             )
         }
