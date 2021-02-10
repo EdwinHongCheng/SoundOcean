@@ -15,8 +15,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // Modal Stuff
 import Modal from './modal/modal';
 
-// Image
-import logo from "../../app/assets/images/favicon.png"
+// Image (Ryan says not to have it yet)
+// import logo from "../../app/assets/images/favicon.png"
 
 const App = () => (
     <div>
@@ -24,10 +24,13 @@ const App = () => (
 
         <header>
             <h1 className="navbar-Left">
-                <Link to="/">SoundOcean</Link>
+                <Link to="/">
+                    SoundOcean
+                    {/* <img src={logo} alt="Logo" /> */}
+                </Link>
             </h1>
 
-            <img src={logo} alt="Logo" />
+            
 
             <div className="navbar-Right">
                 <GreetingContainer />
