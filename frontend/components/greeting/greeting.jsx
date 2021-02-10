@@ -14,8 +14,17 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     const personalGreeting = () => (
         <>
             <hgroup className="header-group">
-                <h2 className="header-name">Hi, {currentUser.username}!</h2>
-                <button className="header-button" onClick={logout}>Sign out</button>
+                
+                {/* [TEST] DropDown Button - from w3schools: How TO - Clickable Dropdown  */}
+                <div class="dropdown">
+                    <button class="dropbtn">Hi, {currentUser.username}!</button>
+                    <div id="myDropdown" class="dropdown-content">
+
+                        <button className="header-button" onClick={logout}>Sign out</button>
+
+                    </div>
+                </div>
+
             </hgroup>
         </>
     );
