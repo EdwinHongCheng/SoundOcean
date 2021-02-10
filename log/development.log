@@ -11807,3 +11807,97 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 290ms (Views: 15.1ms | ActiveRecord: 8.7ms)
 
 
+Started GET "/" for ::1 at 2021-02-10 11:29:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGerchp9ucFXmPKiins55XV8ZGr3Vc0LwV08gaf2e0rhCH99+J1sDQfCm9pMtQGDrKUvK2Aope/uow3EHSM6LQ=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (66.3ms)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 17.4ms)
+
+
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting ')'
+...end=( favicon_link_tag 'favicon.png' );@output_buffer.safe_a...
+...                        ^~~~~~~
+/Users/edwinhong/Desktop/SoundOcean/app/views/layouts/application.html.erb:13: syntax error, unexpected '<', expecting ')'
+  </head>
+  ^
+/Users/edwinhong/Desktop/SoundOcean/app/views/layouts/application.html.erb:17: unknown regexp options - bdy
+/Users/edwinhong/Desktop/SoundOcean/app/views/layouts/application.html.erb:18: syntax error, unexpected '<'
+</html>
+^
+/Users/edwinhong/Desktop/SoundOcean/app/views/layouts/application.html.erb:23: unterminated regexp meets end of file
+          end
+             ^
+/Users/edwinhong/Desktop/SoundOcean/app/views/layouts/application.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^:
+  app/views/layouts/application.html.erb:12:in `'
+
+Started POST "/__better_errors/29ec73ab85390d07/variables" for ::1 at 2021-02-10 11:29:19 -0800
+Started GET "/" for ::1 at 2021-02-10 11:29:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGerchp9ucFXmPKiins55XV8ZGr3Vc0LwV08gaf2e0rhCH99+J1sDQfCm9pMtQGDrKUvK2Aope/uow3EHSM6LQ=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 3430ms (Views: 3408.9ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-02-10 11:30:01 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CGerchp9ucFXmPKiins55XV8ZGr3Vc0LwV08gaf2e0rhCH99+J1sDQfCm9pMtQGDrKUvK2Aope/uow3EHSM6LQ=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Exists (3.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "guest"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "v90hIEGDPAXKaInRUtvu51qpFyd7xKnnsW+TzhGE79BiWwhCmsIais4HpMBiPS4/vmZ8m1vFZevJAX4JZju52A=="], ["updated_at", "2021-02-10 19:30:01.383111"], ["id", 1]]
+  ↳ app/models/user.rb:33
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:33
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (8.8ms)
+Completed 200 OK in 90ms (Views: 69.6ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-10 11:30:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (97.5ms)
+Completed 200 OK in 272ms (Views: 260.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-10 11:31:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 68ms (Views: 62.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-10 11:31:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 65ms (Views: 59.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-10 11:31:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 92ms (Views: 86.8ms | ActiveRecord: 0.8ms)
+
+
