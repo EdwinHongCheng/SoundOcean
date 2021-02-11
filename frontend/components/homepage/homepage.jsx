@@ -31,7 +31,9 @@ class HomePage extends React.Component {
                     </div>
                 </header>
 
-                <h2>~ where SoundWaves never end (◠‿◠✿) ~</h2>
+                <br />
+
+                <h2>~ Hear the SoundWaves (◠‿◠✿) ~</h2>
             </div>
         )
     }
