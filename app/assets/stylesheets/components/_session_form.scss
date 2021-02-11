@@ -11,21 +11,39 @@
   flex-direction: column;
 }
 
+
+
 .login-input {
   margin-left: 20px;
-  // Curved Borders
-  border-radius: 4px;
+  // width: 400px;
+  // height: 42px;
+  // font-size: 15px;
+
+  // Curved Borders (ugly outline tho)
+  // border-radius: 4px;
+
 }
 
 
 .submit-button {
   // Curved Borders
   border-radius: 4px;
+  outline: none;
+  border: none;
+
+  // text color + font
+  color: white;
+  font-size: 15px;
+
+  // button size
+  width: 400px;
+  height: 42px;
+  background-color: #096d4f;
+  cursor: pointer;
 }
 
 .login-form-box {
-  // took out outline cuz it's perfectly rectangle (doesn't curve to match border radius)
-  // outline: 1px solid black;
+
   padding: 20px;
   background: white;
   position: relative;
@@ -43,28 +61,28 @@
   background: hsla(0,0%,94.9%,.9);
   z-index: 10;
   // [TEST] Animation
-  animation: color-me-out 0.5s;
+  // animation: color-me-out 0.5s;
 }
 
 
-@keyframes color-me-out {
-  0%{
-    background:rgba(235, 235, 235, 0.7);
-  }
-  100%{
-    background:rgba(235, 235, 235, 0);
-  }
-}
+// @keyframes color-me-out {
+//   0%{
+//     background:rgba(235, 235, 235, 0.7);
+//   }
+//   100%{
+//     background:rgba(235, 235, 235, 0);
+//   }
+// }
 
 // [TEST] Animation
-@keyframes color-me-in {
-  0%{
-    background:rgba(235, 235, 235, 0);
-  }
-  100%{
-    background:rgba(235, 235, 235, 0.7);
-  }
-}
+// @keyframes color-me-in {
+//   0%{
+//     background:rgba(235, 235, 235, 0);
+//   }
+//   100%{
+//     background:rgba(235, 235, 235, 0.7);
+//   }
+// }
 
 
 .modal-child {
@@ -73,42 +91,42 @@
   left: 50%;
   transform: translate(-50%, -50%);
   // [TEST] Animation
-  animation: move-me-in 0.5s;
+  // animation: move-me-in 0.5s;
 }
 
 // [TEST] Animation
-@keyframes move-me-in {
-  0%{
-    top: -200px;
-  }
-  100%{
-    // position where Modal stops sliding down + sets
-    top: 330px;
-  }
-}
+// @keyframes move-me-in {
+//   0%{
+//     top: -200px;
+//   }
+//   100%{
+//     // position where Modal stops sliding down + sets
+//     top: 330px;
+//   }
+// }
 
 
 
 .close-x {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 14px;
+  right: 22px;
   cursor: pointer;
   color: #000;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 
 // [TEST] Animation (not used right now)
 
-@keyframes move-me-out {
-  0%{
-    top: 350px;
-  }
-  100%{
-    top: -200px;
-  }
-}
+// @keyframes move-me-out {
+//   0%{
+//     top: 350px;
+//   }
+//   100%{
+//     top: -200px;
+//   }
+// }
 
 
 
