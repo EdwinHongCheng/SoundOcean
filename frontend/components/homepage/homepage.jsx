@@ -20,15 +20,19 @@ class HomePage extends React.Component {
                 <Modal />
 
                 <header>
-                    <h1 className="navbar-Left">
-                        <Link to="/">
-                            <img className="logo" src={logo} alt="Logo" />
-                        </Link>
-                    </h1>
+                    <nav>
+                        <div className="navbar-Left">
+                            <h1>
+                                <Link to="/">
+                                    <img className="logo" src={logo} alt="Logo" />
+                                </Link>
+                            </h1>
+                        </div>
 
-                    <div className="navbar-Right">
-                        <GreetingContainer />
-                    </div>
+                        <div className="navbar-Right">
+                            <GreetingContainer />
+                        </div>
+                    </nav>
                 </header>
 
                 <br />

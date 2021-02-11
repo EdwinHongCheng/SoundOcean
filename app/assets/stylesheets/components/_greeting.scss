@@ -1,5 +1,16 @@
 // from CSS Friends
 
+.navbar-except-logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.soundOcean-greeting-text {
+  margin-right: 480px;
+  margin-top: 20px;
+}
+
+
 .navbar-login-signup {
   display: flex;
   justify-content: space-between;
@@ -8,6 +19,31 @@
 
 .signin-button-navbar {
   margin-right: 10px;
+}
+
+
+// NavBar Right (after Signing In -> Home, Stream, Library, etc)
+
+.navbar-Right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-UList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-UList > li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.unicode-3-dots {
+  font-size: 40px;
+  align-items: center;
 }
 
 

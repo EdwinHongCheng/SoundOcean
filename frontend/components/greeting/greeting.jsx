@@ -3,12 +3,19 @@ import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
-        <>
-            <nav className="navbar-login-signup">
-                <button className="signin-button-navbar" onClick={() => openModal('login')}>Sign in</button>
-                <button onClick={() => openModal('signup')}>Create account</button>
-            </nav>
-        </>
+        <div className="navbar-except-logo">
+            <p className="soundOcean-greeting-text">SoundOcean</p>
+            
+            {/* NavBar Right - Unordered List of Buttons/Links */}
+            <ul className="navbar-login-signup">
+                <li>
+                    <button className="signin-button-navbar" onClick={() => openModal('login')}>Sign in</button>
+                </li>
+                <li>
+                    <button onClick={() => openModal('signup')}>Create account</button>
+                </li>
+            </ul>
+        </div>
     );
 
     // DropDown Test
@@ -37,15 +44,27 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         <>
             <hgroup className="header-group">
 
-                {/* [TEST] DropDown Button - from w3schools: How TO - Clickable Dropdown  */}
-                <div className="dropdown">
-                    <button onClick={myFunction} className="dropbtn">Hello, {currentUser.username}</button>
-                    <div id="myDropdown" className="dropdown-content">
+                <ul className="navbar-UList">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Stream</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><input type="input" placeholder="Search for artists, bands, tracks, podcases" /></li>
+                    <li><a href="#">Upload</a></li>
 
-                        <button className="header-button" onClick={logout}>Sign out</button>
-
+                    {/* [TEST] DropDown Button - from w3schools: How TO - Clickable Dropdown  */}
+                    <div className="dropdown">
+                        <button onClick={myFunction} className="dropbtn">Hello, {currentUser.username}</button>
+                        <div id="myDropdown" className="dropdown-content">
+                            <button className="header-button" onClick={logout}>Sign out</button>
+                        </div>
                     </div>
-                </div>
+
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#" className="unicode-3-dots">&#8230;</a></li>
+                </ul>
+
+
 
             </hgroup>
         </>

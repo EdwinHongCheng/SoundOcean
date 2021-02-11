@@ -7,10 +7,10 @@ import {
     HashRouter
 } from 'react-router-dom';
 
-// testing HomePage Component
+// 
 import HomePage from "./homepage/homepage"
 
-// Error Message
+
 import NotFound from "./error_messages/not_found"
 
 class App extends React.Component {
@@ -19,8 +19,12 @@ class App extends React.Component {
         return (
             <>
                 <Switch>
+                    {/* HomePage Component */}
                     <Route exact path="/" component={HomePage} />
-                    <Route component={NotFound} />
+                    {/* Redirect to HomePage */}
+                    <Route render={() => <Redirect to="/" />} />
+                    {/* Error Message Page */}
+                    {/* <Route component={NotFound} /> */}
                 </Switch>
             </>
         )

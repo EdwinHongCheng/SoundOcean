@@ -145,16 +145,9 @@ class SessionForm extends React.Component {
 
         return (
             <>
-            
                 <div className="login-form-container">
-
                     <form onSubmit={this.handleSubmit} className="login-form-box">
-
-                        {/* SoundCloud doesn't have this lol */}
-                        {/* {} or {this.props.otherForm} */}
-
                         {this.renderErrors()}
-
                         <div className="login-form">
                             {/* DEMO SIGN IN */}
                             {demoLoginButton}
