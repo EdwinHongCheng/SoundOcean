@@ -55,16 +55,19 @@
   background-color:#000573;
   color: white;
   padding: 16px;
-  border-right: 1px solid red;
+  border-right: 1px solid black;
 }
-
 
 .upload-button, .home-button {
   background-color:#000573;
   color: white;
   padding: 16px;
-  border-right: 1px solid red;
-  border-left: 1px solid red;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.nav-button:hover, .upload-button:hover, .home-button:hover {
+  background-color: #111abd;
 }
 
 // Search Bar
@@ -72,6 +75,7 @@
   height: 18px;
   padding-right: 10px;
   border: 14px solid #000573;
+  outline: none;
 }
 
 
@@ -86,6 +90,7 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 /* Dropdown button on hover & focus */
@@ -118,7 +123,7 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content div:hover {background-color: gray}
+.dropdown-content div:hover {background-color: #ccc}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
