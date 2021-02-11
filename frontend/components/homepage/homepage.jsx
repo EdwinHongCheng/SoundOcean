@@ -26,7 +26,6 @@ class HomePage extends React.Component {
                 <header>
                     <h1 className="navbar-Left">
                         <Link to="/">
-                            SoundOcean
                             <img src={logo} alt="Logo" />
                         </Link>
                     </h1>

@@ -145,12 +145,17 @@ class SessionForm extends React.Component {
 
         return (
             <div className="login-form-container">
+
+
+
                 <form onSubmit={this.handleSubmit} className="login-form-box">
+
+                    <div onClick={this.props.closeModal} className="close-x">&#x2715;</div>
 
                     {/* SoundCloud doesn't have this lol */}
                     {/* {} or {this.props.otherForm} */}
 
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
+
 
                     {this.renderErrors()}
 
