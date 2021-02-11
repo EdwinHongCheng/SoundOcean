@@ -9,9 +9,6 @@ import GreetingContainer from "../greeting/greeting_container";
 // Modal Stuff
 import Modal from '../modal/modal';
 
-// Image (Ryan says not to have it yet)
-import logo from "../../../app/assets/images/logo.png"
-
 class HomePage extends React.Component {
     render() {
         return (
@@ -21,15 +18,7 @@ class HomePage extends React.Component {
 
                 <header>
                     <nav>
-                        <div className="navbar-Left">
-                            <h1>
-                                <Link to="/">
-                                    <img className="logo" src={logo} alt="Logo" />
-                                </Link>
-                            </h1>
-                        </div>
-
-                        <div className="navbar-Right">
+                        <div>
                             <GreetingContainer />
                         </div>
                     </nav>

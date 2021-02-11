@@ -1,17 +1,16 @@
 // from CSS Friends
 
-.navbar-except-logo {
+.signin-navbar {
   display: flex;
   justify-content: space-between;
 }
 
 .soundOcean-greeting-text {
-  margin-right: 480px;
   margin-top: 20px;
+  margin-right: 500px
 }
 
-
-.navbar-login-signup {
+.navbar-login-signup-section {
   display: flex;
   justify-content: space-between;
   margin: 10px;
@@ -22,12 +21,7 @@
 }
 
 
-// NavBar Right (after Signing In -> Home, Stream, Library, etc)
-
-.navbar-Right {
-  display: flex;
-  justify-content: space-between;
-}
+// NavBar after Signing In (1, Logo, 2, Home, 3, Stream, etc)
 
 .navbar-UList {
   display: flex;
@@ -43,18 +37,17 @@
 
 .unicode-3-dots {
   font-size: 40px;
-  align-items: center;
 }
 
 
-// [TEST] DROPDOWN (from w3schools example)
+// DROPDOWN (from w3schools example)
 
 /* Dropdown Button */
 .dropbtn {
   background-color: #000573;
   color: white;
   padding: 14px;
-  font-size: 14px;
+  font-size: 20px;
   border: none;
   cursor: pointer;
 }
@@ -75,7 +68,7 @@
   display: none; // how to change this (???)
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 40px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -93,5 +86,3 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
-
-

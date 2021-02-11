@@ -1,13 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// Image (Ryan says not to have it yet)
+import logo from "../../../app/assets/images/logo.png"
 
 const Greeting = ({ currentUser, logout, openModal }) => {
+
+    const soLogo = (
+        <h1>
+            <Link to="/">
+                <img className="logo" src={logo} alt="Logo" />
+            </Link>
+        </h1>
+    )
+
     const sessionLinks = () => (
-        <div className="navbar-except-logo">
+        <div className="signin-navbar">
+            
+            {soLogo}
             <p className="soundOcean-greeting-text">SoundOcean</p>
             
+
             {/* NavBar Right - Unordered List of Buttons/Links */}
-            <ul className="navbar-login-signup">
+            <ul className="navbar-login-signup-section">
                 <li>
                     <button className="signin-button-navbar" onClick={() => openModal('login')}>Sign in</button>
                 </li>
@@ -21,10 +35,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     // DropDown Test
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
-    const myFunction = () => {
+    const dropdownFunc = () => {
         document.getElementById("myDropdown").classList.toggle("show");
     }
-
 
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function (event) {
@@ -45,6 +58,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             <hgroup className="header-group">
 
                 <ul className="navbar-UList">
+                    {soLogo}
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Stream</a></li>
                     <li><a href="#">Library</a></li>
@@ -52,16 +66,17 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                     <li><a href="#">Upload</a></li>
 
                     {/* [TEST] DropDown Button - from w3schools: How TO - Clickable Dropdown  */}
+                    <li><a href="#">{currentUser.username}</a></li>
+
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+
                     <div className="dropdown">
-                        <button onClick={myFunction} className="dropbtn">Hello, {currentUser.username}</button>
+                        <button onClick={dropdownFunc} className="dropbtn">&#8230;</button>
                         <div id="myDropdown" className="dropdown-content">
                             <button className="header-button" onClick={logout}>Sign out</button>
                         </div>
                     </div>
-
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#" className="unicode-3-dots">&#8230;</a></li>
                 </ul>
 
 
