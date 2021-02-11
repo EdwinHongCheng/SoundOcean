@@ -14,10 +14,10 @@
 
 // Not sure why its bigger than the buttons
 .login-input {
-  margin-left: 20px;
+  width: 392px;
+  font-size: 18px;
 
   // Curved Borders (ugly outline tho)
-  // border-radius: 4px;
 }
 
 
@@ -39,7 +39,6 @@
 }
 
 .login-form-box {
-
   padding: 20px;
   background: white;
   position: relative;

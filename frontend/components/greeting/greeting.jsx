@@ -20,16 +20,16 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             
             <ul className="navbar-login-right-sect">
                 <li>
-                    <button className="signin-button-navbar" onClick={() => openModal('login')}>Sign in</button>
+                    <div className="signin-button-navbar" onClick={() => openModal('login')}>Sign in</div>
                 </li>
                 <li>
-                    <button onClick={() => openModal('signup')}>Create account</button>
+                    <div className="createAccount-button-navbar" onClick={() => openModal('signup')}>Create account</div>
                 </li>
             </ul>
         </div>
     );
 
-    // DropDown Test
+    // DropDown (w3schools)
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
     const dropdownFunc = () => {

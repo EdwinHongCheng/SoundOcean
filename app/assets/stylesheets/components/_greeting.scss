@@ -27,15 +27,27 @@
   margin-left: 10px;
 }
 
-// Right Side of NavBar on SignUp Page
+// Right Section of NavBar (on SignUp Page)
 .navbar-login-right-sect {
   display: flex;
   justify-content: space-between;
-  margin: 10px;
 }
 
-.signin-button-navbar {
+.signin-button-navbar, .createAccount-button-navbar {
+  background-color: #000573;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 4px;
+
+  margin-top: 5px;
   margin-right: 10px;
+}
+
+.signin-button-navbar:hover, .createAccount-button-navbar:hover {
+  background-color: #111abd;
 }
 
 //----------------------------------------------------------------------------->

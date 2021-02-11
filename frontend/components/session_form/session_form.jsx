@@ -64,11 +64,12 @@ class SessionForm extends React.Component {
         // Password Input Field
         let passwordInputField = (
             <>
-                <label>Password:
-                    <input type="password"
+                <label>
+                    <input 
+                        className="login-input"
+                        type="password"
                         value={this.state.password}
                         onChange={this.update('password')}
-                        className="login-input"
                         placeholder="Your Password"
                     />
                 </label>
@@ -80,11 +81,12 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'signup') { 
             email = (
                 <>
-                    <label>Email:
-                        <input type="text"
+                    <label>
+                        <input 
+                            className="login-input"
+                            type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            className="login-input"
                             placeholder="Your Email Address"
                         />
                     </label>
@@ -152,7 +154,7 @@ class SessionForm extends React.Component {
                             {/* DEMO SIGN IN */}
                             {demoLoginButton}
                             {/* Username Input Field (always shows) */}
-                            <label>Username:
+                            <label>
                                 <input type="text"
                                     value={this.state.username}
                                     onChange={this.update('username')}
