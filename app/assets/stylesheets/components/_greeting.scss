@@ -1,6 +1,6 @@
 // Logo in NavBar
 .logo {
-    height: 47px;
+    height: 48px;
 }
 
 // To Center Nav Bar -> gives it margins if screen = stretch to wide
@@ -46,16 +46,32 @@
 }
 
 .navbar-post-signin > li {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 // for the Nav Buttons Post-SignIn (Home, Stream, etc)
 .nav-button {
   background-color:#000573;
   color: white;
-  padding: 15px;
+  padding: 16px;
   border-right: 1px solid red;
+}
+
+
+.upload-button, .home-button {
+  background-color:#000573;
+  color: white;
+  padding: 16px;
+  border-right: 1px solid red;
+  border-left: 1px solid red;
+}
+
+// Search Bar
+.searchBar {
+  height: 18px;
+  padding-right: 10px;
+  border: 14px solid #000573;
 }
 
 
@@ -66,8 +82,8 @@
 .dropbtn {
   background-color: #000573;
   color: white;
-  padding: 14px;
-  font-size: 20px;
+  padding: 15px;
+  font-size: 16px;
   border: none;
   cursor: pointer;
 }
@@ -85,24 +101,24 @@
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none; // how to change this (???)
+  // will display: changed by toggle from "dropdownFunc"
+  display: none; 
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 40px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color:white;
   z-index: 1;
+  cursor: pointer;
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content div {
   color: black;
-  padding: 12px 16px;
   text-decoration: none;
   display: block;
+  border: 1px solid black;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+.dropdown-content div:hover {background-color: gray}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
