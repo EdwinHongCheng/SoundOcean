@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'login' && !this.state.cont_state) {
             demoLoginButton = (
             <>
-                <button onClick={this.demoSignIn}>Demo Sign in</button>
+                <button className="submit-button" onClick={this.demoSignIn}>Demo Sign in</button>
                 <br />
                 <p className="straightline">
                     <span>or</span>
@@ -113,7 +113,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'login') {
             contButton = (
                     <>
-                        <button onClick={this.contMethod}>Continue</button>
+                        <button className="submit-button" onClick={this.contMethod}>Continue</button>
                     </>
             )
         }
@@ -131,14 +131,14 @@ class SessionForm extends React.Component {
             signInOrCreateAccountButton = (
             <>
                 <br />
-                <input type="submit" value="Create account" />
+                    <input className="submit-button" type="submit" value="Create account" />
             </>
             )
         } else if (this.props.formType === 'login' && this.state.cont_state) {
             signInOrCreateAccountButton = (
                 <>
                     <br />
-                    <input type="submit" value="Sign in" />
+                    <input className="submit-button" type="submit" value="Sign in" />
                 </>
             ) 
         }
