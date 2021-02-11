@@ -82,7 +82,8 @@
     top: -200px;
   }
   100%{
-    top: 350px;
+    // position where Modal stops sliding down + sets
+    top: 330px;
   }
 }
 
