@@ -6,11 +6,6 @@ import {
 
 import GreetingContainer from "../greeting/greeting_container";
 
-// Old Stuff (based on BenchBnB)
-// import SignupFormContainer from '../session_form/signup_form_container';
-// import LoginFormContainer from '../session_form/login_form_container';
-// import { AuthRoute, ProtectedRoute } from '../../util/route_util';
-
 // Modal Stuff
 import Modal from '../modal/modal';
 
@@ -21,6 +16,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
+
                 <Modal />
 
                 <header>
@@ -36,11 +32,6 @@ class HomePage extends React.Component {
                 </header>
 
                 <h2>~ where SoundWaves never end (◠‿◠✿) ~</h2>
-
-                {/* <Switch>
-                    <AuthRoute exact path="/login" component={LoginFormContainer} />
-                    <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                </Switch> */}
             </div>
         )
     }

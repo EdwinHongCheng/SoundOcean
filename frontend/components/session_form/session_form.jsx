@@ -144,42 +144,40 @@ class SessionForm extends React.Component {
         }
 
         return (
-            <div className="login-form-container">
+            <>
+            
+                <div className="login-form-container">
 
+                    <form onSubmit={this.handleSubmit} className="login-form-box">
 
+                        {/* SoundCloud doesn't have this lol */}
+                        {/* {} or {this.props.otherForm} */}
 
-                <form onSubmit={this.handleSubmit} className="login-form-box">
+                        {this.renderErrors()}
 
-                    <div onClick={this.props.closeModal} className="close-x">&#x2715;</div>
+                        <div className="login-form">
+                            {/* DEMO SIGN IN */}
+                            {demoLoginButton}
+                            {/* Username Input Field (always shows) */}
+                            <label>Username:
+                                <input type="text"
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    className="login-input"
+                                    placeholder="Your Username"
+                                />
+                            </label>
+                            <br />
+                            {/* Email Input Field*/}
+                            {email}
+                            {/* Continue Button*/}
+                            {contButton}
+                            {signInOrCreateAccountButton}
+                        </div>
+                    </form>
+                </div>
 
-                    {/* SoundCloud doesn't have this lol */}
-                    {/* {} or {this.props.otherForm} */}
-
-
-
-                    {this.renderErrors()}
-
-                    <div className="login-form">
-                        {/* DEMO SIGN IN */}
-                        {demoLoginButton}
-                        {/* Username Input Field (always shows) */}
-                        <label>Username:
-                            <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                                className="login-input"
-                                placeholder="Your Username"
-                            />
-                        </label>
-                        <br />
-                        {/* Email Input Field*/}
-                        {email}
-                        {/* Continue Button*/}
-                        {contButton}
-                        {signInOrCreateAccountButton}
-                    </div>
-                </form>
-            </div>
+            </>
         );
     }
 }

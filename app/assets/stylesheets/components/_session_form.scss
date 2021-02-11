@@ -16,10 +16,14 @@
 }
 
 .login-form-box {
-  outline: 1px solid black;
+  // took out outline cuz it's perfectly rectangle (doesn't curve to match border radius)
+  // outline: 1px solid black;
   padding: 20px;
   background: white;
   position: relative;
+
+  // Curved Borders
+  border-radius: 6px;
 }
 
 
@@ -31,7 +35,8 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: hsla(0,0%,94.9%,.9);
+  // background: rgba(0, 0, 0, 0.7);
   z-index: 10;
 }
 
@@ -47,18 +52,21 @@
   top: 5px;
   right: 5px;
   cursor: pointer;
+  color: #000;
+  font-size: 24px;
 }
+
 
 /* Straight Line (for the "or" in Demo Log In Button (session_form.jsx) */
 .straightline {
-   width: 100%; 
-   text-align: center; 
-   border-bottom: 1px solid #000; 
-   line-height: 0.1em;
-   margin: 10px 0 20px; 
+  width: 100%; 
+  text-align: center; 
+  border-bottom: 1px solid #000; 
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
 } 
 
 .straightline span { 
-    background:#fff; 
-    padding:0 16px; 
+  background:#fff; 
+  padding:0 16px; 
 }
