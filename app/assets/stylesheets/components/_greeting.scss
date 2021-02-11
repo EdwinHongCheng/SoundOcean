@@ -1,15 +1,21 @@
-// from CSS Friends
-
+// Spaces both Sections (NavBar on SignUp Page)
 .signin-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Left Side of NavBar on SignUp Page
+.navbar-login-logo-text {
   display: flex;
   justify-content: space-between;
 }
 
 .soundOcean-greeting-text {
   margin-top: 20px;
-  margin-right: 500px
+  margin-left: 10px;
 }
 
+// Right Side of NavBar on SignUp Page
 .navbar-login-signup-section {
   display: flex;
   justify-content: space-between;
@@ -21,7 +27,9 @@
 }
 
 
-// NavBar after Signing In (1, Logo, 2, Home, 3, Stream, etc)
+
+
+// NavBar Post-Sign In (1, Logo, 2, Home, 3, Stream, etc)
 
 .navbar-UList {
   display: flex;
@@ -38,6 +46,8 @@
 .unicode-3-dots {
   font-size: 40px;
 }
+
+
 
 
 // DROPDOWN (from w3schools example)

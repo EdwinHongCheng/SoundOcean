@@ -6,18 +6,18 @@ import logo from "../../../app/assets/images/logo.png"
 const Greeting = ({ currentUser, logout, openModal }) => {
 
     const soLogo = (
-        <h1>
-            <Link to="/">
-                <img className="logo" src={logo} alt="Logo" />
-            </Link>
-        </h1>
+        <Link to="/">
+            <img className="logo" src={logo} alt="Logo" />
+        </Link>
     )
 
     const sessionLinks = () => (
         <div className="signin-navbar">
-            
-            {soLogo}
-            <p className="soundOcean-greeting-text">SoundOcean</p>
+
+            <div className="navbar-login-logo-text">
+                {soLogo}
+                <p className="soundOcean-greeting-text">SoundOcean</p>
+            </div>
             
 
             {/* NavBar Right - Unordered List of Buttons/Links */}

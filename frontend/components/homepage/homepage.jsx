@@ -12,22 +12,18 @@ import Modal from '../modal/modal';
 class HomePage extends React.Component {
     render() {
         return (
-            <div>
-
+            <>
                 <Modal />
-
                 <header>
                     <nav>
-                        <div>
-                            <GreetingContainer />
-                        </div>
+                        <GreetingContainer />
                     </nav>
                 </header>
 
+                {/* Delete Filler below Later */}
                 <br />
-
                 <h2>~ Hear the SoundWaves (◠‿◠✿) ~</h2>
-            </div>
+            </>
         )
     }
 }

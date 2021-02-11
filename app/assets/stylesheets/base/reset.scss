@@ -52,3 +52,9 @@ table {
 }
 
 // end of CSS Reset
+
+
+// remove underlines from links
+a:link {
+    text-decoration: none;
+}
