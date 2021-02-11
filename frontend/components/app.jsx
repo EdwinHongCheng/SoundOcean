@@ -7,43 +7,24 @@ import {
     HashRouter
 } from 'react-router-dom';
 
-import GreetingContainer from "./greeting/greeting_container";
-import SignupFormContainer from './session_form/signup_form_container';
-import LoginFormContainer from './session_form/login_form_container';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+// testing HomePage Component
+import HomePage from "./homepage/homepage"
 
-// Modal Stuff
-import Modal from './modal/modal';
+// Error Message
+import NotFound from "./error_messages/not_found"
 
-// Image (Ryan says not to have it yet)
-// import logo from "../../app/assets/images/favicon.png"
+class App extends React.Component {
 
-const App = () => (
-    <div>
-        <Modal />
-
-        <header>
-            <h1 className="navbar-Left">
-                <Link to="/">
-                    SoundOcean
-                    {/* <img src={logo} alt="Logo" /> */}
-                </Link>
-            </h1>
-
-            
-
-            <div className="navbar-Right">
-                <GreetingContainer />
-            </div>
-        </header>
-
-        <h2>~ where SoundWaves never end (◠‿◠✿) ~</h2>
-
-        {/* <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        </Switch> */}
-    </div>
-);
+    render() {
+        return (
+            <>
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route component={NotFound} />
+                </Switch>
+            </>
+        )
+    }
+}
 
 export default App;
