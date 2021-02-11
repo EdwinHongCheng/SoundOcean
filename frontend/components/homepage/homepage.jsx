@@ -22,7 +22,7 @@ class HomePage extends React.Component {
                 <header>
                     <h1 className="navbar-Left">
                         <Link to="/">
-                            <img src={logo} alt="Logo" />
+                            <img className="logo" src={logo} alt="Logo" />
                         </Link>
                     </h1>
 
