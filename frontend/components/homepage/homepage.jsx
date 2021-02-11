@@ -15,7 +15,7 @@ class HomePage extends React.Component {
             <>
                 <Modal />
                 <header>
-                    <nav>
+                    <nav className="navigation-bar"> 
                         <GreetingContainer />
                     </nav>
                 </header>

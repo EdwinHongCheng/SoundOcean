@@ -1,3 +1,15 @@
+// Logo in NavBar
+.logo {
+    height: 47px;
+}
+
+// To Center Nav Bar -> gives it margins if screen = stretch to wide
+.navigation-bar {
+  max-width: 1000px;
+  margin: auto;
+}
+
+
 // Spaces both Sections (NavBar on SignUp Page)
 .signin-navbar {
   display: flex;
@@ -5,7 +17,7 @@
 }
 
 // Left Side of NavBar on SignUp Page
-.navbar-login-logo-text {
+.navbar-login-left-sect {
   display: flex;
   justify-content: space-between;
 }
@@ -16,7 +28,7 @@
 }
 
 // Right Side of NavBar on SignUp Page
-.navbar-login-signup-section {
+.navbar-login-right-sect {
   display: flex;
   justify-content: space-between;
   margin: 10px;
@@ -26,27 +38,25 @@
   margin-right: 10px;
 }
 
-
-
+//----------------------------------------------------------------------------->
 
 // NavBar Post-Sign In (1, Logo, 2, Home, 3, Stream, etc)
-
-.navbar-UList {
+.navbar-post-signin {
   display: flex;
-  justify-content: space-between;
 }
 
-.navbar-UList > li {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 12px;
-  margin-right: 12px;
+.navbar-post-signin > li {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.unicode-3-dots {
-  font-size: 40px;
+// for the Nav Buttons Post-SignIn (Home, Stream, etc)
+.nav-button {
+  background-color:#000573;
+  color: white;
+  padding: 15px;
+  border-right: 1px solid red;
 }
-
 
 
 

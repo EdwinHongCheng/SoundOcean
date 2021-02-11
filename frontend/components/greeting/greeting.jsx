@@ -14,14 +14,14 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <div className="signin-navbar">
 
-            <div className="navbar-login-logo-text">
+            <div className="navbar-login-left-sect">
                 {soLogo}
                 <p className="soundOcean-greeting-text">SoundOcean</p>
             </div>
             
 
             {/* NavBar Right - Unordered List of Buttons/Links */}
-            <ul className="navbar-login-signup-section">
+            <ul className="navbar-login-right-sect">
                 <li>
                     <button className="signin-button-navbar" onClick={() => openModal('login')}>Sign in</button>
                 </li>
@@ -57,19 +57,19 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         <>
             <hgroup className="header-group">
 
-                <ul className="navbar-UList">
+                <ul className="navbar-post-signin">
                     {soLogo}
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Stream</a></li>
-                    <li><a href="#">Library</a></li>
+                    <li><a className="nav-button" href="#">Home</a></li>
+                    <li><a className="nav-button" href="#">Stream</a></li>
+                    <li><a className="nav-button" href="#">Library</a></li>
                     <li><input type="input" placeholder="Search for artists, bands, tracks, podcases" /></li>
-                    <li><a href="#">Upload</a></li>
+                    <li><a className="nav-button" href="#">Upload</a></li>
 
                     {/* [TEST] DropDown Button - from w3schools: How TO - Clickable Dropdown  */}
-                    <li><a href="#">{currentUser.username}</a></li>
+                    <li><a className="nav-button" href="#">{currentUser.username}</a></li>
 
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">LinkedIn</a></li>
+                    <li><a className="nav-button" href="#">GitHub</a></li>
+                    <li><a className="nav-button" href="#">LinkedIn</a></li>
 
                     <div className="dropdown">
                         <button onClick={dropdownFunc} className="dropbtn">&#8230;</button>
