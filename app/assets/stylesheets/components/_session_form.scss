@@ -17,6 +17,10 @@
   width: 392px;
   font-size: 18px;
   outline: none;
+
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 38px;
 }
 
 
@@ -179,5 +183,5 @@
 
 .straightline span { 
   background:#fff; 
-  padding:0 16px; 
+  padding:0 8px; 
 }

@@ -29,6 +29,8 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         </div>
     );
 
+    //------------------------------------------------------------------------->
+
     // DropDown (w3schools)
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
@@ -36,7 +38,16 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         document.getElementById("myDropdown").classList.toggle("show1");
     }
 
-    // Close the dropdown menu if the user clicks outside of it
+    //------------------------------------------------------------------------->
+    // DropDown Number 2 (for User)
+
+    const dropdownFunc2 = () => {
+        document.getElementById("myDropdown2").classList.toggle("show2");
+    }
+
+
+
+    // Close BOTH dropdown menus if the user clicks outside of it
     window.onclick = function (event) {
         if (!event.target.matches('.dropbtn')) {
             var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -48,32 +59,18 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                 }
             }
         }
+
+        if (!event.target.matches('.dropbtn2')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content2");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show2')) {
+                    openDropdown.classList.remove('show2');
+                }
+            }
+        }
     }
-
-
-
-    //------------------------------------------------------------------------->
-    // DropDown Number 2 (for User)
-
-    // const dropdownFunc2 = () => {
-    //     document.getElementById("myDropdown2").classList.toggle("show2");
-    // }
-
-    // // Close the dropdown menu if the user clicks outside of it
-    // window.onclick = function (event) {
-    //     if (!event.target.matches('.dropbtn2')) {
-    //         var dropdowns = document.getElementsByClassName("dropdown-content2");
-    //         var i;
-    //         for (i = 0; i < dropdowns.length; i++) {
-    //             var openDropdown = dropdowns[i];
-    //             if (openDropdown.classList.contains('show2')) {
-    //                 openDropdown.classList.remove('show2');
-    //             }
-    //         }
-    //     }
-    // }
-
-
 
 
     //------------------------------------------------------------------------->
@@ -89,10 +86,15 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             <li><a className="nav-button" href="#">Library</a></li>
             <input className="searchBar" type="input" placeholder="Search" />
             <li><a className="upload-button" href="#">Upload</a></li>
+
+            {/* DropDown Button 2  */}
             <li>
-                <a className="nav-button" href="#">
-                    {currentUser.username}
-                </a>
+                <div className="dropdown2">
+                    <text onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</text>
+                    <div id="myDropdown2" className="dropdown-content2">
+                        <div>My Tracks</div>
+                    </div>
+                </div>
             </li>
 
             <li><a className="nav-button" href="#">GitHub</a></li>
