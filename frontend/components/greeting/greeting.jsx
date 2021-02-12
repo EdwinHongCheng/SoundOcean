@@ -34,15 +34,19 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     // DropDown (w3schools)
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
-    const dropdownFunc = () => {
+    const dropdownFunc = (e) => {
         document.getElementById("myDropdown").classList.toggle("show1");
+        e.currentTarget.classList.toggle("focusedBlue");
     }
 
     //------------------------------------------------------------------------->
     // DropDown Number 2 (for User)
 
-    const dropdownFunc2 = () => {
+    
+
+    const dropdownFunc2 = (e) => {
         document.getElementById("myDropdown2").classList.toggle("show2");
+        e.currentTarget.classList.toggle("focusedBlue");
     }
 
 
@@ -56,6 +60,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                 var openDropdown = dropdowns[i];
                 if (openDropdown.classList.contains('show1')) {
                     openDropdown.classList.remove('show1');
+                    document.querySelector(".dropbtn").classList.toggle("focusedBlue");
                 }
             }
         }
@@ -67,10 +72,12 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                 var openDropdown = dropdowns[i];
                 if (openDropdown.classList.contains('show2')) {
                     openDropdown.classList.remove('show2');
+                    document.querySelector(".dropbtn2").classList.toggle("focusedBlue");
                 }
             }
         }
     }
+
 
 
     //------------------------------------------------------------------------->
