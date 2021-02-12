@@ -91,8 +91,10 @@
 }
 
 
+//----------------------------------------------------------------------------->
 
 // DROPDOWN (from w3schools example)
+
 
 /* Dropdown Button */
 .dropbtn {
@@ -116,6 +118,7 @@
   display: inline-block;
 }
 
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   // will display: changed by toggle from "dropdownFunc"
@@ -124,6 +127,7 @@
   background-color:white;
   z-index: 1;
   cursor: pointer;
+
 }
 
 /* Links inside the dropdown */
@@ -138,4 +142,8 @@
 .dropdown-content div:hover {background-color: #ccc}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {
+  display: block;
+  width: 85px;
+  right: 0px;
+}

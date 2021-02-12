@@ -6,6 +6,7 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 
 function Modal({ modal, closeModal }) {
+
     if (!modal) {
         return null;
     }
@@ -20,6 +21,14 @@ function Modal({ modal, closeModal }) {
         default:
             return null;
     }
+
+    // Event Listener - pressing escape closes the modal
+    document.onkeydown = function(e) {
+        if (e.keyCode === 27) {
+            closeModal();
+        }
+    };
+
     return (
         <div className="modal-background" onClick={closeModal}>
             <div onClick={closeModal} className="close-x">&#x2715;</div>

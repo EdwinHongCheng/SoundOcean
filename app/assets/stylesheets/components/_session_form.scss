@@ -16,6 +16,7 @@
 .login-input {
   width: 392px;
   font-size: 18px;
+  outline: none;
 
   // Curved Borders (ugly outline tho)
 }
@@ -39,14 +40,34 @@
 }
 
 .login-form-box {
-  padding: 20px;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+
   background: white;
   position: relative;
+
+}
+
+// Modal Blurb - center it
+.modalBlurb {
+  text-align: center;
 }
 
 
+// Rendered Errors - Red Text
+.renderedErrors {
+  color: red;
+}
+
 
 // Modal Stuff (SUPER IMPORTANT FOR MODAL TO WORK)
+
+.submit-button:hover {
+  background-color: #111abd;
+}
+
 .modal-background {
   position: fixed;
   top: 0;

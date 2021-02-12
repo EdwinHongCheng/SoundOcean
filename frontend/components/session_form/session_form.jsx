@@ -52,14 +52,18 @@ class SessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
+                    <>
+                        <li key={`error-${i}`} className="renderedErrors">
+                            {error}
+                        </li>
+                        <br />
+                    </>
                 ))}
             </ul>
         );
     }
 
+    //------------------------------------------------------------------------->
     render() {
         // Password Input Field
         let passwordInputField = (
@@ -70,7 +74,7 @@ class SessionForm extends React.Component {
                         type="password"
                         value={this.state.password}
                         onChange={this.update('password')}
-                        placeholder="Your Password"
+                        placeholder="Please enter your password"
                     />
                 </label>
                 {/* <br /> */}
@@ -87,7 +91,7 @@ class SessionForm extends React.Component {
                             type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            placeholder="Your Email Address"
+                            placeholder="Please enter your email address"
                         />
                     </label>
                     <br />
@@ -145,10 +149,32 @@ class SessionForm extends React.Component {
             ) 
         }
 
+        // Form Blurb
+        let formBlurbAbove;
+        if (this.props.formType === "signup") {
+            formBlurbAbove = (
+                <>
+                    <p className="modalBlurb">Join the SoundOcean community today!</p>
+                    <br />
+                    <br />
+                </>
+            ) 
+        } else if (this.props.formType === "login") {
+            formBlurbAbove = (
+                <>
+                    <p className="modalBlurb">Welcome back to SoundOcean!</p>
+                    <br />
+                    <br />
+                </>
+            )
+        }
+
+        //--------------------------------------------------------------------->
         return (
             <>
                 <div className="login-form-container">
                     <form onSubmit={this.handleSubmit} className="login-form-box">
+                        {formBlurbAbove}
                         {this.renderErrors()}
                         <div className="login-form">
                             {/* DEMO SIGN IN */}
@@ -159,7 +185,7 @@ class SessionForm extends React.Component {
                                     value={this.state.username}
                                     onChange={this.update('username')}
                                     className="login-input"
-                                    placeholder="Your Username"
+                                    placeholder="Please enter your username"
                                 />
                             </label>
                             <br />
