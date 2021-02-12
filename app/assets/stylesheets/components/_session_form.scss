@@ -37,6 +37,30 @@
   cursor: pointer;
 }
 
+.submit-button:hover {
+  background-color: #111abd;
+}
+
+// Demo Button
+.demo-button {
+  // Curved Borders
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  // text color + font
+  color: white;
+  font-size: 15px;
+  // button size
+  width: 400px;
+  height: 42px;
+  background-color: #fd6c6c;
+  cursor: pointer;
+}
+
+.demo-button:hover {
+  background-color: #ff8b8b;
+}
+
 .login-form-box {
   padding-left: 22px;
   padding-right: 22px;
@@ -70,12 +94,8 @@
   color: black;
 }
 
-
-// Modal Stuff (SUPER IMPORTANT FOR MODAL TO WORK)
-
-.submit-button:hover {
-  background-color: #111abd;
-}
+// ---------------------------------------------------------------------------->
+// Modal Stuff
 
 .modal-background {
   position: fixed;
