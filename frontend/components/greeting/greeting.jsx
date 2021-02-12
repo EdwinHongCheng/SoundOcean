@@ -33,7 +33,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
     const dropdownFunc = () => {
-        document.getElementById("myDropdown").classList.toggle("show");
+        document.getElementById("myDropdown").classList.toggle("show1");
     }
 
     // Close the dropdown menu if the user clicks outside of it
@@ -43,12 +43,13 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             var i;
             for (i = 0; i < dropdowns.length; i++) {
                 var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
+                if (openDropdown.classList.contains('show1')) {
+                    openDropdown.classList.remove('show1');
                 }
             }
         }
     }
+
 
     const personalGreeting = () => (
         <ul className="navbar-post-signin">
@@ -58,17 +59,22 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             <li><a className="nav-button" href="#">Library</a></li>
             <input className="searchBar" type="input" placeholder="Search" />
             <li><a className="upload-button" href="#">Upload</a></li>
-            <li><a className="nav-button" href="#">{currentUser.username}</a></li>
+            <li>
+                <a className="nav-button" href="#">
+                    {currentUser.username}
+                </a>
+            </li>
+
             <li><a className="nav-button" href="#">GitHub</a></li>
             <li><a className="nav-button" href="#">LinkedIn</a></li>
 
-            {/* [TEST] DropDown Button - from w3schools: How TO - Clickable Dropdown  */}
+            {/* DropDown Button (w3schools): How TO - Clickable Dropdown  */}
             <div className="dropdown">
                 <button onClick={dropdownFunc} className="dropbtn">&#8230;</button>
                 <div id="myDropdown" className="dropdown-content">
                     <div onClick={logout}>Sign out</div>
                 </div>
-            </div>
+            </div>            
         </ul>
     );
 
