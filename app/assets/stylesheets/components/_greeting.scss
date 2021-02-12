@@ -6,7 +6,7 @@
 // To Center Nav Bar -> gives it margins if screen = stretch to wide
 // - in homepage.jsx (affects the GreetingsContainer)
 .navigation-bar {
-  max-width: 904px;
+  max-width: 901px;
   margin: auto;
 }
 
@@ -73,11 +73,18 @@
   border-right: 1px solid black;
 }
 
-.upload-button, .home-button {
+.home-button {
   color: white;
   padding: 16px;
   font-size: 16px;
   border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.upload-button {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
   border-left: 1px solid black;
 }
 
@@ -161,7 +168,7 @@
 
 //----------------------------------------------------------------------------->
 
-// DROPDOWN  2
+// DROPDOWN  2 - User button
 
 
 /* Dropdown Button */
@@ -174,6 +181,7 @@
   cursor: pointer;
   outline: none;
   border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
 /* Dropdown button on hover & focus */
