@@ -51,9 +51,13 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     }
 
 
+    // Post-Sign Up Page Nav Bar, etc.
+
     const personalGreeting = () => (
         <ul className="navbar-post-signin">
+
             {soLogo}
+
             <li><a className="home-button" href="#">Home</a></li>
             <li><a className="nav-button" href="#">Stream</a></li>
             <li><a className="nav-button" href="#">Library</a></li>
@@ -74,8 +78,10 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                 <div id="myDropdown" className="dropdown-content">
                     <div onClick={logout}>Sign out</div>
                 </div>
-            </div>            
+            </div>
+
         </ul>
+
     );
 
     return currentUser ? personalGreeting() : sessionLinks();
