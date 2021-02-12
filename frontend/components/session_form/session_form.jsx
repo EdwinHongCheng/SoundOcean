@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
                 ))}
             </ul>
         );
-    }
+    }  
 
     //------------------------------------------------------------------------->
     render() {
@@ -77,7 +77,6 @@ class SessionForm extends React.Component {
                         placeholder="Please enter your password"
                     />
                 </label>
-                {/* <br /> */}
             </>
         )
         // Email Input Field (for Create Account)
@@ -105,7 +104,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'login' && !this.state.cont_state) {
             demoLoginButton = (
             <>
-                <button className="submit-button" onClick={this.demoSignIn}>Demo Sign in</button>
+                <button type="button" className="submit-button" onClick={this.demoSignIn}>Demo Sign in</button>
                 <br />
                 <p className="straightline">
                     <span>or</span>
@@ -118,9 +117,7 @@ class SessionForm extends React.Component {
         let contButton;
         if (this.props.formType === 'login') {
             contButton = (
-                    <>
-                        <button className="submit-button" onClick={this.contMethod}>Continue</button>
-                    </>
+                <button className="submit-button" onClick={this.contMethod}>Continue</button>
             )
         }
         if (this.state.cont_state === true) {
