@@ -166,6 +166,31 @@ class SessionForm extends React.Component {
             )
         }
 
+        // Other Form Switching Blurb
+        let here = this.props.otherForm
+
+        let otherFormBlurb;
+        if (this.props.formType === "signup") {
+            otherFormBlurb = (
+                <>
+                    <br />
+                    <br />
+                    <p className="modalBlurb">Already have an account? Sign in {here}!</p>
+                </>
+            )
+        } else if (this.props.formType === "login") {
+            otherFormBlurb = (
+                <>
+                    <br />
+                    <br />
+                    <p className="modalBlurb">Don't have an account? Sign up {here}!</p>
+                </>
+            )
+        }
+
+
+
+
         //--------------------------------------------------------------------->
         return (
             <>
@@ -192,6 +217,7 @@ class SessionForm extends React.Component {
                             {contButton}
                             {signInOrCreateAccountButton}
                         </div>
+                        {otherFormBlurb}
                     </form>
                 </div>
 

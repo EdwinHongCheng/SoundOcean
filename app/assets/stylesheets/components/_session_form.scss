@@ -59,6 +59,16 @@
   color: red;
 }
 
+// Sign Up/Sign in "Here" Button - make it look like regular text
+.here-button {
+  cursor: pointer;
+  color: red;
+}
+
+.here-button:hover { 
+  color: black;
+}
+
 
 // Modal Stuff (SUPER IMPORTANT FOR MODAL TO WORK)
 
