@@ -14,13 +14,15 @@
 
 // Not sure why its bigger than the buttons
 .login-input {
-  width: 392px;
+  width: 386px;
   font-size: 18px;
   outline: none;
 
   border: 1px solid black;
   border-radius: 4px;
   height: 38px;
+
+  padding-left: 10px;
 }
 
 
