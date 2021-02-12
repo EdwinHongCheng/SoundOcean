@@ -51,6 +51,32 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     }
 
 
+
+    //------------------------------------------------------------------------->
+    // DropDown Number 2 (for User)
+
+    // const dropdownFunc2 = () => {
+    //     document.getElementById("myDropdown2").classList.toggle("show2");
+    // }
+
+    // // Close the dropdown menu if the user clicks outside of it
+    // window.onclick = function (event) {
+    //     if (!event.target.matches('.dropbtn2')) {
+    //         var dropdowns = document.getElementsByClassName("dropdown-content2");
+    //         var i;
+    //         for (i = 0; i < dropdowns.length; i++) {
+    //             var openDropdown = dropdowns[i];
+    //             if (openDropdown.classList.contains('show2')) {
+    //                 openDropdown.classList.remove('show2');
+    //             }
+    //         }
+    //     }
+    // }
+
+
+
+
+    //------------------------------------------------------------------------->
     // Post-Sign Up Page Nav Bar, etc.
 
     const personalGreeting = () => (
@@ -74,7 +100,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
 
             {/* DropDown Button (w3schools): How TO - Clickable Dropdown  */}
             <div className="dropdown">
-                <button onClick={dropdownFunc} className="dropbtn">&#8230;</button>
+                <text onClick={dropdownFunc} className="dropbtn">&#8230;</text>
                 <div id="myDropdown" className="dropdown-content">
                     <div onClick={logout}>Sign out</div>
                 </div>
