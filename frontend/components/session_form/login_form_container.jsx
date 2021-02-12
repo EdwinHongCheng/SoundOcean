@@ -15,10 +15,16 @@ const mSTP = ({ errors }) => {
 };
 
 const mDTP = dispatch => {
+
+    let switchForm2 = () => {
+        dispatch(receiveErrors([]))
+        dispatch(openModal('signup'))
+    }
+
     return {
         processForm: (user) => dispatch(login(user)),
         otherForm: (
-            <span className="here-button" onClick={() => dispatch(openModal('signup'))}>
+            <span className="here-button" onClick={switchForm2}>
                 here
             </span>
         ),
