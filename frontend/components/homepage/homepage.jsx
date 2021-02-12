@@ -22,7 +22,7 @@ class HomePage extends React.Component {
 
                 {/* Delete Filler below Later */}
                 <br />
-                <h2>~ Hear the SoundWaves (◠‿◠✿) ~</h2>
+                <h2 className="filler-flower-text">~ Hear the SoundWaves (◠‿◠✿) ~</h2>
             </>
         )
     }
