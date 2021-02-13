@@ -15,9 +15,20 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :creator_id,
         class_name: :Track
+
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :liker_id,
+        class_name: :Like
+
+    
+    # Through Associations
+    has_many :liked_tracks,
+        through: :likes,
+        source: :track
     
         
-    
+
     # (A)SPIRE ------------------------------------------------>
     after_initialize :ensure_session_token
 

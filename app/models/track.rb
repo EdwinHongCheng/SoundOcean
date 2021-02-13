@@ -8,5 +8,13 @@ class Track < ApplicationRecord
         foreign_key: :creator_id,
         class_name: :User
 
-    
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :track_id,
+        class_name: :Like
+
+    # Through Associations
+    has_many :likers
+        through: :likes,
+        source: :liker
 end
