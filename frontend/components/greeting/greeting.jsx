@@ -28,9 +28,6 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         </div>
     );
 
-    //------------------------------------------------------------------------->
-  
-    // OLD: return currentUser ? personalGreeting() : sessionLinks();
     return sessionLinks();
 };
 

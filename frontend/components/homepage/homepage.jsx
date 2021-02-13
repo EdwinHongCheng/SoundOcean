@@ -5,8 +5,6 @@ import {
 } from 'react-router-dom';
 
 import GreetingContainer from "../greeting/greeting_container";
-
-// Modal Stuff
 import Modal from '../modal/modal';
 
 class HomePage extends React.Component {

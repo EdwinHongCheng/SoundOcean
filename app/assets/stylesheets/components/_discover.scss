@@ -20,31 +20,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#000573;
   width: 100%;
   height: 48px;
+  // for Search Bar
+  background-color:#000573;
   border-bottom: 1px solid black;
 }
 
 // for the Nav Buttons Post-SignIn (Home, Stream, etc)
 .nav-button {
+  background-color:#000573;
   color: white;
   padding: 16px;
+  // border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
 
 .home-button {
+  background-color:#000573;
   color: white;
   padding: 16px;
   font-size: 16px;
+  // border-bottom: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
 }
 
 .upload-button {
+  background-color:#000573;
   color: white;
   padding: 16px;
   font-size: 16px;
+  // border-bottom: 1px solid black;
   border-left: 1px solid black;
 }
 
@@ -54,6 +61,7 @@
 
 // Search Bar
 .searchBar {
+  height: 16px;
   font-size: 16px;
   margin-left: 16px;
   margin-right: 16px;
@@ -75,6 +83,7 @@
   border: none;
   cursor: pointer;
   outline: none;
+  border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
 

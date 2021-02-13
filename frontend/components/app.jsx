@@ -21,12 +21,11 @@ class App extends React.Component {
             <>
                 <Switch>
                     <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
-
-
-                    {/* HomePage Component */}
                     <AuthRoute exact path="/" component={HomePage} />
+
+
                     {/* Redirect to HomePage */}
-                    <Route render={() => <Redirect to="/" />} />
+                    {/* <Route render={() => <Redirect to="/" />} /> */}
                     {/* Error Message Page */}
                     {/* <Route component={NotFound} /> */}
                 </Switch>
