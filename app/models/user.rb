@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
 
     # Associations
-    has_many: :tracks,
+    has_many :tracks,
         primary_key: :id,
         foreign_key: :creator_id,
         class_name: :Track
