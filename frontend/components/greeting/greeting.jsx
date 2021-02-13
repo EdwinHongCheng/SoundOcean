@@ -95,9 +95,10 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             <li><a className="upload-button" href="#">Upload</a></li>
 
             {/* DropDown Button 2  */}
+            {/* Note - changed "text" tag to "p" -> issues w dropdown alignment now */}
             <li>
                 <div className="dropdown2">
-                    <text onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</text>
+                    <p onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</p>
                     <div id="myDropdown2" className="dropdown-content2">
                         <div>My Tracks</div>
                     </div>
@@ -108,8 +109,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             <li><a className="nav-button" href="#">LinkedIn</a></li>
 
             {/* DropDown Button (w3schools): How TO - Clickable Dropdown  */}
+            {/* Note - changed "text" tag to "p" -> issues w dropdown alignment now */}
             <div className="dropdown">
-                <text onClick={dropdownFunc} className="dropbtn nav-button">...</text>
+                <p onClick={dropdownFunc} className="dropbtn nav-button">...</p>
                 <div id="myDropdown" className="dropdown-content">
                     <div onClick={logout}>Sign out</div>
                 </div>

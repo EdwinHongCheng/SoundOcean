@@ -8,7 +8,8 @@ class User < ApplicationRecord
     validates :email, length: { minimum: 1 }, allow_nil: true
 
     attr_reader :password
-
+    
+    # (A)SPIRE ------------------------------------------------>
     after_initialize :ensure_session_token
 
     def self.find_by_credentials(username, password)
