@@ -13,6 +13,11 @@ class Track < ApplicationRecord
         foreign_key: :track_id,
         class_name: :Like
 
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :track_id,
+        class_name: :Comment
+
     # Through Associations
     has_many :likers,
         through: :likes,

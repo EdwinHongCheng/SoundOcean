@@ -21,6 +21,11 @@ class User < ApplicationRecord
         foreign_key: :liker_id,
         class_name: :Like
 
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Comment
+
     
     # Through Associations
     has_many :liked_tracks,
