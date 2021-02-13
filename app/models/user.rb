@@ -4,10 +4,19 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
 
-    # Get email error
+    # Get email error for Sign In/Create Account Modal
     validates :email, length: { minimum: 1 }, allow_nil: true
 
     attr_reader :password
+
+
+    # Associations
+    has_many: :tracks,
+        primary_key: :id,
+        foreign_key: :creator_id,
+        class_name: :Track
+    
+        
     
     # (A)SPIRE ------------------------------------------------>
     after_initialize :ensure_session_token
