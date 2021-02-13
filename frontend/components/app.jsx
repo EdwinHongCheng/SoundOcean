@@ -26,9 +26,7 @@ class App extends React.Component {
                     <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
                     <ProtectedRoute exact path="/upload" component={UploadContainer} />
 
-                    
                     <AuthRoute exact path="/" component={HomePage} />
-
 
                     {/* Redirect to HomePage (OR /discover ???) */}
                     <Route render={() => <Redirect to="/" />} />
