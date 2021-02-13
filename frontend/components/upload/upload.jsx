@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarContainer from "../navbar/navbar_container"
 
-const Upload = ({ currentUser, logout }) => {
+const Upload = ({ currentUser }) => {
 
     return (
         <div>

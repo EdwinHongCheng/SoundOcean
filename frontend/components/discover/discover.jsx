@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarContainer from "../navbar/navbar_container"
 
-const Discover = ({ currentUser, logout }) => {
+const Discover = ({ currentUser }) => {
 
     return(
         <div>

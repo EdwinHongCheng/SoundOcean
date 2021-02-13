@@ -67,13 +67,12 @@ const Navbar = ({ currentUser, logout }) => {
             {soLogo}
 
             <li><Link to="/" className="home-button">Home</Link></li>
-            <li><a className="nav-button" href="#">Stream</a></li>
-            <li><a className="nav-button" href="#">Library</a></li>
+            <li><Link to="/stream"className="nav-button" >Stream</ Link></li>
+            <li><Link to="/library" className="nav-button" >Library</ Link></li>
             <input className="searchBar" type="input" placeholder="Search" />
             <li><Link to="/upload" className="upload-button">Upload</Link></li>
 
-            {/* DropDown Button 2  */}
-            {/* Note - changed "text" tag to "p" -> issues w dropdown alignment now */}
+            {/* DropDown Button 2 (for User) */}
             <li>
                 <div className="dropdown2">
                     <p onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</p>
@@ -84,10 +83,9 @@ const Navbar = ({ currentUser, logout }) => {
             </li>
 
             <li><a className="nav-button" href="https://github.com/EdwinHongCheng/SoundOcean/wiki">GitHub</a></li>
-            <li><a className="nav-button" href="#">LinkedIn</a></li>
+            <li><a className="nav-button" href="https://en.wikipedia.org/wiki/LinkedIn">LinkedIn</a></li>
 
-            {/* DropDown Button (w3schools): How TO - Clickable Dropdown  */}
-            {/* Note - changed "text" tag to "p" -> issues w dropdown alignment now */}
+            {/* DropDown Button for "..." (w3schools): How TO - Clickable Dropdown  */}
             <div className="dropdown">
                 <p onClick={dropdownFunc} className="dropbtn nav-button">...</p>
                 <div id="myDropdown" className="dropdown-content">
@@ -96,7 +94,6 @@ const Navbar = ({ currentUser, logout }) => {
             </div>
 
         </ul>
-
     );
 
     return (
