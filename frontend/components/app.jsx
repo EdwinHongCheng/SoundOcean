@@ -7,9 +7,10 @@ import {
     HashRouter
 } from 'react-router-dom';
 
-// 
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+ 
 import HomePage from "./homepage/homepage"
-
+import DiscoverContainer from "./discover/discover_container"
 
 import NotFound from "./error_messages/not_found"
 
@@ -19,8 +20,11 @@ class App extends React.Component {
         return (
             <>
                 <Switch>
+                    <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
+
+
                     {/* HomePage Component */}
-                    <Route exact path="/" component={HomePage} />
+                    <AuthRoute exact path="/" component={HomePage} />
                     {/* Redirect to HomePage */}
                     <Route render={() => <Redirect to="/" />} />
                     {/* Error Message Page */}
