@@ -4,12 +4,12 @@ class Like < ApplicationRecord
 
     # Associations
     # NOTE: "Likes" is a joins table (users and track)
-    belongs_to :track
+    belongs_to :track,
         primary_key: :id,
         foreign_key: :track_id,
         class_name: :Track
 
-    belongs_to :liker
+    belongs_to :liker,
         primary_key: :id,
         foreign_key: :liker_id,
         class_name: :User

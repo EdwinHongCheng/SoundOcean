@@ -14,7 +14,7 @@ class Track < ApplicationRecord
         class_name: :Like
 
     # Through Associations
-    has_many :likers
+    has_many :likers,
         through: :likes,
         source: :liker
 end
