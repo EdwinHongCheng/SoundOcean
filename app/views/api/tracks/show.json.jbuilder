@@ -1,0 +1,1 @@
+json.extract! @track, :title, :creator_id

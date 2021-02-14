@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store"
 import Root from "./components/root"
 
-// Testing
+// Testing (remove later)
 import { signup, login, logout } from "./actions/session_actions"
 
 
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let store;
 
-    // Preloaded State (BenchBnB Part 1)
+    // Preloaded State (BenchBnB Part 1 + aAO W11D4 - Front End Auth)
     if (window.currentUser) {
         const preloadedState = {
             entities: {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const root = document.getElementById("root");
 
-    // Testing
+    // Testing (remove later)
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.login = login

@@ -3,10 +3,13 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     # sign up
-    resource :user, only: [:create] 
+    resource :user, only: [ :create ] 
 
     # login, logout, show user's login page
-    resource :session, only: [:create, :destroy, :show] 
+    resource :session, only: [ :create, :destroy, :show ]
+
+    # Testing: Track Routes (create, etc)
+    resources :tracks, only: [ :index, :show, :create, :update, :destroy ]
   end
 
   root "static_pages#root"
