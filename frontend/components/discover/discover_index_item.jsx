@@ -8,7 +8,7 @@ class DiscoverIndexItem extends React.Component {
             <>
                 <p>Track Number: {this.props.track.id}</p>
                 <p>Track Title: {this.props.track.title}</p>
-                <p>Created by: User {this.props.track.author_id}</p>
+                <p>Created by: User {this.props.track.creator_id}</p>
             </>
         )
     }   
