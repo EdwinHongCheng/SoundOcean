@@ -1,6 +1,11 @@
 class Api::TracksController < ApplicationController
 
 before_action :require_logged_in, only: [:create, :update, :destroy]
+
+    def show
+        @track = Track.find(params[:id])
+        render :show
+    end
     
     def create
         @track = Track.new(track_params)
@@ -12,10 +17,9 @@ before_action :require_logged_in, only: [:create, :update, :destroy]
         end
     end
 
-
     private
     def track_params
-        params.require(:track).permit(:title)
+        params.require(:track).permit(:title, :creator_id)
     end
 
 end

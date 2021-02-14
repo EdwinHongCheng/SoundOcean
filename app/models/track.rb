@@ -1,6 +1,6 @@
 class Track < ApplicationRecord
     validates :title, :creator_id, presence: true
-    validates :title, uniqueness: { scope: :creator_id }
+    validates :title, uniqueness: { scope: :creator_id }, length: { minimum: 1 }
 
     # Associations
     belongs_to :creator,
