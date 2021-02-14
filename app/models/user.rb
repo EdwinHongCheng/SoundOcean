@@ -5,7 +5,7 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true
 
     # Get email error for Sign In/Create Account Modal
-    validates :email, length: { minimum: 1 }, allow_nil: true
+    validates :email, length: { minimum: 1 }, allow_nil: true, uniqueness: true
 
     attr_reader :password
 
