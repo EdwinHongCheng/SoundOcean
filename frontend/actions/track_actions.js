@@ -1,6 +1,7 @@
 import * as TrackApiUtil from '../util/track_api_util';
 
-export const RECEIVE_TRACK = "RECEIVE_TRACK"
+// Action Constants
+export const RECEIVE_TRACK = "RECEIVE_TRACK";
 
 
 // Action Creators
@@ -19,8 +20,8 @@ export const fetchTrack = trackId => dispatch => {
 }
 
 
-export const createTrack = track => dispatch => {
-    return TrackApiUtil.createTrack(track)
+export const createTrack = track => dispatch => (
+    TrackApiUtil.createTrack(track)
         .then(track => dispatch(receiveTrack(track)))
-}
+)
 

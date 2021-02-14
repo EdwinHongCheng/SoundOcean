@@ -8,17 +8,17 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
 
 
 // Action Creators
-export const receiveCurrentUser = currentUser => ({
+const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
     currentUser
 });
 
-export const logoutCurrentUser = () => ({
+const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,
 });
 
 
-export const receiveErrors = errors => ({
+const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 });

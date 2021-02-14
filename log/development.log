@@ -37346,3 +37346,614 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 24ms (Views: 15.4ms | ActiveRecord: 3.1ms)
 
 
+Started GET "/" for ::1 at 2021-02-14 13:27:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 523ms (Views: 514.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-14 13:27:32 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:62
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "guest"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:62
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:62
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["updated_at", "2021-02-14 21:27:32.278069"], ["id", 1]]
+  ↳ app/models/user.rb:62
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:62
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 254ms (Views: 13.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:28:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 490ms (Views: 484.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:29:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 432ms (Views: 427.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:21 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+Started GET "/" for ::1 at 2021-02-14 13:29:21 -0800
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 18ms (Views: 0.7ms | ActiveRecord: 5.4ms)
+
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 48ms (Views: 43.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:25 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 16ms (Views: 0.2ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:27 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 16ms (Views: 0.4ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:27 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 13ms (Views: 0.1ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:27 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 15ms (Views: 0.1ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:27 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 15ms (Views: 0.1ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:27 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 18ms (Views: 0.1ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:29 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 16ms (Views: 0.2ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:29 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 14ms (Views: 0.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:29 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 16ms (Views: 0.2ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:29:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 81ms (Views: 74.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:34 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 18ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:35 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (3.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 15ms (Views: 0.2ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:35 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 16ms (Views: 0.2ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:29:35 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 14ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:30:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 610ms (Views: 602.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:30:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 103ms (Views: 92.4ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:30:32 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Started GET "/" for ::1 at 2021-02-14 13:30:32 -0800
+  [1m[36mTrack Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (5.9ms)[0m  [1m[31mROLLBACK[0m
+  Rendering static_pages/root.html.erb within layouts/application
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 33ms (Views: 0.2ms | ActiveRecord: 16.1ms)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 70ms (Views: 62.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:39:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 723ms (Views: 700.4ms | ActiveRecord: 19.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-02-14 13:39:26 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gVrUyop6RtLgZCJLmbIbFpZkqN/VrZtg1C+Fqc8v/a/tyx/rCimDUqyfYsehYyVn+l6a6/+Rrmg0KPTv7Ug2+A=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:62
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "guest"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:62
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:62
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "irc03W1DduooalP6doNEO7k2Tb7ibD66TKa/YzuCuvA7tsQR7cjAAEtxRY0MsgfockcUND+w28f5rmsQq67hbA=="], ["updated_at", "2021-02-14 21:39:26.733717"], ["id", 1]]
+  ↳ app/models/user.rb:62
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:62
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 23ms (Views: 12.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:39:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:39:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 72ms (Views: 65.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:44:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 433ms (Views: 428.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-14 13:44:46 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"guest", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "guest"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:62
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "guest"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:62
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "guest@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:62
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["updated_at", "2021-02-14 21:44:46.367950"], ["id", 1]]
+  ↳ app/models/user.rb:62
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:62
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 259ms (Views: 14.3ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:44:48 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Started GET "/" for ::1 at 2021-02-14 13:44:48 -0800
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 41ms (Views: 0.4ms | ActiveRecord: 9.0ms)
+
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 68ms (Views: 63.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:44:49 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 15ms (Views: 0.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:44:50 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 17ms (Views: 0.1ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:44:50 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 14ms (Views: 0.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:44:50 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 15ms (Views: 0.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:45:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 656ms (Views: 652.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:46:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 82ms (Views: 76.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:46:04 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"", "creator_id"=>"1"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", ""], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+Started GET "/" for ::1 at 2021-02-14 13:46:04 -0800
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 21ms (Views: 0.1ms | ActiveRecord: 4.1ms)
+
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 56ms (Views: 50.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:49:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 467ms (Views: 449.7ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:49:24 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"sunshine", "creator_id"=>"1"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", "sunshine"], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Create (0.8ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "sunshine"], ["creator_id", 1], ["created_at", "2021-02-14 21:49:24.749895"], ["updated_at", "2021-02-14 21:49:24.749895"]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  Rendering api/tracks/show.json.jbuilder
+  Rendered api/tracks/show.json.jbuilder (0.5ms)
+Completed 200 OK in 43ms (Views: 13.0ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/api/tracks/" for ::1 at 2021-02-14 13:51:19 -0800
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"title"=>"sunshine", "creator_id"=>"1"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mTrack Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."title" = $1 AND "tracks"."creator_id" = $2 LIMIT $3[0m  [["title", "sunshine"], ["creator_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:13
+Completed 422 Unprocessable Entity in 37ms (Views: 0.2ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-14 13:52:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Lt48Ff5CPhiGxIybzudLtTUvKLgt1csrWmcvp2hvsgqeZsXy9Hz8/w+VCYBEzkluPyfX7QwuKXL5/sObsEFqlw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 685ms (Views: 680.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m

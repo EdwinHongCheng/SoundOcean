@@ -24,18 +24,36 @@ class CreateTrackForm extends React.Component {
         this.props.createTrack(this.state)
     }
 
+    // Test - rendering errors (such as Title must be at least 1 character long)
+
+    // renderErrors() {
+    //     return (
+    //         <ul>
+    //             {this.props.errors.map((error, i) => (
+    //                 <>
+    //                     <li key={`error-${i}`} className="renderedErrors">
+    //                         {error}
+    //                     </li>
+    //                     <br />
+    //                 </>
+    //             ))}
+    //         </ul>
+    //     );
+    // }  
+
+
     render() {
         return (
             <>
                 <NavbarContainer />
-
                 <br />
-
                 <form onSubmit={this.handleSubmit}>
+
+                    {/* Test - rendering Errors when uploading track */}
+                    {/* {this.renderErrors()} */}
+
                     <h1>Create a New Track</h1>
-
                     <br />
-
                     <label>Title
                         <input
                             type="text"
@@ -43,10 +61,8 @@ class CreateTrackForm extends React.Component {
                             onChange={this.update('title')}
                         />
                     </label>
-
                     <br />
                     <br />
-
                     <label>Create Your Track
                         <input type="submit" />
                     </label>
