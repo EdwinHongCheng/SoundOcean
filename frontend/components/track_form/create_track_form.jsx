@@ -8,9 +8,13 @@ class CreateTrackForm extends React.Component {
         this.state = {
             title: '',
             creator_id: this.props.currentUserId,
+            uploaded: false // switch to True -> display "UPLOAD SUCCESS" after a good upload
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
+
+        // 
+        this.afterUpload = this.afterUpload.bind(this)
     }
 
     update(field) {
@@ -22,6 +26,13 @@ class CreateTrackForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault
         this.props.createTrack(this.state)
+        this.afterUpload()
+    }
+
+    afterUpload() {
+        if (this.state.title.length > 0) {
+            this.setState({ uploaded: true })
+        }
     }
 
     // Test - rendering errors (such as Title must be at least 1 character long)
@@ -43,30 +54,39 @@ class CreateTrackForm extends React.Component {
 
 
     render() {
+
+        let uploadForm = (
+            <form onSubmit={this.handleSubmit}>
+
+                {/* Test - rendering Errors when uploading track */}
+                {/* {this.renderErrors()} */}
+
+                <h1>Create a New Track</h1>
+                <br />
+                <label>Title
+                        <input
+                        type="text"
+                        value={this.state.title}
+                        onChange={this.update('title')}
+                    />
+                </label>
+                <br />
+                <br />
+                <label>Create Your Track
+                        <input type="submit" />
+                </label>
+            </form>
+        )
+
+        if (this.state.uploaded) {
+            uploadForm = (<h1>UPLOAD SUCCESS !!!</h1>)
+        }
+
         return (
             <>
                 <NavbarContainer />
                 <br />
-                <form onSubmit={this.handleSubmit}>
-
-                    {/* Test - rendering Errors when uploading track */}
-                    {/* {this.renderErrors()} */}
-
-                    <h1>Create a New Track</h1>
-                    <br />
-                    <label>Title
-                        <input
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                        />
-                    </label>
-                    <br />
-                    <br />
-                    <label>Create Your Track
-                        <input type="submit" />
-                    </label>
-                </form>
+                {uploadForm}
             </>
         );
     }
