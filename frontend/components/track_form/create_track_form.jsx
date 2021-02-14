@@ -1,5 +1,6 @@
 import React from 'react'
 import NavbarContainer from "../navbar/navbar_container"
+import { Link } from 'react-router-dom';
 
 class CreateTrackForm extends React.Component {
     constructor(props) {
@@ -79,7 +80,12 @@ class CreateTrackForm extends React.Component {
         )
 
         if (this.state.uploaded) {
-            uploadForm = (<h1>UPLOAD SUCCESS !!!</h1>)
+            uploadForm = (
+                <>
+                    <h1>UPLOAD SUCCESS !!!</h1>
+                    <Link to="/discover">Check out our tracks!</Link>
+                </>
+            )
         }
 
         return (
