@@ -2,16 +2,22 @@ class Api::TracksController < ApplicationController
 
 before_action :require_logged_in, only: [:create, :update, :destroy]
 
+
+    def index
+        @tracks = Track.all
+        render :index
+    end
+
     def show
         @track = Track.find(params[:id])
-        render "api/tracks/show"
+        render :show
     end
     
     def create
         @track = Track.new(track_params)
         @track.creator_id = current_user.id
         if @track.save
-            render "api/tracks/show"
+            render :show
         else
             render json: @track.errors.full_messages, status:422
         end
