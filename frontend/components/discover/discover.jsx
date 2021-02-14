@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from "../navbar/navbar_container"
+import DiscoverIndexItem from './discover_index_item'
 
 class Discover extends React.Component {
     constructor(props) {
@@ -7,24 +8,21 @@ class Discover extends React.Component {
     }
 
     // [!!!] NOTE: the below componentDidMount breaks everything - why?
-    // componentDidMount() {
-    //     this.props.fetchTracks()
-    // }
+    componentDidMount() {
+        this.props.fetchTracks()
+    }
 
     render() {
 
         // Test - goal: display index of ALL tracks uploaded
-        const { tracks } = this.props
-
-        let allTracks = tracks.map(track => {
+        const allTracks = this.props.tracks.map(track => {
             return (
-                <div key={track.id}>
-                    <p>Title: {track.title}</p>
-                    <p>Created by User #{track.creator_id}</p>
-                </div>
+                <DiscoverIndexItem
+                    key={track.id}
+                    track={track}
+                />
             )
         })
-
 
         return(
             <>

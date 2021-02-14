@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import Discover from './discover';
 // Test
-import fetchTracks from '../../actions/track_actions'
+import { fetchTracks } from '../../actions/track_actions'
 
 
-const mSTP = ({ session, entities, entities: { users } }) => {
+const mSTP = ({ session, entities }) => {
     return {
-        currentUser: users[session.id],
+        currentUser: entities.users[session.id],
         tracks: Object.values(entities.tracks)
     };
 };
