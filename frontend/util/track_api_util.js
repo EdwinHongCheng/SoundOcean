@@ -24,3 +24,20 @@ export const createTrack = track => {
         data: { track }
     })
 }
+
+// [Test] - update + delete
+
+export const updateTrack = track => {
+    return $.ajax({
+        url: `/api/tracks/${track.id}`,
+        method: "PATCH",
+        data: { track }
+    })
+}
+
+export const deleteTrack = trackId => {
+    return $.ajax({
+        url: `/api/tracks/${trackId}`,
+        method: "DELETE"
+    })
+}

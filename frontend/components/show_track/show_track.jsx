@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import NavbarContainer from "../navbar/navbar_container"
+import NavbarContainer from "../navbar/navbar_container";
+
+// Testing - not working so far
+import EditTrackFormContainer from "../edit_track/edit_track_form_container";
 
 class ShowTrack extends React.Component {
 
@@ -15,6 +18,17 @@ class ShowTrack extends React.Component {
         if (!currentTrack) {
             return (<><Redirect to="/discover" /></>)
         } else {
+
+            let canEditTrack;
+            if (this.props.currentUser.id === currentTrack.creator_id) {
+                canEditTrack = (
+                    <>
+                        <p>I own this track. I can edit it (WIP)</p>
+                        <br />
+                    </>
+                )
+            }
+
             return (
                 <>  
                     <NavbarContainer />
@@ -23,6 +37,7 @@ class ShowTrack extends React.Component {
                     <br />
                     <p>Track Title: {currentTrack.title}</p>
                     <br />
+                    {canEditTrack}
                     <div>
                         <Link to="/">Back to Main Page</Link>
                     </div>

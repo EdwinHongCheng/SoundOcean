@@ -1,4 +1,4 @@
-import { RECEIVE_TRACK, RECEIVE_TRACKS } from '../actions/track_actions'
+import { RECEIVE_TRACK, RECEIVE_TRACKS, REMOVE_TRACK } from '../actions/track_actions'
 
 const tracksReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -12,6 +12,10 @@ const tracksReducer = (oldState = {}, action) => {
         // NOTE: not sure why state shape turns out good (but it does lol)
         case RECEIVE_TRACKS:
             return action.tracks
+
+        case REMOVE_TRACK:
+            delete nextState[action.trackId]
+            return nextState;
     
         default:
             return oldState;
