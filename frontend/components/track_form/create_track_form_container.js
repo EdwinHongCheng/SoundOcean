@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import { createTrack, fetchTrack, receiveErrors, clearErrors } from '../../actions/track_actions';
 import CreateTrackForm from './create_track_form';
+import { createTrack, fetchTrack, receiveErrors, clearErrors } from '../../actions/track_actions';
 
 
 

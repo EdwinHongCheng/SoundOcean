@@ -53,7 +53,7 @@ class CreateTrackForm extends React.Component {
         );
     }  
 
-    // Testing
+    // Testing - works! (LOL) - clears red errors if i go to another link
     componentWillUnmount() {
         this.props.clearErrors()
     }

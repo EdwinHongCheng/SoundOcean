@@ -21,11 +21,36 @@ class EditTrackForm extends React.Component {
         this.props.updateTrack(this.state)
     }
 
+    //------------------------------------------------------------------------->
+    // render errors when editing (such as title = blank)
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <>
+                        <li key={`error-${i}`} className="renderedErrors">
+                            {error}
+                        </li>
+                        <br />
+                    </>
+                ))}
+            </ul>
+        );
+    }
+    // clears rendered errors if i click on another link, etc
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+    //------------------------------------------------------------------------->
+
     render() {
         return (
             <>
                 <form onSubmit={this.handleSubmit}>
                     <h1>Edit Track Form</h1>
+
+                    {/* Test - rendering Errors when uploading track */}
+                    {this.renderErrors()}
 
                     <label>Title
                         <input
