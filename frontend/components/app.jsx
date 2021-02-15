@@ -28,8 +28,8 @@ class App extends React.Component {
                     <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
                     <ProtectedRoute exact path="/upload" component={CreateTrackFormContainer} />
 
-                    {/* [Test] Single Track Show Page */}
-                    <Route exact path="/tracks/:trackId" component={ShowTrackContainer} />
+                    {/* protected route since: must be signed in for NavBar to work */}
+                    <ProtectedRoute exact path="/tracks/:trackId" component={ShowTrackContainer} />
 
                     <AuthRoute exact path="/" component={HomePage} />
 
