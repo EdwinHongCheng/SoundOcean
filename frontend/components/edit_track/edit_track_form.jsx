@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class EditTrackForm extends React.Component {
     constructor(props) {
         super(props)
@@ -17,7 +16,8 @@ class EditTrackForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault
+        e.preventDefault()
+        // e.stopPropagation()
         this.props.updateTrack(this.state)
     }
 
@@ -38,6 +38,8 @@ class EditTrackForm extends React.Component {
                     <label>Update Track
                         <input type="submit" />
                     </label>
+
+                    <button type="button" onClick={() => this.props.deleteTrack(this.state.id)}>Delete Track</button>
                 </form>
             </>
         )
