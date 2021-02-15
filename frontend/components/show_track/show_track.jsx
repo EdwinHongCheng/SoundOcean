@@ -9,15 +9,17 @@ class ShowTrack extends React.Component {
     }
 
     render() {
-        let currentTrack = this.props.track // if no such track -> checkTrack = null
+        let currentTrack = this.props.track // if no such track -> currentTrack = null
 
-        // Return
+        // Return (redirects if currentTrack === null)
         if (!currentTrack) {
             return (<><Redirect to="/discover" /></>)
         } else {
             return (
                 <>  
                     <NavbarContainer />
+                    <br />
+                    <p>⊂(・﹏・⊂)</p>
                     <br />
                     <p>Track Title: {currentTrack.title}</p>
                     <br />
