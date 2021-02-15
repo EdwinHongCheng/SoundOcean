@@ -22,9 +22,11 @@ class ShowTrack extends React.Component {
             return (
                 <>
                     <p>Track Title: {track.title}</p>
+
+                    <br />
                     
                     <div>
-                        <Link to="/discover">Back to Tracks Index (Discover)</Link>
+                        <Link to="/">Back to Main Page</Link>
                     </div>
                 </>
             )
