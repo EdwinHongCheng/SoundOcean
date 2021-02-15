@@ -2,6 +2,9 @@ class Track < ApplicationRecord
     validates :title, :creator_id, presence: true
     validates :title, uniqueness: { scope: :creator_id }, length: { minimum: 1 }
 
+    # [TEST] Association to Attach Photo (Cover Art) to a Track
+    has_one_attached :cover_art
+
     # Associations
     belongs_to :creator,
         primary_key: :id,

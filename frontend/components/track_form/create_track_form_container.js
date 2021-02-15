@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 
-import { createTrack, fetchTrack } from '../../actions/track_actions';
+import { createTrack, fetchTrack, receiveErrors, clearErrors } from '../../actions/track_actions';
 import CreateTrackForm from './create_track_form';
 
-// Test - rendering Upload errors (dont think i need here tho tbh)
-import { receiveErrors } from '../../actions/session_actions'
+
 
 // mSTP = mapStateToProps, mDTP = mapDispatchToProps
 
@@ -15,14 +14,16 @@ const mSTP = state => {
         tracks: state.entities.tracks,
         formType: 'Create Track',
         // Test - upload errors?
-        errors: state.errors.session
+        errors: state.errors.trackErrors
     }
 }
 
 const mDTP = dispatch => {
     return {
         createTrack: track => dispatch(createTrack(track)),
-        fetchTrack: trackId => dispatch(fetchTrack(trackId))
+        fetchTrack: trackId => dispatch(fetchTrack(trackId)),
+        // Test - clear upload errors?
+        clearErrors: () => dispatch(clearErrors())
     }
 }
 

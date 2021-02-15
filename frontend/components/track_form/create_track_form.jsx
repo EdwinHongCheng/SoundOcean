@@ -25,7 +25,7 @@ class CreateTrackForm extends React.Component {
     };
 
     handleSubmit(e) {
-        e.preventDefault
+        e.preventDefault()
         this.props.createTrack(this.state)
         this.afterUpload()
     }
@@ -38,29 +38,32 @@ class CreateTrackForm extends React.Component {
 
     // Test - rendering errors (such as Title must be at least 1 character long)
 
-    // renderErrors() {
-    //     return (
-    //         <ul>
-    //             {this.props.errors.map((error, i) => (
-    //                 <>
-    //                     <li key={`error-${i}`} className="renderedErrors">
-    //                         {error}
-    //                     </li>
-    //                     <br />
-    //                 </>
-    //             ))}
-    //         </ul>
-    //     );
-    // }  
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <>
+                        <li key={`error-${i}`} className="renderedErrors">
+                            {error}
+                        </li>
+                        <br />
+                    </>
+                ))}
+            </ul>
+        );
+    }  
 
+    // Testing
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
 
     render() {
-
         let uploadForm = (
             <form onSubmit={this.handleSubmit}>
 
                 {/* Test - rendering Errors when uploading track */}
-                {/* {this.renderErrors()} */}
+                {this.renderErrors()}
 
                 <h1>Create a New Track</h1>
                 <br />

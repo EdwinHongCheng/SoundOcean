@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     # login, logout, show user's login page
     resource :session, only: [ :create, :destroy, :show ]
 
-    # Testing: Track Routes (create, etc)
+    # Track Routes (create, etc)
     resources :tracks, only: [ :index, :show, :create, :update, :destroy ]
   end
 
