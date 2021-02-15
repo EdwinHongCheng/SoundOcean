@@ -18,7 +18,7 @@ class CreateTrackForm extends React.Component {
         this.afterUpload = this.afterUpload.bind(this)
 
         // [TEST] - not working
-        // this.handleFile = this.handleFile.bind(this)
+        this.handleFile = this.handleFile.bind(this)
     }
 
     update(field) {
@@ -35,32 +35,32 @@ class CreateTrackForm extends React.Component {
 
 
     // [TEST] - not working
-    // handleFile(e) {
-    //     this.setState({ cover_art: e.currentTarget.files[0] })
-    // }
+    handleFile(e) {
+        this.setState({ cover_art: e.currentTarget.files[0] })
+    }
 
     // [TEST] - not working
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     const formData = new FormData();
-    //     formData.append('track[title]', this.state.title);
-    //     formData.append('track[creator_id]', this.state.creator_id)
-    //     if (this.state.cover_art) {
-    //         formData.append('track[cover_art]', this.state.cover_art);;
-    //     }
+    handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('track[title]', this.state.title);
+        formData.append('track[creator_id]', this.state.creator_id)
 
-    //     this.props.createTrack(formData);
+        if (this.state.cover_art) {
+            formData.append('track[cover_art]', this.state.cover_art);;
+        }
 
-    //     this.afterUpload();
-    // }
+        this.props.createTrack(formData)
+            .then(this.afterUpload)
+    }
 
 
     // Old Way (works)
-    handleSubmit(e) {
-        e.preventDefault()
-        this.props.createTrack(this.state)
-            .then(this.afterUpload)
-    }
+    // handleSubmit(e) {
+    //     e.preventDefault()
+    //     this.props.createTrack(this.state)
+    //         .then(this.afterUpload)
+    // }
 
     
     renderErrors() {
@@ -98,10 +98,10 @@ class CreateTrackForm extends React.Component {
                 <br />
 
                 {/* [TEST] - not working */}
-                {/* <input 
+                <input 
                     type="file"
                     onChange={this.handleFile}
-                /> */}
+                />
                
                 <input type="submit" value="Create Track" />
             </form>

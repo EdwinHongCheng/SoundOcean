@@ -23,7 +23,7 @@ before_action :require_logged_in, only: [:create, :update, :destroy]
     end
 
     def update
-        @track = Track.find(params[:id])
+        @track = Track.find(params[:track][:id])
 
         if @track.update(track_params)
             render :show
@@ -41,8 +41,7 @@ before_action :require_logged_in, only: [:create, :update, :destroy]
 
     private
     def track_params
-        params.require(:track).permit(:title, :creator_id)
-        # params.require(:track).permit(:title, :creator_id, :cover_art)
+        params.require(:track).permit(:title, :creator_id, :cover_art)
     end
 
 end

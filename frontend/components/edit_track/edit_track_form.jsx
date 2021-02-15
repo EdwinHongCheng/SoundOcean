@@ -4,9 +4,16 @@ class EditTrackForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = this.props.track // { id, title, author_id }
+        this.state = {
+            title: this.props.track.title,
+            id: this.props.track.id,
+            creator_id: this.props.track.creator_id,
+            cover_art: null // for Cover Art File Upload
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this)
+
+        this.handleFile = this.handleFile.bind(this)
     }
 
     update(field) {
@@ -15,10 +22,30 @@ class EditTrackForm extends React.Component {
         }
     }
 
+    // Old Way
+    // handleSubmit(e) {
+    //     e.preventDefault()
+    //     // e.stopPropagation()
+    //     this.props.updateTrack(this.state)
+    // }
+
+    // [TEST] - not working
+    handleFile(e) {
+        this.setState({ cover_art: e.currentTarget.files[0] })
+    }
+
     handleSubmit(e) {
-        e.preventDefault()
-        // e.stopPropagation()
-        this.props.updateTrack(this.state)
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('track[title]', this.state.title);
+        formData.append('track[creator_id]', this.state.creator_id)
+        formData.append('track[id]', this.state.id)
+
+        if (this.state.cover_art) {
+            formData.append('track[cover_art]', this.state.cover_art);
+        }
+
+        this.props.updateTrack(formData);
     }
 
     //------------------------------------------------------------------------->
@@ -60,6 +87,16 @@ class EditTrackForm extends React.Component {
                             onChange={this.update('title')}
                         />
                     </label>
+
+
+
+                    {/* [TEST] - not working */}
+                    <input
+                        type="file"
+                        onChange={this.handleFile}
+                    />
+
+
 
                     <br />
                     <br />

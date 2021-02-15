@@ -14,18 +14,24 @@ export const fetchTrack = trackId => {
 
 
 export const createTrack = track => {
+
     return $.ajax({
         url: `/api/tracks/`,
         method: "POST",
-        data: { track }
+        data: track,
+        contentType: false,
+        processData: false
     })
 }
 
 export const updateTrack = track => {
+
     return $.ajax({
-        url: `/api/tracks/${track.id}`,
+        url: `/api/tracks/${track.get['track[id]']}`,
         method: "PATCH",
-        data: { track }
+        data: track,
+        contentType: false,
+        processData: false
     })
 }
 
