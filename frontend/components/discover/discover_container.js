@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import Discover from './discover';
-// Test
 import { fetchTracks } from '../../actions/track_actions'
 
 

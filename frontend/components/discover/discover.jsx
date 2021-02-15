@@ -7,14 +7,12 @@ class Discover extends React.Component {
         super(props)
     }
 
-    // [!!!] NOTE: the below componentDidMount breaks everything - why?
     componentDidMount() {
         this.props.fetchTracks()
     }
 
     render() {
-
-        // Test - goal: display index of ALL tracks uploaded
+        
         const allTracks = this.props.tracks.map(track => {
             return (
                 <DiscoverIndexItem
