@@ -1,7 +1,3 @@
-// Note: ref (soundcrowd - song_api_util.js)
-// - doing one feature at a time, starting w create (and show too?)
-
-
 export const fetchTracks = () => {
     return $.ajax({
         method: `GET`,
@@ -24,8 +20,6 @@ export const createTrack = track => {
         data: { track }
     })
 }
-
-// [Test] - update + delete
 
 export const updateTrack = track => {
     return $.ajax({

@@ -48,10 +48,11 @@ class EditTrackForm extends React.Component {
             <>
                 <form onSubmit={this.handleSubmit}>
                     <h1>Edit Track Form</h1>
+                    <br />
 
                     {/* Test - rendering Errors when uploading track */}
                     {this.renderErrors()}
-
+                    
                     <label>Title
                         <input
                             type="text"
@@ -60,10 +61,10 @@ class EditTrackForm extends React.Component {
                         />
                     </label>
 
-                    <label>Update Track
-                        <input type="submit" />
-                    </label>
-
+                    <br />
+                    <br />
+                    <input type="submit" value="Update Track"/>
+                    <span> </span>
                     <button type="button" onClick={() => this.props.deleteTrack(this.state.id)}>Delete Track</button>
                 </form>
             </>

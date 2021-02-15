@@ -62,14 +62,14 @@ export const fetchTrack = trackId => dispatch => {
         .then(track => dispatch(receiveTrack(track)))
 }
 
-// Testing Render Errors (Michelle)
+// Creates Track + Render Errors
 export const createTrack = track => dispatch => (
     TrackApiUtil.createTrack(track)
         .then(track => { dispatch(receiveTrack(track)); dispatch(clearErrors()) },
             err => dispatch(receiveErrors(err.responseJSON)))
 )
 
-// Test - update + remove Track
+// Edits Track + Render Errors
 export const updateTrack = track => dispatch => {
     return TrackApiUtil.updateTrack(track)
         .then(track => { dispatch(receiveTrack(track)); dispatch(clearErrors()) },

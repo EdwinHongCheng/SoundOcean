@@ -37,7 +37,6 @@ class CreateTrackForm extends React.Component {
     }
 
     // Test - rendering errors (such as Title must be at least 1 character long)
-
     renderErrors() {
         return (
             <ul>
@@ -76,9 +75,9 @@ class CreateTrackForm extends React.Component {
                 </label>
                 <br />
                 <br />
-                <label>Create Your Track
-                        <input type="submit" />
-                </label>
+
+                <input type="submit" value="Create Track" />
+
             </form>
         )
 

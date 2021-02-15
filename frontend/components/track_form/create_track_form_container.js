@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 
 import CreateTrackForm from './create_track_form';
-import { createTrack, fetchTrack, receiveErrors, clearErrors } from '../../actions/track_actions';
-
+import { createTrack, fetchTrack, clearErrors } from '../../actions/track_actions';
 
 
 // mSTP = mapStateToProps, mDTP = mapDispatchToProps
