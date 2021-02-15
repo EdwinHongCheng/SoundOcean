@@ -6,9 +6,10 @@ const tracksReducer = (oldState = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_TRACK:
-            nextState[action.track.id] = action.track       
+            nextState[action.track.track.id] = action.track.track
             return nextState;
 
+        // NOTE: not sure why state shape turns out good (but it does lol)
         case RECEIVE_TRACKS:
             return action.tracks
     

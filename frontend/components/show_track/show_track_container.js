@@ -4,7 +4,8 @@ import { fetchTrack } from '../../actions/track_actions';
 
 const mSTP = (state, ownProps) => {
     return {
-        track: state.entities.tracks[ownProps.match.params.trackId]
+        track: state.entities.tracks[ownProps.match.params.trackId],
+        currentUser: state.entities.users[state.session.id]
     }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 // Note: issue with rendering the fetched track's info after componentDidMount
@@ -7,35 +7,29 @@ import { Link } from 'react-router-dom';
 class ShowTrack extends React.Component {
     constructor(props) {
         super(props)
-
-        this.state = this.props.track
     }
-
 
     componentDidMount() {
         this.props.fetchTrack(this.props.match.params.trackId)
-            // .then(track => this.setState( { track } ))
     }
 
     render() {
-        
-        let trackInfo;
-        if (this.state != null) {
-            trackInfo = (
+        let track = this.props.track // if no such track -> checkTrack = null
+
+        if (!track) {
+            return (<><Redirect to="/discover" /></>)
+        } else {
+            return (
                 <>
-                    <h1>{this.state.track.creator_id}</h1>
-                    <h1>{this.state.track.title}</h1>
+                    <p>Track Title: {track.title}</p>
+                    
+                    <div>
+                        <Link to="/discover">Back to Tracks Index (Discover)</Link>
+                    </div>
                 </>
             )
         }
 
-        return (
-            <div>
-                {trackInfo}
-
-                <Link to="/discover">Back to Tracks Index (Discover)</Link>
-            </div>
-        )
     }
 }
 
