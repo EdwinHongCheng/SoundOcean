@@ -27,48 +27,42 @@ class CreateTrackForm extends React.Component {
         };
     };
 
-
-    // [TEST] - not working
-    // handleFile(e) {
-    //     e.preventDefault()
-    //     this.setState({ cover_art: e.currentTarget.files[0] })
-    // }
-
-
-
     afterUpload() {
         if (this.state.title.length > 0) {
             this.setState({ uploaded: true })
         }
     }
 
+
+    // [TEST] - not working
+    // handleFile(e) {
+    //     this.setState({ cover_art: e.currentTarget.files[0] })
+    // }
+
     // [TEST] - not working
     // handleSubmit(e) {
-    //     e.preventDefault()
+    //     e.preventDefault();
     //     const formData = new FormData();
     //     formData.append('track[title]', this.state.title);
     //     formData.append('track[creator_id]', this.state.creator_id)
-    //     formData.append('track[cover_art]', this.state.cover_art);;
-    //     $.ajax({
-    //         url: `/api/tracks/`,
-    //         method: "POST",
-    //         data: { formData },
-    //         contentType: false,
-    //         processData: false
-    //     }).then(() => this.afterUpload())   
+    //     if (this.state.cover_art) {
+    //         formData.append('track[cover_art]', this.state.cover_art);;
+    //     }
+
+    //     this.props.createTrack(formData);
+
+    //     this.afterUpload();
     // }
 
-    
+
     // Old Way (works)
     handleSubmit(e) {
         e.preventDefault()
         this.props.createTrack(this.state)
-        this.afterUpload()
+            .then(this.afterUpload)
     }
 
-
-
-    // Test - rendering errors (such as Title must be at least 1 character long)
+    
     renderErrors() {
         return (
             <ul>
@@ -87,15 +81,10 @@ class CreateTrackForm extends React.Component {
         this.props.clearErrors()
     }
 
-
-
-
     render() {
         let uploadForm = (
             <form onSubmit={this.handleSubmit}>
-
                 {this.renderErrors()}
-
                 <h1>Create a New Track</h1>
                 <br />
                 <label>Title
@@ -112,13 +101,9 @@ class CreateTrackForm extends React.Component {
                 {/* <input 
                     type="file"
                     onChange={this.handleFile}
-                />
-                <br />
-                <br /> */}
-
-
+                /> */}
+               
                 <input type="submit" value="Create Track" />
-
             </form>
         )
 
