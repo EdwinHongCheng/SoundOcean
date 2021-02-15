@@ -1,37 +1,28 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
-
-// Note: issue with rendering the fetched track's info after componentDidMount
-
 class ShowTrack extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         this.props.fetchTrack(this.props.match.params.trackId)
     }
 
     render() {
-        let track = this.props.track // if no such track -> checkTrack = null
+        let currentTrack = this.props.track // if no such track -> checkTrack = null
 
-        if (!track) {
+        if (!currentTrack) {
             return (<><Redirect to="/discover" /></>)
         } else {
             return (
                 <>
-                    <p>Track Title: {track.title}</p>
-
+                    <p>Track Title: {currentTrack.title}</p>
                     <br />
-                    
                     <div>
                         <Link to="/">Back to Main Page</Link>
                     </div>
                 </>
             )
         }
-
     }
 }
 
