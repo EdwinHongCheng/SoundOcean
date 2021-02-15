@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import NavbarContainer from "../navbar/navbar_container";
 
-// Testing - not working so far
-import EditTrackFormContainer from "../edit_track/edit_track_form_container";
+// [TEST] not working so far
+import EditTrackForm from './edit_track_form'
 
 class ShowTrack extends React.Component {
 
@@ -24,6 +24,10 @@ class ShowTrack extends React.Component {
                 canEditTrack = (
                     <>
                         <p>I own this track. I can edit it (WIP)</p>
+                        <br />
+                        <EditTrackForm 
+                            track={currentTrack}
+                        />
                         <br />
                     </>
                 )
