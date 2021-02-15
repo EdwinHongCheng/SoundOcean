@@ -43,9 +43,17 @@ class ShowTrack extends React.Component {
                     <br />
                     <p>⊂(・﹏・⊂)</p>
                     <br />
+
+                    {/* Testing */}
+                    <img src={currentTrack.imageURL} className="coverArt"/>
+                    <br />
+                    <br />
+                    {/* Testing */}
+
                     <p>Track Title: {currentTrack.title}</p>
                     <br />
                     {canEditTrack}
+
                     <div>
                         <Link to="/">Back to Main Page</Link>
                     </div>

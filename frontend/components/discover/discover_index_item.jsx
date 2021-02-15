@@ -4,11 +4,18 @@ import { Link } from 'react-router-dom';
 class DiscoverIndexItem extends React.Component {
     render() {
 
+        let currentTrack = this.props.track;
+
         return (
             <>
-                <p>{this.props.track.id}. Track Title: {this.props.track.title}</p>
-                <p>- Created by: User {this.props.track.creator_id}</p>
-                <Link to={`/tracks/${this.props.track.id}`}>- Link to This Track</Link>
+                {/* Testing */}
+                <Link to={`/tracks/${currentTrack.id}`}><img src={currentTrack.imageURL} className="coverArt" /></Link>
+                <br />
+                <br />
+                {/* Testing */}
+                <p>{currentTrack.id}. Track Title: {currentTrack.title}</p>
+                <p>- Created by: User {currentTrack.creator_id}</p>
+                <Link to={`/tracks/${currentTrack.id}`}>- Link to This Track</Link>
                 <br />
                 <br />
             </>
