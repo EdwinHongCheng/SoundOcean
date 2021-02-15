@@ -7,9 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
+Track.delete_all
 
 guest = User.create!(
   username: 'guest',
   email: 'guest@gmail.com',
+  password: '123456'
+)
+
+everfall = User.create!(
+  username: 'everfall',
+  email: 'everfall@gmail.com',
   password: '123456'
 )
