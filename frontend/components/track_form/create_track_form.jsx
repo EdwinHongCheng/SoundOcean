@@ -17,6 +17,7 @@ class CreateTrackForm extends React.Component {
 
         this.afterUpload = this.afterUpload.bind(this)
 
+        // [TEST] - not working
         // this.handleFile = this.handleFile.bind(this)
     }
 
@@ -27,11 +28,13 @@ class CreateTrackForm extends React.Component {
     };
 
 
-    // Testing - handle File (uploading Image)
+    // [TEST] - not working
     // handleFile(e) {
     //     e.preventDefault()
     //     this.setState({ cover_art: e.currentTarget.files[0] })
     // }
+
+
 
     afterUpload() {
         if (this.state.title.length > 0) {
@@ -39,6 +42,7 @@ class CreateTrackForm extends React.Component {
         }
     }
 
+    // [TEST] - not working
     // handleSubmit(e) {
     //     e.preventDefault()
     //     const formData = new FormData();
@@ -48,12 +52,10 @@ class CreateTrackForm extends React.Component {
     //     $.ajax({
     //         url: `/api/tracks/`,
     //         method: "POST",
-    //         data: formData,
+    //         data: { formData },
     //         contentType: false,
     //         processData: false
-    //     })
-
-    //     this.afterUpload()
+    //     }).then(() => this.afterUpload())   
     // }
 
     
@@ -81,7 +83,6 @@ class CreateTrackForm extends React.Component {
             </ul>
         );
     }  
-    // Testing - works! (LOL) - clears red errors if i go to another link
     componentWillUnmount() {
         this.props.clearErrors()
     }
@@ -93,7 +94,6 @@ class CreateTrackForm extends React.Component {
         let uploadForm = (
             <form onSubmit={this.handleSubmit}>
 
-                {/* Test - rendering Errors when uploading track */}
                 {this.renderErrors()}
 
                 <h1>Create a New Track</h1>
@@ -108,7 +108,7 @@ class CreateTrackForm extends React.Component {
                 <br />
                 <br />
 
-                {/* Testing - File Upload ? */}
+                {/* [TEST] - not working */}
                 {/* <input 
                     type="file"
                     onChange={this.handleFile}

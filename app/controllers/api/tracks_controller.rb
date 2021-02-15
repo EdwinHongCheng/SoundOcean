@@ -23,7 +23,6 @@ before_action :require_logged_in, only: [:create, :update, :destroy]
         end
     end
 
-    # Test - update + destroy ------------------------------------------------>
     def update
         @track = Track.find(params[:id])
 
@@ -40,8 +39,6 @@ before_action :require_logged_in, only: [:create, :update, :destroy]
 
         render json: {}
     end
-
-    # ----------------------------->
 
     private
     def track_params
