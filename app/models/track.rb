@@ -2,12 +2,23 @@ class Track < ApplicationRecord
     validates :title, :creator_id, presence: true
     validates :title, uniqueness: { scope: :creator_id }, length: { minimum: 1 }
 
-    # Association to Attach Photo (Cover Art) to a Track
+    # Assoc to Attach Photo (Cover Art) to a Track
     has_one_attached :cover_art
 
-    # [TEST] Assoc to Attach Audio File to a Track
+    # Assoc to Attach Audio File to a Track
     has_one_attached :audio_file
 
+    #-------------------------------------------------------------------------->
+    # [TEST] requires an audio track to Upload Successfully
+    validate :ensure_audio_file
+
+    def ensure_audio_file
+        unless self.audio_file.attached?
+            # Error Message: "Please upload an audio file"
+            errors[:Please] << "upload an audio file"
+        end
+    end
+    #-------------------------------------------------------------------------->
 
     # Associations
     belongs_to :creator,
