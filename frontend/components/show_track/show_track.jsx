@@ -41,11 +41,19 @@ class ShowTrack extends React.Component {
                     <p>⊂(・﹏・⊂)</p>
                     <br />
 
-                    {/* Testing */}
+                    {/* Cover Art */}
                     <img src={currentTrack.imageURL} className="coverArt"/>
                     <br />
                     <br />
-                    {/* Testing */}
+
+                    {/* [TEST] Audio File (w3schools) */}
+                    <audio controls>
+                        <source src={currentTrack.audioURL} type="audio/mpeg"/>
+                        <source src={currentTrack.audioURL} type="audio/ogg" />
+                        Your browser does not support the audio tag.
+                    </audio>    
+                    <br />
+                    <br /> 
 
                     <p>Track Title: {currentTrack.title}</p>
                     <br />
