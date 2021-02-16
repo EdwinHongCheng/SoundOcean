@@ -37,34 +37,39 @@ class ShowTrack extends React.Component {
             return (
                 <>  
                     <NavbarContainer />
-                    <br />
-                    <p>⊂(・﹏・⊂)</p>
-                    <br />
-
-                    {/* Cover Art */}
-                    <img src={currentTrack.imageURL} className="coverArt"/>
-                    <br />
-                    <br />
 
 
-                    {/* [TEST] Audio File (w3schools) - works! */}
-                    {/* NOTE: No Auto-Loop: revert back to <audio controls> */}
-                    <audio controls loop>
-                        <source src={currentTrack.audioURL} type="audio/mpeg"/>
-                        <source src={currentTrack.audioURL} type="audio/ogg" />
-                        Your browser does not support the audio tag.
-                    </audio>    
-                    <br />
-                    <br /> 
+                    <div className="showTrackBody">
+                        <br />
+                        <p>⊂(・﹏・⊂)</p>
+                        <br />
+
+                        {/* Cover Art */}
+                        <img src={currentTrack.imageURL} className="coverArt"/>
+                        <br />
+                        <br />
 
 
-                    <p>Track Title: {currentTrack.title}</p>
-                    <br />
-                    {canEditTrack}
+                        {/* [TEST] Audio File (w3schools) - works! */}
+                        {/* NOTE: No Auto-Loop: revert back to <audio controls> */}
+                        <audio controls loop>
+                            <source src={currentTrack.audioURL} type="audio/mpeg"/>
+                            <source src={currentTrack.audioURL} type="audio/ogg" />
+                            Your browser does not support the audio tag.
+                        </audio>    
+                        <br />
+                        <br /> 
 
-                    <div>
-                        <Link to="/">Back to Main Page</Link>
+
+                        <p>Track Title: {currentTrack.title}</p>
+                        <br />
+                        {canEditTrack}
+
+                        <div>
+                            <Link to="/">Back to Main Page</Link>
+                        </div>
                     </div>
+
                 </>
             )
         }

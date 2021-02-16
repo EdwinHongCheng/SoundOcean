@@ -96,7 +96,6 @@ class CreateTrackForm extends React.Component {
 
     render() {
 
-
         {/* Testing Preview */ }
         let imagePreview = null;
         if (this.state.coverArtPreviewURL) {
@@ -165,7 +164,9 @@ class CreateTrackForm extends React.Component {
             <>
                 <NavbarContainer />
                 <br />
-                {uploadForm}
+                <div className="createTrackFormBody">
+                    {uploadForm}
+                </div>
             </>
         );
     }

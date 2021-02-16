@@ -96,7 +96,7 @@ class EditTrackForm extends React.Component {
         }
 
         return (
-            <>
+            <div>
                 <form onSubmit={this.handleSubmit}>
                     <h1>Edit Track Form</h1>
                     <br />
@@ -129,7 +129,7 @@ class EditTrackForm extends React.Component {
                     <span> </span>
                     <button type="button" onClick={() => this.props.deleteTrack(this.state.id)}>Delete Track</button>
                 </form>
-            </>
+            </div>
         )
     }
 }

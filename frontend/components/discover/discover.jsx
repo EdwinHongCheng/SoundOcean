@@ -25,12 +25,15 @@ class Discover extends React.Component {
         return(
             <>
                 <NavbarContainer />
+
+                <div className="discoverBody">
+                    {/* Delete Filler below Later (???) */ }
+                    <br />
+                    <h2 className="filler-flower-text">~ Hear the SoundWaves (◠‿◠✿) ~</h2>
+                    <br />
+                    {allTracks}
+                </div>
     
-                {/* Delete Filler below Later (???) */ }
-                <br />
-                <h2 className="filler-flower-text">~ Hear the SoundWaves (◠‿◠✿) ~</h2>
-                <br />
-                {allTracks}
             </>
         )
     }
