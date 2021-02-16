@@ -1,8 +1,7 @@
 json.extract! track, :id, :title, :creator_id
 
-# [WORKS] - can do track.user.username -> shows a track's creator's username
-json.creator(track.creator, :id, :username, :email)
-
+# [NO GOOD] - can do track.user.username -> shows a track's creator's username
+# json.creator(track.creator, :id, :username, :email)
 
 
 # [Works] - based on soundcrowd
@@ -15,6 +14,8 @@ else
     # Sanwitch (Default pic if no cover art)
     json.imageURL 'https://ms.yugipedia.com//b/b6/Sanwitch-TF04-JP-VG.jpg'
 end
+
+
 
 
 # [TEST] - audio file

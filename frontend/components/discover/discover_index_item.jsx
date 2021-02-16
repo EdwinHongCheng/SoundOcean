@@ -10,8 +10,9 @@ class DiscoverIndexItem extends React.Component {
             <div className="discoverIndexItem">
                 <Link to={`/tracks/${currentTrack.id}`}><img src={currentTrack.imageURL} className="coverArt" /></Link>
                 <br />
-                {/* [WORKS] shows track's creator's username (edited _track.kson.jbuilder) */}
-                <p className="creatorNameText">{currentTrack.creator.username}</p>
+
+                {/* [WRONG] shows track's creator's username (edited _track.kson.jbuilder) */}
+                {/* <p className="creatorNameText">{user.username}</p> */}
 
                 <Link to={`/tracks/${currentTrack.id}`}><p>{currentTrack.title}</p></Link>
                 <br />

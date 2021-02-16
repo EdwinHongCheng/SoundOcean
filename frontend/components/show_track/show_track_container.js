@@ -2,6 +2,9 @@ import { connect } from 'react-redux';
 import ShowTrack from "./show_track";
 import { fetchTrack } from '../../actions/track_actions';
 
+// [TEST] updating current Track
+import { receiveCurrentTrack } from '../../actions/session_actions'
+
 const mSTP = (state, ownProps) => {
     return {
         track: state.entities.tracks[ownProps.match.params.trackId],
@@ -11,7 +14,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchTrack: trackId => dispatch(fetchTrack(trackId))
+        fetchTrack: trackId => dispatch(fetchTrack(trackId)),
+        receiveCurrentTrack: track => dispatch(receiveCurrentTrack(track))
     }
 }
 

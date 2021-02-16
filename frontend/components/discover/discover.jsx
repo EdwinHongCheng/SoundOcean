@@ -1,5 +1,4 @@
 import React from 'react';
-import NavbarContainer from "../navbar/navbar_container"
 import DiscoverIndexItem from './discover_index_item'
 
 class Discover extends React.Component {
@@ -24,8 +23,6 @@ class Discover extends React.Component {
 
         return(
             <>
-                <NavbarContainer />
-
                 <div className="discoverBody">
                     {/* Delete Filler below Later (???) */ }
                     <br />

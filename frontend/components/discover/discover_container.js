@@ -6,7 +6,8 @@ import { fetchTracks } from '../../actions/track_actions'
 const mSTP = ({ session, entities }) => {
     return {
         currentUser: entities.users[session.id],
-        tracks: Object.values(entities.tracks)
+        tracks: Object.values(entities.tracks),
+        // all current users - grab them
     };
 };
 

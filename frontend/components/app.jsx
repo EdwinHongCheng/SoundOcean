@@ -15,6 +15,9 @@ import CreateTrackFormContainer from "./track_form/create_track_form_container";
 // Test - Show Track
 import ShowTrackContainer from "./show_track/show_track_container";
 
+import NavbarContainer from "./navbar/navbar_container"
+import PlayBarContainer from './playbar/playbar_container'
+
 
 import NotFound from "./error_messages/not_found"
 
@@ -24,6 +27,8 @@ class App extends React.Component {
     render() {
         return (
             <>
+                <NavbarContainer />
+
                 <Switch>
                     <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
                     <ProtectedRoute exact path="/upload" component={CreateTrackFormContainer} />
@@ -39,6 +44,8 @@ class App extends React.Component {
                     {/* Error Message Page */}
                     {/* <Route component={NotFound} /> */}
                 </Switch>
+
+                <PlayBarContainer />
             </>
         )
     }

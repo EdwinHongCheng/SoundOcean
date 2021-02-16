@@ -61,47 +61,52 @@ const Navbar = ({ currentUser, logout }) => {
     //------------------------------------------------------------------------->
     // Post-Sign Up Page Nav Bar, etc.
 
-    const navigationBar = () => (
-        <ul className="navbar-post-signin">
+    let navigationBar;
 
-            {soLogo}
-
-            <li><Link to="/discover" className="home-button">Home</Link></li>
-            <li><Link to="/stream"className="nav-button" >Stream</ Link></li>
-            <li><Link to="/library" className="nav-button" >Library</ Link></li>
-            <input className="searchBar" type="input" placeholder="Search" />
-            <li><Link to="/upload" className="upload-button">Upload</Link></li>
-
-            {/* DropDown Button 2 (for User) */}
-            <li>
-                <div className="dropdown2">
-                    <p onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</p>
-                    <div id="myDropdown2" className="dropdown-content2">
-                        <div>My Tracks</div>
+    if (currentUser) {
+        navigationBar = (
+    
+            <nav className="navigation-bar">
+                <ul className="navbar-post-signin">
+    
+                    {soLogo}
+    
+                    <li><Link to="/discover" className="home-button">Home</Link></li>
+                    <li><Link to="/stream"className="nav-button" >Stream</ Link></li>
+                    <li><Link to="/library" className="nav-button" >Library</ Link></li>
+                    <input className="searchBar" type="input" placeholder="Search" />
+                    <li><Link to="/upload" className="upload-button">Upload</Link></li>
+    
+                    {/* DropDown Button 2 (for User) */}
+                    <li>
+                        <div className="dropdown2">
+                            <p onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</p>
+                            <div id="myDropdown2" className="dropdown-content2">
+                                <div>My Tracks</div>
+                            </div>
+                        </div>
+                    </li>
+    
+                    <li><a className="nav-button" href="https://github.com/EdwinHongCheng/SoundOcean/wiki">GitHub</a></li>
+                    <li><a className="nav-button" href="https://en.wikipedia.org/wiki/LinkedIn">LinkedIn</a></li>
+    
+                    {/* DropDown Button for "..." (w3schools): How TO - Clickable Dropdown  */}
+                    <div className="dropdown">
+                        <p onClick={dropdownFunc} className="dropbtn nav-button">...</p>
+                        <div id="myDropdown" className="dropdown-content">
+                            <div onClick={logout}>Sign out</div>
+                        </div>
                     </div>
-                </div>
-            </li>
-
-            <li><a className="nav-button" href="https://github.com/EdwinHongCheng/SoundOcean/wiki">GitHub</a></li>
-            <li><a className="nav-button" href="https://en.wikipedia.org/wiki/LinkedIn">LinkedIn</a></li>
-
-            {/* DropDown Button for "..." (w3schools): How TO - Clickable Dropdown  */}
-            <div className="dropdown">
-                <p onClick={dropdownFunc} className="dropbtn nav-button">...</p>
-                <div id="myDropdown" className="dropdown-content">
-                    <div onClick={logout}>Sign out</div>
-                </div>
-            </div>
-
-        </ul>
-    );
-
+    
+                </ul>
+            </nav>
+        );
+    }
+    
     return (
         <div>
             <header>
-                <nav className="navigation-bar">
-                    {navigationBar()}
-                </nav>
+                    {navigationBar}
             </header>
         </div>
     )

@@ -1,12 +1,25 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import NavbarContainer from "../navbar/navbar_container";
-import EditTrackFormContainer from '../edit_track/edit_track_form_container'
+import EditTrackFormContainer from '../edit_track/edit_track_form_container';
+
+
 
 class ShowTrack extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.playCurrentTrack = this.playCurrentTrack.bind(this)
+    }
 
     componentDidMount() {
         this.props.fetchTrack(this.props.match.params.trackId)
+    }
+
+
+    // [TEST] updates Current Track to whatever is here
+    playCurrentTrack(e) {
+        e.preventDefault()
+        this.props.receiveCurrentTrack(this.props.track.id)
     }
 
     render() {
@@ -18,7 +31,6 @@ class ShowTrack extends React.Component {
         } else {
 
             let canEditTrack;
-            
             if (this.props.currentUser.id === currentTrack.creator_id 
                 // everfall id = 2 -> has Admin Powers lol
                 || this.props.currentUser.id === 2) {
@@ -34,9 +46,6 @@ class ShowTrack extends React.Component {
 
             return (
                 <>  
-                    <NavbarContainer />
-
-
                     <div className="showTrackBody">
                         <br />
                         <p>⊂(・﹏・⊂)</p>
@@ -69,6 +78,8 @@ class ShowTrack extends React.Component {
                         </div>
                     </div>
 
+                    {/* [TEST] */}
+                    <button onClick={this.playCurrentTrack}>[TEST] Play Current Track (?)</button>
                 </>
             )
         }

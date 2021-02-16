@@ -11,10 +11,10 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 // Action Creators
-const receiveTracks = tracks => {
+const receiveTracks = payload => {
     return {
         type: RECEIVE_TRACKS,
-        tracks
+        payload
     }
 }
 
@@ -54,7 +54,7 @@ export const clearErrors = () => {
 // Thunk Action Creators
 export const fetchTracks = () => dispatch => {
     return TrackApiUtil.fetchTracks()
-        .then(tracks => dispatch(receiveTracks(tracks)))
+        .then(payload => dispatch(receiveTracks(payload)))
 }
 
 export const fetchTrack = trackId => dispatch => {

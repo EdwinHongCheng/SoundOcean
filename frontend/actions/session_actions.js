@@ -6,14 +6,12 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
 
 // ---------------------------------------------------------------------------->
-// [TEST] current track (based on WaveSky)
-// NOTE: will organize action constant + action creator later (if it works)
-// NOTE 2: need to dispatch it !!!
+// [TEST] current track - can refactor/put this somewhere else later
 export const RECEIVE_CURRENT_TRACK = "RECEIVE_CURRENT_TRACK"
 
-export const receiveCurrentTrack = track => ({
+export const receiveCurrentTrack = currentTrackId => ({
     type: RECEIVE_CURRENT_TRACK,
-    track
+    currentTrackId
 })
 // ---------------------------------------------------------------------------->
 
