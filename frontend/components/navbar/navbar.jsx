@@ -105,9 +105,7 @@ const Navbar = ({ currentUser, logout }) => {
     
     return (
         <div>
-            <header>
-                    {navigationBar}
-            </header>
+            {navigationBar}
         </div>
     )
 };
