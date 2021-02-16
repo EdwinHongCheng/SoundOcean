@@ -7,7 +7,7 @@ class DiscoverIndexItem extends React.Component {
         let currentTrack = this.props.track;
 
         return (
-            <>
+            <div className="discoverIndexItem">
                 <Link to={`/tracks/${currentTrack.id}`}><img src={currentTrack.imageURL} className="coverArt" /></Link>
                 <br />
                 <p>{currentTrack.id}. Track Title: {currentTrack.title}</p>
@@ -16,7 +16,7 @@ class DiscoverIndexItem extends React.Component {
                 <br />
                 <br />
                 <br />
-            </>
+            </div>
         )
     }   
 }

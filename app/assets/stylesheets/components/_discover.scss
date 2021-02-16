@@ -2,3 +2,14 @@
     max-width: 901px;
     margin: auto;
 }
+
+// [WIP] Discover Page - testing how to display 4 Cover Arts per row
+.discoverAllTracks {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;    
+}
+
+.discoverIndexItem {
+    margin: 10px;
+}

@@ -31,7 +31,10 @@ class Discover extends React.Component {
                     <br />
                     <h2 className="filler-flower-text">~ Hear the SoundWaves (◠‿◠✿) ~</h2>
                     <br />
-                    {allTracks}
+
+                    <div className="discoverAllTracks">
+                        {allTracks}
+                    </div>
                 </div>
     
             </>
