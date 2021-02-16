@@ -3,8 +3,19 @@ import * as APIUtil from '../util/session_api_util'
 // Action Constants
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
-
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
+
+// ---------------------------------------------------------------------------->
+// [TEST] current track (based on WaveSky)
+// NOTE: will organize action constant + action creator later (if it works)
+export const RECEIVE_CURRENT_TRACK = "RECEIVE_CURRENT_TRACK"
+
+export const receiveCurrentTrack = track => ({
+    type: RECEIVE_CURRENT_TRACK,
+    track
+})
+// ---------------------------------------------------------------------------->
+
 
 
 // Action Creators

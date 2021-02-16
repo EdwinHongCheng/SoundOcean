@@ -24,8 +24,6 @@ class ShowTrack extends React.Component {
                 || this.props.currentUser.id === 2) {
                 canEditTrack = (
                     <>
-                        <p>I own this track. I can edit or delete it!</p>
-                        <br />
                         <EditTrackFormContainer 
                             track={currentTrack}
                         />
@@ -63,6 +61,7 @@ class ShowTrack extends React.Component {
 
                         <p>Track Title: {currentTrack.title}</p>
                         <br />
+                        {/* Edit Track Form */}
                         {canEditTrack}
 
                         <div>

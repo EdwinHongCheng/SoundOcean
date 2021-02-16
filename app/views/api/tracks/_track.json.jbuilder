@@ -1,5 +1,9 @@
 json.extract! track, :id, :title, :creator_id
 
+# [WORKS] - can do track.user.username -> shows a track's creator's username
+json.creator(track.creator, :id, :username, :email)
+
+
 
 # [Works] - based on soundcrowd
 if track.cover_art.attached?
