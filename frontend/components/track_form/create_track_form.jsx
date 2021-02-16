@@ -163,7 +163,6 @@ class CreateTrackForm extends React.Component {
 
         return (
             <>
-                <NavbarContainer />
                 <br />
                 <div className="createTrackFormBody">
                     {uploadForm}
