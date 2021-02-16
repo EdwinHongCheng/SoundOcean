@@ -9,7 +9,9 @@ class Track < ApplicationRecord
     has_one_attached :audio_file
 
     #-------------------------------------------------------------------------->
-    # [TEST] requires an audio track to Upload Successfully
+    # [COMMENT BACK IN/OUT] requires an audio track to Upload Successfully
+    # NOTE: comment out if I just wanna test visual stuff
+
     validate :ensure_audio_file
 
     def ensure_audio_file

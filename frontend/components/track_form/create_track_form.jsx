@@ -155,6 +155,7 @@ class CreateTrackForm extends React.Component {
             uploadForm = (
                 <>
                     <h1>UPLOAD SUCCESS !!!</h1>
+                    <br />
                     <Link to="/discover">Check out our tracks!</Link>
                 </>
             )
