@@ -48,7 +48,8 @@ class ShowTrack extends React.Component {
 
 
                     {/* [TEST] Audio File (w3schools) - works! */}
-                    <audio controls>
+                    {/* NOTE: No Auto-Loop: revert back to <audio controls> */}
+                    <audio controls loop>
                         <source src={currentTrack.audioURL} type="audio/mpeg"/>
                         <source src={currentTrack.audioURL} type="audio/ogg" />
                         Your browser does not support the audio tag.

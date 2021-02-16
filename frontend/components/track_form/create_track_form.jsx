@@ -138,8 +138,7 @@ class CreateTrackForm extends React.Component {
                 <br />
 
 
-                {/* [TEST] Audio Upload ]*/}
-                {imagePreview}
+                {/* [TEST] Audio Upload - WORKS !!! */}
                 <p>Upload Audio File Here !!!</p>
                 <input
                     type="file"
