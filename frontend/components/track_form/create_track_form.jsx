@@ -11,12 +11,18 @@ class CreateTrackForm extends React.Component {
             creator_id: this.props.currentUserId,
             uploaded: false, // switch to True -> display "UPLOAD SUCCESS" after a good upload
             cover_art: null, // for Cover Art File Upload
-            coverArtPreviewURL: null
+            coverArtPreviewURL: null,
+
+            // [TEST] Audio File Upload
+            audio_file: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.afterUpload = this.afterUpload.bind(this)
         this.handleFile = this.handleFile.bind(this)
+
+        // [TEST] Upload Audio File
+        this.handleAudioFile = this.handleAudioFile.bind(this)
     }
 
     update(field) {
@@ -46,6 +52,12 @@ class CreateTrackForm extends React.Component {
         } 
     }
 
+    // [TEST] Upload Audio File
+    handleAudioFile(e) {
+        this.setState( { audio_file: e.currentTarget.files[0] } )
+    }
+
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -54,6 +66,10 @@ class CreateTrackForm extends React.Component {
 
         if (this.state.cover_art) {
             formData.append('track[cover_art]', this.state.cover_art);;
+        }
+
+        if (this.state.audio_file) {
+            formData.append('track[audio_file]', this.state.audio_file);;
         }
 
         this.props.createTrack(formData)
@@ -117,6 +133,17 @@ class CreateTrackForm extends React.Component {
                 <input 
                     type="file"
                     onChange={this.handleFile}
+                />
+                <br />
+                <br />
+
+
+                {/* [TEST] Audio Upload ]*/}
+                {imagePreview}
+                <p>Upload Audio File Here !!!</p>
+                <input
+                    type="file"
+                    onChange={this.handleAudioFile}
                 />
                 <br />
                 <br />

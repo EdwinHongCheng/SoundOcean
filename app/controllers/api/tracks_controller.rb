@@ -41,7 +41,7 @@ before_action :require_logged_in, only: [:create, :update, :destroy]
 
     private
     def track_params
-        params.require(:track).permit(:title, :creator_id, :cover_art)
+        params.require(:track).permit(:title, :creator_id, :cover_art, :audio_file)
     end
 
 end
