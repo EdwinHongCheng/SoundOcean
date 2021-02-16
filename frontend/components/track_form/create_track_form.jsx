@@ -16,7 +16,6 @@ class CreateTrackForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.afterUpload = this.afterUpload.bind(this)
-        // [Works Now]
         this.handleFile = this.handleFile.bind(this)
     }
 
@@ -33,9 +32,8 @@ class CreateTrackForm extends React.Component {
     }
 
 
-    // [Works Now]
     handleFile(e) {
-        // Testing Preview
+        // Cover Art Preview
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
 
@@ -48,7 +46,6 @@ class CreateTrackForm extends React.Component {
         } 
     }
 
-    // [Works Now]
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -90,7 +87,7 @@ class CreateTrackForm extends React.Component {
             imagePreview = (
                 <>
                     <p>Cover Art Preview</p>
-                    <img src={this.state.coverArtPreviewURL} className="coverArt"/>
+                    <img src={this.state.coverArtPreviewURL} className="previewArt"/>
                     <br />
                     <br />
                 </>
@@ -136,9 +133,6 @@ class CreateTrackForm extends React.Component {
                 </>
             )
         }
-
-
-
 
         return (
             <>

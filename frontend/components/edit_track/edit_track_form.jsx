@@ -90,7 +90,7 @@ class EditTrackForm extends React.Component {
                     <br />
                     <br />
                     <p>Cover Art Preview</p>
-                    <img src={this.state.coverArtPreviewURL} className="coverArt" />
+                    <img src={this.state.coverArtPreviewURL} className="previewArt" />
                     <br />
                     <br />
                 </>
