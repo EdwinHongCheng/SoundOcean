@@ -8,6 +8,7 @@ const mSTP = ({ session, entities }) => {
         currentUser: entities.users[session.id],
         tracks: Object.values(entities.tracks),
         // all current users - grab them
+        users: Object.values(entities.users)
     };
 };
 

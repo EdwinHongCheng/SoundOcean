@@ -10,13 +10,20 @@ class Discover extends React.Component {
         this.props.fetchTracks()
     }
 
-    render() {
-        
+    render() {        
+
+        // Testing
+        const users = this.props.users
+
+        // debugger
+
         const allTracks = this.props.tracks.map(track => {
             return (
                 <DiscoverIndexItem
                     key={track.id}
                     track={track}
+                    // NOTE: -1 cuz 1st user at index 0 in the passed-down array, not 1
+                    user={users[track.creator_id - 1]}
                 />
             )
         })
