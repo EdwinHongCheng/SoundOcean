@@ -8,6 +8,7 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
 // ---------------------------------------------------------------------------->
 // [TEST] current track (based on WaveSky)
 // NOTE: will organize action constant + action creator later (if it works)
+// NOTE 2: need to dispatch it !!!
 export const RECEIVE_CURRENT_TRACK = "RECEIVE_CURRENT_TRACK"
 
 export const receiveCurrentTrack = track => ({
