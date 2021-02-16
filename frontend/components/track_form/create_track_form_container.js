@@ -12,7 +12,6 @@ const mSTP = state => {
         currentUser: state.entities.users[state.session.id],
         tracks: state.entities.tracks,
         formType: 'Create Track',
-        // Test - upload errors?
         errors: state.errors.trackErrors
     }
 }
@@ -21,7 +20,6 @@ const mDTP = dispatch => {
     return {
         createTrack: track => dispatch(createTrack(track)),
         fetchTrack: trackId => dispatch(fetchTrack(trackId)),
-        // Test - clear upload errors?
         clearErrors: () => dispatch(clearErrors())
     }
 }

@@ -14,7 +14,6 @@ export const fetchTrack = trackId => {
 
 
 export const createTrack = track => {
-
     return $.ajax({
         url: `/api/tracks/`,
         method: "POST",
@@ -25,7 +24,6 @@ export const createTrack = track => {
 }
 
 export const updateTrack = track => {
-
     return $.ajax({
         url: `/api/tracks/${track.get['track[id]']}`,
         method: "PATCH",

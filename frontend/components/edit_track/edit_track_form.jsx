@@ -8,7 +8,8 @@ class EditTrackForm extends React.Component {
             title: this.props.track.title,
             id: this.props.track.id,
             creator_id: this.props.track.creator_id,
-            cover_art: null // for Cover Art File Upload
+            cover_art: null, // for Cover Art File Upload
+            coverArtPreviewURL: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,9 +30,18 @@ class EditTrackForm extends React.Component {
     //     this.props.updateTrack(this.state)
     // }
 
-    // [TEST] - not working
     handleFile(e) {
-        this.setState({ cover_art: e.currentTarget.files[0] })
+        // Testing Preview
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+
+        fileReader.onloadend = () => {
+            this.setState({ cover_art: file, coverArtPreviewURL: fileReader.result })
+        }
+
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
     }
 
     handleSubmit(e) {
@@ -71,6 +81,22 @@ class EditTrackForm extends React.Component {
     //------------------------------------------------------------------------->
 
     render() {
+
+        {/* Testing Preview */ }
+        let imagePreview = null;
+        if (this.state.coverArtPreviewURL) {
+            imagePreview = (
+                <>
+                    <br />
+                    <br />
+                    <p>Cover Art Preview</p>
+                    <img src={this.state.coverArtPreviewURL} className="coverArt" />
+                    <br />
+                    <br />
+                </>
+            )
+        }
+
         return (
             <>
                 <form onSubmit={this.handleSubmit}>
@@ -89,14 +115,12 @@ class EditTrackForm extends React.Component {
                     </label>
 
 
-
-                    {/* [TEST] - not working */}
+                    {/* Cover Art Preview */}
+                    {imagePreview}
                     <input
                         type="file"
                         onChange={this.handleFile}
                     />
-
-
 
                     <br />
                     <br />

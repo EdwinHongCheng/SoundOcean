@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import NavbarContainer from "../navbar/navbar_container";
-
-// [TEST] working now -> just need to make it an edit form type deal
-// - refer to Practice Exam, etc (?) -> must test out update + delete
 import EditTrackFormContainer from '../edit_track/edit_track_form_container'
 
 class ShowTrack extends React.Component {
