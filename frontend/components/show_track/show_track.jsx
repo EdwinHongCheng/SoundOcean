@@ -46,7 +46,8 @@ class ShowTrack extends React.Component {
                     <br />
                     <br />
 
-                    {/* [TEST] Audio File (w3schools) */}
+
+                    {/* [TEST] Audio File (w3schools) - works! */}
                     <audio controls>
                         <source src={currentTrack.audioURL} type="audio/mpeg"/>
                         <source src={currentTrack.audioURL} type="audio/ogg" />
@@ -54,6 +55,7 @@ class ShowTrack extends React.Component {
                     </audio>    
                     <br />
                     <br /> 
+
 
                     <p>Track Title: {currentTrack.title}</p>
                     <br />

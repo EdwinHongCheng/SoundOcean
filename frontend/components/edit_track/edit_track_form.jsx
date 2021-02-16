@@ -87,8 +87,6 @@ class EditTrackForm extends React.Component {
         if (this.state.coverArtPreviewURL) {
             imagePreview = (
                 <>
-                    <br />
-                    <br />
                     <p>Cover Art Preview</p>
                     <img src={this.state.coverArtPreviewURL} className="previewArt" />
                     <br />
@@ -116,6 +114,9 @@ class EditTrackForm extends React.Component {
 
 
                     {/* Cover Art Preview */}
+                    <br />
+                    <br />
+                    <p>[Optional] Upload a New Cover Art</p>
                     {imagePreview}
                     <input
                         type="file"

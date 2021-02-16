@@ -113,7 +113,7 @@ class CreateTrackForm extends React.Component {
 
                 {/* Cover Art Preview */}
                 {imagePreview}
-
+                <p>[Optional] Upload Cover Art</p>
                 <input 
                     type="file"
                     onChange={this.handleFile}
@@ -125,6 +125,7 @@ class CreateTrackForm extends React.Component {
             </form>
         )
 
+        // Successful Upload Message (replaces the Upload Form after good upload)
         if (this.state.uploaded) {
             uploadForm = (
                 <>
