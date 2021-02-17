@@ -114,6 +114,8 @@ class CreateTrackForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 {this.renderErrors()}
 
+                <p>(｀・ω・´)</p>
+                <br />
                 <h1>Create a New Track</h1>
                 <br />
                 <label>Title
@@ -137,7 +139,8 @@ class CreateTrackForm extends React.Component {
                 <br />
 
 
-                {/* [TEST] Audio Upload - WORKS !!! */}
+                {/* Audio Upload */}
+
                 <p>Upload Audio File Here !!!</p>
                 <input
                     type="file"
@@ -154,7 +157,9 @@ class CreateTrackForm extends React.Component {
         if (this.state.uploaded) {
             uploadForm = (
                 <>
-                    <h1>UPLOAD SUCCESS !!!</h1>
+                    <p>ヽ(＾Д＾)ﾉ</p>
+                    <br />
+                    <h1>!!! UPLOAD SUCCESS !!!</h1>
                     <br />
                     <Link to="/discover">Check out our tracks!</Link>
                 </>

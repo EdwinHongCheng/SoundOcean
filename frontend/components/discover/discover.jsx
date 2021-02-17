@@ -11,11 +11,7 @@ class Discover extends React.Component {
     }
 
     render() {        
-
-        // Testing
         const users = this.props.users
-
-        // debugger
 
         const allTracks = this.props.tracks.map(track => {
             return (
