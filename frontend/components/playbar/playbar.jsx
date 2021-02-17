@@ -9,7 +9,7 @@ class PlayBar extends React.Component {
 
             let playbar = (
                 // NOTE: audio tag: add "controls" -> audio player shows up
-                <audio id="audio" controls autoPlay loop key={this.props.currentTrack.id}>
+                <audio id="audio" autoPlay loop key={this.props.currentTrack.id}>
                     <source src={this.props.currentTrack.audioURL} type="audio/mpeg" />
                     <source src={this.props.currentTrack.audioURL} type="audio/ogg" />
                     Your browser does not support the audio tag.
@@ -20,7 +20,7 @@ class PlayBar extends React.Component {
             let playPauseButton;
             if (this.props.isPlaying) {
                 playPauseButton = (
-                    <button onClick={
+                    <button id="playBarButton" onClick={
                         () => {
                             document.getElementById('audio').pause()
                             this.props.pauseTrack()
@@ -29,7 +29,7 @@ class PlayBar extends React.Component {
                 )
             } else {
                 playPauseButton = (
-                    <button onClick={
+                    <button id="playBarButton" onClick={
                         () => {
                             document.getElementById('audio').play()
                             this.props.playTrack()
@@ -41,7 +41,6 @@ class PlayBar extends React.Component {
             playbarAll = (
                 <div className="playbar">
                     {/* NOTE: need a unique "key" to tell React it updated !!! */}
-
                     <div className="playbar-left">
                         {playbar}
                     </div>
@@ -49,7 +48,7 @@ class PlayBar extends React.Component {
 
                     <p className="playbar-right">Now Playing: {this.props.currentTrack.title}</p>
 
-                    {/* [TEST - WORKS] Play/Pause Buttons (delete later) */}
+                    {/* [WORKS] Play/Pause Buttons (maybe delete later (?)) */}
                     {playPauseButton}
                 </div>
             )

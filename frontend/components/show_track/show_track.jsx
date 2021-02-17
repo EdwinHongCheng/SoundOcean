@@ -44,7 +44,7 @@ class ShowTrack extends React.Component {
                 )
             }
 
-            // [TEST] [WORKS] ------------------------------------------------->
+            // [WORKS] ------------------------------------------------->
             let currentTrackButton;
             if (this.props.track !== this.props.currentTrack) {
                 currentTrackButton = (
@@ -71,7 +71,7 @@ class ShowTrack extends React.Component {
                     }>[  PLAY  ]</button>
                 )
             }
-            // [TEST] -------------------------->
+            // -------------------------->
 
 
             return (
