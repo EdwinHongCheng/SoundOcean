@@ -12,7 +12,6 @@ tmp/
 !/tmp/.keep
 
 # testing this - hope it ignores logs
-log/
 **/*.log
 
 # Ignore uploaded files in development
