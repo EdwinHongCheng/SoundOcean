@@ -2,9 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
 
-
-// [TEST] want to redirect to "discover" page if track doesn't exist
-// - it works. but 
+// [*WORKS-ish] want to redirect to "discover" page if track doesn't exist
 // Issue: now I can't refresh -> go back to same existing track on show page
 import { withRouter } from 'react-router';
 
@@ -20,8 +18,15 @@ class ShowTrack extends React.Component {
         this.props.fetchTrack(this.props.match.params.trackId)
     }
 
+    // [WORKS] Lina: if my URL wildcard changes -> this triggers
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.trackId !== this.props.match.params.trackId) {
+            this.props.fetchTrack(this.props.match.params.trackId)
+                .fail(() => this.props.history.push("/discover"))
+        }
+    }
 
-    // [WORKS] updates Current Track to whatever is here
+    // [WORKS] for my Play This Track button
     updateCurrentTrack(e) {
         e.preventDefault()
         this.props.receiveCurrentTrack(this.props.track.id)
@@ -29,14 +34,9 @@ class ShowTrack extends React.Component {
     }
 
     render() {
-        let showTrack = this.props.track // if no such track -> currentTrack = null
+        let currentTrack = this.props.track // if no such track -> currentTrack = null
 
-        if (!showTrack) {
-            // [NOTE] PICK ONE: refresh works, OR redirect works (not both)
-            // if I want just refresh to work: comment out below line
-
-            this.props.history.push("/")
-
+        if (!currentTrack) {
             return null;
         } else {
 
@@ -50,7 +50,7 @@ class ShowTrack extends React.Component {
                 canEditTrack = (
                     <>
                         <EditTrackFormContainer 
-                            track={showTrack}
+                            track={currentTrack}
                         />
                         <br />
                     </>
@@ -94,17 +94,16 @@ class ShowTrack extends React.Component {
                         <br />
 
                         {/* Cover Art */}
-                        <img src={showTrack.imageURL} className="coverArt"/>
+                        <img src={currentTrack.imageURL} className="coverArt"/>
                         <br />
                         <br />
 
-                        {/* [TEST] [WORKS] */}
+                        {/* Button Toggles based on "isPlaying" Global State */}
                         {currentTrackButton}
                         <br />
                         <br />
 
-    
-                        <p>Track Title: {showTrack.title}</p>
+                        <p>Track Title: {currentTrack.title}</p>
                         <br />
                         {/* Edit Track Form */}
                         {canEditTrack}
