@@ -12,11 +12,10 @@ class HomePage extends React.Component {
         return (
             <>
                 <Modal />
-                <header>
-                    <nav className="homepage-bar"> 
-                        <GreetingContainer />
-                    </nav>
-                </header>
+
+                <nav className="homepage-bar"> 
+                    <GreetingContainer />
+                </nav>
 
                 {/* Delete Filler below Later */}
                 <br />

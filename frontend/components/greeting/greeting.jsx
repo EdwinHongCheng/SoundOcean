@@ -4,7 +4,7 @@ import logo from "../../../app/assets/images/logo.png"
 
 const Greeting = ({ currentUser, logout, openModal }) => {
 
-    const soLogo = (
+    const soundOceanLogo = (
         <Link to="/">
             <img className="logo" src={logo} alt="Logo" />
         </Link>
@@ -13,7 +13,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <div className="signin-navbar">
             <div className="navbar-login-left-sect">
-                {soLogo}
+                {soundOceanLogo}
                 <p className="soundOcean-greeting-text">SoundOcean</p>
             </div>
             

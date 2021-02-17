@@ -12,16 +12,14 @@ class CreateTrackForm extends React.Component {
             uploaded: false, // switch to True -> display "UPLOAD SUCCESS" after a good upload
             cover_art: null, // for Cover Art File Upload
             coverArtPreviewURL: null,
-
-            // [TEST] Audio File Upload
-            audio_file: null
+            audio_file: null // Audio File Upload
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.afterUpload = this.afterUpload.bind(this)
         this.handleFile = this.handleFile.bind(this)
 
-        // [TEST] Upload Audio File
+        // Upload Audio File
         this.handleAudioFile = this.handleAudioFile.bind(this)
     }
 
@@ -52,7 +50,7 @@ class CreateTrackForm extends React.Component {
         } 
     }
 
-    // [TEST] Upload Audio File
+    // Upload Audio File
     handleAudioFile(e) {
         this.setState( { audio_file: e.currentTarget.files[0] } )
     }
