@@ -5,18 +5,6 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
 
-// ---------------------------------------------------------------------------->
-// [TEST] current track - can refactor/put this somewhere else later
-export const RECEIVE_CURRENT_TRACK = "RECEIVE_CURRENT_TRACK"
-
-export const receiveCurrentTrack = currentTrackId => ({
-    type: RECEIVE_CURRENT_TRACK,
-    currentTrackId
-})
-// ---------------------------------------------------------------------------->
-
-
-
 // Action Creators
 export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,

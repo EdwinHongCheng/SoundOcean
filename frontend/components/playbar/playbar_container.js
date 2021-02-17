@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { receiveCurrentTrack } from '../../actions/session_actions';
+import { receiveCurrentTrack } from '../../actions/ui_actions';
 import PlayBar from './playbar';
 
 
@@ -12,7 +12,7 @@ const mSTP = state => {
 };
 
 const mDTP = dispatch => ({
-    receiveCurrentTrack: track => dispatch(receiveCurrentTrack(track))
+    receiveCurrentTrack: trackId => dispatch(receiveCurrentTrack(trackId))
 });
 
 export default connect(mSTP, mDTP)(PlayBar);

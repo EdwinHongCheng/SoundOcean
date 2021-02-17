@@ -1,6 +1,6 @@
 import {
     RECEIVE_CURRENT_TRACK
-} from '../actions/session_actions';
+} from '../actions/ui_actions';
 
 const defaultState = {
     id: null

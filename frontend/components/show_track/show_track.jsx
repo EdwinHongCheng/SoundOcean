@@ -3,12 +3,11 @@ import { Link, Redirect } from 'react-router-dom';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
 
 
-
 class ShowTrack extends React.Component {
     constructor(props) {
         super(props)
 
-        this.playCurrentTrack = this.playCurrentTrack.bind(this)
+        this.updateCurrentTrack = this.updateCurrentTrack.bind(this)
     }
 
     componentDidMount() {
@@ -17,7 +16,7 @@ class ShowTrack extends React.Component {
 
 
     // [TEST] updates Current Track to whatever is here
-    playCurrentTrack(e) {
+    updateCurrentTrack(e) {
         e.preventDefault()
         this.props.receiveCurrentTrack(this.props.track.id)
     }
@@ -79,7 +78,7 @@ class ShowTrack extends React.Component {
                     </div>
 
                     {/* [TEST] */}
-                    <button onClick={this.playCurrentTrack}>[TEST] Play Current Track (?)</button>
+                    <button onClick={this.updateCurrentTrack}>[TEST] Updates Current Track (?)</button>
                 </>
             )
         }
