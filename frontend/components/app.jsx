@@ -11,7 +11,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
  
 import HomePage from "./homepage/homepage";
 import DiscoverContainer from "./discover/discover_container";
-import CreateTrackFormContainer from "./track_form/create_track_form_container";
+import CreateTrackFormContainer from "./create_track/create_track_form_container";
 // Test - Show Track
 import ShowTrackContainer from "./show_track/show_track_container";
 
