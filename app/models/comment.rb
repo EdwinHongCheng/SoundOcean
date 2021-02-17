@@ -1,6 +1,9 @@
 class Comment < ApplicationRecord
     validates :body, :track_id, :author_id, presence: true
 
+    # [TEST] Goal: render errors for empty body (minimum 1 char long to post comment)
+    validates :body, length: { minimum: 1 }
+
     # Associations
     belongs_to :track,
         primary_key: :id,

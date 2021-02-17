@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
     # Track Routes (create, etc)
     resources :tracks, only: [ :index, :show, :create, :update, :destroy ]
+
+    # Comment Routes (just Create + Destroy for now)
+    resources :comments, only: [ :create, :destroy ]
   end
 
   root "static_pages#root"

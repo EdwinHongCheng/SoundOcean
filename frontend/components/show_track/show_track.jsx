@@ -31,7 +31,10 @@ class ShowTrack extends React.Component {
         } else {
 
             let canEditTrack;
-            if (this.props.currentUser.id === currentTrack.creator_id 
+            // [Demo user - cannot edit/delete]
+            if (this.props.currentUser.id === 1) {
+                // Nothing Happens (no access to edit form)
+            } else if (this.props.currentUser.id === currentTrack.creator_id
                 // everfall id = 2 -> has Admin Powers lol
                 || this.props.currentUser.id === 2) {
                 canEditTrack = (

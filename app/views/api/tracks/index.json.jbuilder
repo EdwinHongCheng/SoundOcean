@@ -7,6 +7,7 @@ json.tracks do
 end
 
 # [CHANGED] Erik's suggestion (to keep state = one source of truth, no dupes)
+# - NOTE: this gets my track creators' info to the global state
 json.users do
     @tracks.each do |track|
         json.set! track.creator.id do

@@ -23,7 +23,7 @@ class EditTrackForm extends React.Component {
         }
     }
 
-    // Old Way
+    // [Old Way]
     // handleSubmit(e) {
     //     e.preventDefault()
     //     // e.stopPropagation()
