@@ -33,8 +33,7 @@ class PlayBar extends React.Component {
                             document.getElementById('audio').pause()
                             this.setState({ isPlaying: false })
                         } 
-                    }
-                    >Pause Button</button>
+                    }>[Local] Pause Button</button>
                 )
             } else {
                 playPauseButton = (
@@ -43,7 +42,7 @@ class PlayBar extends React.Component {
                             document.getElementById('audio').play()
                             this.setState({ isPlaying: true })
                         }
-                    }>Play Button</button>
+                    }>[Local] Play Button</button>
                 )
             }
 
