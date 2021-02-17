@@ -11,7 +11,7 @@ tmp/
 !/log/.keep
 !/tmp/.keep
 
-# testing this - hope it ignores logs
+# [TEST][ WORKS ? ] - hope it ignores logs
 **/*.log
 log/*.log
 tmp/**/*

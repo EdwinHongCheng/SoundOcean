@@ -38,6 +38,8 @@ class App extends React.Component {
 
                     {/* Error Message Page (dont need)*/}
                     {/* <Route component={NotFound} /> */}
+
+                    {/* <Redirect to="/" />  */}
                 </Switch>
 
                 <PlayBarContainer />

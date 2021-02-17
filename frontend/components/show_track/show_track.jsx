@@ -32,8 +32,8 @@ class ShowTrack extends React.Component {
         let showTrack = this.props.track // if no such track -> currentTrack = null
 
         if (!showTrack) {
-
-            // [NOTE] PICK ONE: refresh works, OR redirect works (not)
+            // [NOTE] PICK ONE: refresh works, OR redirect works (not both)
+            // if I want just refresh to work: comment out below line
 
             this.props.history.push("/")
 
@@ -59,7 +59,7 @@ class ShowTrack extends React.Component {
 
             // [WORKS] ------------------------------------------------->
             let currentTrackButton;
-            if (this.props.track !== this.props.showTrack) {
+            if (this.props.track !== this.props.currentTrack) {
                 currentTrackButton = (
                     <button onClick={this.updateCurrentTrack}>
                         &#9654; Play This Track
@@ -86,7 +86,6 @@ class ShowTrack extends React.Component {
             }
             // -------------------------->
 
-
             return (
                 <>  
                     <div className="showTrackBody">
@@ -104,7 +103,7 @@ class ShowTrack extends React.Component {
                         <br />
                         <br />
 
-   
+    
                         <p>Track Title: {showTrack.title}</p>
                         <br />
                         {/* Edit Track Form */}
@@ -116,6 +115,7 @@ class ShowTrack extends React.Component {
                     </div>
                 </>
             )
+
         }
     }
 }
