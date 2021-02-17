@@ -55,16 +55,21 @@ class ShowTrack extends React.Component {
                         <br />
                         <br />
 
+                        {/* [TEST] */}
+                        <button onClick={this.updateCurrentTrack}>&#9654; Play Current Track</button>
+                        <br />
+                        <br />
+
 
                         {/* [TEST] Audio File (w3schools) - works! */}
                         {/* NOTE: No Auto-Loop: revert back to <audio controls> */}
-                        <audio controls loop>
+                        {/* <audio controls loop>
                             <source src={currentTrack.audioURL} type="audio/mpeg"/>
                             <source src={currentTrack.audioURL} type="audio/ogg" />
                             Your browser does not support the audio tag.
                         </audio>    
                         <br />
-                        <br /> 
+                        <br />  */}
 
 
                         <p>Track Title: {currentTrack.title}</p>
@@ -76,9 +81,6 @@ class ShowTrack extends React.Component {
                             <Link to="/">Back to Main Page</Link>
                         </div>
                     </div>
-
-                    {/* [TEST] */}
-                    <button onClick={this.updateCurrentTrack}>[TEST] Updates Current Track (?)</button>
                 </>
             )
         }
