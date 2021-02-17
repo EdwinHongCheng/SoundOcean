@@ -9,8 +9,8 @@ class PlayBar extends React.Component {
         if (this.props.currentTrack) {
 
             playbar = (
-                // NOTE: need a unique key to tell React it updated !!!
-                <audio controls loop key={this.props.currentTrack.id}>
+                // NOTE: need a unique "key" to tell React it updated !!!
+                <audio controls autoPlay loop key={this.props.currentTrack.id}>
                     <source src={this.props.currentTrack.audioURL} type="audio/mpeg" />
                     <source src={this.props.currentTrack.audioURL} type="audio/ogg" />
                         Your browser does not support the audio tag.
