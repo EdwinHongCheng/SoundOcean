@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ShowTrack from "./show_track";
-import { fetchTrack } from '../../actions/track_actions';
+import { fetchTrack, fetchTracks } from '../../actions/track_actions';
 import { receiveCurrentTrack, playTrack, pauseTrack } from '../../actions/ui_actions'
 
 const mSTP = (state, ownProps) => {
@@ -21,7 +21,10 @@ const mDTP = dispatch => {
         receiveCurrentTrack: track => dispatch(receiveCurrentTrack(track)),
         // [WORKS] updating isPlaying state (Play Pause)
         playTrack: () => dispatch(playTrack()),
-        pauseTrack: () => dispatch(pauseTrack())
+        pauseTrack: () => dispatch(pauseTrack()),
+
+        // [TEST] want to not crash when fetching page
+        fetchTracks: () => dispatch(fetchTracks())
     }
 }
 

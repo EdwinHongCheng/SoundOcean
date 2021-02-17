@@ -6,7 +6,7 @@ class DiscoverIndexItem extends React.Component {
 
         let currentTrack = this.props.track;
         let user = this.props.user;
-
+        
         return (
             <div className="discoverIndexItem">
                 <Link to={`/tracks/${currentTrack.id}`}><img src={currentTrack.imageURL} className="coverArt" /></Link>

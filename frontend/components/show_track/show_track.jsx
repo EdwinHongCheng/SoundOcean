@@ -25,9 +25,9 @@ class ShowTrack extends React.Component {
     render() {
         let currentTrack = this.props.track // if no such track -> currentTrack = null
 
-        // Return (redirects if currentTrack === null)
+        // Return (result: redirects if currentTrack === null)
         if (!currentTrack) {
-            return (<Redirect to="/discover" />)
+            return null;
         } else {
 
             let canEditTrack;
