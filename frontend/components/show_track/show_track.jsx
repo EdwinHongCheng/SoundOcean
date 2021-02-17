@@ -59,7 +59,7 @@ class ShowTrack extends React.Component {
                             document.getElementById('audio').pause()
                             this.props.pauseTrack()
                         }
-                    }>[Global Pause Button]</button>
+                    }>[ PAUSE ]</button>
                 )
             } else {
                 currentTrackButton = (
@@ -68,7 +68,7 @@ class ShowTrack extends React.Component {
                             document.getElementById('audio').play()
                             this.props.playTrack()
                         }
-                    }>[Global Play Button]</button>
+                    }>[  PLAY  ]</button>
                 )
             }
             // [TEST] -------------------------->
