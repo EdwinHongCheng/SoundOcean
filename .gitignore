@@ -13,6 +13,7 @@ tmp/
 
 # testing this - hope it ignores logs
 log/
+**/*.log
 
 # Ignore uploaded files in development
 /storage/*
