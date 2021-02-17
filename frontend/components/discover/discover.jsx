@@ -13,16 +13,15 @@ class Discover extends React.Component {
     render() {        
         const users = this.props.users
 
-        const allTracks = this.props.tracks.map(track => {
-
-            debugger
-            
+        const allTracks = this.props.tracks.map(track => {            
             return (
                 <DiscoverIndexItem
                     key={track.id}
                     track={track}
 
-                    // [TEST] super-janky way
+                    // [TEST][WORKS] super-janky way
+                    // RESULT: object of all users 
+                    // -> can key into specific user w track.creator_id
                     user={users[track.creator_id]}
                 />
             )
