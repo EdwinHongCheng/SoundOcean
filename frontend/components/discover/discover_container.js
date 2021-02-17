@@ -4,11 +4,20 @@ import { fetchTracks } from '../../actions/track_actions'
 
 
 const mSTP = ({ session, entities }) => {
+
+
+    // [TEST] super janky way
+    let allUsers = Object.values(entities.users);
+    let allUsersObject = {};
+    allUsers.forEach(user => {
+        allUsersObject[user.id] = user
+    })
+
     return {
         currentUser: entities.users[session.id],
         tracks: Object.values(entities.tracks),
-        // all current users - grab them
-        users: Object.values(entities.users)
+        // [TEST] super janky way
+        users: allUsersObject
     };
 };
 

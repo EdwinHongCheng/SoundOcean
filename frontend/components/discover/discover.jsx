@@ -14,12 +14,16 @@ class Discover extends React.Component {
         const users = this.props.users
 
         const allTracks = this.props.tracks.map(track => {
+
+            debugger
+            
             return (
                 <DiscoverIndexItem
                     key={track.id}
                     track={track}
-                    // NOTE: -1 cuz 1st user at index 0 in the passed-down array, not 1
-                    user={users[track.creator_id - 1]}
+
+                    // [TEST] super-janky way
+                    user={users[track.creator_id]}
                 />
             )
         })
