@@ -1,5 +1,20 @@
+// [STUCK] want playbar left (the music player) + playbar right (the text/info)
+// to be justify-content: space-between -> DOESNT WORK THO
+
 .playbar {
     position: fixed;
+    display: flex;
+    align-items: center;
     bottom: 20px;
-    left: 24px;
+}
+
+.playbar-left {
+    margin-left: 24px;
+}
+
+.playbar-right {
+    padding: 6px;
+    background-color: white;
+    border: 1px solid black;
+    right: 0;
 }

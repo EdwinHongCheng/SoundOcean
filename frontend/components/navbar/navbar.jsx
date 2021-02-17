@@ -56,8 +56,6 @@ const Navbar = ({ currentUser, logout }) => {
         }
     }
 
-
-
     //------------------------------------------------------------------------->
     // Post-Sign Up Page Nav Bar, etc.
 
