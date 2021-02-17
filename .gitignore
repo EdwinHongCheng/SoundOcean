@@ -11,6 +11,9 @@ tmp/
 !/log/.keep
 !/tmp/.keep
 
+# testing this - hope it ignores logs
+log/
+
 # Ignore uploaded files in development
 /storage/*
 
