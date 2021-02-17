@@ -27,7 +27,7 @@ class ShowTrack extends React.Component {
 
         // Return (redirects if currentTrack === null)
         if (!currentTrack) {
-            return (<><Redirect to="/discover" /></>)
+            return (<Redirect to="/discover" />)
         } else {
 
             let canEditTrack;

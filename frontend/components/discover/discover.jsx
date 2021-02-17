@@ -6,11 +6,19 @@ class Discover extends React.Component {
         super(props)
     }
 
-    componentDidMount() {
-        this.props.fetchTracks()
-    }
+    // [BAD][OLD WAY] - doesn't work after going to Show Page -> refresh ->
+    // auto-redirect to "Discover" page
+    // componentDidMount() {
+    //     this.props.fetchTracks()
+    // }
 
-    render() {        
+    render() {
+
+        // [WORKS] - now, going to Track Show page -> refreshing ->
+        // -> auto-redirect to "Discover" -> now, tracks are fetched 
+        // to global state before everything else is rendered
+        this.props.fetchTracks()
+
         const users = this.props.users
 
         const allTracks = this.props.tracks.map(track => {            
@@ -28,7 +36,7 @@ class Discover extends React.Component {
         })
 
         return(
-            <>
+            <div>
                 <div className="discoverBody">
                     {/* Delete Filler below Later (???) */ }
                     <br />
@@ -40,7 +48,7 @@ class Discover extends React.Component {
                     </div>
                 </div>
     
-            </>
+            </div>
         )
     }
 };

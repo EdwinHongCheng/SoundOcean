@@ -82,7 +82,7 @@ class EditTrackForm extends React.Component {
 
     render() {
 
-        {/* Testing Preview */ }
+        {/* [WORKS] Update Image Preview */ }
         let imagePreview = null;
         if (this.state.coverArtPreviewURL) {
             imagePreview = (
@@ -101,7 +101,7 @@ class EditTrackForm extends React.Component {
                     <h1>Edit Track Form</h1>
                     <br />
 
-                    {/* Test - rendering Errors when uploading track */}
+                    {/* [WORKS] rendering Errors when uploading track */}
                     {this.renderErrors()}
                     
                     <label>Title

@@ -7,7 +7,7 @@ import { fetchTrack, updateTrack, deleteTrack, receiveErrors, clearErrors } from
 const mSTP = (state, ownProps) => {
     return {
         track: ownProps.track,
-        // Test - Render Errors for edit
+        // [WORKS] Render Errors for edit
         errors: state.errors.trackErrors
     }
 }
@@ -17,7 +17,7 @@ const mDTP = dispatch => {
         fetchTrack: trackId => dispatch(fetchTrack(trackId)),
         updateTrack: track => dispatch(updateTrack(track)),
         deleteTrack: trackId => dispatch(deleteTrack(trackId)),
-        // Test - clear edit errors?
+        // [WORKS] clear edit errors
         clearErrors: () => dispatch(clearErrors())
     }
 }

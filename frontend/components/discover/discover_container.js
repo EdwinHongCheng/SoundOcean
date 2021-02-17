@@ -6,7 +6,7 @@ import { fetchTracks } from '../../actions/track_actions'
 const mSTP = ({ session, entities }) => {
 
 
-    // [TEST][WORKS] super-janky way
+    // [TEST][WORKS] super-janky way ------------------------------------------>
     // RESULT: object of all users 
     // -> can key into specific user w track.creator_id
     let allUsers = Object.values(entities.users);
@@ -14,6 +14,7 @@ const mSTP = ({ session, entities }) => {
     allUsers.forEach(user => {
         allUsersObject[user.id] = user
     })
+    // ------------------------------------------------------------------------>
 
     return {
         currentUser: entities.users[session.id],
