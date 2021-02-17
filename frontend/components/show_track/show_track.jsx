@@ -8,9 +8,6 @@ class ShowTrack extends React.Component {
         super(props)
 
         this.updateCurrentTrack = this.updateCurrentTrack.bind(this)
-
-        this.playCurrentTrack = this.playCurrentTrack.bind(this)
-        this.pauseCurrentTrack = this.pauseCurrentTrack.bind(this)
     }
 
     componentDidMount() {
@@ -24,19 +21,6 @@ class ShowTrack extends React.Component {
         this.props.receiveCurrentTrack(this.props.track.id)
         this.props.playTrack()
     }
-
-
-    // [TEST] changing global state of isPlaying (boolean)
-    playCurrentTrack(e) {
-        e.preventDefault()
-        this.props.playTrack()
-    }
-    pauseCurrentTrack(e) {
-        e.preventDefault()
-        this.props.pauseTrack()
-    }
-
-
 
     render() {
         let currentTrack = this.props.track // if no such track -> currentTrack = null
@@ -65,7 +49,7 @@ class ShowTrack extends React.Component {
             if (this.props.track !== this.props.currentTrack) {
                 currentTrackButton = (
                     <button onClick={this.updateCurrentTrack}>
-                        &#9654; Play Current Track
+                        &#9654; Play This Track
                     </button>
                 )
             } else if (this.props.isPlaying) {

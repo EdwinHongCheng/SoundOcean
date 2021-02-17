@@ -3,9 +3,6 @@ import ShowTrack from "./show_track";
 import { fetchTrack } from '../../actions/track_actions';
 import { receiveCurrentTrack, playTrack, pauseTrack } from '../../actions/ui_actions'
 
-
-
-
 const mSTP = (state, ownProps) => {
     return {
         // NOTE: track refers to the show page's specific track
