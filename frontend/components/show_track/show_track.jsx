@@ -8,6 +8,9 @@ class ShowTrack extends React.Component {
         super(props)
 
         this.updateCurrentTrack = this.updateCurrentTrack.bind(this)
+
+        this.playCurrentTrack = this.playCurrentTrack.bind(this)
+        this.pauseCurrentTrack = this.pauseCurrentTrack.bind(this)
     }
 
     componentDidMount() {
@@ -15,11 +18,25 @@ class ShowTrack extends React.Component {
     }
 
 
-    // [TEST] updates Current Track to whatever is here
+    // [WORKS] updates Current Track to whatever is here
     updateCurrentTrack(e) {
         e.preventDefault()
         this.props.receiveCurrentTrack(this.props.track.id)
+        this.props.playTrack()
     }
+
+
+    // [TEST] changing global state of isPlaying (boolean)
+    playCurrentTrack(e) {
+        e.preventDefault()
+        this.props.playTrack()
+    }
+    pauseCurrentTrack(e) {
+        e.preventDefault()
+        this.props.pauseTrack()
+    }
+
+
 
     render() {
         let currentTrack = this.props.track // if no such track -> currentTrack = null
@@ -43,6 +60,36 @@ class ShowTrack extends React.Component {
                 )
             }
 
+            // [TEST] [WORKS] ------------------------------------------------->
+            let currentTrackButton;
+            if (this.props.track !== this.props.currentTrack) {
+                currentTrackButton = (
+                    <button onClick={this.updateCurrentTrack}>
+                        &#9654; Play Current Track
+                    </button>
+                )
+            } else if (this.props.isPlaying) {
+                currentTrackButton = (
+                    <button onClick={
+                        () => {
+                            document.getElementById('audio').pause()
+                            this.props.pauseTrack()
+                        }
+                    }>[Global Pause Button]</button>
+                )
+            } else {
+                currentTrackButton = (
+                    <button onClick={
+                        () => {
+                            document.getElementById('audio').play()
+                            this.props.playTrack()
+                        }
+                    }>[Global Play Button]</button>
+                )
+            }
+            // [TEST] -------------------------->
+
+
             return (
                 <>  
                     <div className="showTrackBody">
@@ -55,23 +102,12 @@ class ShowTrack extends React.Component {
                         <br />
                         <br />
 
-                        {/* [TEST] */}
-                        <button onClick={this.updateCurrentTrack}>&#9654; Play Current Track</button>
+                        {/* [TEST] [WORKS] */}
+                        {currentTrackButton}
                         <br />
                         <br />
 
-
-                        {/* [TEST] Audio File (w3schools) - works! */}
-                        {/* NOTE: No Auto-Loop: revert back to <audio controls> */}
-                        {/* <audio controls loop>
-                            <source src={currentTrack.audioURL} type="audio/mpeg"/>
-                            <source src={currentTrack.audioURL} type="audio/ogg" />
-                            Your browser does not support the audio tag.
-                        </audio>    
-                        <br />
-                        <br />  */}
-
-
+   
                         <p>Track Title: {currentTrack.title}</p>
                         <br />
                         {/* Edit Track Form */}

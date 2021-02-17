@@ -1,15 +1,6 @@
 import React from 'react';
 
 class PlayBar extends React.Component {
-    constructor(props) {
-        super(props)
-
-        // [TEST] [DELETE LATER] local state to toggle between Play/Pause button
-        this.state = {
-            isPlaying: true
-        }
-    }
-
 
     render() {
         let playbarAll;
@@ -17,6 +8,7 @@ class PlayBar extends React.Component {
         if (this.props.currentTrack) {
 
             let playbar = (
+                // NOTE: can remove "controls" to make audio player not show up
                 <audio id="audio" controls autoPlay loop key={this.props.currentTrack.id}>
                     <source src={this.props.currentTrack.audioURL} type="audio/mpeg" />
                     <source src={this.props.currentTrack.audioURL} type="audio/ogg" />
@@ -24,27 +16,55 @@ class PlayBar extends React.Component {
                 </audio>
             )
 
-            // [TEST] [WORKS LOCALLY] Play/Pause Button 
+
             let playPauseButton;
-            if (this.state.isPlaying) {
+            if (this.props.isPlaying) {
                 playPauseButton = (
                     <button onClick={
                         () => {
                             document.getElementById('audio').pause()
-                            this.setState({ isPlaying: false })
+                            this.props.pauseTrack()
                         } 
-                    }>[Local Pause Button]</button>
+                    }>[Global Pause Button]</button>
                 )
             } else {
                 playPauseButton = (
                     <button onClick={
                         () => {
                             document.getElementById('audio').play()
-                            this.setState({ isPlaying: true })
+                            this.props.playTrack()
                         }
-                    }>[Local Play Button]</button>
+                    }>[Global Play Button]</button>
                 )
             }
+
+
+            
+
+
+            // [OLD VERSION] LOCAL - works
+            // let playPauseButton;
+            // if (this.state.isPlaying) {
+            //     playPauseButton = (
+            //         <button onClick={
+            //             () => {
+            //                 document.getElementById('audio').pause()
+            //                 this.setState({ isPlaying: false })
+            //             } 
+            //         }>[Local Pause Button]</button>
+            //     )
+            // } else {
+            //     playPauseButton = (
+            //         <button onClick={
+            //             () => {
+            //                 document.getElementById('audio').play()
+            //                 this.setState({ isPlaying: true })
+            //             }
+            //         }>[Local Play Button]</button>
+            //     )
+            // }
+
+
 
             playbarAll = (
                 <div className="playbar">
@@ -57,7 +77,7 @@ class PlayBar extends React.Component {
                     <p className="playbar-right">Now Playing: {this.props.currentTrack.title}</p>
 
 
-                    {/* [TEST] Play/Pause Buttons (delete later) */}
+                    {/* [TEST - WORKS] Play/Pause Buttons (delete later) */}
                     {playPauseButton}
                 </div>
             )
