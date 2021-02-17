@@ -4,6 +4,12 @@ import DiscoverIndexItem from './discover_index_item'
 class Discover extends React.Component {
     constructor(props) {
         super(props)
+
+        // [WORKS] - now, going to Track Show page -> refreshing ->
+        // -> auto-redirect to "Discover" -> now, tracks are fetched 
+        // to global state before everything else is rendered
+        // [NOTE] can't do in render or else I continuously render (???)
+        this.props.fetchTracks()
     }
 
     // [BAD][OLD WAY] - doesn't work after going to Show Page -> refresh ->
@@ -13,12 +19,6 @@ class Discover extends React.Component {
     // }
 
     render() {
-
-        // [WORKS] - now, going to Track Show page -> refreshing ->
-        // -> auto-redirect to "Discover" -> now, tracks are fetched 
-        // to global state before everything else is rendered
-        this.props.fetchTracks()
-
         const users = this.props.users
 
         const allTracks = this.props.tracks.map(track => {            
