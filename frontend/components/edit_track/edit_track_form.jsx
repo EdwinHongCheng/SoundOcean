@@ -1,5 +1,8 @@
 import React from 'react';
 
+// [TEST] want to redirect to "discover" page after delete
+import { withRouter } from 'react-router';
+
 class EditTrackForm extends React.Component {
     constructor(props) {
         super(props)
@@ -127,11 +130,14 @@ class EditTrackForm extends React.Component {
                     <br />
                     <input type="submit" value="Update Track"/>
                     <span> </span>
-                    <button type="button" onClick={() => this.props.deleteTrack(this.state.id)}>Delete Track</button>
+                    <button type="button" onClick={
+                        () => this.props.deleteTrack(this.state.id).then( () => this.props.history.push("/"))
+                    }
+                    >Delete Track</button>
                 </form>
             </div>
         )
     }
 }
 
-export default EditTrackForm;
+export default withRouter(EditTrackForm);

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import EditTrackForm from './edit_track_form';
 import { fetchTrack, updateTrack, deleteTrack, receiveErrors, clearErrors } from '../../actions/track_actions'
 
-
 const mSTP = (state, ownProps) => {
     return {
         track: ownProps.track,

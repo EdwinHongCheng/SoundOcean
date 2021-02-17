@@ -3,6 +3,12 @@ import { Link, Redirect } from 'react-router-dom';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
 
 
+// [TEST] want to redirect to "discover" page if track doesn't exist
+// - it works. but 
+// Issue: now I can't refresh -> go back to same existing track on show page
+import { withRouter } from 'react-router';
+
+
 class ShowTrack extends React.Component {
     constructor(props) {
         super(props)
@@ -23,10 +29,14 @@ class ShowTrack extends React.Component {
     }
 
     render() {
-        let currentTrack = this.props.track // if no such track -> currentTrack = null
+        let showTrack = this.props.track // if no such track -> currentTrack = null
 
-        // Return (result: redirects if currentTrack === null)
-        if (!currentTrack) {
+        if (!showTrack) {
+
+            // [NOTE] PICK ONE: refresh works, OR redirect works (not)
+
+            this.props.history.push("/")
+
             return null;
         } else {
 
@@ -40,7 +50,7 @@ class ShowTrack extends React.Component {
                 canEditTrack = (
                     <>
                         <EditTrackFormContainer 
-                            track={currentTrack}
+                            track={showTrack}
                         />
                         <br />
                     </>
@@ -49,7 +59,7 @@ class ShowTrack extends React.Component {
 
             // [WORKS] ------------------------------------------------->
             let currentTrackButton;
-            if (this.props.track !== this.props.currentTrack) {
+            if (this.props.track !== this.props.showTrack) {
                 currentTrackButton = (
                     <button onClick={this.updateCurrentTrack}>
                         &#9654; Play This Track
@@ -85,7 +95,7 @@ class ShowTrack extends React.Component {
                         <br />
 
                         {/* Cover Art */}
-                        <img src={currentTrack.imageURL} className="coverArt"/>
+                        <img src={showTrack.imageURL} className="coverArt"/>
                         <br />
                         <br />
 
@@ -95,7 +105,7 @@ class ShowTrack extends React.Component {
                         <br />
 
    
-                        <p>Track Title: {currentTrack.title}</p>
+                        <p>Track Title: {showTrack.title}</p>
                         <br />
                         {/* Edit Track Form */}
                         {canEditTrack}
@@ -110,4 +120,4 @@ class ShowTrack extends React.Component {
     }
 }
 
-export default ShowTrack;
+export default withRouter(ShowTrack);
