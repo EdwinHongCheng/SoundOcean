@@ -107,6 +107,7 @@ class ShowTrack extends React.Component {
                         <br />
 
                         <p>Track Title: {currentTrack.title}</p>
+                        <p>Track Creator: {currentTrack.creator}</p>
                         <br />
                         {/* Edit Track Form */}
                         {canEditTrack}
