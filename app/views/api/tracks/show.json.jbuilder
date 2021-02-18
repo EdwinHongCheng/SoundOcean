@@ -11,8 +11,15 @@ json.comments do
         json.set! comment.id do
             json.extract! comment, :id, :body, :author_id, :track_id, :created_at
 
-            # [TEST] putting each comments author's name in global slice of state
+            # [WORKS] putting each comments author's name in global slice of state
             json.author comment.author.username
+
+            # [TEST] - works for getting profile pic for commenters
+            if comment.author.profile_pic.attached?
+                json.profilePicURL url_for(comment.author.profile_pic)
+            else
+                json.profilePicURL 'https://ms.yugipedia.com//2/22/Gellenduo-TF04-JP-VG.jpg'
+            end
         end
     end
 end
