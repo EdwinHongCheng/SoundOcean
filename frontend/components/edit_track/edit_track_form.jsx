@@ -128,12 +128,16 @@ class EditTrackForm extends React.Component {
 
                     <br />
                     <br />
+                    
                     <input type="submit" value="Update Track"/>
+
                     <span> </span>
+
                     <button type="button" onClick={
                         () => this.props.deleteTrack(this.state.id).then( () => this.props.history.push("/"))
                     }
                     >Delete Track</button>
+
                 </form>
             </div>
         )

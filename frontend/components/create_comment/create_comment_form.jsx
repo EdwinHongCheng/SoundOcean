@@ -26,16 +26,46 @@ class CreateCommentForm extends React.Component {
         this.props.createComment(this.state)
             // [!!! WORKS (JANKY) ] .then (fetch track again to update comment's new author name)
             .then(() => this.props.fetchTrack(this.props.trackId))
-        
-        this.setState({
-            body: '',
-            track_id: this.props.trackId
-        })
+
+            .then(() => {
+                this.setState({
+                    body: '',
+                    track_id: this.props.trackId
+                })
+            })
     }
+
+
+    // [WORKS] rendering comment errors (if blank or too long - 20 chars max)
+    //------------------------------------------------------------------------->
+    // render errors when editing (such as title = blank)
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <>
+                        <li key={`error-${i}`} className="renderedErrors">
+                            {error}
+                        </li>
+                        <br />
+                    </>
+                ))}
+            </ul>
+        );
+    }
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+    //------------------------------------------------------------------------->
+
+
 
     render() {
         return (
             <div>
+                {/* [WORKS] rendering Errors when uploading track */}
+                {this.renderErrors()}
+
                 <form onSubmit={this.handleSubmit}>
                     <textarea
                         placeholder="Write a comment"
