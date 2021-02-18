@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
-
-// [*WORKS-ish] want to redirect to "discover" page if track doesn't exist
-// Issue: now I can't refresh -> go back to same existing track on show page
 import { withRouter } from 'react-router';
+
+// [TEST] to create comment form
+import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
 
 
 class ShowTrack extends React.Component {
@@ -86,6 +86,8 @@ class ShowTrack extends React.Component {
             }
             // -------------------------->
 
+            // debugger
+
             return (
                 <>  
                     <div className="showTrackBody">
@@ -107,6 +109,14 @@ class ShowTrack extends React.Component {
                         <br />
                         {/* Edit Track Form */}
                         {canEditTrack}
+
+
+                        {/* [TEST] Create Comment */}
+
+                    
+                        <CreateCommentFormContainer 
+                            trackId={this.props.track.id}
+                        />
 
                         <div>
                             <Link to="/">Back to Main Page</Link>

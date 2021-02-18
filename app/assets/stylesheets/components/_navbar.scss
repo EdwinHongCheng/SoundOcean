@@ -6,7 +6,9 @@
 // To Center Nav Bar -> gives it margins if screen = stretch to wide
 // - in homepage.jsx (affects the GreetingsContainer)
 .navigation-bar {
+  // Can take out max-width to get extended blue border
   max-width: 901px;
+  
   height: 48px;
   margin: auto;
 }
