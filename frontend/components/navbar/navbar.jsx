@@ -82,11 +82,8 @@ const Navbar = ({ currentUser, logout }) => {
                         <div className="dropdown2">
                             <p onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</p>
                             <div id="myDropdown2" className="dropdown-content2">
-                                {/* [NOTE] want to make this an onClick instead to avoid the purple-clicked "link" */}
                                 <Link to={`/users/${currentUser.id}`}>
-                                    <div>
-                                        Profile
-                                    </div>
+                                    <div>Profile</div>
                                 </Link>
                             </div>
                         </div>
