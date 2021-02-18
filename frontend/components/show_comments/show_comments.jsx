@@ -2,7 +2,13 @@ import React from 'react';
 
 class ShowComments extends React.Component {
 
+    // [TEST] want to clear global state of comments once exiting show page
+    componentWillUnmount() {
+        this.props.clearComments()
+    }
+
     render() {
+
         let allComments = this.props.trackComments.map((comment, idx) => {
             return (
                 <div key={comment.id}>
@@ -21,7 +27,8 @@ class ShowComments extends React.Component {
                 </div>
             )    
         })
-
+        
+    
         return (
             <div>
                 {allComments}               

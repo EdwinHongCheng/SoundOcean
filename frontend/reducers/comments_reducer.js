@@ -1,4 +1,4 @@
-import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions'
+import { RECEIVE_COMMENT, REMOVE_COMMENT, CLEAR_COMMENTS } from '../actions/comment_actions'
 
 import { RECEIVE_TRACK } from '../actions/track_actions'
 
@@ -18,7 +18,11 @@ const CommentsReducer = (oldState = {}, action) => {
 
         case RECEIVE_TRACK:
             return Object.assign({}, action.track.comments);
-    
+
+        // [TEST] clear comments from global state
+        case CLEAR_COMMENTS:
+            return {};
+
         default:
             return oldState;
     }
