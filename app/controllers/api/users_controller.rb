@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
         end
     end
 
-    # [TEST] show user (after chaging routes to resources :users)
+    # [TEST] show user (after changing routes to resources :users)
     def show
         @user = User.find(params[:id])
         if @user

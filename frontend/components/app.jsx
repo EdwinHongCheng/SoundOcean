@@ -18,6 +18,11 @@ import PlayBarContainer from './playbar/playbar_container'
 // import NotFound from "./error_messages/not_found"
 
 
+
+// [TEST] user show pages path
+import ShowUserContainer from './show_user/show_user_container';
+
+
 class App extends React.Component {
 
     render() {
@@ -30,6 +35,11 @@ class App extends React.Component {
                     <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
                     <ProtectedRoute exact path="/upload" component={CreateTrackFormContainer} />
                     <ProtectedRoute exact path="/tracks/:trackId" component={ShowTrackContainer} />
+
+
+                    {/* [TEST] user show pages path (Refer to track show page?) */}
+                    <ProtectedRoute exact path="/users/:userId" component={ShowUserContainer} />
+
 
                     <AuthRoute exact path="/" component={HomePage} />
 

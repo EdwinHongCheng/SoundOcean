@@ -6,7 +6,7 @@ import { withRouter } from 'react-router';
 // [WORKS] to create comment form
 import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
 
-// [TEST] show all comments + their delete buttons (if author of comment)
+// [WORKS] show all comments + their delete buttons (if author of comment)
 import ShowCommentContainer from '../show_comments/show_comments_container';
 
 
@@ -41,6 +41,8 @@ class ShowTrack extends React.Component {
 
         if (!currentTrack) {
             return null;
+
+        // *** [if currentTrack exists]---------------------------------------->    
         } else {
 
             let canEditTrack;
@@ -133,6 +135,7 @@ class ShowTrack extends React.Component {
             )
 
         }
+        // *** [if currentTrack exists]---------------------------------------->   
     }
 }
 
