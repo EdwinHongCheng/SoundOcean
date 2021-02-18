@@ -11,7 +11,6 @@ const mSTP = state => {
         currentUserId: state.session.id,
         currentUser: state.entities.users[state.session.id],
         tracks: state.entities.tracks,
-        formType: 'Create Track',
         errors: state.errors.trackErrors
     }
 }

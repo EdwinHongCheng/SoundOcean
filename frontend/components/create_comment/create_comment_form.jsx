@@ -11,7 +11,6 @@ class CreateCommentForm extends React.Component {
             track_id: this.props.trackId
         }
 
-
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -23,7 +22,11 @@ class CreateCommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createComment(this.state);
+
+        this.props.createComment(this.state)
+            // [!!! WORKS (JANKY) ] .then (fetch track again to update comment's new author name)
+            .then(() => this.props.fetchTrack(this.props.trackId))
+        
         this.setState({
             body: '',
             track_id: this.props.trackId

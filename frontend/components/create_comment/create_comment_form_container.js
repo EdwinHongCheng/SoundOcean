@@ -4,20 +4,24 @@ import CreateCommentForm from './create_comment_form';
 import { createComment } from '../../actions/comment_actions';
 
 
-// [TEST] pass down Track Show page's track id to create comment
+// [WORKS but janky?] fetch track (and new comment + comment author info) w it
+import { fetchTrack } from '../../actions/track_actions';
+
+
 const mSTP = (state, ownProps) => {
     return {
         currentUserId: state.session.id,
         currentUser: state.entities.users[state.session.id],
         comments: state.entities.comments,
-        // [TEST] pass down Track Show page's track id to create comment
+        // [WORKS] pass down Track Show page's track id to create comment
         trackId: ownProps.trackId
     }
 }
 
 const mDTP = dispatch => {
     return {
-        createComment: comment => dispatch(createComment(comment))
+        createComment: comment => dispatch(createComment(comment)),
+        fetchTrack: trackId => dispatch(fetchTrack(trackId))
     }
 }
 

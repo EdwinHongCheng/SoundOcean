@@ -6,7 +6,7 @@ import { withRouter } from 'react-router';
 // [WORKS] to create comment form
 import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
 
-// [TEST] show all comments + their delete buttons (not restricted to comment owner yet)
+// [TEST] show all comments + their delete buttons (if author of comment)
 import ShowCommentContainer from '../show_comments/show_comments_container';
 
 
@@ -111,16 +111,15 @@ class ShowTrack extends React.Component {
                         {/* Edit Track Form */}
                         {canEditTrack}
 
-
-                        {/* [TEST] Show All of a Track's Comments */}
-                        <ShowCommentContainer />
-
-
-                        {/* [WORKS] Create Comment */}                    
-                        <CreateCommentFormContainer 
+                        {/* [WORKS] Create Comment */}
+                        <CreateCommentFormContainer
                             trackId={this.props.track.id}
                         />
                         <br />
+
+
+                        {/* [WORKS] Show All of a Track's Comments */}
+                        <ShowCommentContainer />
 
                         <div>
                             <Link to="/">Back to Main Page</Link>

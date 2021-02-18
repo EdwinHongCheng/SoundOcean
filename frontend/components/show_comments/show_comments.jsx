@@ -10,20 +10,35 @@ class ShowComments extends React.Component {
     render() {
 
         let allComments = this.props.trackComments.map((comment, idx) => {
+
             return (
                 <div key={comment.id}>
-                    {/* Adding 1 so 1st comment = number 1, not 0 */}
-                    <p>Comment #{idx + 1}</p> 
-                    <p>{comment.body}</p>
 
-                    {/* [TEST] Conditional Delete Button (comments can only be deleted by their author) */}
+                    <p> ----------------------------------------</p>
+
+                    {/* Adding 1 so 1st comment = number 1, not 0 */}
+                    {/* <p>Comment #{idx + 1}</p> */}
+
+                    {/* [!!! JANK WORKS] NOTE: see create_comment_form.jsx */}
+                    <p>Comment Author: {comment.author}</p>
+                    <br />
+
+
+                    <p>Comment Body: {comment.body}</p>
+
+                    {/* [WORKS] Conditional Delete Button (comments can only be deleted by their author) */}
                     {/* ALSO: gave everfall admin powers (lol) */}
                     {this.props.currentUserId === comment.author_id || this.props.currentUserId === 2 ?
-                        <button onClick={() => this.props.deleteComment(comment.id)}>DELETE COMMENT</button> 
+
+                        (<div>
+                            <br />
+                            <button onClick={() => this.props.deleteComment(comment.id)}>DELETE COMMENT</button>
+                        </div>)
+
                     : null}
 
+
                     <br />
-                    <br /> 
                 </div>
             )    
         })

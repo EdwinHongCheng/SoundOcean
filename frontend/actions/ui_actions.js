@@ -6,7 +6,7 @@ export const receiveCurrentTrack = currentTrackId => ({
 })
 
 //----------------------------------------------------------------------------->
-// [TEST] making isPlaying slice of state
+// [WORKS] making isPlaying slice of state
 export const PLAY_TRACK = "PLAY_TRACK";
 export const PAUSE_TRACK = "PAUSE_TRACK";
 
@@ -21,5 +21,4 @@ export const pauseTrack = () => {
         type: PAUSE_TRACK
     };
 };
-
 //----------------------------------------------------------------------------->
