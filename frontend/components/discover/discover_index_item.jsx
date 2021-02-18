@@ -15,7 +15,12 @@ class DiscoverIndexItem extends React.Component {
 
                 {/* Display Username (new + old ways) */}
                 {/* [New Way - Works] */}
-                <p className="creatorNameText">{currentTrack.creator}</p>
+
+                <Link to={`/users/${currentTrack.creator_id}`}>
+                    <div className="creatorNameText">{currentTrack.creator}</div>
+                </Link>
+
+                
                 
                 {/* Old Way (using new way now, probs better) */}
                 {/* <p className="creatorNameText">{user.username}</p> */}
