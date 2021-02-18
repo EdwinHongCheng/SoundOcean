@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 
 // [WORKS] to create comment form
 import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
@@ -141,4 +141,5 @@ class ShowTrack extends React.Component {
     }
 }
 
-export default withRouter(ShowTrack);
+// export default withRouter(ShowTrack);
+export default ShowTrack;
