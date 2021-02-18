@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import logo from "../../../app/assets/images/logo.png"
 
 const Navbar = ({ currentUser, logout }) => {
@@ -82,7 +82,8 @@ const Navbar = ({ currentUser, logout }) => {
                         <div className="dropdown2">
                             <p onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</p>
                             <div id="myDropdown2" className="dropdown-content2">
-                                <div>My Tracks</div>
+                                {/* NOTE make this a redirect to user show page */}
+                                <div><Link to={`/users/${currentUser.id}`}>Profile</Link></div>
                             </div>
                         </div>
                     </li>
