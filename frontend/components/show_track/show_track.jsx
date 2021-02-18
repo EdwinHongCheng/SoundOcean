@@ -3,8 +3,11 @@ import { Link, Redirect } from 'react-router-dom';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
 import { withRouter } from 'react-router';
 
-// [TEST] to create comment form
+// [WORKS] to create comment form
 import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
+
+// [TEST] show all comments + their delete buttons (not restricted to comment owner yet)
+import ShowCommentContainer from '../show_comments/show_comments_container';
 
 
 class ShowTrack extends React.Component {
@@ -85,7 +88,7 @@ class ShowTrack extends React.Component {
                 )
             }
             // -------------------------->
-            
+
             return (
                 <>  
                     <div className="showTrackBody">
@@ -109,12 +112,15 @@ class ShowTrack extends React.Component {
                         {canEditTrack}
 
 
-                        {/* [TEST] Create Comment */}
+                        {/* [TEST] Show All of a Track's Comments */}
+                        <ShowCommentContainer />
 
-                    
+
+                        {/* [WORKS] Create Comment */}                    
                         <CreateCommentFormContainer 
                             trackId={this.props.track.id}
                         />
+                        <br />
 
                         <div>
                             <Link to="/">Back to Main Page</Link>

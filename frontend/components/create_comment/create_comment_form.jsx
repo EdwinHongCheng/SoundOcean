@@ -22,11 +22,8 @@ class CreateCommentForm extends React.Component {
     }
 
     handleSubmit(e) {
-
         e.preventDefault();
-        
         this.props.createComment(this.state);
-
         this.setState({
             body: '',
             track_id: this.props.trackId
@@ -37,15 +34,13 @@ class CreateCommentForm extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-
                     <textarea
                         placeholder="Write a comment"
                         value={this.state.body}
                         onChange={this.update('body')} 
                     />
-
+                    <br />
                     <input type="submit" value="Create Comment" />
-
                 </form>
             </div>
         )
