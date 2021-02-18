@@ -17,15 +17,18 @@ class ShowComments extends React.Component {
                     <p>_____________________________________________</p>
                     <br />
 
-                    {/* Adding 1 so 1st comment = number 1, not 0 */}
+                    {/* [DONT NEED] Adding 1 so 1st comment = number 1, not 0 */}
                     {/* <p>Comment #{idx + 1}</p> */}
 
+
                     {/* [!!! JANK WORKS] NOTE: see create_comment_form.jsx */}
-                    <p>Comment Author: {comment.author}</p>
+                    <img className="commentProfilePic" src={comment.profilePicURL} />
+                    <span> {comment.author}</span>
+                    <br />
                     <br />
 
 
-                    <p>Comment Body: {comment.body}</p>
+                    <p>{comment.body}</p>
 
                     {/* [WORKS] Conditional Delete Button (comments can only be deleted by their author) */}
                     {/* ALSO: gave everfall admin powers (lol) */}
