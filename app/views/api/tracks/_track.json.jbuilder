@@ -33,6 +33,7 @@ end
 if track.creator.profile_pic.attached?
     json.profilePicURL url_for(track.creator.profile_pic)
 else
-    json.profilePicURL 'https://ms.yugipedia.com//2/24/Marshmallon-TF04-JP-VG.png'
+    json.profilePicURL 'https://ms.yugipedia.com//2/22/Gellenduo-TF04-JP-VG.jpg'
+    # json.profilePicURL 'https://ms.yugipedia.com//2/24/Marshmallon-TF04-JP-VG.png'
 end
 

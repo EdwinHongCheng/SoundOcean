@@ -7,5 +7,6 @@ json.extract! user, :id, :username, :email
 if user.profile_pic.attached?
     json.profilePicURL url_for(user.profile_pic)
 else
-    json.profilePicURL 'https://ms.yugipedia.com//2/24/Marshmallon-TF04-JP-VG.png'
+    json.profilePicURL 'https://ms.yugipedia.com//2/22/Gellenduo-TF04-JP-VG.jpg'
+    # json.profilePicURL 'https://ms.yugipedia.com//2/24/Marshmallon-TF04-JP-VG.png'
 end
