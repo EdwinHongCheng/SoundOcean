@@ -1,7 +1,7 @@
 json.extract! track, :id, :title, :creator_id
 
 
-# [WORKS!] putting each track's creator's name in global slice of state
+# [!!! WORKS] putting each track's creator's name in global slice of state
 json.creator track.creator.username
 
 

@@ -20,7 +20,7 @@ class Discover extends React.Component {
                 <DiscoverIndexItem
                     key={track.id}
                     track={track}
-                    user={users[track.creator_id]}
+                    // user={users[track.creator_id]}
                 />
             )
         })
