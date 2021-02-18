@@ -3,7 +3,9 @@ import React from 'react';
 class ShowUser extends React.Component {
 
     componentDidMount() {
-        this.props.fetchUser(this.props.match.params.userId);
+        // [WORKS] Lina's way - redirect if user URL = not valid
+        this.props.fetchUser(this.props.match.params.userId)
+            .fail(() => this.props.history.push("/discover"))
 
         // [TEST] want to fetch all tracks -> only display those owned by user
         this.props.fetchTracks();

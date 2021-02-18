@@ -18,10 +18,12 @@ class ShowTrack extends React.Component {
     }
 
     componentDidMount() {
+        // [WORKS] Lina's way - redirect if track URL = not valid
         this.props.fetchTrack(this.props.match.params.trackId)
+            .fail(() => this.props.history.push("/discover"))
     }
 
-    // [WORKS] Lina: if my URL wildcard changes -> this triggers
+    // [??? BROKE ???] Lina: if my URL wildcard changes -> this triggers
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.trackId !== this.props.match.params.trackId) {
             this.props.fetchTrack(this.props.match.params.trackId)

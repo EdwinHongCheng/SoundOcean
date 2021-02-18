@@ -17,9 +17,7 @@ import NavbarContainer from "./navbar/navbar_container"
 import PlayBarContainer from './playbar/playbar_container'
 // import NotFound from "./error_messages/not_found"
 
-
-
-// [TEST] user show pages path
+// [WORKS] user show pages path
 import ShowUserContainer from './show_user/show_user_container';
 
 
