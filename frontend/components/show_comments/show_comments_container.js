@@ -6,7 +6,8 @@ import { deleteComment } from '../../actions/comment_actions'
 const mSTP = state => {
     return {
         // [TEST] want to return an array of comments
-        trackComments: Object.values(state.entities.comments)
+        trackComments: Object.values(state.entities.comments),
+        currentUserId: state.session.id
     }
 }
 
