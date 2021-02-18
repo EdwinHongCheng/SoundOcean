@@ -14,7 +14,8 @@ class ShowComments extends React.Component {
             return (
                 <div key={comment.id}>
 
-                    <p> ----------------------------------------</p>
+                    <p>_____________________________________________</p>
+                    <br />
 
                     {/* Adding 1 so 1st comment = number 1, not 0 */}
                     {/* <p>Comment #{idx + 1}</p> */}
@@ -37,8 +38,7 @@ class ShowComments extends React.Component {
 
                     : null}
 
-
-                    <br />
+                    <p>_____________________________________________</p>
                 </div>
             )    
         })

@@ -120,10 +120,13 @@ class ShowTrack extends React.Component {
 
                         {/* [WORKS] Show All of a Track's Comments */}
                         <ShowCommentContainer />
+                        <br/>
 
                         <div>
                             <Link to="/">Back to Main Page</Link>
                         </div>
+                        <br />
+                        
                     </div>
                 </>
             )
