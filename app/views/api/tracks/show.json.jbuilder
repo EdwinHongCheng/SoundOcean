@@ -18,7 +18,7 @@ json.comments do
             if comment.author.profile_pic.attached?
                 json.profilePicURL url_for(comment.author.profile_pic)
             else
-                json.profilePicURL 'https://ms.yugipedia.com//2/22/Gellenduo-TF04-JP-VG.jpg'
+                json.profilePicURL 'https://ms.yugipedia.com//2/24/Marshmallon-TF04-JP-VG.png'
             end
         end
     end
