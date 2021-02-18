@@ -9,10 +9,13 @@ json.creator track.creator.username
 if track.cover_art.attached?
     json.imageURL url_for(track.cover_art)
 else
-    # soundcrowd's generic music
+    # soundcrowd's generic music (blank music)
     # json.imageURL 'http://dalelyles.com/musicmp3s/no_cover.jpg'
 
-    # Default pic if no cover art: Sanwitch
+    # [TEST] Googled another image (record cover)
+    # json.imageURL 'https://images.fineartamerica.com/images-medium-large-5/music-record-henrik-lehnerer.jpg'
+
+    # [CURRENT FAV] Default pic if no cover art: Sanwitch
     json.imageURL 'https://ms.yugipedia.com//b/b6/Sanwitch-TF04-JP-VG.jpg'
 end
 

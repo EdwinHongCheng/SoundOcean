@@ -7,7 +7,7 @@
 // - in homepage.jsx (affects the GreetingsContainer)
 .navigation-bar {
   // Can take out max-width to get extended blue border
-  max-width: 901px;
+  max-width: 949px;
   
   height: 48px;
   margin: auto;
@@ -68,6 +68,15 @@
   margin-left: 16px;
   margin-right: 16px;
   outline: none;
+}
+
+
+// [TEST] Profile Pic (mini)
+.mini-prof-pic {
+  height: 48px;
+  width: 48px;
+  // border-bottom: 1px solid black;
+  border-left: 1px solid black;
 }
 
 

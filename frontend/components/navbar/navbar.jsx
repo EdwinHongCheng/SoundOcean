@@ -74,6 +74,8 @@ const Navbar = ({ currentUser, logout }) => {
                     <li><Link to="/library" className="nav-button" >Library</ Link></li>
                     <input className="searchBar" type="input" placeholder="Search" />
                     <li><Link to="/upload" className="upload-button">Upload</Link></li>
+
+                    <img className="mini-prof-pic" src={currentUser.profilePicURL} />
     
                     {/* DropDown Button 2 (for User) */}
                     <li>

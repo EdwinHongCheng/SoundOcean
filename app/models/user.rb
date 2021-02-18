@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    
     validates :username, :password_digest, :session_token, presence: true
     validates :username, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
@@ -8,6 +7,10 @@ class User < ApplicationRecord
     validates :email, length: { minimum: 1 }, allow_nil: true, uniqueness: true
 
     attr_reader :password
+
+
+    # [TEST] Assoc to Attach a Profile Pic to a User
+    has_one_attached :profile_pic
 
 
     # Associations
