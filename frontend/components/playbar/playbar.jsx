@@ -41,15 +41,16 @@ class PlayBar extends React.Component {
             playbarAll = (
                 <div className="playbar">
                     {/* NOTE: need a unique "key" to tell React it updated !!! */}
-                    <div className="playbar-left">
+                    <div className="playbar-controls">
                         {playbar}
                     </div>
 
-
-                    <p className="playbar-right">Now Playing: {this.props.currentTrack.title}</p>
-
                     {/* [WORKS] Play/Pause Buttons (maybe delete later (?)) */}
                     {playPauseButton}
+
+                    <p className="playbar-text">Now Playing: {this.props.currentTrack.title}</p>
+
+
                 </div>
             )
         }

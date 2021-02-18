@@ -33,7 +33,7 @@ class ShowComments extends React.Component {
 
                         (<div>
                             <br />
-                            <button onClick={() => this.props.deleteComment(comment.id)}>DELETE COMMENT</button>
+                            <button onClick={() => this.props.deleteComment(comment.id)}>Delete Comment</button>
                         </div>)
 
                     : null}
