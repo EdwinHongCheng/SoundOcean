@@ -17,7 +17,7 @@ const CommentsReducer = (oldState = {}, action) => {
             return nextState;
 
         case RECEIVE_TRACK:
-            return Object.assign({}, action.tracks.comments);
+            return Object.assign({}, action.track.comments);
     
         default:
             return oldState;

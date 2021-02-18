@@ -7,7 +7,8 @@ import commentsReducer from './comments_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
-    tracks: tracksReducer
+    tracks: tracksReducer,
+    comments: commentsReducer
 });
 
 export default entitiesReducer

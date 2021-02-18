@@ -85,9 +85,7 @@ class ShowTrack extends React.Component {
                 )
             }
             // -------------------------->
-
-            // debugger
-
+            
             return (
                 <>  
                     <div className="showTrackBody">

@@ -6,7 +6,8 @@ class CreateCommentForm extends React.Component {
 
         this.state = {
             body: '',
-            // [TEST] pass it down from show page to Container
+            // [WORKS] pass it down from show page to Container
+            // Question: this = dependent on outside to drop trackId prop
             track_id: this.props.trackId
         }
 
