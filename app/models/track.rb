@@ -12,14 +12,14 @@ class Track < ApplicationRecord
     # [COMMENT BACK IN/OUT] requires an audio track to Upload Successfully
     # NOTE: comment out if I just wanna test Upload functionality
 
-    # validate :ensure_audio_file
+    validate :ensure_audio_file
 
-    # def ensure_audio_file
-    #     unless self.audio_file.attached?
-    #         # Error Message: "Please upload an audio file"
-    #         errors[:Please] << "upload an audio file"
-    #     end
-    # end
+    def ensure_audio_file
+        unless self.audio_file.attached?
+            # Error Message: "Please upload an audio file"
+            errors[:Please] << "upload an audio file"
+        end
+    end
     #-------------------------------------------------------------------------->
 
     # Associations
