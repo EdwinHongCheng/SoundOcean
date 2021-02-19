@@ -10,9 +10,13 @@ class Discover extends React.Component {
     render() {
 
         // [WORKS] janky way from Ryan
-        if (Object.keys(this.props.users).length < 2) {
-            return null;
-        }
+        // [NOTE] resetting DB -> this fails badly
+        // issue: if there's only one track creator
+        // trying to see if commenting it out works
+
+        // if (Object.keys(this.props.users).length < 2) {
+        //     return null;
+        // }
 
         const users = this.props.users
         const allTracks = this.props.tracks.map(track => {            
