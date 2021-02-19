@@ -36,35 +36,34 @@ class CreateCommentForm extends React.Component {
     }
 
 
-    // [WORKS] rendering comment errors (if blank or too long - 20 chars max)
+    // [WORKS] rendering comment errors (if blank)
+    // [BUGGY - but WORKS] rendering Errors when uploading track
     //------------------------------------------------------------------------->
-    // render errors when editing (such as title = blank)
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <>
-                        <li key={`error-${i}`} className="renderedErrors">
-                            {error}
-                        </li>
-                        <br />
-                    </>
-                ))}
-            </ul>
-        );
-    }
-    componentWillUnmount() {
-        this.props.clearErrors()
-    }
+    // renderErrors() {
+    //     return (
+    //         <ul>
+    //             {this.props.errors.map((error, i) => (
+    //                 <>
+    //                     <li key={`error-${i}`} className="renderedErrors">
+    //                         {error}
+    //                     </li>
+    //                     <br />
+    //                 </>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
+    // componentWillUnmount() {
+    //     this.props.clearErrors()
+    // }
     //------------------------------------------------------------------------->
-
-
 
     render() {
         return (
             <div>
-                {/* [WORKS] rendering Errors when uploading track */}
-                {this.renderErrors()}
+                {/* [BUGGY - but WORKS] rendering Errors when uploading track */}
+                {/* [BUG] the Edit Form track also renders the same errors */}
+                {/* {this.renderErrors()} */}
 
                 <form onSubmit={this.handleSubmit}>
                     <textarea
