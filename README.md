@@ -25,7 +25,7 @@ Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
 
     After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each       track is a clickable link which leads to each track's show page. 
     
-    ![discover](https://imgur.com/a/cZNuUUs)
+    ![discover](https://i.imgur.com/oGmERTb.png)
 
 - ### Track Upload
 
