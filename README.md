@@ -40,4 +40,4 @@ Here is a list of planned features to be implemented later:
 - Volume and playtime controls (Continuous Play Bar)
 - Likes: users can like tracks, and their liked tracks will all be displayed on their show page
 - Functioning Search Bar: allows users to search for tracks and users in the database
-- Splash page: featuring vibrant pictures and music-related text (similar to SoundCloud)
+- Splash page: featuring vibrant pictures and music-related text
