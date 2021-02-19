@@ -60,11 +60,19 @@ export const clearErrors = () => {
     }
 }
 
+
+// [NOTE] using this one again (see commented out ver below)
 export const createComment = comment => dispatch => {
     return CommentApiUtil.createComment(comment)
-        .then(comment => { dispatch(receiveComment(comment)); dispatch(clearErrors()) },
-            err => dispatch(receiveErrors(err.responseJSON)))
+        .then(comment => dispatch(receiveComment(comment)))
 }
+
+// [OLD: dont wanna render Comment Errors in Edit Form errors]
+// export const createComment = comment => dispatch => {
+//     return CommentApiUtil.createComment(comment)
+//         .then(comment => { dispatch(receiveComment(comment)); dispatch(clearErrors()) },
+//             err => dispatch(receiveErrors(err.responseJSON)))
+// }
 //----------------------------------------------------------------------------->
 
 
