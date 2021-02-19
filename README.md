@@ -47,7 +47,7 @@ Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
     
     Users can comment on specific tracks on the track's show page. Users can also delete their own comments.
     
-    <img src=https://i.imgur.com/FmJlEZx.png width="240">
+    <img src=https://i.imgur.com/FmJlEZx.png width="360">
     
 ## Planned Features
 
