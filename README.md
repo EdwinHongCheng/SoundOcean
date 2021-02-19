@@ -43,6 +43,10 @@ Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
     
     ![playbar](https://i.imgur.com/ycG9hwo.png)
     
+- ### Comments
+    
+    Users can comment on specific tracks on the track's show page.
+    
 ## Planned Features
 
 Here is a list of planned features to be implemented later:
