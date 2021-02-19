@@ -21,6 +21,12 @@ Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
 
 ## Main Features
 
+- ### Discover Page
+
+    After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each       track is a clickable link which leads to each track's show page. 
+    
+    ![discover](https://imgur.com/a/cZNuUUs)
+
 - ### Track Upload
 
     Users can upload a new track by logging in and clicking the `Upload` button on the navigation bar at the top. To do so, enter a     title, choose an audio file to upload, select a cover art for the track (optional), and press the `Create Track` button. After       the track is fully uploaded, the upload page displays an `UPLOAD SUCCESS` message.
