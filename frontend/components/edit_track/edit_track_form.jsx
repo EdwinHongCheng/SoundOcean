@@ -134,7 +134,8 @@ class EditTrackForm extends React.Component {
                     <span> </span>
 
                     <button type="button" onClick={
-                        () => this.props.deleteTrack(this.state.id).then( () => this.props.history.push("/"))
+                        () => this.props.deleteTrack(this.state.id)
+                            .then(() => this.props.history.push("/"))
                     }
                     >Delete Track</button>
 
@@ -145,4 +146,3 @@ class EditTrackForm extends React.Component {
 }
 
 export default EditTrackForm;
-// export default withRouter(EditTrackForm);

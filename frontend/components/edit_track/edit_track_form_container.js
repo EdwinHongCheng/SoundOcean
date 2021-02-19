@@ -7,7 +7,10 @@ const mSTP = (state, ownProps) => {
     return {
         track: ownProps.track,
         // [WORKS] Render Errors for edit
-        errors: state.errors.trackErrors
+        errors: state.errors.trackErrors,
+        // [TEST] have to pass this down from show_track.jsx
+        // -> THEN, use it in the delete button in "edit_track_form.jsx"
+        history: ownProps.history
     }
 }
 

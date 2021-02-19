@@ -23,7 +23,8 @@ class ShowTrack extends React.Component {
             .fail(() => this.props.history.push("/discover"))
     }
 
-    // [??? BROKE ???] Lina: if my URL wildcard changes -> this triggers
+    // [WORKS perfectly w the above added code] 
+    // - Lina: if my URL wildcard changes -> this triggers
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.trackId !== this.props.match.params.trackId) {
             this.props.fetchTrack(this.props.match.params.trackId)
@@ -58,6 +59,7 @@ class ShowTrack extends React.Component {
                     <>
                         <EditTrackFormContainer 
                             track={currentTrack}
+                            history={this.props.history}
                         />
                         <br />
                     </>
