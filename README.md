@@ -1,4 +1,4 @@
-# SoundOcean
+# SoundOcean ![logo](https://imgur.com/wSQRkYO)
 
 Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
 
