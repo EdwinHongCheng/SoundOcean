@@ -38,5 +38,6 @@ Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
 Here is a list of planned features to be implemented later:
 
 - Volume and playtime controls (Continuous Play Bar)
-- Users can like tracks, and their liked tracks will all be displayed on their show page.
-- Functioning search bar to find tracks and users
+- Likes: users can like tracks, and their liked tracks will all be displayed on their show page
+- Functioning Search Bar: allows users to search for tracks and users in the database
+- Splash page: featuring vibrant pictures and music-related text (similar to SoundCloud)
