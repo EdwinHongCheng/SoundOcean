@@ -11,7 +11,6 @@ class Api::UsersController < ApplicationController
         end
     end
 
-    # [TEST] show user (after changing routes to resources :users)
     def show
         @user = User.find(params[:id])
         if @user
@@ -21,11 +20,23 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    # [TEST] update user's profile pic
+    def update
+        @user = User.find(params[:user][:id])
+
+        if @user.update(user_params)
+            render :show
+        else
+            # [TESTING] Note: don't want to render anything if update fails
+            render json: {} 
+        end
+    end
+
 
     private
 
     def user_params
-        params.require(:user).permit(:username, :email, :password)
+        params.require(:user).permit(:username, :email, :password, :profile_pic)
     end
 
 end

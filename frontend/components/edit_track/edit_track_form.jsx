@@ -1,7 +1,8 @@
 import React from 'react';
 
 // [TEST] want to redirect to "discover" page after delete
-import { withRouter } from 'react-router';
+// [NOTE] dont think it's necessary
+// import { withRouter } from 'react-router';
 
 class EditTrackForm extends React.Component {
     constructor(props) {
@@ -16,7 +17,6 @@ class EditTrackForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
-
         this.handleFile = this.handleFile.bind(this)
     }
 
@@ -144,4 +144,5 @@ class EditTrackForm extends React.Component {
     }
 }
 
-export default withRouter(EditTrackForm);
+export default EditTrackForm;
+// export default withRouter(EditTrackForm);

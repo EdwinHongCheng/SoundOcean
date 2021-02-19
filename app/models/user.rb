@@ -9,7 +9,7 @@ class User < ApplicationRecord
     attr_reader :password
 
 
-    # [TEST] Assoc to Attach a Profile Pic to a User
+    # [WORKS] Assoc to Attach a Profile Pic to a User
     has_one_attached :profile_pic
 
 

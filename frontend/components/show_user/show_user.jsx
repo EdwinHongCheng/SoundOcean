@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// [TEST] update profile pic form
+import EditUserFormContainer from '../edit_user/edit_user_form_container';
+
 class ShowUser extends React.Component {
 
     componentDidMount() {
@@ -36,8 +39,8 @@ class ShowUser extends React.Component {
                 (this.props.showUser.id === track.creator_id ?
 
                     <div key={track.id}>
-                        <br/>
 
+                        <br/>
                         {/* <span>Track Title: </span> */}
                         <Link to={`/tracks/${track.id}`}>
                             <span>{track.title}</span>
@@ -56,6 +59,18 @@ class ShowUser extends React.Component {
                 )
             )
 
+            // [TEST] if current user = same as showpage's user -> let them update profile pic
+            let editProfilePic;
+            // [ALSO] giving user 2 (everfall) admin powers (lol)
+            if (this.props.currentUser.id === showUser.id || this.props.currentUser.id === 2) {
+                editProfilePic = (
+                    <EditUserFormContainer
+                        // [NOTE] must pass down currentUser as ownProps
+                        showUser={showUser}
+                    />
+                )
+            }
+
             return (
                 <div className="showUserBody">
 
@@ -63,14 +78,15 @@ class ShowUser extends React.Component {
                     <p>{this.props.showUser.username}'s Show Page</p>
                     <br />
                     <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
-
-
                     <br />
                     <br />
+
+                    {editProfilePic}
+                    
                     <br />
                     <p>All Tracks</p>
                     <p>_____________________________________________________</p>
-                    <br />
+                    
                     {showUserTracks}
                     <br />
 
