@@ -2,8 +2,6 @@ import { connect } from 'react-redux';
 import ShowUser from './show_user';
 
 import { fetchTracks } from '../../actions/track_actions';
-
-// [TEST] hoping to fetch user for the user's show page
 import { fetchUser } from '../../actions/user_actions'
 
 const mSTP = (state, ownProps) => {
@@ -17,7 +15,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchTracks: () => dispatch(fetchTracks()),
-        fetchUser: userId => dispatch(fetchUser(userId))
+        fetchUser: userId => dispatch(fetchUser(userId)),
     }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ShowUser extends React.Component {
 
@@ -37,7 +38,10 @@ class ShowUser extends React.Component {
                     <div key={track.id}>
                         <br/>
                         <p>Track Title: {track.title}</p>
-                        <img className="showUserTrackArt" src={track.imageURL}/>
+
+                        <Link to={`/tracks/${track.id}`}>
+                            <img className="showUserTrackArt" src={track.imageURL}/>
+                        </Link>
                         <br />
                     </div>
 
