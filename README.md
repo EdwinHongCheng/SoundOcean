@@ -25,6 +25,6 @@ Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
 
     Users can upload a new track by logging in and clicking the "Upload" button on the navigation bar at the top. To do so, enter a       title, choose an audio file to upload, select a cover art for the track (optional), and press the "Create Track" button.
 
-    Afterwards, users can listen back to their uploaded track, and creators can make changes to their tracks through the track edit       form on their tracks' individual show pages.
+    Afterwards, users can listen to their uploaded track, and track creators can make changes to their own tracks through the track       edit form on their tracks' individual show pages.
 
 
