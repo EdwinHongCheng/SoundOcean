@@ -38,7 +38,7 @@ class ShowUser extends React.Component {
                     <div key={track.id}>
                         <br/>
 
-                        <span>Track Title: </span>
+                        {/* <span>Track Title: </span> */}
                         <Link to={`/tracks/${track.id}`}>
                             <span>{track.title}</span>
                         </Link>
@@ -64,6 +64,12 @@ class ShowUser extends React.Component {
                     <br />
                     <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
 
+
+                    <br />
+                    <br />
+                    <br />
+                    <p>All Tracks</p>
+                    <p>_____________________________________________________</p>
                     <br />
                     {showUserTracks}
                     <br />
