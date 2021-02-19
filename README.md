@@ -1,3 +1,3 @@
 # SoundOcean
 
-[LIVE DEMO](https://soundocean.herokuapp.com/#/)
+Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
