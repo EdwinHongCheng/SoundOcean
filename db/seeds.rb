@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# [NOTE][Ryan] need this to "open" links (maybe - Lisa didn't use it tho ???)
+require "open-uri"
+
+
+
 User.delete_all
 Track.delete_all
 
