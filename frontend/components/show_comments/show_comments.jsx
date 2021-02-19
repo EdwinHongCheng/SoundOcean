@@ -50,7 +50,6 @@ class ShowComments extends React.Component {
             )    
         })
         
-    
         return (
             <div>
                 {allComments}               

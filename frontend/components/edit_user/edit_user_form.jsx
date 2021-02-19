@@ -64,6 +64,9 @@ class EditUserForm extends React.Component {
 
         return (
             <div>
+                <p>_____________________________________________________</p>
+                <br />
+
                 <form onSubmit={this.handleSubmit}>
                     <h1>Upload a New Profile Pic</h1>
                     <br />
@@ -80,6 +83,10 @@ class EditUserForm extends React.Component {
 
                     <input type="submit" value="Update Profile Pic" />
                 </form>
+
+                <p>_____________________________________________________</p>
+                <br />
+                
             </div>
         );
     }

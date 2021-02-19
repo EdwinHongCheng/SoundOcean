@@ -61,6 +61,10 @@ class CreateCommentForm extends React.Component {
     render() {
         return (
             <div>
+
+                <p>_____________________________________________</p>
+                <br />
+                
                 {/* [BUGGY - but WORKS] rendering Errors when uploading track */}
                 {/* [BUG] the Edit Form track also renders the same errors */}
                 {/* {this.renderErrors()} */}
