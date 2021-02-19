@@ -37,8 +37,14 @@ class ShowUser extends React.Component {
 
                     <div key={track.id}>
                         <br/>
-                        <p>Track Title: {track.title}</p>
 
+                        <span>Track Title: </span>
+                        <Link to={`/tracks/${track.id}`}>
+                            <span>{track.title}</span>
+                        </Link>
+
+                        <br/>
+                        
                         <Link to={`/tracks/${track.id}`}>
                             <img className="showUserTrackArt" src={track.imageURL}/>
                         </Link>
@@ -60,6 +66,13 @@ class ShowUser extends React.Component {
 
                     <br />
                     {showUserTracks}
+                    <br />
+
+                    <div>
+                        <Link to="/">Back to Main Page</Link>
+                    </div>
+                    <br />
+                    
                 </div>
             )
         }

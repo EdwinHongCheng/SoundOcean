@@ -75,8 +75,11 @@ const Navbar = ({ currentUser, logout }) => {
                     <input className="searchBar" type="input" placeholder="Search" />
                     <li><Link to="/upload" className="upload-button">Upload</Link></li>
 
-                    <img className="mini-prof-pic" src={currentUser.profilePicURL} />
-    
+                    <Link to={`/users/${currentUser.id}`}>
+                        <img className="mini-prof-pic" src={currentUser.profilePicURL} />
+                    </Link>
+                
+                
                     {/* DropDown Button 2 (for User) */}
                     <li>
                         <div className="dropdown2">

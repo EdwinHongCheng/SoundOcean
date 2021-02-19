@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ShowComments extends React.Component {
 
@@ -22,8 +23,11 @@ class ShowComments extends React.Component {
 
 
                     {/* [!!! JANK WORKS] NOTE: see create_comment_form.jsx */}
-                    <img className="commentProfilePic" src={comment.profilePicURL} />
-                    <span> {comment.author}</span>
+
+                    <Link to={`/users/${comment.author_id}`}>
+                        <img className="commentProfilePic" src={comment.profilePicURL} />
+                        <span> {comment.author}</span>
+                    </Link>
                     <br />
                     <br />
 

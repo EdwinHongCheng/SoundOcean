@@ -110,8 +110,15 @@ class ShowTrack extends React.Component {
                         <br />
                         <br />
 
-                        <p>Track Title: {currentTrack.title}</p>
-                        <p>Track Creator: {currentTrack.creator}</p>
+                        <p>Title: {currentTrack.title}</p>
+
+                        <span>Creator: </span>
+                        <Link to={`/users/${currentTrack.creator_id}`}>
+                            <span>{currentTrack.creator}</span>
+                        </Link>
+                        <br />
+
+
                         <br />
                         {/* Edit Track Form */}
                         {canEditTrack}
