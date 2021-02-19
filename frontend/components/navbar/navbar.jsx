@@ -92,7 +92,7 @@ const Navbar = ({ currentUser, logout }) => {
                         </div>
                     </li>
     
-                    <li><a className="nav-button" href="https://github.com/EdwinHongCheng/SoundOcean/wiki">GitHub</a></li>
+                    <li><a className="nav-button" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a></li>
                     <li><a className="nav-button" href="https://en.wikipedia.org/wiki/LinkedIn">LinkedIn</a></li>
     
                     {/* DropDown Button for "..." (w3schools): How TO - Clickable Dropdown  */}
