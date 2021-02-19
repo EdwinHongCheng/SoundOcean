@@ -8,23 +8,12 @@ class Discover extends React.Component {
     }
 
     render() {
-
-        // [WORKS] janky way from Ryan
-        // [NOTE] resetting DB -> this fails badly
-        // issue: if there's only one track creator
-        // trying to see if commenting it out works
-
-        // if (Object.keys(this.props.users).length < 2) {
-        //     return null;
-        // }
-
         const users = this.props.users
         const allTracks = this.props.tracks.map(track => {            
             return (
                 <DiscoverIndexItem
                     key={track.id}
                     track={track}
-                    // user={users[track.creator_id]}
                 />
             )
         })
@@ -32,7 +21,7 @@ class Discover extends React.Component {
         return(
             <div>
                 <div className="discoverBody">
-                    {/* Delete Filler below Later (???) */ }
+                    {/* Delete Filler Text below Later (???) */ }
                     <br />
                     <h2 className="filler-flower-text">~ Hear the SoundWaves (◠‿◠✿) ~</h2>
                     <br />
