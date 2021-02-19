@@ -11,7 +11,11 @@ const tracksReducer = (oldState = {}, action) => {
 
         // NOTE: not sure why state shape turns out good (but it does lol)
         case RECEIVE_TRACKS:
-            return action.payload.tracks
+            if (action.payload.tracks) {
+                return action.payload.tracks
+            } else {
+                return oldState;
+            }
 
         case REMOVE_TRACK:
             delete nextState[action.trackId]
