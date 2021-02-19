@@ -39,7 +39,7 @@ Check out the Live Demo [HERE](https://soundocean.herokuapp.com/#/)!
     
     The play bar also allows users to pause and resume track playback. Visiting a new track's show page and pressing their `Play         This Track` button replaces the current track with the selected track.
     
-    ![playbar](https://i.imgur.com/bSKLHxz.png)
+    ![playbar](https://i.imgur.com/ycG9hwo.png)
     
 ## Planned Features
 
