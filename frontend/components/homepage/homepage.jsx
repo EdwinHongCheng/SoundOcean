@@ -11,6 +11,8 @@ class HomePage extends React.Component {
     render() {
         return (
             <>
+                <div className="homepage-pic1"></div>
+                
                 <Modal />
 
                 <nav className="homepage-bar"> 
@@ -20,6 +22,8 @@ class HomePage extends React.Component {
                 {/* Delete Filler below Later */}
                 <br />
                 <h2 className="filler-flower-text">~ Hear the SoundWaves (◠‿◠✿) ~</h2>
+
+
             </>
         )
     }

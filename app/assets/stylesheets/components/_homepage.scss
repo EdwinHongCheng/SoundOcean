@@ -3,5 +3,15 @@
 
 .filler-flower-text {
   max-width: 901px;
-    margin: auto;
+  margin: auto;
+}
+
+// [WIP] Goal - nujabes image = background, 
+// - centered, small enough + scaled properly
+
+.homepage-pic1 {
+  background: image-url('nujabes_working.jpg');
+  background-repeat: no-repeat;
+  background-size: 1244px 646px;
+  height: 646px;
 }
