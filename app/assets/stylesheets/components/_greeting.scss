@@ -3,19 +3,6 @@
   height: 48px;
 }
 
-// To Center Nav Bar -> gives it margins if screen = stretch to wide
-// - in homepage.jsx (affects the GreetingsContainer)
-.homepage-bar {
-  max-width: 901px;
-  height: 48px;
-  margin: auto;
-
-  // [TEST]
-  background: image-url('nujabes_working.jpg');
-  background-repeat: no-repeat;
-  background-size: 1244px 646px;
-  height: 646px;
-}
 
 
 // Spaces both Sections (NavBar on SignUp Page)
@@ -32,11 +19,7 @@
   align-items: center;
 }
 
-.soundOcean-greeting-text {
-  margin-left: 10px;
-  font-weight: bold;
-  color: white;
-}
+
 
 // Right Section of NavBar (on SignUp Page)
 .navbar-login-right-sect {
@@ -50,7 +33,7 @@
   color: white;
   padding: 12px;
   font-size: 14px;
-  border: 1px solid black;
+  // border: 1px solid black;
   cursor: pointer;
   border-radius: 4px;
   margin-right: 10px;

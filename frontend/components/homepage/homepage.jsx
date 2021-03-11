@@ -14,6 +14,8 @@ class HomePage extends React.Component {
                 <Modal />
                 <nav className="homepage-bar"> 
                     <GreetingContainer />
+
+                    <p className="homepage-blurb">Welcome to SoundOcean!</p>
                 </nav>
             </div>
         )

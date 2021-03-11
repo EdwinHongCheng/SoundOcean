@@ -1,7 +1,29 @@
 // so far, just CSS for filler ~ Hear the SoundWaves (◠‿◠✿)~
 // in both disocver.jsx and homepage.jsx
 
-.filler-flower-text {
+
+// To Center Nav Bar -> gives it margins if screen = stretch to wide
+// - in homepage.jsx (affects the GreetingsContainer)
+.homepage-bar {
   max-width: 901px;
+  height: 48px;
   margin: auto;
+
+  // [TEST]
+  background: image-url('nujabes_working.jpg');
+  background-repeat: no-repeat;
+  background-size: 1244px 646px;
+  height: 646px;
+}
+
+.soundOcean-greeting-text {
+  margin-left: 10px;
+  font-weight: bold;
+  color: white;
+
+  text-shadow: 1px 1px black;
+}
+
+.homepage-blurb {
+  color: white;
 }
