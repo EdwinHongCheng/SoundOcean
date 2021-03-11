@@ -9,6 +9,12 @@
   max-width: 901px;
   height: 48px;
   margin: auto;
+
+  // [TEST]
+  background: image-url('nujabes_working.jpg');
+  background-repeat: no-repeat;
+  background-size: 1244px 646px;
+  height: 646px;
 }
 
 
@@ -28,6 +34,8 @@
 
 .soundOcean-greeting-text {
   margin-left: 10px;
+  font-weight: bold;
+  color: white;
 }
 
 // Right Section of NavBar (on SignUp Page)
