@@ -15,7 +15,13 @@ class HomePage extends React.Component {
                 <nav className="homepage-bar"> 
                     <GreetingContainer />
 
-                    <p className="homepage-blurb">Welcome to SoundOcean!</p>
+                    <div className="homepage-blurb-all">
+                        <p className="homepage-blurb-big">What's next in music is first on SoundOcean</p>
+                        <p className="homepage-blurb-small">
+                            Upload your first track and begin your journey. SoundOcean gives you space to create, find your fans, and connect with other artists.
+                        </p>
+                    </div>
+                    
                 </nav>
             </div>
         )

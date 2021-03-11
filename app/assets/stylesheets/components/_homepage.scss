@@ -10,20 +10,39 @@
   margin: auto;
 
   // [TEST]
-  background: image-url('nujabes_working.jpg');
+  background: image-url('nujabes_working_bw_1240x450.jpg');
   background-repeat: no-repeat;
-  background-size: 1244px 646px;
-  height: 646px;
+  background-size: 1240px 450px;
+  height: 450px;
 }
 
 .soundOcean-greeting-text {
   margin-left: 10px;
-  font-weight: bold;
+  // font-weight: bold;
+  font-size: 18px;
   color: white;
-
-  text-shadow: 1px 1px black;
+  text-shadow: 4px 4px 10px #000000;
 }
 
-.homepage-blurb {
+.homepage-blurb-all {
+
+}
+
+.homepage-blurb-big {
   color: white;
+  text-align: center;
+  font-size: 29px;
+  margin-top: 154px;
+  margin-bottom: 14px;
+  text-shadow: 4px 4px 10px #000000;
+}
+
+.homepage-blurb-small {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  text-shadow: 4px 4px 10px #000000;
+
+  margin-left: 155px;
+  margin-right: 155px;
 }
