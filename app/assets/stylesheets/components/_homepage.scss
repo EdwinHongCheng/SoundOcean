@@ -9,7 +9,6 @@
   height: 48px;
   margin: auto;
 
-  // [TEST]
   background: image-url('nujabes_working_bw_1240x450.jpg');
   background-repeat: no-repeat;
   background-size: 1240px 450px;
@@ -45,4 +44,25 @@
 
   margin-left: 155px;
   margin-right: 155px;
+}
+
+
+.so-button-parent {
+  display: flex;
+  justify-content: center;
+}
+
+.so-button {
+  font-size: 16px;
+  padding: 13px 23px;
+  background-color: #000573;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 50px;
+  margin-bottom: 90px;
+}
+
+.so-button:hover {
+  background-color: #111abd;
 }

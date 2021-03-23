@@ -9,7 +9,7 @@ import {
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
  
-import HomePage from "./homepage/homepage";
+import HomePageContainer from "./homepage/homepage_container";
 import DiscoverContainer from "./discover/discover_container";
 import CreateTrackFormContainer from "./create_track/create_track_form_container";
 import ShowTrackContainer from "./show_track/show_track_container";
@@ -39,7 +39,7 @@ class App extends React.Component {
                     <ProtectedRoute exact path="/users/:userId" component={ShowUserContainer} />
 
 
-                    <AuthRoute exact path="/" component={HomePage} />
+                    <AuthRoute exact path="/" component={HomePageContainer} />
 
                     {/* Redirect to HomePage "/" or "/discover"  (depends if logged in) */}
                     <Route render={() => <Redirect to="/" />} />
