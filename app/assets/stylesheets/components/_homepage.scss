@@ -9,7 +9,7 @@
   height: 48px;
   margin: auto;
 
-  background: image-url('nujabes_working_bw_1240x450.jpg');
+  background: image-url('nujabes_working_bw_1240x450_darkened_35.jpg');
   background-repeat: no-repeat;
   background-size: 1240px 450px;
   height: 450px;
@@ -52,6 +52,16 @@
   justify-content: center;
 }
 
+.so-button1 {
+  font-size: 16px;
+  padding: 13px 23px;
+  background-color: #000573;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 30px; 
+}
+
 .so-button {
   font-size: 16px;
   padding: 13px 23px;
@@ -60,9 +70,18 @@
   cursor: pointer;
   border-radius: 4px;
   margin-top: 50px;
-  margin-bottom: 90px;
+  margin-bottom: 40px;
 }
 
-.so-button:hover {
+.so-button:hover, .so-button1:hover {
   background-color: #111abd;
+}
+
+.hear-whats-trending-parent {
+  display: flex;
+  justify-content: center;
+}
+
+.hear-whats-trending {
+  font-size: 24px;
 }

@@ -20,11 +20,19 @@ class HomePage extends React.Component {
                         <p className="homepage-blurb-small">
                             Upload your first track and begin your journey. SoundOcean gives you space to create, find your fans, and connect with other artists.
                         </p>
+
+                        <div className="so-button-parent">
+                            <p className="so-button1" onClick={() => this.props.openModal('signup')}>Start uploading today</p>
+                        </div>
                     </div>
                 </nav>
 
                 <div className="so-button-parent">
-                    <p className="so-button" onClick={() => this.props.openModal('login')}>Upload Your Own</p>
+                    <p className="so-button" onClick={() => this.props.openModal('login')}>Upload your own</p>
+                </div>
+
+                <div className="hear-whats-trending-parent">
+                    <p className="hear-whats-trending">Hear what’s trending for free in the SoundOcean community</p>
                 </div>
             </div>
         )
