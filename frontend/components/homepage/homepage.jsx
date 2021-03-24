@@ -6,9 +6,27 @@ import {
 
 import GreetingContainer from "../greeting/greeting_container";
 import Modal from '../modal/modal';
+import HomepageIndexItem from './homepage_index_item';
 
 class HomePage extends React.Component {
+    componentDidMount() {
+        this.props.fetchTracks()
+    }
+
     render() {
+        const users = this.props.users
+        const allTracks = this.props.tracks.map((track, idx) => {            
+            return (
+                <HomepageIndexItem
+                    key={track.id}
+                    track={track}
+                    idx={idx}
+                />
+            )
+        })
+
+        const firstTwelveTracks = allTracks.filter((track, idx) => idx < 12);
+
         return (
             <div>
                 <Modal />
@@ -33,6 +51,11 @@ class HomePage extends React.Component {
 
                 <div className="hear-whats-trending-parent">
                     <p className="hear-whats-trending">Hear what’s trending for free in the SoundOcean community</p>
+                </div>
+
+                {/* HomePage Tracks Grid */}
+                <div className="homepageAllTracks">
+                    {firstTwelveTracks}
                 </div>
             </div>
         )

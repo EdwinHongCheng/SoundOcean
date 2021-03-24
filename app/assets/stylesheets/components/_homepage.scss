@@ -84,4 +84,36 @@
 
 .hear-whats-trending {
   font-size: 24px;
+  margin-bottom: 36px;
 }
+
+// [WIP] Homepage Tracks ------------------------------------------------------>
+
+.homepageAllTracks {
+  display: flex;
+  flex-wrap: wrap;
+  grid-auto-flow: row;
+
+  max-width: 901px;
+  margin: auto;
+}
+
+.homepageCoverArt, .homepageCoverArtLast {
+  width: 136.66px;
+  height: 136.66px;
+}
+
+.homepageCoverArt {
+  margin-right: 16.208px;
+}
+
+.homepageTrackText {
+  font-size: 14px;
+}
+
+.homepageCreatorNameText {
+  font-size: 12px;
+  margin-bottom: 40px;
+}
+
+
