@@ -109,11 +109,21 @@
 
 .homepageTrackText {
   font-size: 14px;
+  color: black;
 }
 
 .homepageCreatorNameText {
   font-size: 12px;
   margin-bottom: 40px;
+  color: #999;
+}
+
+.homepageCreatorNameText:hover {
+  color: black;
+}
+
+.homepageCoverArt:hover, .homepageTrackText:hover, .homepageCreatorNameText:hover {
+  cursor: pointer;
 }
 
 

@@ -21,6 +21,7 @@ class HomePage extends React.Component {
                     key={track.id}
                     track={track}
                     idx={idx}
+                    openModal={this.props.openModal}
                 />
             )
         })
