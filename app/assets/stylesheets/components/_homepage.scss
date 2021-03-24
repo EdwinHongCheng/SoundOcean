@@ -95,7 +95,7 @@
   margin-bottom: 36px;
 }
 
-// [WIP] Homepage Tracks ------------------------------------------------------>
+// Homepage Tracks ------------------------------------------------------>
 
 .homepageAllTracks {
   display: flex;
@@ -114,11 +114,12 @@
 
 .homepageCoverArt {
   margin-right: 16.208px;
+  margin-bottom: 6px;
 }
 
 .homepageTrackText {
   font-size: 14px;
-  color: black;
+  color: #333;
 
   height: 16px;
 
@@ -141,7 +142,7 @@
   text-overflow: ellipsis;
 }
 
-.homepageCreatorNameText:hover {
+.homepageTrackText:hover, .homepageCreatorNameText:hover {
   color: black;
 }
 
@@ -149,4 +150,28 @@
   cursor: pointer;
 }
 
+// ---------------------------------------------------------------------------->
+.homepage-bottom {
+  width: 901px;
+  margin: auto;
+}
+
+.so-button-parent2 {
+  display: flex;
+  justify-content: center;
+}
+
+.so-button2 {
+  font-size: 16px;
+  padding: 13px 23px;
+  background-color: #000573;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 72px;
+}
+
+.so-button2:hover {
+  background-color: #111abd;
+}
 

@@ -41,7 +41,7 @@ class HomePage extends React.Component {
                         </p>
 
                         <div className="so-button-parent">
-                            <p className="so-button1" onClick={() => this.props.openModal('signup')}>Start uploading today</p>
+                            <p className="so-button1" onClick={() => this.props.openModal('login')}>Start uploading today</p>
                         </div>
                     </div>
                 </nav>
@@ -56,10 +56,15 @@ class HomePage extends React.Component {
                     </div>
                 </div>
 
-
                 {/* HomePage Tracks Grid */}
                 <div className="homepageAllTracks">
                     {firstTwelveTracks}
+                </div>
+
+                <div className="homepage-bottom">
+                    <div className="so-button-parent2">
+                        <p className="so-button2" onClick={() => this.props.openModal('login')}>Explore new sounds</p>
+                    </div>
                 </div>
             </div>
         )
