@@ -6,7 +6,7 @@
 // - in homepage.jsx (affects the GreetingsContainer)
 .homepage-bar {
   // max-width: 901px;
-  width: 901px;
+  width: 960px;
   height: 48px;
   margin: auto;
 
@@ -78,9 +78,16 @@
   background-color: #111abd;
 }
 
-// ---------------------------------------------------------------------------->
+// Homepage Middle (All) ------------------------------------------------------>
+.homepage-middle-all {
+  width: 960px;
+  margin: auto;
+  background-color: white;
+}
+
+
 .homepage-middle {
-  width: 901px;
+  width: 960px;
   margin: auto;
 }
 
@@ -103,18 +110,18 @@
   grid-auto-flow: row;
 
   // max-width: 901px;
-  width: 901px;
+  width: 960px;
   margin: auto;
 }
 
 .homepageCoverArt, .homepageCoverArtLast {
   width: 136.66px;
   height: 136.66px;
+  margin-left: 20px;
 }
 
-.homepageCoverArt {
-  margin-right: 16.208px;
-  margin-bottom: 6px;
+.homepageCoverArtLast {
+  margin-right: 20px;
 }
 
 .homepageTrackText {
@@ -122,6 +129,7 @@
   color: #333;
 
   height: 16px;
+  margin-left: 20px;
 
   width: 136.66px;
   white-space: nowrap;
@@ -135,6 +143,7 @@
   color: #999;
 
   height: 14px;
+  margin-left: 20px;
 
   width: 136.66px;
   white-space: nowrap;
@@ -151,11 +160,6 @@
 }
 
 // ---------------------------------------------------------------------------->
-.homepage-bottom {
-  width: 901px;
-  margin: auto;
-}
-
 .so-button-parent2 {
   display: flex;
   justify-content: center;
@@ -174,4 +178,6 @@
 .so-button2:hover {
   background-color: #111abd;
 }
+
+// ---------------------------------------------------------------------------->
 

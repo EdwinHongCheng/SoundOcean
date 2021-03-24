@@ -46,24 +46,26 @@ class HomePage extends React.Component {
                     </div>
                 </nav>
 
-                <div className="homepage-middle">
-                    <div className="so-button-parent">
-                        <p className="so-button" onClick={() => this.props.openModal('login')}>Upload your own</p>
+                <div className="homepage-middle-all">
+                    <div className="homepage-middle">
+                        <div className="so-button-parent">
+                            <p className="so-button" onClick={() => this.props.openModal('login')}>Upload your own</p>
+                        </div>
+
+                        <div className="hear-whats-trending-parent">
+                            <p className="hear-whats-trending">Hear what’s trending for free in the SoundOcean community</p>
+                        </div>
                     </div>
 
-                    <div className="hear-whats-trending-parent">
-                        <p className="hear-whats-trending">Hear what’s trending for free in the SoundOcean community</p>
+                    {/* HomePage Tracks Grid */}
+                    <div className="homepageAllTracks">
+                        {firstTwelveTracks}
                     </div>
-                </div>
 
-                {/* HomePage Tracks Grid */}
-                <div className="homepageAllTracks">
-                    {firstTwelveTracks}
-                </div>
-
-                <div className="homepage-bottom">
-                    <div className="so-button-parent2">
-                        <p className="so-button2" onClick={() => this.props.openModal('login')}>Explore new sounds</p>
+                    <div className="homepage-middle">
+                        <div className="so-button-parent2">
+                            <p className="so-button2" onClick={() => this.props.openModal('login')}>Explore new sounds</p>
+                        </div>
                     </div>
                 </div>
             </div>
