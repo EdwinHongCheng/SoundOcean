@@ -68,6 +68,17 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div className="homepage-bottom">
+
+                    {/* [WIP] Image 3 */}
+                    <div className="homepage-image-3">
+                        <div className="homepage-image-3-all">
+                            <p className="homepage-image-3-text-big">Calling All Creators</p>
+                            <p className="homepage-image-3-text-small">Get on SoundCloud to connect with fans, share your sounds, and grow your audience. What are you waiting for?</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
