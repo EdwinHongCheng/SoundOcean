@@ -32,6 +32,7 @@
   color: white;
   text-align: center;
   font-size: 29px;
+  font-weight: lighter;
   margin-top: 154px;
   margin-bottom: 14px;
   text-shadow: 4px 4px 10px #000000;
@@ -41,6 +42,7 @@
   color: white;
   text-align: center;
   font-size: 18px;
+  font-weight: lighter;
   text-shadow: 4px 4px 10px #000000;
 
   margin-left: 155px;
@@ -99,6 +101,7 @@
 
 .hear-whats-trending {
   font-size: 24px;
+  font-weight: lighter;
   margin-bottom: 36px;
 }
 
@@ -208,12 +211,14 @@
 .homepage-image-3-text-big {
   color: white;
   font-size: 22px;
+  font-weight: lighter;
   margin-bottom: 20px;
 }
 
 .homepage-image-3-text-small {
   color: white;
   font-size: 17px;
+  font-weight: lighter;
 
   line-height: 25px;
 }
@@ -231,9 +236,31 @@
 
   border: 1px solid #e5e5e5;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .homepage-image-3-button:hover {
   border: 1px solid white;
+}
+
+// ---------------------------------------------------------------------------->
+.homepage-end {
+  width: 960px;
+  height: 480px;
+  margin: auto;
+  background-color: white;
+}
+
+.homepage-end-text-big {
+  text-align: center;
+  font-size: 36px;
+  font-weight: lighter;
+  padding-top: 90px;
+  padding-bottom: 30px;
+}
+
+.homepage-end-text-small {
+  text-align: center;
+  font-size: 24px;
+  font-weight: lighter;
 }
