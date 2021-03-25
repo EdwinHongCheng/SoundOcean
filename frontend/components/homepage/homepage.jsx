@@ -74,8 +74,12 @@ class HomePage extends React.Component {
                     {/* [WIP] Image 3 */}
                     <div className="homepage-image-3">
                         <div className="homepage-image-3-all">
-                            <p className="homepage-image-3-text-big">Calling All Creators</p>
+                            <p className="homepage-image-3-text-big">Calling all creators</p>
                             <p className="homepage-image-3-text-small">Get on SoundCloud to connect with fans, share your sounds, and grow your audience. What are you waiting for?</p>
+
+
+                            <div className="homepage-image-3-button" onClick={() => this.props.openModal('login')}>Find out more</div>
+
                         </div>
                     </div>
                 </div>

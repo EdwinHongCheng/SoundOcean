@@ -199,15 +199,41 @@
 // [WIP] text on image 3
 
 .homepage-image-3-all {
+  width: 300px;
+  padding-top: 90px;
+  padding-left: 60px;
 
 }
 
 .homepage-image-3-text-big {
   color: white;
   font-size: 22px;
+  margin-bottom: 20px;
 }
 
 .homepage-image-3-text-small {
   color: white;
-  font-size: 16px;
+  font-size: 17px;
+
+  line-height: 25px;
+}
+
+.homepage-image-3-button {
+  margin-top: 30px;
+
+  background-color: transparent;
+  color: white;
+  padding: 16px 0px;
+  font-size: 17px;
+  text-align: center;
+
+  width: 166px;
+
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.homepage-image-3-button:hover {
+  border: 1px solid white;
 }
