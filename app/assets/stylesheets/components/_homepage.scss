@@ -301,6 +301,7 @@
 }
 
 .homepage-end-signIn-button {
+  cursor: pointer;
   text-align: center;
   font-size: 16px;
   padding: 13px 17px;
@@ -320,7 +321,7 @@
 
 .homepage-footer-links {
   display: flex;
-  padding: 20px 0px;
+  padding: 20px 0px 15px;
 }
 
 .homepage-footer-links a, .homepage-footer-links li {
