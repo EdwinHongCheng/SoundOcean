@@ -80,9 +80,31 @@ class HomePage extends React.Component {
                 </div>
 
                 <div className="homepage-end">
-                    <p className="homepage-end-text-big">Thanks for listening. Now join in.</p>
-                    <p className="homepage-end-text-small">Upload tracks, discover artists and leave comments. All for free.</p>
+
+                    <div className="homepage-end-top">
+                        <p className="homepage-end-text-big">Thanks for listening. Now join in.</p>
+                        <p className="homepage-end-text-small">Upload tracks, discover artists and leave comments. All for free.</p>
+
+                        <div className="homepage-end-createAccount-button" onClick={() => this.props.openModal('signup')}>Create account</div>
+
+                        <div className="homepage-end-last-pair">
+                            <p className="homepage-end-last-pair-text">Already have an account?</p>
+                            <div className="homepage-end-signIn-button" onClick={() => this.props.openModal('login')}>Sign in</div>
+                        </div>
+
+                        </div>
+                    <div className="homepage-footer">
+                        <ul className="homepage-footer-links">
+                            <a className="homepage-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                            <li> - </li>
+                            <a className="homepage-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
+                            <li> - </li>
+                            <a className="homepage-footer-socials" target="_blank" href="https://angel.co/u/edwin-cheng-5">AngelList</a>
+                        </ul>
+                        <p className="homepage-language-text">Language: English (US)</p>
+                    </div>
                 </div>
+
             </div>
         )
     }

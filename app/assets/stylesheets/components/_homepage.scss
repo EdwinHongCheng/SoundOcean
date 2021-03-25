@@ -251,16 +251,94 @@
   background-color: white;
 }
 
+.homepage-end-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .homepage-end-text-big {
   text-align: center;
   font-size: 36px;
   font-weight: lighter;
   padding-top: 90px;
-  padding-bottom: 30px;
+  padding-bottom: 24px;
 }
 
 .homepage-end-text-small {
   text-align: center;
   font-size: 24px;
   font-weight: lighter;
+  padding-bottom: 28px;
 }
+
+.homepage-end-createAccount-button {
+  text-align: center;
+  width: 200px;
+  background-color: #000573;
+  color: white;
+  padding: 15px 0px;
+  font-size: 18px;
+  // font-weight: lighter;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.homepage-end-createAccount-button:hover {
+  background-color: #111abd;
+}
+
+.homepage-end-last-pair {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.homepage-end-last-pair-text {
+  font-size: 13px;
+  margin-right: 14px;
+}
+
+.homepage-end-signIn-button {
+  text-align: center;
+  font-size: 16px;
+  padding: 13px 17px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.homepage-end-signIn-button:hover {
+  border: 1px solid #b8b8b8;
+}
+
+// --------------------------------------------------------------------------->
+.homepage-footer {
+  margin: 0px 32px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.homepage-footer-links {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.homepage-footer-links a, .homepage-footer-links li {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.homepage-footer-links li {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.homepage-footer-socials:hover {
+  color: #b8b8b8;
+}
+
+.homepage-language-text {
+  color: #333;
+  font-size: 14px;
+}
+
