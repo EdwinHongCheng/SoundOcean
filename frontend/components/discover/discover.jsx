@@ -9,11 +9,12 @@ class Discover extends React.Component {
 
     render() {
         const users = this.props.users
-        const allTracks = this.props.tracks.map(track => {            
+        const allTracks = this.props.tracks.map((track, idx) => {            
             return (
                 <DiscoverIndexItem
                     key={track.id}
                     track={track}
+                    idx={idx}
                 />
             )
         })

@@ -23,27 +23,57 @@
   margin: 0px 32px;
   margin-top: 10px;
   border-top: 1px solid #f2f2f2;
+
+  margin-bottom: 30px;
 }
 
 
-
 //----------------------------------------------------------------------------->
-// [TESTING] Discover Page - want to display 4 Cover Arts per row
+// Discover Page Tracks (4 per row)
 .discoverAllTracks {
     display: flex;
     flex-wrap: wrap;
     grid-auto-flow: row;
 
-    // align-content: flex-start;
-    // justify-content: space-evenly;
+    width: 960px;
 }
 
+//------------------>
 .discoverIndexItem {
-    margin: 32px;
+    margin-left: 64px;
 }
-//----------------------------------------------------------------------------->
 
-.creatorNameText {
+.discover-coverArt {
+    height: 158px;
+    width: 158px;
+    border: 1px solid rgba(0, 0, 0, 0.1);   
+}
+
+.discover-track-title {
+    font-size: 16px;
+    height: 18px;
+    color: #333;
+    margin-top: 4px;
+    margin-bottom: 2px;
+
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.discover-track-creator-name {
     font-size: 14px;
-    margin-bottom: 4px;
+    height: 16px;
+    color: #999;
+    margin-bottom: 30px;
+
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.discover-track-title:hover, .discover-track-creator-name:hover {
+    color: black;
 }
