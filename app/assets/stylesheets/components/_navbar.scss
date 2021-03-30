@@ -143,7 +143,7 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content Link div, .dropdown-content div {
+.dropdown-content Link div, .dropdown-content div, .dropdown-content a {
   color: black;
   text-decoration: none;
   display: block;
@@ -154,12 +154,14 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content div:hover {background-color: #ccc}
+.dropdown-content div:hover, .dropdown-content a:hover {
+  background-color: #ccc
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show1 {
   display: block;
-  width: 85px;
+  width: 90px;
   right: 0px;
   top: 48px;
 }
@@ -231,7 +233,7 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show2 {
   display: block;
-  width: 98px;
+  width: 73px;
   top: 48px;
 }
 
