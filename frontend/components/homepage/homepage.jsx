@@ -10,11 +10,13 @@ import HomepageIndexItem from './homepage_index_item';
 
 class HomePage extends React.Component {
     componentDidMount() {
-        this.props.fetchTracks()
+        this.props.fetchTracks();
     }
 
     render() {
-        const users = this.props.users
+        window.scrollTo(0,0);
+
+        const users = this.props.users;
         const allTracks = this.props.tracks.map((track, idx) => {            
             return (
                 <HomepageIndexItem

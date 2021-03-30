@@ -4,10 +4,10 @@ import DiscoverIndexItem from './discover_index_item'
 class Discover extends React.Component {
 
     componentDidMount() {
-        this.props.fetchTracks()
+        this.props.fetchTracks();
     }
 
-    render() {
+    render() {        
         const users = this.props.users
         const allTracks = this.props.tracks.map((track, idx) => {            
             return (
