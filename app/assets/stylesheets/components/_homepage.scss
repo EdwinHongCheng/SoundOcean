@@ -111,16 +111,16 @@
   display: flex;
   flex-wrap: wrap;
   grid-auto-flow: row;
-
-  // max-width: 901px;
+  
   width: 960px;
   margin: auto;
 }
 
 .homepageCoverArt, .homepageCoverArtLast {
-  width: 136.66px;
-  height: 136.66px;
+  width: 134.66px;
+  height: 134.66px;
   margin-left: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .homepageCoverArtLast {
