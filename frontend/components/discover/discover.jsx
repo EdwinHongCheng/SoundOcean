@@ -21,11 +21,6 @@ class Discover extends React.Component {
         return(
             <div>
                 <div className="discoverBody">
-                    {/* Delete Filler Text below Later (???) */ }
-                    <br />
-                    <h2 className="filler-flower-text">~ Hear the SoundWaves (◠‿◠✿) ~</h2>
-                    <br />
-
                     <div className="discoverAllTracks">
                         {allTracks}
                     </div>

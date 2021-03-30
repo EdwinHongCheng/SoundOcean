@@ -6,11 +6,15 @@
 // To Center Nav Bar -> gives it margins if screen = stretch to wide
 // - in homepage.jsx (affects the GreetingsContainer)
 .navigation-bar {
-  // Can take out max-width to get extended blue border
-  max-width: 954px;
-  
-  height: 48px;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  width: 960px;
+  height: 48px;
+
+  background-color:#000573;
+  // border-bottom: 1px solid black;
 }
 
 //----------------------------------------------------------------------------->
@@ -18,24 +22,29 @@
 // NavBar Post-Sign In (1, Logo, 2, Home, 3, Stream, etc)
 
 
-.navbar-post-signin {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 48px;
-  // for Search Bar
-  background-color:#000573;
-  border-bottom: 1px solid black;
-}
+// .navbar-post-signin {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 960;
+//   height: 48px;
+//   // for Search Bar
+//   background-color:#000573;
+//   border-bottom: 1px solid black;
+// }
 
 // for the Nav Buttons Post-SignIn (Home, Stream, etc)
-.nav-button {
+
+
+
+// NavBar Left Side ---------------------------------------------------------->
+
+
+.navbar-left {
+  height: 48px;
+  display: flex;
+  align-items: center;
   background-color:#000573;
-  color: white;
-  padding: 16px;
-  // border-bottom: 1px solid black;
-  border-right: 1px solid black;
 }
 
 .home-button {
@@ -43,10 +52,33 @@
   color: white;
   padding: 16px;
   font-size: 16px;
-  // border-bottom: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
 }
+
+.nav-button {
+  background-color:#000573;
+  color: white;
+  padding: 16px;
+  border-right: 1px solid black;
+}
+
+
+/// NavBar Middle (just blue for now -> Search Bar later) --------------------->
+
+
+
+
+
+
+// NavBar Right Side ---------------------------------------------------------->
+
+.navbar-right {
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
 
 .upload-button {
   background-color:#000573;
