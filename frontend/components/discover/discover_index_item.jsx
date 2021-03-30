@@ -10,8 +10,6 @@ class DiscoverIndexItem extends React.Component {
         return (
             <div className="discoverIndexItem">
                 <Link to={`/tracks/${currentTrack.id}`}><img src={currentTrack.imageURL} className="coverArt" /></Link>
-                <br />
-
 
                 {/* Display Username (new + old ways) */}
                 {/* [New Way - Works] */}
@@ -27,7 +25,6 @@ class DiscoverIndexItem extends React.Component {
 
 
                 <Link to={`/tracks/${currentTrack.id}`}><p>{currentTrack.title}</p></Link>
-                <br />
             </div>
         )
     }   

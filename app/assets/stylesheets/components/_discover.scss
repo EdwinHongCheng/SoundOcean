@@ -1,11 +1,29 @@
 .discoverBody {
-    max-width: 901px;
+    max-width: 960px;
     margin: auto;
+    background-color: white;
 }
 
-// .discover-text-big {
-//     margin-top: 50px;
-// }
+.discover-text-big {
+    padding-top: 84px;
+
+    font-size: 24px;
+    // font-weight: lighter;
+    margin-bottom: 16px;
+    margin-left: 32px;
+}
+
+.discover-text-small {
+    margin-left: 32px;
+    font-size: 14px;
+    color: #999;
+}
+
+.discover-line-top {
+  margin: 0px 32px;
+  margin-top: 10px;
+  border-top: 1px solid #f2f2f2;
+}
 
 
 

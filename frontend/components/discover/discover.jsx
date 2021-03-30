@@ -22,7 +22,8 @@ class Discover extends React.Component {
             <div>
                 <div className="discoverBody">
                     <p className="discover-text-big">All Tracks</p>
-                    <p className="discover-text-small">Explore the Ocean, Listen to the SoundWaves</p>
+                    <p className="discover-text-small">Explore the Ocean, Hear the SoundWaves</p>
+                    <div className="discover-line-top"></div>
                     <div className="discoverAllTracks">
                         {allTracks}
                     </div>
