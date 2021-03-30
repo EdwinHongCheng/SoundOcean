@@ -6,6 +6,11 @@
 // To Center Nav Bar -> gives it margins if screen = stretch to wide
 // - in homepage.jsx (affects the GreetingsContainer)
 .navigation-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -14,7 +19,6 @@
   height: 48px;
 
   background-color:#000573;
-  // border-bottom: 1px solid black;
 }
 
 //----------------------------------------------------------------------------->
@@ -64,12 +68,6 @@
 }
 
 
-/// NavBar Middle (just blue for now -> Search Bar later) --------------------->
-
-
-
-
-
 
 // NavBar Right Side ---------------------------------------------------------->
 
@@ -93,22 +91,16 @@
   background-color: #111abd;
 }
 
-// Search Bar
-.searchBar {
-  height: 16px;
-  font-size: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
-  outline: none;
+
+// [WORKS] Profile Pic (mini)
+.prof-pic-parent {
+  height: 48px;
 }
 
 
-// [WORKS] Profile Pic (mini)
 .mini-prof-pic {
-  height: 52px;
-  width: 52px;
-  // border-bottom: 1px solid black;
-  border-left: 1px solid black;
+  height: 48px;
+  width: 48px;
 }
 
 
@@ -126,7 +118,6 @@
   border: none;
   cursor: pointer;
   outline: none;
-  border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
 
@@ -150,7 +141,6 @@
   background-color:white;
   z-index: 1;
   cursor: pointer;
-
 }
 
 /* Links inside the dropdown */
@@ -172,7 +162,7 @@
   display: block;
   width: 85px;
   right: 0px;
-  top: 49px;
+  top: 48px;
 }
 
 
@@ -194,6 +184,13 @@
   outline: none;
   border-right: 1px solid black;
   border-left: 1px solid black;
+
+  // Note: max-width for the username text itself (not the padding, etc)
+  // - can adjust to w/e
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Dropdown button on hover & focus */
@@ -216,7 +213,6 @@
   background-color:white;
   z-index: 1;
   cursor: pointer;
-
 }
 
 /* Links inside the dropdown */
@@ -237,7 +233,7 @@
 .show2 {
   display: block;
   width: 98px;
-  top: 49px;
+  top: 48px;
 }
 
 

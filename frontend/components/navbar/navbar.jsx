@@ -78,7 +78,7 @@ const Navbar = ({ currentUser, logout }) => {
                 <div className="navbar-right">
                     <Link to="/upload" className="upload-button">Upload</Link>
 
-                    <Link to={`/users/${currentUser.id}`}>
+                    <Link to={`/users/${currentUser.id}`} className="prof-pic-parent">
                         <img className="mini-prof-pic" src={currentUser.profilePicURL} />
                     </Link>
                     
