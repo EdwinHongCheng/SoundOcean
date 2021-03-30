@@ -1,5 +1,5 @@
 .discoverBody {
-    max-width: 960px;
+    width: 960px;
     margin: auto;
     background-color: white;
 }
@@ -76,4 +76,42 @@
 
 .discover-track-title:hover, .discover-track-creator-name:hover {
     color: black;
+}
+
+// Discover Page: Footer ------------------------------------------------------>
+.discover-footer-parent {
+    width: 960px;
+    height: 100px;
+    margin: auto;
+    background-color: white;
+}
+
+
+.discover-footer {
+  margin: 0px 32px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.discover-footer-links {
+  display: flex;
+  padding: 20px 0px 15px;
+}
+
+.discover-footer-links a, .discover-footer-links li {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.discover-footer-links li {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.discover-footer-socials:hover {
+  color: #b8b8b8;
+}
+
+.discover-language-text {
+  color: #333;
+  font-size: 14px;
 }
