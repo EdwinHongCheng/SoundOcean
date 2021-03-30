@@ -5,8 +5,8 @@ import logo from "../../../app/assets/images/logo.png"
 const Navbar = ({ currentUser, logout }) => {
 
     const soLogo = (
-        <Link to="/discover">
-            <img className="logo" src={logo} alt="Logo" />
+        <Link to="/discover" className="logo-parent">
+            <img className="navbar-logo" src={logo} alt="Logo" />
         </Link>
     )
 

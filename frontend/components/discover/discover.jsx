@@ -21,11 +21,12 @@ class Discover extends React.Component {
         return(
             <div>
                 <div className="discoverBody">
+                    <p className="discover-text-big">All Tracks</p>
+                    <p className="discover-text-small">Explore the Ocean, Listen to the SoundWaves</p>
                     <div className="discoverAllTracks">
                         {allTracks}
                     </div>
                 </div>
-    
             </div>
         )
     }

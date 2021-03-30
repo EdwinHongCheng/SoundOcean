@@ -24,21 +24,6 @@
 }
 
 //----------------------------------------------------------------------------->
-
-// NavBar Post-Sign In (1, Logo, 2, Home, 3, Stream, etc)
-
-
-// .navbar-post-signin {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 960;
-//   height: 48px;
-//   // for Search Bar
-//   background-color:#000573;
-//   border-bottom: 1px solid black;
-// }
-
 // for the Nav Buttons Post-SignIn (Home, Stream, etc)
 
 
@@ -49,10 +34,13 @@
   height: 48px;
   display: flex;
   align-items: center;
-  background-color:#000573;
 }
 
-.logo {
+.logo-parent{
+  height: 48px;
+}
+
+.navbar-logo {
   height: 48px;
 }
 
