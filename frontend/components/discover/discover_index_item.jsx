@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlayCircle, faPauseCircle } from '@fortawesome/free-solid-svg-icons'
 
 class DiscoverIndexItem extends React.Component {
     constructor(props) {
@@ -27,16 +29,26 @@ class DiscoverIndexItem extends React.Component {
     }
 
     render() {
-
         let currentTrack = this.props.track;
-        // let user = this.props.user;
+
+        let playPauseButton;
+        if (this.props.currentTrack === this.props.track && this.props.isPlaying) {
+            playPauseButton = (
+            <FontAwesomeIcon id="play-btn" icon={faPauseCircle} 
+                onClick={this.updateCurrentTrack}
+            />)
+        } else {
+            playPauseButton = (<FontAwesomeIcon id="play-btn" icon={faPlayCircle}
+                onClick={this.updateCurrentTrack} 
+            />)
+        }
 
         return (
             <div className="discoverIndexItem">
-
-                {/* [TESTING] Need to have it pause/resume too now */}
-                <img onClick={this.updateCurrentTrack} src={currentTrack.imageURL} className="discover-coverArt" />
-
+                <div className="coverArt-and-button">
+                    <img onClick={this.updateCurrentTrack} src={currentTrack.imageURL} className="discover-coverArt" />
+                    {playPauseButton}
+                </div>
 
                 <Link to={`/tracks/${currentTrack.id}`}>
                     <div className="discover-track-title">{currentTrack.title}</div>

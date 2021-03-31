@@ -43,15 +43,53 @@
   margin-left: 64px;
 }
 
+.coverArt-and-button {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+
+.coverArt-and-button:hover {
+  #play-btn {
+    display: block;
+  }
+}
+
 .discover-coverArt {
   height: 158px;
   width: 158px;
-  border: 1px solid rgba(0, 0, 0, 0.1);   
+  border: 1px solid rgba(0, 0, 0, 0.1);  
 }
 
 .discover-coverArt:hover {
   cursor: pointer;
 }
+
+#play-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #fd6c6c;
+  background-color: white;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: none;
+}
+
+#play-btn:hover {
+  cursor: pointer;
+  // color: #ff8b8b;
+}
+
+
+
+
+
+
 
 .discover-track-title {
     font-size: 16px;
