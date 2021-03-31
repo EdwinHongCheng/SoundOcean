@@ -1,22 +1,22 @@
 .discoverBody {
-    width: 960px;
-    margin: auto;
-    background-color: white;
+  width: 960px;
+  margin: auto;
+  background-color: white;
 }
 
 .discover-text-big {
-    padding-top: 84px;
+  padding-top: 84px;
+  font-size: 24px;
 
-    font-size: 24px;
-    // font-weight: lighter;
-    margin-bottom: 16px;
-    margin-left: 32px;
+  // font-weight: lighter;
+  margin-bottom: 16px;
+  margin-left: 32px;
 }
 
 .discover-text-small {
-    margin-left: 32px;
-    font-size: 14px;
-    color: #999;
+  margin-left: 32px;
+  font-size: 14px;
+  color: #999;
 }
 
 .discover-line-top {
@@ -31,22 +31,26 @@
 //----------------------------------------------------------------------------->
 // Discover Page Tracks (4 per row)
 .discoverAllTracks {
-    display: flex;
-    flex-wrap: wrap;
-    grid-auto-flow: row;
+  display: flex;
+  flex-wrap: wrap;
+  grid-auto-flow: row;
 
-    width: 960px;
+  width: 960px;
 }
 
 //------------------>
 .discoverIndexItem {
-    margin-left: 64px;
+  margin-left: 64px;
 }
 
 .discover-coverArt {
-    height: 158px;
-    width: 158px;
-    border: 1px solid rgba(0, 0, 0, 0.1);   
+  height: 158px;
+  width: 158px;
+  border: 1px solid rgba(0, 0, 0, 0.1);   
+}
+
+.discover-coverArt:hover {
+  cursor: pointer;
 }
 
 .discover-track-title {
@@ -63,27 +67,27 @@
 }
 
 .discover-track-creator-name {
-    font-size: 14px;
-    height: 16px;
-    color: #999;
-    margin-bottom: 30px;
+  font-size: 14px;
+  height: 16px;
+  color: #999;
+  margin-bottom: 30px;
 
-    width: 160px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .discover-track-title:hover, .discover-track-creator-name:hover {
-    color: black;
+  color: black;
 }
 
 // Discover Page: Footer ------------------------------------------------------>
 .discover-footer-parent {
-    width: 960px;
-    height: 100px;
-    margin: auto;
-    background-color: white;
+  width: 960px;
+  height: 100px;
+  margin: auto;
+  background-color: white;
 }
 
 

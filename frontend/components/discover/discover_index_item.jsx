@@ -2,6 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class DiscoverIndexItem extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.updateCurrentTrack = this.updateCurrentTrack.bind(this)
+    }
+
+    // [WORKS] for my Play This Track button
+    updateCurrentTrack(e) {
+        e.preventDefault()
+        this.props.receiveCurrentTrack(this.props.track.id)
+        this.props.playTrack()
+    }
+
     render() {
 
         let currentTrack = this.props.track;
@@ -9,7 +22,10 @@ class DiscoverIndexItem extends React.Component {
 
         return (
             <div className="discoverIndexItem">
-                <Link to={`/tracks/${currentTrack.id}`}><img src={currentTrack.imageURL} className="discover-coverArt" /></Link>
+
+                {/* [TESTING] Need to have it pause/resume too now */}
+                <img onClick={this.updateCurrentTrack} src={currentTrack.imageURL} className="discover-coverArt" />
+
 
                 <Link to={`/tracks/${currentTrack.id}`}>
                     <div className="discover-track-title">{currentTrack.title}</div>
