@@ -104,6 +104,27 @@
   // border-radius: 100px;
 }
 
+.navbar-gh-icon-parent {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000573;
+  border-right: 1px solid black;
+}
+
+#navbar-gh-icon {
+  width: 36px;
+  height: 36px;
+  color: white;
+}
+
+.navbar-gh-icon-parent:hover {
+  cursor: pointer;
+  // color: #ccc;
+  background-color: #111abd;
+}
 
 //----------------------------------------------------------------------------->
 

@@ -2,6 +2,9 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import logo from "../../../app/assets/images/logo.png"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub} from '@fortawesome/free-brands-svg-icons';
+
 const Navbar = ({ currentUser, logout }) => {
 
     const soLogo = (
@@ -96,7 +99,10 @@ const Navbar = ({ currentUser, logout }) => {
                         </div>
 
 
-                        <a className="nav-button" href="https://github.com/EdwinHongCheng/SoundOcean" target="_blank">GitHub</a>
+                        <a className="navbar-gh-icon-parent" href="https://github.com/EdwinHongCheng/SoundOcean" target="_blank">
+                            <FontAwesomeIcon id="navbar-gh-icon" icon={faGithub}/>
+                        </a>
+
                         {/* <a className="nav-button" href="https://www.linkedin.com/in/edwin-cheng-a603819b/" target="_blank">LinkedIn</a> */}
 
                         {/* DropDown Button for "..." (w3schools): How TO - Clickable Dropdown  */}
