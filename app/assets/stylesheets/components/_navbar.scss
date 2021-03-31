@@ -175,6 +175,7 @@
 .dropdown-content Link div, .dropdown-content div, .dropdown-content a {
   color: black;
   text-decoration: none;
+  font-size: 12px;
   display: block;
   border-left: 1px solid black;
   border-right: 1px solid black;
@@ -190,7 +191,7 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show1 {
   display: block;
-  width: 90px;
+  width: 96px;
   right: 0px;
   top: 48px;
 }
@@ -249,6 +250,7 @@
 .dropdown-content2 div {
   color: black;
   text-decoration: none;
+  font-size: 16px;
   display: block;
   border-left: 1px solid black;
   border-right: 1px solid black;
