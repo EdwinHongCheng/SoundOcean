@@ -90,18 +90,24 @@
 
 // [WORKS] Profile Pic (mini)
 .prof-pic-parent {
+  width: 48px;
   height: 48px;
 
-  // margin-left: 4px;
-  // margin-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000573;
 }
 
-
 .mini-prof-pic {
-  height: 48px;
-  width: 48px;
+  height: 36px;
+  width: 36px;
   
-  // border-radius: 100px;
+  border-radius: 100px;
+}
+
+.prof-pic-parent:hover {
+  background-color: #111abd;
 }
 
 .navbar-gh-icon-parent {
