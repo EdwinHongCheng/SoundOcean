@@ -11,11 +11,11 @@ import HomepageIndexItem from './homepage_index_item';
 class HomePage extends React.Component {
     componentDidMount() {
         this.props.fetchTracks();
+
+        window.scrollTo(0, 0);
     }
-
+    
     render() {
-        window.scrollTo(0,0);
-
         const users = this.props.users;
         const allTracks = this.props.tracks.map((track, idx) => {            
             return (
