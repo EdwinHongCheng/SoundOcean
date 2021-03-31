@@ -11,8 +11,19 @@ class DiscoverIndexItem extends React.Component {
     // [WORKS] for my Play This Track button
     updateCurrentTrack(e) {
         e.preventDefault()
-        this.props.receiveCurrentTrack(this.props.track.id)
-        this.props.playTrack()
+
+        if (this.props.currentTrack === this.props.track) {
+            if (this.props.isPlaying) {
+                document.getElementById('audio').pause();
+                this.props.pauseTrack();
+            } else {
+                document.getElementById('audio').play();
+                this.props.playTrack();
+            }
+        } else {
+            this.props.receiveCurrentTrack(this.props.track.id)
+            this.props.playTrack();
+        }
     }
 
     render() {

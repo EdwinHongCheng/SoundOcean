@@ -19,6 +19,8 @@ class Discover extends React.Component {
                     receiveCurrentTrack={this.props.receiveCurrentTrack}
                     playTrack={this.props.playTrack}
                     pauseTrack={this.props.pauseTrack}
+                    currentTrack={this.props.currentTrack}
+                    isPlaying={this.props.isPlaying}
                 />
             )
         })
