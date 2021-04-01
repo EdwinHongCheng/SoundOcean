@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import logo from "../../../app/assets/images/logo.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub} from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faAngellist } from '@fortawesome/free-brands-svg-icons';
 
 const Navbar = ({ currentUser, logout }) => {
 
@@ -101,6 +101,14 @@ const Navbar = ({ currentUser, logout }) => {
 
                         <a className="navbar-gh-icon-parent" href="https://github.com/EdwinHongCheng/SoundOcean" target="_blank">
                             <FontAwesomeIcon id="navbar-gh-icon" icon={faGithub}/>
+                        </a>
+
+                        <a className="navbar-gh-icon-parent" href="https://www.linkedin.com/in/edwin-cheng-a603819b/" target="_blank">
+                            <FontAwesomeIcon id="navbar-gh-icon" icon={faLinkedin}/>
+                        </a>
+
+                        <a className="navbar-gh-icon-parent" href="https://angel.co/u/edwin-cheng-5" target="_blank">
+                            <FontAwesomeIcon id="navbar-gh-icon" icon={faAngellist}/>
                         </a>
 
                         {/* <a className="nav-button" href="https://www.linkedin.com/in/edwin-cheng-a603819b/" target="_blank">LinkedIn</a> */}
