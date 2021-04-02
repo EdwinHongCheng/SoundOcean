@@ -26,7 +26,7 @@ class PlayBar extends React.Component {
 
             let audio = (
                 // NOTE: audio tag: add "controls" -> audio player shows up
-                <audio id="audio" autoPlay key={this.props.currentTrack.id}>
+                <audio id="audio" autoPlay loop key={this.props.currentTrack.id}>
                     <source src={this.props.currentTrack.audioURL} type="audio/mpeg" />
                     <source src={this.props.currentTrack.audioURL} type="audio/ogg" />
                     Your browser does not support the audio tag.
