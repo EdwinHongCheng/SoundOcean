@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
@@ -60,7 +61,22 @@ class PlayBar extends React.Component {
                             </div>
 
                             <div className="playbar-right">
-                                <p className="playbar-text">Now Playing: {this.props.currentTrack.title}</p>
+                                <div className="playbar-coverArt-parent" >
+                                    <Link to={`/tracks/${this.props.currentTrack.id}`}>
+                                        <img src={this.props.currentTrack.imageURL} className="playbar-coverArt" />
+                                    </Link>
+                                </div>
+
+                                <div className="playbar-track-text-parent">
+                                    <Link to={`/tracks/${this.props.currentTrack.id}`}>
+                                        <p className="playbar-text-track-title">{this.props.currentTrack.title}</p>
+                                    </Link>
+
+                                    <Link to={`/users/${this.props.currentTrack.creator_id}`}>
+                                        <p className="playbar-text-track-creator">{this.props.currentTrack.creator}</p>
+                                    </Link>
+                                </div>
+                                
                             </div>
                         </div>
 
