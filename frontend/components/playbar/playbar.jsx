@@ -22,7 +22,7 @@ class PlayBar extends React.Component {
             let playPauseButton;
             if (this.props.isPlaying) {
                 playPauseButton = (
-                    <div className="playpause-button-parent"
+                    <div className="playpause-button-parent" title="Pause Current Track"
                         onClick={
                             () => {
                                 document.getElementById('audio').pause();
@@ -35,7 +35,7 @@ class PlayBar extends React.Component {
                 )
             } else {
                 playPauseButton = (
-                    <div className="playpause-button-parent"
+                    <div className="playpause-button-parent" title="Play Current Track"
                         onClick={
                             () => {
                                 document.getElementById('audio').play();
@@ -68,12 +68,12 @@ class PlayBar extends React.Component {
                                 </div>
 
                                 <div className="playbar-track-text-parent">
-                                    <Link to={`/tracks/${this.props.currentTrack.id}`}>
-                                        <p className="playbar-text-track-title">{this.props.currentTrack.title}</p>
-                                    </Link>
-
                                     <Link to={`/users/${this.props.currentTrack.creator_id}`}>
                                         <p className="playbar-text-track-creator">{this.props.currentTrack.creator}</p>
+                                    </Link>
+
+                                    <Link to={`/tracks/${this.props.currentTrack.id}`}>
+                                        <p className="playbar-text-track-title">{this.props.currentTrack.title}</p>
                                     </Link>
                                 </div>
                                 
