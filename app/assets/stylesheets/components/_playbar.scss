@@ -70,7 +70,9 @@
 
 .playbar-right {
     width: 342px;
+    height: 48px;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -94,32 +96,46 @@
 .playbar-track-text-parent {
     display: flex;
     flex-direction: column;
+    width: 184px;
 }
 
 .playbar-text-track-creator {
     font-size: 13px;
     line-height: 18px;
     color: #999;
-
-    max-width: 204px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .playbar-text-track-title {
     font-size: 13px;
     line-height: 18px;
     color: #666;
+}
 
-
-    max-width: 204px;
+.playbar-text-track-creator, .playbar-text-track-title {
+    // adjust width, max-width if adding Like Button, etc.
+    max-width: 184px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+
 .playbar-text-track-creator:hover, .playbar-text-track-title:hover {
     color: #333;
+}
+
+// -------------------->
+
+.playbar-right-blurb {
+    width: 90px;
+    margin: 0px 10px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #666;
+}
+
+.playbar-right-blurb:hover {
+    color: #111abd;
+    cursor: pointer;
 }
  

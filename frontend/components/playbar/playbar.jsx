@@ -116,6 +116,10 @@ class PlayBar extends React.Component {
                                         <p className="playbar-text-track-title">{this.props.currentTrack.title}</p>
                                     </Link>
                                 </div>
+
+                                <a className="playbar-right-blurb" href="https://www.linkedin.com/in/edwin-cheng-a603819b/" target="_blank">
+                                    Site created by Edwin Cheng
+                                </a>
                             </div>
                         </div>
 
