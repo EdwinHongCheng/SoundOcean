@@ -1,9 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 
 class PlayBar extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            muted: false,
+        }
+
+        this.toggleMute = this.toggleMute.bind(this);
+    }
+
+    toggleMute(e) {
+        e.preventDefault();
+        this.setState({ muted: !this.state.muted });
+    }
 
     render() {
         let playbarAll;
@@ -12,7 +26,7 @@ class PlayBar extends React.Component {
 
             let audio = (
                 // NOTE: audio tag: add "controls" -> audio player shows up
-                <audio id="audio" autoPlay loop key={this.props.currentTrack.id}>
+                <audio id="audio" autoPlay key={this.props.currentTrack.id}>
                     <source src={this.props.currentTrack.audioURL} type="audio/mpeg" />
                     <source src={this.props.currentTrack.audioURL} type="audio/ogg" />
                     Your browser does not support the audio tag.
@@ -48,6 +62,31 @@ class PlayBar extends React.Component {
                 )
             }
 
+            let volumeButton;
+            if (this.state.muted) {
+                volumeButton = (<div className="volume-button-parent"
+                    onClick={
+                        (e) => {
+                            document.getElementById('audio').muted = false;
+                            this.toggleMute(e);
+                        } 
+                    }
+                > 
+                    <FontAwesomeIcon id="volume-button-icon" icon={faVolumeMute}/>
+                </div>)
+            } else {
+                volumeButton = (<div className="volume-button-parent"
+                    onClick={
+                        (e) => {
+                            document.getElementById('audio').muted = true;
+                            this.toggleMute(e);
+                        } 
+                    }
+                >
+                    <FontAwesomeIcon id="volume-button-icon" icon={faVolumeUp}/>
+                </div>)
+            }
+
             playbarAll = (
                 <div className="playbar-parent-parent">
                     <div className="playbar-parent">
@@ -58,6 +97,7 @@ class PlayBar extends React.Component {
                                     {audio}
                                 </div>
                                 {playPauseButton}
+                                {volumeButton}
                             </div>
 
                             <div className="playbar-right">
@@ -76,7 +116,6 @@ class PlayBar extends React.Component {
                                         <p className="playbar-text-track-title">{this.props.currentTrack.title}</p>
                                     </Link>
                                 </div>
-                                
                             </div>
                         </div>
 
