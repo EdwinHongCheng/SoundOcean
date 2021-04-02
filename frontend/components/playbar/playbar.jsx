@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
 class PlayBar extends React.Component {
 
@@ -7,7 +9,7 @@ class PlayBar extends React.Component {
 
         if (this.props.currentTrack) {
 
-            let playbar = (
+            let audio = (
                 // NOTE: audio tag: add "controls" -> audio player shows up
                 <audio id="audio" autoPlay loop key={this.props.currentTrack.id}>
                     <source src={this.props.currentTrack.audioURL} type="audio/mpeg" />
@@ -16,41 +18,53 @@ class PlayBar extends React.Component {
                 </audio>
             )
 
-
             let playPauseButton;
             if (this.props.isPlaying) {
                 playPauseButton = (
-                    <button id="playBarButton" onClick={
-                        () => {
-                            document.getElementById('audio').pause()
-                            this.props.pauseTrack()
-                        } 
-                    }>[ PAUSE ]</button>
+                    <div className="playpause-button-parent"
+                        onClick={
+                            () => {
+                                document.getElementById('audio').pause();
+                                this.props.pauseTrack();
+                            } 
+                        }
+                    >
+                        <FontAwesomeIcon id="playpause-button-icon" icon={faPause}/>
+                    </div>
                 )
             } else {
                 playPauseButton = (
-                    <button id="playBarButton" onClick={
-                        () => {
-                            document.getElementById('audio').play()
-                            this.props.playTrack()
+                    <div className="playpause-button-parent"
+                        onClick={
+                            () => {
+                                document.getElementById('audio').play();
+                                this.props.playTrack();
+                            } 
                         }
-                    }>[  PLAY  ]</button>
+                    >
+                        <FontAwesomeIcon id="playpause-button-icon" icon={faPlay}/>
+                    </div>
                 )
             }
 
             playbarAll = (
-                <div className="playbar">
-                    {/* NOTE: need a unique "key" to tell React it updated !!! */}
-                    <div className="playbar-controls">
-                        {playbar}
+                <div className="playbar-parent-parent">
+                    <div className="playbar-parent">
+                        {/* NOTE: need a unique "key" to tell React it updated !!! */}
+                        <div className="playbar">
+                            <div className="playbar-left">
+                                <div className="audio">
+                                    {audio}
+                                </div>
+                                {playPauseButton}
+                            </div>
+
+                            <div className="playbar-right">
+                                <p className="playbar-text">Now Playing: {this.props.currentTrack.title}</p>
+                            </div>
+                        </div>
+
                     </div>
-
-                    {/* [WORKS] Play/Pause Buttons (maybe delete later (?)) */}
-                    {playPauseButton}
-
-                    <p className="playbar-text">Now Playing: {this.props.currentTrack.title}</p>
-
-
                 </div>
             )
         }

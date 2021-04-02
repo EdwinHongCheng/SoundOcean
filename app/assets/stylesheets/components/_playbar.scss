@@ -2,19 +2,69 @@
 // to be justify-content: space-between -> DOESNT WORK THO
 
 
+.playbar-parent-parent {
+    background-color: #f2f2f2;
+    border-top: 1px solid #cecece;
+    position: fixed;
+    width: 100%;
+    height: 48px; 
+    display: flex;
+    justify-content: center;  
+    // z-index: 2;
+    bottom: 0;
+}
+
+
 // [NOTE] temp margin-botton, etc
-.playbar {
+.playbar-parent {
+    background-color: #f2f2f2;
+    width: 960px;
+    height: 48px;
+    margin: auto;
     position: fixed;
     display: flex;
     align-items: center;
-    top: 66px;
-    right: 60px;
 }
 
-// [NOTE] temp margin-left, etc
-.playbar-controls {
-    // margin-left: 24px;
+.playbar {
+    width: 960px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+// [Playbar Left] ------------------------------------------------------------->
+
+.playbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.audio {
+}
+
+.playpause-button-parent {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 24px;
+}
+
+.playpause-button-parent:hover {
+    cursor: pointer;
+}
+
+#playpause-button-icon {
+    width: 15px;
+    height: 15px;
+}
+
+
+// [Playbar Right] ------------------------------------------------------------>
 
 .playbar-text {
     padding: 6px;
