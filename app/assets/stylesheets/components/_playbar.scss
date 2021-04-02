@@ -1,7 +1,3 @@
-// [STUCK] want playbar left (the music player) + playbar right (the text/info)
-// to be justify-content: space-between -> DOESNT WORK THO
-
-
 .playbar-parent-parent {
     background-color: #f2f2f2;
     border-top: 1px solid #cecece;
@@ -14,8 +10,6 @@
     bottom: 0;
 }
 
-
-// [NOTE] temp margin-botton, etc
 .playbar-parent {
     background-color: #f2f2f2;
     width: 960px;
