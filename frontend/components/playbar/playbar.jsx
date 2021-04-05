@@ -13,7 +13,7 @@ class PlayBar extends React.Component {
             trackLength: 0,
             currentTrackId: null,
             looping: false,
-            volume: 0.2,
+            volume: 0.5,
         }
 
         this.toggleMute = this.toggleMute.bind(this);
@@ -36,7 +36,7 @@ class PlayBar extends React.Component {
         const scrubber = document.getElementById('scrubber');
 
         if (this.state.currentTrackId === null) {
-            progressBar.volume = 0.2;
+            progressBar.volume = 0.5;
             this.playTrack = setInterval(()=>{
                 scrubber.value = progressBar.currentTime;
                 this.setState({ trackPlayed: progressBar.currentTime })
