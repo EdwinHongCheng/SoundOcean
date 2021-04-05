@@ -13,24 +13,18 @@ class PlayBar extends React.Component {
             trackLength: 0,
             currentTrackId: null,
             looping: false,
-            volume: 0.3,
+            volume: 0.2,
         }
 
         this.toggleMute = this.toggleMute.bind(this);
-        // [TEST]
         this.getTrackLength = this.getTrackLength.bind(this);
         this.handleTrackPlay = this.handleTrackPlay.bind(this);
         this.handleScrubbing = this.handleScrubbing.bind(this);
         this.toggleTrackLooping = this.toggleTrackLooping.bind(this);
         this.handleEnd = this.handleEnd.bind(this);
         this.goBackToStart = this.goBackToStart.bind(this);
-        // [TEST]
         this.handleVolume = this.handleVolume.bind(this);
     }
-
-    // componentDidUpdate(prevProps){
-
-    // }
 
     toggleMute(e) {
         e.preventDefault();
@@ -42,7 +36,7 @@ class PlayBar extends React.Component {
         const scrubber = document.getElementById('scrubber');
 
         if (this.state.currentTrackId === null) {
-            progressBar.volume = 0.3;
+            progressBar.volume = 0.2;
             this.playTrack = setInterval(()=>{
                 scrubber.value = progressBar.currentTime;
                 this.setState({ trackPlayed: progressBar.currentTime })
@@ -121,7 +115,6 @@ class PlayBar extends React.Component {
         if (this.props.currentTrack) {
 
             let audio = (
-                // NOTE: audio tag: add "controls" -> audio player shows up
                 <audio id="audio" autoPlay key={this.props.currentTrack.id}
                     onLoadedMetadata={this.getTrackLength}
                     onPlaying={this.handleTrackPlay}
@@ -221,7 +214,6 @@ class PlayBar extends React.Component {
             }
 
             // PROGRESS BAR --------------------------------------------------->
-
             let formatTrackTime = (time) => {
                 let sec = Math.floor(parseFloat(time));
                 let min = Math.floor(sec / 60);
@@ -239,13 +231,12 @@ class PlayBar extends React.Component {
                 </div>
             )
 
-            // ---------------------------------------------------------------->
-
+            // PlayBar (All) -------------------------------------------------->
             playbarAll = (
                 <div className="playbar-parent-parent">
                     <div className="playbar-parent">
-                        {/* NOTE: need a unique "key" to tell React it updated !!! */}
                         <div className="playbar">
+
                             <div className="playbar-left">
                                 <div className="audio">
                                     {audio}
