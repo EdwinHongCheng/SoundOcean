@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faVolumeMute, faVolumeUp, faUndo } from '@fortawesome/free-solid-svg-icons';
 
 class PlayBar extends React.Component {
     constructor(props) {
@@ -9,10 +9,10 @@ class PlayBar extends React.Component {
 
         this.state = {
             muted: false,
-            // [TEST]
             trackPlayed: 0,
             trackLength: 0,
             currentTrackId: null,
+            looping: false,
         }
 
         this.toggleMute = this.toggleMute.bind(this);
@@ -20,6 +20,7 @@ class PlayBar extends React.Component {
         this.getTrackLength = this.getTrackLength.bind(this);
         this.handleTrackPlay = this.handleTrackPlay.bind(this);
         this.handleScrubbing = this.handleScrubbing.bind(this);
+        this.toggleTrackLooping = this.toggleTrackLooping.bind(this);
     }
 
     componentDidUpdate(prevProps){
@@ -51,6 +52,7 @@ class PlayBar extends React.Component {
 
             progressBar.currentTime = 0;
             scrubber.value = progressBar.currentTime;
+            progressBar.loop = this.state.looping;
 
             this.playTrack = setInterval(()=>{
                 scrubber.value = progressBar.currentTime;
@@ -71,6 +73,12 @@ class PlayBar extends React.Component {
         this.setState({ trackPlayed: e.target.value });
     }
 
+    toggleTrackLooping() {
+        let x = this.state.looping;
+        this.setState({ looping: !x });
+        document.getElementById('audio').loop = !x;
+    }
+
     render() {
         let playbarAll;
 
@@ -78,7 +86,7 @@ class PlayBar extends React.Component {
 
             let audio = (
                 // NOTE: audio tag: add "controls" -> audio player shows up
-                <audio id="audio" autoPlay loop key={this.props.currentTrack.id}
+                <audio id="audio" autoPlay key={this.props.currentTrack.id}
                     onLoadedMetadata={this.getTrackLength}
                     onPlaying={this.handleTrackPlay}
                     src={this.props.currentTrack.audioURL}
@@ -113,6 +121,18 @@ class PlayBar extends React.Component {
                     </div>
                 )
             }
+
+            let replayButton = (
+                <div className="replay-button-parent" title="Loop Track"
+                    onClick={
+                        () => {
+                            this.toggleTrackLooping();
+                        } 
+                    }
+                >
+                    <FontAwesomeIcon id={`replay-button-icon-${this.state.looping}`} icon={faUndo}/>
+                </div>
+            )
 
             let volumeButton;
             if (this.state.muted) {
@@ -172,11 +192,12 @@ class PlayBar extends React.Component {
                                     {audio}
                                 </div>
                                 {playPauseButton}
-                                {progressBar}
-                                {volumeButton}
+                                {replayButton}
                             </div>
 
                             <div className="playbar-right">
+                                {progressBar}
+                                {volumeButton}
                                 <div className="playbar-coverArt-parent" >
                                     <Link to={`/tracks/${this.props.currentTrack.id}`}>
                                         <img src={this.props.currentTrack.imageURL} className="playbar-coverArt" />

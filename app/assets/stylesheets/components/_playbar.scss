@@ -37,38 +37,72 @@
     align-items: center;
 }
 
-.audio {
+.playpause-button-parent {
+    margin-left: 48px;
 }
 
-.playpause-button-parent, .volume-button-parent {
+.playpause-button-parent, .replay-button-parent {
     width: 48px;
     height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    // Remove if I want to implement prev track button, etc
-    // margin: 0 24px;
 }
 
-.playpause-button-parent:hover, .volume-button-parent:hover {
+.playpause-button-parent:hover, .replay-button-parent:hover {
     cursor: pointer;
 }
 
-#playpause-button-icon, #volume-button-icon {
+#playpause-button-icon, .replay-button-icon-false {
+    width: 15px;
+    height: 15px;
+    color: #333;
+}
+
+#replay-button-icon-true {
+    color: #111abd;
+}
+
+
+// [Playbar Right] ------------------------------------------------------------>
+
+.playbar-right {
+    width: 723px;
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+// Volume Button -------------------------------------------------------------->
+
+.volume-button-parent {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume-button-parent:hover {
+    cursor: pointer;
+}
+
+#volume-button-icon {
     width: 15px;
     height: 15px;
     color: #333;
 }
 
 
-// [TEST] Progress Bar --------------------------->
+// Progress Bar (All) --------------------------------------------------------->
 
 .progressBar-scrub {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 170px;
+    // margin-left: 127px;
 }
 
 .progressBar-scrub p {
@@ -81,7 +115,7 @@
 }
 
 
-// Progress Bar --------------------------------------------------------------->
+// Progress Bar: Progress Slider ---------------------------------------------->
 
 // excess height to improve interactive area / accessibility
 $height: 30px;
@@ -187,15 +221,9 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
 // }
 
 
-// [Playbar Right] ------------------------------------------------------------>
 
-.playbar-right {
-    width: 342px;
-    height: 48px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
+
+
 
 .playbar-coverArt-parent {
     width: 48px;
