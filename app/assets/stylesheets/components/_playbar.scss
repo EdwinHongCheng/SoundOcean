@@ -81,7 +81,7 @@
 }
 
 
-// [TEST] Slider Time CSS ----------------------------------------------------->
+// Progress Bar --------------------------------------------------------------->
 
 // excess height to improve interactive area / accessibility
 $height: 30px;
@@ -139,7 +139,6 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   appearance: none;
   height: $thumb-height;
   width: $thumb-height;
-//   background: transparent;
   background: #111abd;
   border: 1px solid #111abd;
   border-radius: 100%;
@@ -148,12 +147,6 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   box-shadow: webkit-slider-thumb-shadow();
   transition: background-color 150ms;
 }
-
-// .slider::-webkit-slider-thumb:hover {
-//     background: #111abd;
-//     border: 1px solid #111abd;
-// }
-
 
 // Firefox
 .slider::-moz-range-track,
