@@ -13,6 +13,7 @@ class PlayBar extends React.Component {
             trackLength: 0,
             currentTrackId: null,
             looping: false,
+            volume: 0.5,
         }
 
         this.toggleMute = this.toggleMute.bind(this);
@@ -23,6 +24,8 @@ class PlayBar extends React.Component {
         this.toggleTrackLooping = this.toggleTrackLooping.bind(this);
         this.handleEnd = this.handleEnd.bind(this);
         this.goBackToStart = this.goBackToStart.bind(this);
+        // [TEST]
+        this.handleVolume = this.handleVolume.bind(this);
     }
 
     // componentDidUpdate(prevProps){
@@ -39,6 +42,7 @@ class PlayBar extends React.Component {
         const scrubber = document.getElementById('scrubber');
 
         if (this.state.currentTrackId === null) {
+            progressBar.volume = 0.5;
             this.playTrack = setInterval(()=>{
                 scrubber.value = progressBar.currentTime;
                 this.setState({ trackPlayed: progressBar.currentTime })
@@ -102,6 +106,13 @@ class PlayBar extends React.Component {
         progressBar.currentTime = 0;
         scrubber.value = progressBar.currentTime;
         this.setState({ trackPlayed: 0 })
+    }
+
+    // [WIP] Volume
+    handleVolume(e){
+        const progressBar = document.getElementById('audio');
+        progressBar.volume = e.target.value / 1000.0;
+        this.setState({ volume: e.target.value / 1000.0 })
     }
 
     render() {
@@ -185,16 +196,27 @@ class PlayBar extends React.Component {
                     <FontAwesomeIcon id="volume-button-icon" icon={faVolumeMute}/>
                 </div>)
             } else {
-                volumeButton = (<div className="volume-button-parent"
-                    onClick={
-                        (e) => {
-                            document.getElementById('audio').muted = true;
-                            this.toggleMute(e);
-                        } 
-                    }
-                >
-                    <FontAwesomeIcon id="volume-button-icon" icon={faVolumeUp}/>
-                </div>)
+                volumeButton = (
+                    <div className="volume-button-parent">
+                        <FontAwesomeIcon id="volume-button-icon" icon={faVolumeUp}
+                            onClick={
+                                (e) => {
+                                    document.getElementById('audio').muted = true;
+                                    this.toggleMute(e);
+                                } 
+                            }
+                        />
+
+                        <div className="volume-slider-parent">
+                            <input type="range"
+                                className="volume-slider"
+                                min="0.0" 
+                                defaultValue={this.state.volume * 1000}
+                                max = "1000.0"
+                                onChange={this.handleVolume} 
+                            />
+                        </div>
+                    </div>)
             }
 
             // ---------------------------------------------------------------->
