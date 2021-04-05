@@ -152,10 +152,10 @@ class PlayBar extends React.Component {
 
             let progressBar = (
                 <div className="progressBar-scrub">
-                    <p>{formatSongTime(this.state.trackPlayed)}</p>
+                    <p className="progress-time-start">{formatSongTime(this.state.trackPlayed)}</p>
                     <input type="range" id="scrubber" min='0' max={this.state.trackLength}
                         onInput={this.handleScrubbing} className="slider"/>
-                    <p>{formatSongTime(this.state.trackLength)}</p>
+                    <p className="progress-time-end">{formatSongTime(this.state.trackLength)}</p>
                 </div>
             )
 

@@ -62,6 +62,70 @@
 }
 
 
+// [TEST] Progress Bar --------------------------->
+
+.progressBar-scrub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 170px;
+}
+
+.progressBar-scrub p {
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.progress-time-start {
+    color: #111abd;
+}
+
+.slider[type='range'] {
+    width: 252px;
+    overflow: hidden;
+    -webkit-appearance: none;
+    background: #ccc;
+    outline: none;
+}
+
+.slider[type='range']::-webkit-slider-thumb {
+    width: 4px;
+    height: 4px;
+    cursor: pointer;
+    box-shadow: -252px 0 0 252px red;
+}
+
+.slider[type='range']::-webkit-slider-runnable-track {
+    // height: 1px;
+    -webkit-appearance: none;
+}
+
+
+
+// .slider[type='range'] {
+//     overflow: hidden;
+//     width: 252px;
+//     -webkit-appearance: none;
+//     background-color: #ccc;
+//     outline: none;
+// }
+
+// .slider[type='range']::-webkit-slider-runnable-track {
+//     height: 1px;
+//     -webkit-appearance: none;
+//     color: red;
+// }
+
+// .slider[type='range']::-webkit-slider-thumb {
+//     // width: 10px;
+//     // -webkit-appearance: none;
+//     height: 10px;
+//     cursor: pointer;
+//     // background: red;
+//     box-shadow: -252px 0 0 252px #43e5f7;
+// }
+
+
 // [Playbar Right] ------------------------------------------------------------>
 
 .playbar-right {
@@ -137,19 +201,3 @@
 }
  
 
-// [TEST]
-
-.progressBar-scrub {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.progressBar-scrub p {
-    width: 25px;
-    margin: 0 10px;
-}
-
-.slider {
-    width: 360px;
-}
