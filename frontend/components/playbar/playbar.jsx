@@ -75,16 +75,16 @@ class PlayBar extends React.Component {
     }
 
     toggleTrackLooping() {
-        let x = this.state.looping;
-        this.setState({ looping: !x });
-        document.getElementById('audio').loop = !x;
+        let loopState = this.state.looping;
+        this.setState({ looping: !loopState });
+        document.getElementById('audio').loop = !loopState;
     }
 
     handleEnd() {
         if (!this.state.looping) {
             const progressBar = document.getElementById('audio');
             const scrubber = document.getElementById('scrubber');
-            
+
             progressBar.currentTime = 0;
             scrubber.value = progressBar.currentTime;
             this.setState({ trackPlayed: 0 })
