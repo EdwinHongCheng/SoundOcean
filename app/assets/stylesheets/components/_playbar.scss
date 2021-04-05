@@ -63,7 +63,7 @@
 #replay-button-icon-true {
     width: 15px;
     height: 15px;
-    color: #111abd;
+    color: #fd6c6c;;
 }
 
 
@@ -113,7 +113,7 @@
 }
 
 .progress-time-start {
-    color: #111abd;
+    color: #fd6c6c;;
 }
 
 .progress-time-end {
@@ -130,9 +130,9 @@ $track-height: 2px;
 
 // colors
 $upper-color: #ccc;
-$lower-color: #111abd;
-$thumb-color: #000573;
-// $thumb-hover-color: #111abd;
+$lower-color: #fd6c6c;;
+// $thumb-color: #000573;
+// $thumb-hover-color: #fd6c6c;;
 
 $upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
 $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
@@ -179,8 +179,8 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   appearance: none;
   height: $thumb-height;
   width: $thumb-height;
-  background: #111abd;
-  border: 1px solid #111abd;
+  background: #fd6c6c;;
+  border: 1px solid #fd6c6c;;
   border-radius: 100%;
   top: 50%;
   margin-top: (-$thumb-height/2);
@@ -205,8 +205,8 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   margin: 0;
   height: $thumb-height;
   width: $thumb-height;
-  background: #111abd;
-  border: 1px solid #111abd;
+  background: #fd6c6c;;
+  border: 1px solid #fd6c6c;;
   border-radius: 100%;
   transition: background-color 150ms;
 }
@@ -291,7 +291,7 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
 }
 
 .playbar-right-blurb:hover {
-    color: #111abd;
+    color: #fd6c6c;;
     cursor: pointer;
 }
  
