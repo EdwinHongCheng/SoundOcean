@@ -87,14 +87,12 @@
     align-items: center;
 }
 
-.volume-button-parent:hover {
-    cursor: pointer;
-}
-
 #volume-button-icon {
     width: 15px;
     height: 15px;
     color: #333;
+    padding: 9px 9px;
+    cursor: pointer;
 }
 
 
@@ -115,19 +113,102 @@
     bottom: 40px; 
 }
 
+// [WIP] Volume Slider -------------------------------------------------------->
+
+// [NOTE] since I rotated it 270 degrees, $height corresponds to how wide it appears
+
+// excess height to improve interactive area / accessibility
+$height2: 30px;
+$thumb-height2: 8px;
+$track-height2: 2px;
+
+// colors
+$upper-color2: #ccc;
+$lower-color2: #fd6c6c;;
+
+$upper-background2: linear-gradient(to bottom, $upper-color2, $upper-color2) 100% 50% / 100% $track-height2 no-repeat transparent;
+$lower-background2: linear-gradient(to bottom, $lower-color2, $lower-color2) 100% 50% / 100% $track-height2 no-repeat transparent;
+
+// Webkit cannot style progress so we fake it with a long shadow
+// on the thumb element
+@function webkit-slider-thumb-shadow2($i: 1) {
+  $val: #{$i}px 0 0 -#{($thumb-height2 - $track-height2) / 2} #{$upper-color2};
+  @if $i == 1 {
+    @for $k from 2 through 1000 {
+      $val: #{$val}, webkit-slider-thumb-shadow2($k);
+    }
+  }
+  @return $val;
+}
 
 .volume-slider {
-  display: block;
-  -webkit-appearance: slider-vertical;
-  background-color: #f2f2f2;
-  width: 2px;
-  height: 92px;
-  position: absolute;
-  cursor: pointer;
-  z-index: 2;
+    transform: rotate(270deg);
+
+    display: block;
+    appearance: none;
+    width: 92px;
+    margin: 0;
+    height: $height2;
+    //   overflow: hidden;
+    cursor: pointer;
+    
+    &:focus {
+        outline: none;
+    }
+
+    background-color: transparent;
+}
+
+// Webkit
+.volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: $height2;
+  background: $lower-background2;
+  overflow: hidden;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  position: relative;
+  appearance: none;
+  height: $thumb-height2;
+  width: $thumb-height2;
+  background: #fd6c6c;;
+  border: 1px solid #fd6c6c;;
+  border-radius: 100%;
+  top: 50%;
+  margin-top: (-$thumb-height2/2);
+  box-shadow: webkit-slider-thumb-shadow2();
+  transition: background-color 150ms;
+}
+
+// Firefox
+.volume-slider::-moz-range-track,
+.volume-slider::-moz-range-progress {
+  width: 100%;
+  height: $height2;
+  background: $upper-background2;
+  
+}
+
+.volume-slider::-moz-range-progress {
+  background: $lower-background2;
+}
+
+.volume-slider::-moz-range-thumb {
+  appearance: none;
+  margin: 0;
+  height: $thumb-height2;
+  width: $thumb-height2;
+  background: #fd6c6c;;
+  border: 1px solid #fd6c6c;;
+  border-radius: 100%;
+  transition: background-color 150ms;
 }
 
 
+
+
+// ---------------------------------------------------------------------------->
 
 // Progress Bar (All) --------------------------------------------------------->
 

@@ -108,11 +108,11 @@ class PlayBar extends React.Component {
         this.setState({ trackPlayed: 0 })
     }
 
-    // [WIP] Volume
     handleVolume(e){
         const progressBar = document.getElementById('audio');
         progressBar.volume = e.target.value / 1000.0;
         this.setState({ volume: e.target.value / 1000.0 })
+        console.log(e.target.value);
     }
 
     render() {
@@ -216,11 +216,11 @@ class PlayBar extends React.Component {
                                 onChange={this.handleVolume} 
                             />
                         </div>
-                    </div>)
+                    </div>
+                )
             }
 
-            // ---------------------------------------------------------------->
-            // [TEST] PROGRESS BAR
+            // PROGRESS BAR --------------------------------------------------->
 
             let formatTrackTime = (time) => {
                 let sec = Math.floor(parseFloat(time));
@@ -238,7 +238,6 @@ class PlayBar extends React.Component {
                     <p className="progress-time-end">{formatTrackTime(this.state.trackLength)}</p>
                 </div>
             )
-
 
             // ---------------------------------------------------------------->
 
