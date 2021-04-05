@@ -21,6 +21,7 @@ class PlayBar extends React.Component {
         this.handleTrackPlay = this.handleTrackPlay.bind(this);
         this.handleScrubbing = this.handleScrubbing.bind(this);
         this.toggleTrackLooping = this.toggleTrackLooping.bind(this);
+        this.handleEnd = this.handleEnd.bind(this);
     }
 
     componentDidUpdate(prevProps){
@@ -79,6 +80,20 @@ class PlayBar extends React.Component {
         document.getElementById('audio').loop = !x;
     }
 
+    handleEnd() {
+        if (!this.state.looping) {
+            const progressBar = document.getElementById('audio');
+            const scrubber = document.getElementById('scrubber');
+            
+            progressBar.currentTime = 0;
+            scrubber.value = progressBar.currentTime;
+            this.setState({ trackPlayed: 0 })
+
+            progressBar.pause();
+            this.props.pauseTrack();
+        }
+    }
+
     render() {
         let playbarAll;
 
@@ -89,6 +104,7 @@ class PlayBar extends React.Component {
                 <audio id="audio" autoPlay key={this.props.currentTrack.id}
                     onLoadedMetadata={this.getTrackLength}
                     onPlaying={this.handleTrackPlay}
+                    onEnded={this.handleEnd}
                     src={this.props.currentTrack.audioURL}
                 />
             )
