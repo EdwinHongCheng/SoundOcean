@@ -136,3 +136,15 @@
     cursor: pointer;
 }
  
+
+// [TEST]
+
+.playbar-scrub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playbar-scrub p {
+    width: 25px;
+}

@@ -9,14 +9,55 @@ class PlayBar extends React.Component {
 
         this.state = {
             muted: false,
+            // [TEST]
+            songPlayed: 0,
+            songLength: 0,
         }
 
         this.toggleMute = this.toggleMute.bind(this);
+        // [TEST]
+        this.getSongLength = this.getSongLength.bind(this);
+        this.handleSongPlay = this.handleSongPlay.bind(this);
+        this.handleScrubbing = this.handleScrubbing.bind(this);
+    }
+
+    componentDidUpdate(prevProps){
+        if (this.props.currentTrack !== prevProps.currentTrack) {
+            let playbar = document.getElementById('audio');
+            this.setState({ songLength: playbar.duration });
+            this.setState({songPlayed : 0});
+            scrubber.value = playbar.currentTime;
+            playbar.currentTime = 0;
+        }
     }
 
     toggleMute(e) {
         e.preventDefault();
         this.setState({ muted: !this.state.muted });
+    }
+
+    handleSongPlay(){
+        const playbar = document.getElementById('audio');
+        const scrubber = document.getElementById('scrubber');
+
+        if (this.props.isPlaying && this.props.currentTrack){
+            this.songPlay = setInterval(()=>{
+                scrubber.value = playbar.currentTime;
+                this.setState({ songPlayed: playbar.currentTime })
+            }, 50);
+        }
+    }
+
+    getSongLength() {
+        const playbar = document.getElementById('audio');
+        this.setState({ songLength: playbar.duration })
+    }
+
+    handleScrubbing(e){
+        e.preventDefault();
+        let playBar = document.getElementById('audio');
+        playBar.currentTime = e.target.value;
+        this.setState({ songPlayed: e.target.value });
     }
 
     render() {
@@ -26,11 +67,11 @@ class PlayBar extends React.Component {
 
             let audio = (
                 // NOTE: audio tag: add "controls" -> audio player shows up
-                <audio id="audio" autoPlay loop key={this.props.currentTrack.id}>
-                    <source src={this.props.currentTrack.audioURL} type="audio/mpeg" />
-                    <source src={this.props.currentTrack.audioURL} type="audio/ogg" />
-                    Your browser does not support the audio tag.
-                </audio>
+                <audio id="audio" autoPlay loop key={this.props.currentTrack.id}
+                    onLoadedMetadata={this.getSongLength}
+                    onPlaying={this.handleSongPlay}
+                    src={this.props.currentTrack.audioURL}
+                />
             )
 
             let playPauseButton;
@@ -87,6 +128,29 @@ class PlayBar extends React.Component {
                 </div>)
             }
 
+            // ---------------------------------------------------------------->
+            // [TEST] PROGRESS BAR
+
+            let formatSongTime = (time) => {
+                let sec = Math.floor(parseFloat(time));
+                let min = Math.floor(sec / 60);
+                sec -= min * 60;
+                sec < 10 ? sec = `0${sec}`: sec = `${sec}`;                        
+                return `${min}:${sec}`;
+            }       
+
+            let progressBar = (
+                <div className="playbar-scrub">
+                    <p>{formatSongTime(this.state.songPlayed)}</p>
+                    <input type="range" id="scrubber" min='0' max={this.state.songLength}
+                        onInput={this.handleScrubbing} className="slider"/>
+                    <p>{formatSongTime(this.state.songLength)}</p>
+                </div>
+            )
+
+
+            // ---------------------------------------------------------------->
+
             playbarAll = (
                 <div className="playbar-parent-parent">
                     <div className="playbar-parent">
@@ -98,6 +162,7 @@ class PlayBar extends React.Component {
                                 </div>
                                 {playPauseButton}
                                 {volumeButton}
+                                {progressBar}
                             </div>
 
                             <div className="playbar-right">
