@@ -10,15 +10,15 @@ class PlayBar extends React.Component {
         this.state = {
             muted: false,
             // [TEST]
-            songPlayed: 0,
-            songLength: 0,
+            trackPlayed: 0,
+            trackLength: 0,
             currentTrackId: null,
         }
 
         this.toggleMute = this.toggleMute.bind(this);
         // [TEST]
-        this.getSongLength = this.getSongLength.bind(this);
-        this.handleSongPlay = this.handleSongPlay.bind(this);
+        this.getTrackLength = this.getTrackLength.bind(this);
+        this.handleTrackPlay = this.handleTrackPlay.bind(this);
         this.handleScrubbing = this.handleScrubbing.bind(this);
     }
 
@@ -31,44 +31,44 @@ class PlayBar extends React.Component {
         this.setState({ muted: !this.state.muted });
     }
 
-    handleSongPlay(){
-        const playbar = document.getElementById('audio');
+    handleTrackPlay(){
+        const progressBar = document.getElementById('audio');
         const scrubber = document.getElementById('scrubber');
 
         if (this.state.currentTrackId === null) {
-            this.songPlay = setInterval(()=>{
-                scrubber.value = playbar.currentTime;
-                this.setState({ songPlayed: playbar.currentTime })
+            this.playTrack = setInterval(()=>{
+                scrubber.value = progressBar.currentTime;
+                this.setState({ trackPlayed: progressBar.currentTime })
             }, 50);
 
             this.setState({currentTrackId: this.props.currentTrack});
 
         } else if (this.state.currentTrackId !== this.props.currentTrack) {
-            clearInterval(this.songPlay);
+            clearInterval(this.playTrack);
             this.setState({currentTrackId: this.props.currentTrack});
 
-            this.setState({ songLength: playbar.duration })
+            this.setState({ trackLength: progressBar.duration })
 
-            playbar.currentTime = 0;
-            scrubber.value = playbar.currentTime;
+            progressBar.currentTime = 0;
+            scrubber.value = progressBar.currentTime;
 
-            this.songPlay = setInterval(()=>{
-                scrubber.value = playbar.currentTime;
-                this.setState({ songPlayed: playbar.currentTime })
+            this.playTrack = setInterval(()=>{
+                scrubber.value = progressBar.currentTime;
+                this.setState({ trackPlayed: progressBar.currentTime })
             }, 50);
         }
     }
 
-    getSongLength() {
-        const playbar = document.getElementById('audio');
-        this.setState({ songLength: playbar.duration })
+    getTrackLength() {
+        const progressBar = document.getElementById('audio');
+        this.setState({ trackLength: progressBar.duration })
     }
 
     handleScrubbing(e){
         e.preventDefault();
-        let playBar = document.getElementById('audio');
-        playBar.currentTime = e.target.value;
-        this.setState({ songPlayed: e.target.value });
+        let progressBar = document.getElementById('audio');
+        progressBar.currentTime = e.target.value;
+        this.setState({ trackPlayed: e.target.value });
     }
 
     render() {
@@ -79,8 +79,8 @@ class PlayBar extends React.Component {
             let audio = (
                 // NOTE: audio tag: add "controls" -> audio player shows up
                 <audio id="audio" autoPlay loop key={this.props.currentTrack.id}
-                    onLoadedMetadata={this.getSongLength}
-                    onPlaying={this.handleSongPlay}
+                    onLoadedMetadata={this.getTrackLength}
+                    onPlaying={this.handleTrackPlay}
                     src={this.props.currentTrack.audioURL}
                 />
             )
@@ -151,11 +151,11 @@ class PlayBar extends React.Component {
             }       
 
             let progressBar = (
-                <div className="playbar-scrub">
-                    <p>{formatSongTime(this.state.songPlayed)}</p>
-                    <input type="range" id="scrubber" min='0' max={this.state.songLength}
+                <div className="progressBar-scrub">
+                    <p>{formatSongTime(this.state.trackPlayed)}</p>
+                    <input type="range" id="scrubber" min='0' max={this.state.trackLength}
                         onInput={this.handleScrubbing} className="slider"/>
-                    <p>{formatSongTime(this.state.songLength)}</p>
+                    <p>{formatSongTime(this.state.trackLength)}</p>
                 </div>
             )
 
