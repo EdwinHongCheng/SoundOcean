@@ -149,10 +149,36 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
   transition: background-color 150ms;
 }
 
-.slider::-webkit-slider-thumb:hover {
-    // background: #111abd;
-    // border: 1px solid #111abd;
+// .slider::-webkit-slider-thumb:hover {
+//     background: #111abd;
+//     border: 1px solid #111abd;
+// }
+
+
+// Firefox
+.slider::-moz-range-track,
+.slider::-moz-range-progress {
+  width: 100%;
+  height: $height;
+  background: $upper-background;
 }
+
+.slider::-moz-range-progress {
+  background: $lower-background;
+}
+
+.slider::-moz-range-thumb {
+  appearance: none;
+  margin: 0;
+  height: $thumb-height;
+  width: $thumb-height;
+  background: #111abd;
+  border: 1px solid #111abd;
+  border-radius: 100%;
+  transition: background-color 150ms;
+}
+
+
 
 // .slider:hover,
 // .slider:focus {
