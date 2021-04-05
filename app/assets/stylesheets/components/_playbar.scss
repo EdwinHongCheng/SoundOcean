@@ -80,49 +80,91 @@
     color: #111abd;
 }
 
-.slider[type='range'] {
-    width: 252px;
-    overflow: hidden;
-    -webkit-appearance: none;
-    background: #ccc;
+
+// [TEST] Slider Time CSS ----------------------------------------------------->
+
+// excess height to improve interactive area / accessibility
+$height: 30px;
+$thumb-height: 8px;
+$track-height: 2px;
+
+// colors
+$upper-color: #ccc;
+$lower-color: #111abd;
+$thumb-color: #000573;
+// $thumb-hover-color: #111abd;
+
+$upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100% 50% / 100% $track-height no-repeat transparent;
+$lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 50% / 100% $track-height no-repeat transparent;
+
+// Webkit cannot style progress so we fake it with a long shadow
+// on the thumb element
+@function webkit-slider-thumb-shadow($i: 1) {
+  $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
+  @if $i == 1 {
+    @for $k from 2 through 1000 {
+      $val: #{$val}, webkit-slider-thumb-shadow($k);
+    }
+  }
+  @return $val;
+}
+
+.slider {
+  display: block;
+  appearance: none;
+  width: 252px;
+  margin: 0;
+  height: $height;
+  overflow: hidden;
+  cursor: pointer;
+  
+  &:focus {
     outline: none;
-}
+  }
 
-.slider[type='range']::-webkit-slider-thumb {
-    width: 4px;
-    height: 4px;
-    cursor: pointer;
-    box-shadow: -252px 0 0 252px red;
-}
-
-.slider[type='range']::-webkit-slider-runnable-track {
-    // height: 1px;
-    -webkit-appearance: none;
+  background-color: transparent;
 }
 
 
 
-// .slider[type='range'] {
-//     overflow: hidden;
-//     width: 252px;
-//     -webkit-appearance: none;
-//     background-color: #ccc;
-//     outline: none;
-// }
+// Webkit
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: $height;
+  background: $lower-background;
+}
 
-// .slider[type='range']::-webkit-slider-runnable-track {
-//     height: 1px;
-//     -webkit-appearance: none;
-//     color: red;
-// }
+.slider::-webkit-slider-thumb {
+  position: relative;
+  appearance: none;
+  height: $thumb-height;
+  width: $thumb-height;
+//   background: transparent;
+  background: #111abd;
+  border: 1px solid #111abd;
+  border-radius: 100%;
+  top: 50%;
+  margin-top: (-$thumb-height/2);
+  box-shadow: webkit-slider-thumb-shadow();
+  transition: background-color 150ms;
+}
 
-// .slider[type='range']::-webkit-slider-thumb {
-//     // width: 10px;
-//     // -webkit-appearance: none;
-//     height: 10px;
-//     cursor: pointer;
-//     // background: red;
-//     box-shadow: -252px 0 0 252px #43e5f7;
+.slider::-webkit-slider-thumb:hover {
+    // background: #111abd;
+    // border: 1px solid #111abd;
+}
+
+// .slider:hover,
+// .slider:focus {
+//   &::-webkit-slider-thumb {
+//     background-color: $thumb-hover-color;
+//   }
+//   &::-moz-range-thumb {
+//     background-color: $thumb-hover-color;
+//   }
+//   &::-ms-thumb {
+//     background-color: $thumb-hover-color;
+//   }
 // }
 
 
