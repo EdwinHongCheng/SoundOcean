@@ -53,13 +53,15 @@
     cursor: pointer;
 }
 
-#playpause-button-icon, .replay-button-icon-false {
+#playpause-button-icon, #replay-button-icon-false {
     width: 15px;
     height: 15px;
     color: #333;
 }
 
 #replay-button-icon-true {
+    width: 15px;
+    height: 15px;
     color: #111abd;
 }
 
