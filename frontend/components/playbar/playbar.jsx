@@ -12,6 +12,7 @@ class PlayBar extends React.Component {
             // [TEST]
             songPlayed: 0,
             songLength: 0,
+            currentTrackId: null,
         }
 
         this.toggleMute = this.toggleMute.bind(this);
@@ -22,13 +23,7 @@ class PlayBar extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        if (this.props.currentTrack !== prevProps.currentTrack) {
-            let playbar = document.getElementById('audio');
-            this.setState({ songLength: playbar.duration });
-            this.setState({songPlayed : 0});
-            scrubber.value = playbar.currentTime;
-            playbar.currentTime = 0;
-        }
+
     }
 
     toggleMute(e) {
@@ -40,7 +35,23 @@ class PlayBar extends React.Component {
         const playbar = document.getElementById('audio');
         const scrubber = document.getElementById('scrubber');
 
-        if (this.props.isPlaying && this.props.currentTrack){
+        if (this.state.currentTrackId === null) {
+            this.songPlay = setInterval(()=>{
+                scrubber.value = playbar.currentTime;
+                this.setState({ songPlayed: playbar.currentTime })
+            }, 50);
+
+            this.setState({currentTrackId: this.props.currentTrack});
+
+        } else if (this.state.currentTrackId !== this.props.currentTrack) {
+            clearInterval(this.songPlay);
+            this.setState({currentTrackId: this.props.currentTrack});
+
+            this.setState({ songLength: playbar.duration })
+
+            playbar.currentTime = 0;
+            scrubber.value = playbar.currentTime;
+
             this.songPlay = setInterval(()=>{
                 scrubber.value = playbar.currentTime;
                 this.setState({ songPlayed: playbar.currentTime })
@@ -161,8 +172,8 @@ class PlayBar extends React.Component {
                                     {audio}
                                 </div>
                                 {playPauseButton}
-                                {volumeButton}
                                 {progressBar}
+                                {volumeButton}
                             </div>
 
                             <div className="playbar-right">
