@@ -403,7 +403,8 @@ $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100% 5
 }
 
 .playbar-right-blurb:hover {
-    color: #fd6c6c;;
+    // color: #fd6c6c;
+    color: #111abd;
     cursor: pointer;
 }
  
