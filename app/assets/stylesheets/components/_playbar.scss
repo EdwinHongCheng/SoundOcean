@@ -38,22 +38,23 @@
 }
 
 .playpause-button-parent {
-    margin-left: 48px;
+    // margin-left: 48px;
 }
 
-.playpause-button-parent, .replay-button-parent {
+.back-button-parent, .playpause-button-parent, .replay-button-parent {
     width: 48px;
     height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 4px;
 }
 
-.playpause-button-parent:hover, .replay-button-parent:hover {
+.back-button-parent:hover, .playpause-button-parent:hover, .replay-button-parent:hover {
     cursor: pointer;
 }
 
-#playpause-button-icon, #replay-button-icon-false {
+#back-button-icon, #playpause-button-icon, #replay-button-icon-false {
     width: 15px;
     height: 15px;
     color: #333;

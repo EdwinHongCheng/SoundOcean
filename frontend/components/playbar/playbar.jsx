@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faVolumeMute, faVolumeUp, faUndo } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faVolumeMute, faVolumeUp, faUndo, faStepBackward } from '@fortawesome/free-solid-svg-icons';
 
 class PlayBar extends React.Component {
     constructor(props) {
@@ -22,11 +22,12 @@ class PlayBar extends React.Component {
         this.handleScrubbing = this.handleScrubbing.bind(this);
         this.toggleTrackLooping = this.toggleTrackLooping.bind(this);
         this.handleEnd = this.handleEnd.bind(this);
+        this.goBackToStart = this.goBackToStart.bind(this);
     }
 
-    componentDidUpdate(prevProps){
+    // componentDidUpdate(prevProps){
 
-    }
+    // }
 
     toggleMute(e) {
         e.preventDefault();
@@ -94,6 +95,15 @@ class PlayBar extends React.Component {
         }
     }
 
+    goBackToStart() {
+        const progressBar = document.getElementById('audio');
+        const scrubber = document.getElementById('scrubber');
+
+        progressBar.currentTime = 0;
+        scrubber.value = progressBar.currentTime;
+        this.setState({ trackPlayed: 0 })
+    }
+
     render() {
         let playbarAll;
 
@@ -107,6 +117,18 @@ class PlayBar extends React.Component {
                     onEnded={this.handleEnd}
                     src={this.props.currentTrack.audioURL}
                 />
+            )
+
+            let backToStartButton = (
+                <div className="back-button-parent" title="Back to Start"
+                    onClick={
+                        () => {
+                            this.goBackToStart();
+                        } 
+                    }
+                >
+                    <FontAwesomeIcon id="back-button-icon" icon={faStepBackward}/>
+                </div>
             )
 
             let playPauseButton;
@@ -207,6 +229,7 @@ class PlayBar extends React.Component {
                                 <div className="audio">
                                     {audio}
                                 </div>
+                                {backToStartButton}
                                 {playPauseButton}
                                 {replayButton}
                             </div>
