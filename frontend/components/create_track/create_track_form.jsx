@@ -115,36 +115,47 @@ class CreateTrackForm extends React.Component {
                     </label>
                 </div>
             )
-        // Phase 2: Edit Track Info + Submit Form
         } else if (!this.state.uploaded) {
+            // Phase 2: Edit Track Info + Submit Form
             uploadForm = (
-                <div className="upload-form-parent">
-                    <form onSubmit={this.handleSubmit}>
-                        {this.renderErrors()}
-                        <h1>Create a New Track</h1>
-                        <label>Title
-                                <input
-                                type="text"
-                                value={this.state.title}
-                                onChange={this.update('title')}
-                            />
-                        </label>
-                        {/* Cover Art Preview */}
-                        {imagePreview}
-                        <p>[Optional] Upload Cover Art</p>
-                        <input 
-                            type="file"
-                            onChange={this.handleFile}
-                        />
-                        {/* Audio Upload (Update) */}
-                        <p>Update Track</p>
-                        <input
-                            type="file"
-                            onChange={this.handleAudioFile}
-                        />            
-                        <input type="submit" value="Create Track" />
-                    </form>
+                <div>
+                    {/* Audio Upload (Update) */}
+                    <div className="replace-track-parent">
+                        <p className="replace-track-left">Replace Current Audio Track</p>
+
+                            <label className="replace-track-right">
+                                Replace File
+                                <input className="replace-track-input"
+                                    type="file"
+                                    onChange={this.handleAudioFile}
+                                /> 
+                            </label>
+
+                    </div>
+
+                    <div className="upload-form-parent">
+                        <form onSubmit={this.handleSubmit}>
+                            {this.renderErrors()}
+                            <h1>Create a New Track</h1>
+                            <label>Title
+                                    <input
+                                    type="text"
+                                    value={this.state.title}
+                                    onChange={this.update('title')}
+                                />
+                            </label>
+                            {/* Cover Art Preview */}
+                            {imagePreview}
+                            <p>[Optional] Upload Cover Art</p>
+                            <input 
+                                type="file"
+                                onChange={this.handleFile}
+                            />           
+                            <input type="submit" value="Create Track" />
+                        </form>
+                    </div>
                 </div>
+
             )
         // Phase 3: Successful Upload (waits after good upload  I think ???)
         } else {
