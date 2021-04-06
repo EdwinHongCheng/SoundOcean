@@ -1,4 +1,31 @@
 .createTrackFormBody {
-    max-width: 901px;
+    width: 960px;
     margin: auto;
+    background-color: white;
+}
+
+// Upload Form
+.upload-phase-1-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-track-padding {
+    padding-top: 84px;
+}
+
+.upload-track-input-parent {
+    width: 160px;
+    padding: 4px;
+    text-align: center;
+    background-color: pink;
+}
+
+.upload-track-input-parent:hover {
+    cursor: pointer;
+}
+
+.upload-track-input {
+    display: none;
 }

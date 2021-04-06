@@ -35,7 +35,6 @@ class CreateTrackForm extends React.Component {
         }
     }
 
-
     handleFile(e) {
         // Cover Art Preview
         const file = e.currentTarget.files[0];
@@ -54,7 +53,6 @@ class CreateTrackForm extends React.Component {
     handleAudioFile(e) {
         this.setState( { audio_file: e.currentTarget.files[0] } )
     }
-
 
     handleSubmit(e) {
         e.preventDefault();
@@ -82,95 +80,87 @@ class CreateTrackForm extends React.Component {
                         <li key={`error-${i}`} className="renderedErrors">
                             {error}
                         </li>
-                        <br />
                     </>
                 ))}
             </ul>
         );
-    }  
+    }
+
     componentWillUnmount() {
         this.props.clearErrors()
     }
 
     render() {
 
-        {/* Testing Preview */ }
+        {/* Image Preview */ }
         let imagePreview = null;
         if (this.state.coverArtPreviewURL) {
             imagePreview = (
-                <>
-                    <p>Cover Art Preview</p>
-                    <img src={this.state.coverArtPreviewURL} className="previewArt"/>
-                    <br />
-                    <br />
-                </>
+                <img src={this.state.coverArtPreviewURL} className="previewArt"/>
             )
         }
 
-
-        let uploadForm = (
-            <form onSubmit={this.handleSubmit}>
-                {this.renderErrors()}
-
-                <p>(｀・ω・´)</p>
-                <br />
-                <h1>Create a New Track</h1>
-                <br />
-                <label>Title
+        let uploadForm;
+        // Phase 1: Upload a Track
+        if (this.state.audio_file === null) {
+            uploadForm = (
+                <div className="upload-phase-1-parent">
+                    <p>Upload Audio File Here</p>
+                    <label className="upload-track-input-parent">
+                        Upload a Track
+                        <input type="file"
+                            className="upload-track-input"
+                            onChange={this.handleAudioFile}
+                        />            
+                    </label>
+                </div>
+            )
+        // Phase 2: Edit Track Info + Submit Form
+        } else if (!this.state.uploaded) {
+            uploadForm = (
+                <div className="upload-form-parent">
+                    <form onSubmit={this.handleSubmit}>
+                        {this.renderErrors()}
+                        <h1>Create a New Track</h1>
+                        <label>Title
+                                <input
+                                type="text"
+                                value={this.state.title}
+                                onChange={this.update('title')}
+                            />
+                        </label>
+                        {/* Cover Art Preview */}
+                        {imagePreview}
+                        <p>[Optional] Upload Cover Art</p>
+                        <input 
+                            type="file"
+                            onChange={this.handleFile}
+                        />
+                        {/* Audio Upload (Update) */}
+                        <p>Update Track</p>
                         <input
-                        type="text"
-                        value={this.state.title}
-                        onChange={this.update('title')}
-                    />
-                </label>
-                <br />
-                <br />
-
-                {/* Cover Art Preview */}
-                {imagePreview}
-                <p>[Optional] Upload Cover Art</p>
-                <input 
-                    type="file"
-                    onChange={this.handleFile}
-                />
-                <br />
-                <br />
-
-
-                {/* Audio Upload */}
-
-                <p>Upload Audio File Here !!!</p>
-                <input
-                    type="file"
-                    onChange={this.handleAudioFile}
-                />
-                <br />
-                <br />
-               
-                <input type="submit" value="Create Track" />
-            </form>
-        )
-
-        // Successful Upload Message (replaces the Upload Form after good upload)
-        if (this.state.uploaded) {
+                            type="file"
+                            onChange={this.handleAudioFile}
+                        />            
+                        <input type="submit" value="Create Track" />
+                    </form>
+                </div>
+            )
+        // Phase 3: Successful Upload (waits after good upload  I think ???)
+        } else {
             uploadForm = (
                 <>
-                    <p>ヽ(＾Д＾)ﾉ</p>
-                    <br />
                     <h1>!!! UPLOAD SUCCESS !!!</h1>
-                    <br />
                     <Link to="/discover">Check out our tracks!</Link>
                 </>
             )
         }
-
+        
         return (
-            <>
-                <br />
-                <div className="createTrackFormBody">
-                    {uploadForm}
-                </div>
-            </>
+            <div className="createTrackFormBody">
+                <div className="create-track-padding"></div>
+                {uploadForm}
+            </div>
         );
     }
 }
