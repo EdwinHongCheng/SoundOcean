@@ -37,6 +37,8 @@ class PlayBar extends React.Component {
 
         if (this.state.currentTrackId === null) {
             progressBar.volume = 0.4;
+            this.setState({ volume:  0.4 })
+
             this.playTrack = setInterval(()=>{
                 scrubber.value = progressBar.currentTime;
                 this.setState({ trackPlayed: progressBar.currentTime })
@@ -51,6 +53,7 @@ class PlayBar extends React.Component {
             this.setState({ trackLength: progressBar.duration })
 
             progressBar.currentTime = 0;
+            progressBar.volume = this.state.volume;
             scrubber.value = progressBar.currentTime;
             progressBar.loop = this.state.looping;
 
