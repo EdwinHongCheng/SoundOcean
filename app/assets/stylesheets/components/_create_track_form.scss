@@ -32,9 +32,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    // padding-top: 104px;
-    padding-top: 70px;
 }
 
 // Upload Form: Phase 1 ------------------------------------------------------->
@@ -49,6 +46,8 @@
     border: 1px solid #f2f2f2;
     box-shadow: 0 2px 12px -5px rgba(0, 0, 255, .1);
 
+    // margin-top: 104px;
+    margin-top: 70px;
     // margin-bottom: 80px;
     margin-bottom: 40px;
 }
@@ -95,6 +94,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
+    margin-bottom: 34px;
 }
 
 .replace-track-left, .replace-track-right {
