@@ -105,7 +105,7 @@ class CreateTrackForm extends React.Component {
         if (this.state.audio_file === null) {
             uploadForm = (
                 <div className="upload-phase-1-parent">
-                    <p>Upload Audio File Here</p>
+                    <p className="upload-p1-top-text">Click the button to upload an audio file</p>
                     <label className="upload-track-input-parent">
                         Upload a Track
                         <input type="file"
@@ -158,8 +158,26 @@ class CreateTrackForm extends React.Component {
         
         return (
             <div className="createTrackFormBody">
-                <div className="create-track-padding"></div>
-                {uploadForm}
+                <div className="upload-tab-parent">
+                    <p className="upload-tab">Upload</p>
+                </div>
+
+                <div className="upload-form-parent-parent">
+                    {uploadForm}
+                </div>
+
+                <div className="upload-footer-parent">
+                    <div className="upload-footer">
+                        <ul className="upload-footer-links">
+                            <a className="upload-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                            <li> - </li>
+                            <a className="upload-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
+                            <li> - </li>
+                            <a className="upload-footer-socials" target="_blank" href="https://angel.co/u/edwin-cheng-5">AngelList</a>
+                        </ul>
+                        <p className="upload-language-text">Language: English (US)</p>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -4,28 +4,121 @@
     background-color: white;
 }
 
+// ------------------------------------>
+.upload-tab-parent {
+    padding-top: 48px;
+    width: 960px;
+    height: 50px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.upload-tab {
+    height: 50px;
+    width: 51px;
+    font-size: 16px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #111abd
+}
+
+
 // Upload Form
-.upload-phase-1-parent {
+.upload-form-parent-parent {
+    width: 960px;
+    margin: auto;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    // padding-top: 104px;
+    padding-top: 50px;
 }
 
-.create-track-padding {
-    padding-top: 84px;
+
+.upload-phase-1-parent {
+    display: flex;
+    height: 388px;
+    width: 800px;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 12px -5px rgba(0, 0, 255, .1);
+
+    // margin-bottom: 80px;
+    margin-bottom: 30px;
 }
+
+.upload-p1-top-text {
+    margin-top: 108px;
+    margin-bottom: 17px;
+    font-size: 22px;
+    font-weight: lighter;
+}
+
 
 .upload-track-input-parent {
-    width: 160px;
-    padding: 4px;
+    color: white;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 12px 62px;
+    border-radius: 3px;
     text-align: center;
-    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000573;
 }
 
 .upload-track-input-parent:hover {
     cursor: pointer;
+  background-color: #111abd;
 }
 
 .upload-track-input {
     display: none;
+}
+
+
+
+// Upload Page: Footer ------------------------------------------------------>
+.upload-footer-parent {
+  width: 960px;
+  height: 66px;
+  margin: auto;
+  background-color: white;
+
+//   padding-bottom: 136px;
+  padding-bottom: 65px;
+}
+
+
+.upload-footer {
+  margin: 0px 101px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.upload-footer-links {
+  display: flex;
+  padding: 20px 0px 15px;
+}
+
+.upload-footer-links a, .upload-footer-links li {
+  color: #666;
+  font-size: 14px;
+}
+
+.upload-footer-links li {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.upload-footer-socials:hover {
+  color: #b8b8b8;
+}
+
+.upload-language-text {
+  color: #333;
+  font-size: 14px;
 }
