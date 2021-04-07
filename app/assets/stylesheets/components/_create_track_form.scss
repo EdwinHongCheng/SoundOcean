@@ -20,7 +20,7 @@
     margin-left: 30px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #111abd
+    border-bottom: 1px solid #111abd;
 }
 
 
@@ -85,6 +85,9 @@
 
 
 // Upload Form: Phase 2 ------------------------------------------------------->
+
+
+// - Replace Track (Phase 2)
 .replace-track-parent {
     width: 800px;
     height: 44px;
@@ -123,6 +126,98 @@
 .replace-track-input {
     display: none;
 }
+
+// - Upload Track Form (Phase 2)
+
+.form-info-parent-parent {
+    height: 420px;
+    width: 800px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 12px -5px rgba(0, 0, 255, .1);
+}
+
+.form-info-parent {
+    margin: 0px 26px;
+}
+
+
+.form-info-tab-parent {
+    width: 100%;
+    padding-top: 15px;
+    height: 40px;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 26px;
+}
+
+.form-info-tab {
+    height: 40px;
+    width: 105px;
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #111abd;
+}
+
+.form-info {
+    display: flex;
+}
+
+// --- Image Preview, etc
+
+.image-preview-and-input {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+}
+
+.image-preview-parent {
+    width: 260px;
+    height: 260px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-preview-art {    
+    width: 260px;
+    height: 260px;
+}
+
+.upload-art-and-input-label {
+  position: absolute;
+  left: 50%;
+  top: 224px;
+  transform: translate(-50%, -50%);
+
+  font-size: 14px;
+  padding: 6px 0px;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  background-color: hsla(0,0%,100%,.8);
+  width: 128px;
+  display: flex;
+  justify-content: center;
+}
+
+.upload-art-and-input-label:hover {
+    cursor: pointer;
+    border: 1px solid #cecece;
+    background-color: white;
+}
+
+#camera-icon {
+    color: #333;
+    margin-right: 8px;
+}
+
+.upload-art-input {
+    display: none;
+}
+
+
 
 
 // Upload Page: Footer ------------------------------------------------------>
