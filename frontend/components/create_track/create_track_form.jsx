@@ -133,7 +133,7 @@ class CreateTrackForm extends React.Component {
             )
         } else {
             imagePreview = (
-                <img src="https://ms.yugipedia.com//b/b6/Sanwitch-TF04-JP-VG.jpg" className="upload-preview-art"/>
+                <img src="http://dalelyles.com/musicmp3s/no_cover.jpg" className="upload-preview-art"/>
             )   
         }
 
@@ -163,7 +163,7 @@ class CreateTrackForm extends React.Component {
             )
         } else {
             postUploadImagePreview = (
-                <img src="https://ms.yugipedia.com//b/b6/Sanwitch-TF04-JP-VG.jpg" className="upload-success-cover-art"/>
+                <img src="http://dalelyles.com/musicmp3s/no_cover.jpg" className="upload-success-cover-art"/>
             )   
         }
 
