@@ -92,6 +92,7 @@ class CreateTrackForm extends React.Component {
         }
 
         this.props.createTrack(formData)
+            .fail(() => this.setState({ uploadingInProgress: false }))
             .then(this.afterUpload)
     }
 
