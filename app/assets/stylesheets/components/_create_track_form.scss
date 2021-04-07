@@ -226,6 +226,8 @@
 .track-title-input-all {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    // border: 1px solid red;
 }
 
 .track-title-text {
@@ -235,7 +237,7 @@
 }
 
 .track-title-input {
-    width: 468px;
+    width: 448px;
     font-size: 14px;
     line-height: 20px;
     color: #333;
@@ -243,6 +245,11 @@
     border-radius: 4px;
     outline: none;
     padding-left: 8px;
+    padding-right: 8px;
+}
+
+.track-title-input:focus {
+    border: 1px solid rgb(129, 129, 129);  
 }
 
 

@@ -162,11 +162,13 @@ class CreateTrackForm extends React.Component {
 
                                 <div className="track-title-input-all">
                                     <p className="track-title-text">Title</p>
+
                                     <input type="text"
                                         className="track-title-input"
                                         value={this.state.title}
                                         onChange={this.update('title')}
                                     />
+
                                     {this.renderErrors()}
                                 </div>
                             </div>
