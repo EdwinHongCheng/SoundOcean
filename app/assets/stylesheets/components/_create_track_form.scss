@@ -162,6 +162,8 @@
 
 .form-info {
     display: flex;
+    margin-bottom: 26px;
+    // border: 1px solid red;
 }
 
 // --- Image Preview, etc
@@ -230,10 +232,22 @@
     // border: 1px solid red;
 }
 
+.track-title-and-star {
+    display: flex;
+    align-items: center;
+}
+
 .track-title-text {
     font-size: 14px;
     line-height: 28px;
     color: #333;
+}
+
+.track-title-star {
+    font-size: 14px;
+    line-height: 28px;
+    color: rgb(168, 24, 24);
+    margin-left: 2px;
 }
 
 .track-title-input {
@@ -252,6 +266,18 @@
     border: 1px solid rgb(129, 129, 129);  
 }
 
+.upload-renderedErrors-parent {
+    margin-top: 14px;
+}
+
+.upload-renderedErrors {
+    font-size: 14px;
+    line-height: 28px;
+    color: rgb(168, 24, 24);
+}
+
+
+// -- Upload Track Submit
 
 
 

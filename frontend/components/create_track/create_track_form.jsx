@@ -79,13 +79,11 @@ class CreateTrackForm extends React.Component {
     
     renderErrors() {
         return (
-            <ul>
+            <ul className="upload-renderedErrors-parent">
                 {this.props.errors.map((error, i) => (
-                    <>
-                        <li key={`error-${i}`} className="renderedErrors">
-                            {error}
-                        </li>
-                    </>
+                    <li key={`error-${i}`} className="upload-renderedErrors">
+                        {error}
+                    </li>
                 ))}
             </ul>
         );
@@ -161,18 +159,25 @@ class CreateTrackForm extends React.Component {
                                 </div>
 
                                 <div className="track-title-input-all">
-                                    <p className="track-title-text">Title</p>
+                                    <div className="track-title-and-star">
+                                        <p className="track-title-text">Title</p>
+                                        <p className="track-title-star">*</p>
+                                    </div>
 
                                     <input type="text"
                                         className="track-title-input"
                                         value={this.state.title}
                                         onChange={this.update('title')}
+                                        placeholder="Name your track"
                                     />
 
                                     {this.renderErrors()}
                                 </div>
                             </div>
-                            <input onClick={this.handleSubmit} type="submit" value="Create Track" />
+
+                            <div>
+                                <input onClick={this.handleSubmit} type="submit" value="Create Track" />
+                            </div>
 
                         </div>
                     </div>
