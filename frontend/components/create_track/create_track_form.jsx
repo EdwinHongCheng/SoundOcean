@@ -133,7 +133,8 @@ class CreateTrackForm extends React.Component {
             )
         } else {
             imagePreview = (
-                <img src="http://dalelyles.com/musicmp3s/no_cover.jpg" className="upload-preview-art"/>
+                <img src="https://soundocean-seed.s3-us-west-1.amazonaws.com/default_cover_art.jpg" 
+                className="upload-preview-art"/>
             )   
         }
 
@@ -163,7 +164,8 @@ class CreateTrackForm extends React.Component {
             )
         } else {
             postUploadImagePreview = (
-                <img src="http://dalelyles.com/musicmp3s/no_cover.jpg" className="upload-success-cover-art"/>
+                <img src="https://soundocean-seed.s3-us-west-1.amazonaws.com/default_cover_art.jpg" 
+                className="upload-success-cover-art"/>
             )   
         }
 
