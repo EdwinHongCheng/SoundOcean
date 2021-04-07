@@ -53,7 +53,10 @@ class CreateTrackForm extends React.Component {
 
     // Upload Audio File
     handleAudioFile(e) {
-        this.setState( { audio_file: e.currentTarget.files[0] } )
+        this.setState( { 
+            audio_file: e.currentTarget.files[0], 
+            title: e.currentTarget.files[0].name   
+        } );
     }
 
     handleSubmit(e) {
@@ -157,18 +160,17 @@ class CreateTrackForm extends React.Component {
                                     </label>
                                 </div>
 
-                                <form onSubmit={this.handleSubmit}>
+                                <div className="track-title-input-all">
+                                    <p className="track-title-text">Title</p>
+                                    <input type="text"
+                                        className="track-title-input"
+                                        value={this.state.title}
+                                        onChange={this.update('title')}
+                                    />
                                     {this.renderErrors()}
-                                    <label>Title
-                                            <input
-                                            type="text"
-                                            value={this.state.title}
-                                            onChange={this.update('title')}
-                                        />
-                                    </label>
-                                    <input type="submit" value="Create Track" />
-                                </form>
+                                </div>
                             </div>
+                            <input onClick={this.handleSubmit} type="submit" value="Create Track" />
 
                         </div>
                     </div>
