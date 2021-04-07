@@ -130,11 +130,12 @@
 // - Upload Track Form (Phase 2)
 
 .form-info-parent-parent {
-    height: 420px;
     width: 800px;
     border: 1px solid #f2f2f2;
     box-shadow: 0 2px 12px -5px rgba(0, 0, 255, .1);
     margin-bottom: 48px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .form-info-parent {
@@ -241,13 +242,13 @@
     font-size: 14px;
     line-height: 28px;
     color: #333;
+    margin-right: 2px;
 }
 
 .track-title-star {
     font-size: 14px;
     line-height: 28px;
     color: rgb(206, 22, 22);
-    margin-left: 2px;
 }
 
 .track-title-input {
@@ -278,6 +279,73 @@
 
 
 // -- Upload Track Submit
+
+.upload-track-submit-section-parent {
+    border-top: 1px solid #f2f2f2;
+    width: 800px;
+}
+
+.upload-track-submit-section {
+    margin: 0px 26px;
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-track-submit-left {
+    display: flex;
+}
+
+.upload-track-submit-star {
+    font-size: 14px;
+    line-height: 26px;
+    color: rgb(206, 22, 22);
+    margin-right: 2px;
+}
+
+.upload-track-submit-text {
+    font-size: 14px;
+    line-height: 26px;  
+    color: #333;
+}
+
+
+
+.upload-track-submit-right {
+    display: flex;
+    align-items: center;
+}
+
+.upload-track-submit-cancel-button, .upload-track-submit-upload-button {
+    font-size: 14px;
+    line-height: 26px;
+    height: 26px;
+    padding: 0px 12px;
+}
+
+.upload-track-submit-cancel-button:hover, .upload-track-submit-upload-button:hover {
+    cursor: pointer;
+}
+
+.upload-track-submit-upload-button:hover {
+    // background-color:  #111abd;
+    background-color: #ff8b8b;
+}
+
+
+.upload-track-submit-cancel-button {
+    color: #333
+}
+
+.upload-track-submit-upload-button {
+    color: white;
+    border-radius: 3px;
+    // background-color: #000573;
+    background-color: #fd6c6c;
+}
+
+
 
 
 

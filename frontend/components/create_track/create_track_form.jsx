@@ -18,6 +18,7 @@ class CreateTrackForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
         this.afterUpload = this.afterUpload.bind(this)
         this.handleFile = this.handleFile.bind(this)
 
@@ -76,7 +77,18 @@ class CreateTrackForm extends React.Component {
         this.props.createTrack(formData)
             .then(this.afterUpload)
     }
-    
+
+    handleCancel(e) {
+        e.preventDefault();
+        this.setState({ 
+            title: '',
+            cover_art: null,
+            coverArtPreviewURL: null,
+            audio_file: null
+        })
+        this.props.clearErrors();
+    }
+     
     renderErrors() {
         return (
             <ul className="upload-renderedErrors-parent">
@@ -174,12 +186,27 @@ class CreateTrackForm extends React.Component {
                                     {this.renderErrors()}
                                 </div>
                             </div>
-
-                            <div>
-                                <input onClick={this.handleSubmit} type="submit" value="Create Track" />
-                            </div>
-
                         </div>
+
+                         <div className="upload-track-submit-section-parent">
+                            <div className="upload-track-submit-section">
+                                <div className="upload-track-submit-left">
+                                    <p className="upload-track-submit-star">*</p>
+                                    <p className="upload-track-submit-text">Required fields</p>
+                                </div>
+                                
+                                {/* [WIP] Cancel (make handleCancel ???) + Upload buttons */}
+                                <div className="upload-track-submit-right">
+                                    <p className="upload-track-submit-cancel-button"
+                                        onClick={this.handleCancel}
+                                    >Cancel</p>
+                                    <p className="upload-track-submit-upload-button"
+                                        onClick={this.handleSubmit}
+                                    >Upload</p>
+                                </div>
+                            </div>
+                         </div>
+
                     </div>
 
                 </div>
