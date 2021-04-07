@@ -348,6 +348,161 @@
 
 
 
+// [WIP] Upload Success (Phase 3)
+
+.upload-phase-3-parent {
+    width: 100%;
+}
+
+.upload-phase-3 {
+    // border: 1px solid red;
+    margin: 0px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Phase 3 Upload File Box
+
+.phase-3-upload-file {
+    width: 100%;
+    height: 90px;
+    border: 2px dashed #e5e5e5;
+    border-radius: 2px;
+    margin-top: 20px;
+    margin-bottom: 36px;
+}
+
+.phase-3-upload-file-margin {
+    height: 90px;
+    margin: 0px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.phase-3-upload-file-left {
+    color: #333;
+    font-size: 18px;
+}
+
+.upload-track-input-parent2 {
+    color: white;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 11px 40px;
+    border-radius: 3px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000573;
+}
+
+.upload-track-input-parent2:hover {
+    cursor: pointer;
+    background-color: #111abd;
+}
+
+
+// Upload Success Box
+
+.upload-success-box {
+    width: 100%;
+    height: 176px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 12px -5px rgba(0, 0, 255, .1);
+    display: flex;
+    align-items: center;
+    // margin-bottom: 24px;
+    margin-bottom: 106px;
+}
+
+.upload-success-box-margin {
+    width: 100%;
+    height: 176px;
+    margin: 0px 25px;
+    display: flex;
+    // align-items: center;
+}
+
+// -- Upload Success Cover Art 
+
+.upload-success-cover-art-parent {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 26px;
+    margin-right: 15px;
+}
+
+.upload-success-cover-art {
+    width: 120px;
+    height: 120px;
+}
+
+// --- Upload Success Box Right (Uploaded Track Info + Link)
+
+.upload-success-box-right {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 26px;
+}
+
+// ---- .upload-success-box-right-top
+
+.uploaded-track-creator {
+    font-size: 14px;
+    line-height: 18px;
+    color: #999;
+
+    width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.uploaded-track-title {
+    font-size: 16px;
+    line-height: 18px;
+    color: #333;
+
+    width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// --- .upload-success-box-right-bottom
+
+.upload-success-box-right-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upload-complete-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.upload-success-link {
+    font-size: 16px;
+    color: #38d;
+}
+
+.upload-success-link:hover {
+    color: #333;
+}
+
+
+
 
 // Upload Page: Footer ------------------------------------------------------>
 .upload-footer-parent {

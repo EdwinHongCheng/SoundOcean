@@ -23,7 +23,8 @@ class CreateTrackForm extends React.Component {
         this.handleFile = this.handleFile.bind(this)
 
         // Upload Audio File
-        this.handleAudioFile = this.handleAudioFile.bind(this)
+        this.handleAudioFile = this.handleAudioFile.bind(this);
+        this.handleAudioFile2 = this.handleAudioFile2.bind(this);
     }
 
     update(field) {
@@ -55,6 +56,17 @@ class CreateTrackForm extends React.Component {
     // Upload Audio File
     handleAudioFile(e) {
         this.setState( { 
+            audio_file: e.currentTarget.files[0], 
+            title: e.currentTarget.files[0].name   
+        } );
+    }
+
+    // Upload Audio File (Post-Upload)
+    handleAudioFile2(e) {
+        this.setState( { 
+            uploaded: false,
+            cover_art: null,
+            coverArtPreviewURL: null,
             audio_file: e.currentTarget.files[0], 
             title: e.currentTarget.files[0].name   
         } );
@@ -111,11 +123,31 @@ class CreateTrackForm extends React.Component {
         let imagePreview = null;
         if (this.state.coverArtPreviewURL) {
             imagePreview = (
-                <div className="image-preview-parent">
-                    <img src={this.state.coverArtPreviewURL} className="upload-preview-art"/>
-                </div>
+                <img src={this.state.coverArtPreviewURL} className="upload-preview-art"/>
             )
+        } else {
+            imagePreview = (
+                <img src="https://ms.yugipedia.com//b/b6/Sanwitch-TF04-JP-VG.jpg" className="upload-preview-art"/>
+            )   
         }
+
+        {/* Image Preview Post-Upload */ }
+        let postUploadImagePreview = null;
+        if (this.state.coverArtPreviewURL) {
+            postUploadImagePreview = (
+                <img src={this.state.coverArtPreviewURL} className="upload-success-cover-art"/>
+            )
+        } else {
+            postUploadImagePreview = (
+                <img src="https://ms.yugipedia.com//b/b6/Sanwitch-TF04-JP-VG.jpg" className="upload-success-cover-art"/>
+            )   
+        }
+
+        let uploadSuccessLink = (
+            <Link to="/discover" className="upload-success-link">
+                Go back to discover
+            </Link>
+        )
 
         let uploadForm;
         // Phase 1: Upload a Track
@@ -195,7 +227,7 @@ class CreateTrackForm extends React.Component {
                                     <p className="upload-track-submit-text">Required fields</p>
                                 </div>
                                 
-                                {/* [WIP] Cancel (make handleCancel ???) + Upload buttons */}
+                                {/* [WIP] Make "Uploading..." button (use local state) */}
                                 <div className="upload-track-submit-right">
                                     <p className="upload-track-submit-cancel-button"
                                         onClick={this.handleCancel}
@@ -212,13 +244,46 @@ class CreateTrackForm extends React.Component {
                 </div>
 
             )
-        // Phase 3: Successful Upload (waits after good upload  I think ???)
         } else {
+            // [WIP] Phase 3: Successful Upload (waits after good upload  I think ???)
             uploadForm = (
-                <>
-                    <h1>!!! UPLOAD SUCCESS !!!</h1>
-                    <Link to="/discover">Check out our tracks!</Link>
-                </>
+                <div className="upload-phase-3-parent">
+                    <div className="upload-phase-3">
+                        <div className="phase-3-upload-file">
+                            <div className="phase-3-upload-file-margin">
+                                <p className="phase-3-upload-file-left">Click the button to upload an audio file</p>
+                                <label className="upload-track-input-parent2">
+                                    Upload a Track
+                                    <input type="file"
+                                        className="upload-track-input"
+                                        onChange={this.handleAudioFile2}
+                                    />            
+                                </label>
+                            </div>
+                        </div>
+
+                        {/* [WIP] Phase 3 */}
+                        <div className="upload-success-box">
+                            <div className="upload-success-box-margin">
+                                <div className="upload-success-cover-art-parent">
+                                    {postUploadImagePreview}    
+                                </div>
+
+                                <div className="upload-success-box-right">
+                                    <div lassName="upload-success-box-right-top">
+                                        <p className="uploaded-track-creator">{this.props.currentUser.username}</p>
+                                        <p className="uploaded-track-title">{this.state.title}</p>
+                                    </div>
+
+                                    <div className="upload-success-box-right-bottom">
+                                        <p className="upload-complete-text">Upload complete.</p>
+                                        <p className="upload-complete-text">{uploadSuccessLink}.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             )
         }
         
