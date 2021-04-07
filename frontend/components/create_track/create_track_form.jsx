@@ -14,7 +14,8 @@ class CreateTrackForm extends React.Component {
             uploaded: false, // switch to True -> display "UPLOAD SUCCESS" after a good upload
             cover_art: null, // for Cover Art File Upload
             coverArtPreviewURL: null,
-            audio_file: null // Audio File Upload
+            audio_file: null, // Audio File Upload
+            uploadingInProgress: false,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -35,7 +36,10 @@ class CreateTrackForm extends React.Component {
 
     afterUpload() {
         if (this.state.title.length > 0) {
-            this.setState({ uploaded: true })
+            this.setState({ 
+                uploaded: true,
+                uploadingInProgress: false 
+            })
         }
     }
 
@@ -74,6 +78,7 @@ class CreateTrackForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.setState( { uploadingInProgress: true })
         const formData = new FormData();
         formData.append('track[title]', this.state.title);
         formData.append('track[creator_id]', this.state.creator_id)
@@ -96,7 +101,8 @@ class CreateTrackForm extends React.Component {
             title: '',
             cover_art: null,
             coverArtPreviewURL: null,
-            audio_file: null
+            audio_file: null,
+            uploadingInProgress: false 
         })
         this.props.clearErrors();
     }
@@ -118,7 +124,6 @@ class CreateTrackForm extends React.Component {
     }
 
     render() {
-
         {/* Image Preview */ }
         let imagePreview = null;
         if (this.state.coverArtPreviewURL) {
@@ -130,6 +135,24 @@ class CreateTrackForm extends React.Component {
                 <img src="https://ms.yugipedia.com//b/b6/Sanwitch-TF04-JP-VG.jpg" className="upload-preview-art"/>
             )   
         }
+
+        // Upload/Uploading in Progress
+        let uploadStart;
+        if (!this.state.uploadingInProgress) {
+            uploadStart = (
+                <>
+                    <p className="upload-track-submit-cancel-button"
+                        onClick={this.handleCancel}
+                    >Cancel</p>
+                    <p className="upload-track-submit-upload-button"
+                        onClick={this.handleSubmit}
+                    >Upload</p>
+                </>
+            )
+        } else {
+            uploadStart = <p className="uploading-in-progress-text">Uploading...</p>
+        }
+
 
         {/* Image Preview Post-Upload */ }
         let postUploadImagePreview = null;
@@ -144,8 +167,8 @@ class CreateTrackForm extends React.Component {
         }
 
         let uploadSuccessLink = (
-            <Link to="/discover" className="upload-success-link">
-                Go back to discover
+            <Link to={`/tracks/${this.props.newestTrackId}`} className="upload-success-link">
+                Go to your track
             </Link>
         )
 
@@ -226,26 +249,19 @@ class CreateTrackForm extends React.Component {
                                     <p className="upload-track-submit-star">*</p>
                                     <p className="upload-track-submit-text">Required fields</p>
                                 </div>
-                                
-                                {/* [WIP] Make "Uploading..." button (use local state) */}
+                                {/* [Note] Clicking "Upload" -> "Uploading..." */}
                                 <div className="upload-track-submit-right">
-                                    <p className="upload-track-submit-cancel-button"
-                                        onClick={this.handleCancel}
-                                    >Cancel</p>
-                                    <p className="upload-track-submit-upload-button"
-                                        onClick={this.handleSubmit}
-                                    >Upload</p>
+                                    {uploadStart}
                                 </div>
                             </div>
                          </div>
 
                     </div>
-
                 </div>
 
             )
         } else {
-            // [WIP] Phase 3: Successful Upload (waits after good upload  I think ???)
+            // Phase 3: Successful Upload (waits after good upload)
             uploadForm = (
                 <div className="upload-phase-3-parent">
                     <div className="upload-phase-3">
@@ -270,7 +286,7 @@ class CreateTrackForm extends React.Component {
                                 </div>
 
                                 <div className="upload-success-box-right">
-                                    <div lassName="upload-success-box-right-top">
+                                    <div className="upload-success-box-right-top">
                                         <p className="uploaded-track-creator">{this.props.currentUser.username}</p>
                                         <p className="uploaded-track-title">{this.state.title}</p>
                                     </div>

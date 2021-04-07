@@ -7,11 +7,16 @@ import { createTrack, fetchTrack, clearErrors } from '../../actions/track_action
 // mSTP = mapStateToProps, mDTP = mapDispatchToProps
 
 const mSTP = state => {
+    let tracksArr = Object.keys(state.entities.tracks);
+    // console.log(tracksArr)
+    let newestTrackId = Math.max(...tracksArr);
+
     return {
         currentUserId: state.session.id,
         currentUser: state.entities.users[state.session.id],
         tracks: state.entities.tracks,
-        errors: state.errors.trackErrors
+        errors: state.errors.trackErrors,
+        newestTrackId: newestTrackId
     }
 }
 
