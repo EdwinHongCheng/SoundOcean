@@ -1,4 +1,4 @@
-json.extract! track, :id, :title, :creator_id
+json.extract! track, :id, :title, :creator_id, :created_at
 
 
 # [!!! WORKS] putting each track's creator's name in global slice of state
