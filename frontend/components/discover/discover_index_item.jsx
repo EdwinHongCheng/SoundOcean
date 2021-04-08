@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle, faPauseCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlayCircle, faPauseCircle, faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
 class DiscoverIndexItem extends React.Component {
     constructor(props) {
@@ -34,13 +34,18 @@ class DiscoverIndexItem extends React.Component {
         let playPauseButton;
         if (this.props.currentTrack === this.props.track && this.props.isPlaying) {
             playPauseButton = (
-            <FontAwesomeIcon id="play-btn" icon={faPauseCircle} 
-                onClick={this.updateCurrentTrack}
-            />)
+                <div className="discover-idx-button"
+                    onClick={this.updateCurrentTrack}>
+                    <FontAwesomeIcon id="discover-idx-pause-icon" icon={faPause}/>
+                </div>
+            )
         } else {
-            playPauseButton = (<FontAwesomeIcon id="play-btn" icon={faPlayCircle}
-                onClick={this.updateCurrentTrack} 
-            />)
+            playPauseButton = (
+                <div className="discover-idx-button"
+                    onClick={this.updateCurrentTrack}>
+                    <FontAwesomeIcon id="discover-idx-play-icon" icon={faPlay}/>
+                </div>
+            )
         }
 
         return (

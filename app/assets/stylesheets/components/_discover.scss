@@ -50,7 +50,7 @@
 }
 
 .coverArt-and-button:hover {
-  #play-btn {
+  .discover-idx-button {
     display: block;
   }
 }
@@ -65,12 +65,15 @@
   cursor: pointer;
 }
 
-#play-btn {
+// Discover Index Button (slightly modified ver of show_track.js version)
+.discover-idx-button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  color: #fd6c6c;
-  background-color: white;
+  background-color: #fd6c6c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   position: absolute;
   left: 50%;
@@ -80,9 +83,23 @@
   display: none;
 }
 
-#play-btn:hover {
+.discover-idx-button:hover {
   cursor: pointer;
-  // color: #ff8b8b;
+}
+
+#discover-idx-play-icon, #discover-idx-pause-icon {
+  width: 25px;
+  height: 25px;
+  color: white;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#discover-idx-play-icon {
+  margin-left: 2px;
 }
 
 
