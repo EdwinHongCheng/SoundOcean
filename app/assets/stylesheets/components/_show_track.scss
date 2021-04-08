@@ -94,6 +94,11 @@
     font-size: 16px;
     background-color: #000000CC;
     padding: 2px 7px 3px;
+
+    max-width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .show-track-creator:hover {
@@ -113,6 +118,11 @@
     font-weight: lighter;
     line-height: 37px;
     padding: 4px 7px;
+
+    max-width: 445px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 

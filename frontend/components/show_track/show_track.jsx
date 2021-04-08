@@ -136,16 +136,10 @@ class ShowTrack extends React.Component {
                         </div>
                     </div>
 
+                    {/* [WIP] Create Comment Box, etc */}
 
 
-
-
-                    
-
-
-
-                    {/* Edit Track Form */}
-                    {canEditTrack}
+            
 
                     {/* [WORKS] Create Comment */}
                     <CreateCommentFormContainer
@@ -154,6 +148,10 @@ class ShowTrack extends React.Component {
 
                     {/* [WORKS] Show All of a Track's Comments */}
                     <ShowCommentContainer />
+
+
+                    {/* Edit Track Form */}
+                    {canEditTrack}
 
                     <div>
                         <Link to="/">Back to Main Page</Link>
