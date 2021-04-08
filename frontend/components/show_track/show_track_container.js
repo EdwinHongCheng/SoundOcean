@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import ShowTrack from "./show_track";
-import { fetchTrack, fetchTracks } from '../../actions/track_actions';
-import { receiveCurrentTrack, playTrack, pauseTrack } from '../../actions/ui_actions'
+import { fetchTrack, fetchTracks, deleteTrack } from '../../actions/track_actions';
+import { receiveCurrentTrack, playTrack, pauseTrack } from '../../actions/ui_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
     return {
@@ -12,6 +13,8 @@ const mSTP = (state, ownProps) => {
         currentTrack: state.entities.tracks[state.ui.currentTrack.id],
         // [WORKS] updating isPlaying state (Play Pause)
         isPlaying: state.ui.isPlaying,
+        // [TEST]
+        history: ownProps.history
     }
 }
 
@@ -22,9 +25,12 @@ const mDTP = dispatch => {
         // [WORKS] updating isPlaying state (Play Pause)
         playTrack: () => dispatch(playTrack()),
         pauseTrack: () => dispatch(pauseTrack()),
-
         // [TEST] want to not crash when fetching page
-        fetchTracks: () => dispatch(fetchTracks())
+        fetchTracks: () => dispatch(fetchTracks()),
+        deleteTrack: trackId => dispatch(deleteTrack(trackId)),
+        // [TEST] Open/Close Edit Track Form Modal (see session form container)
+        openModal: () => { dispatch(openModal('editTrack')) },
+        closeModal: () => { dispatch(closeModal()) },
     }
 }
 

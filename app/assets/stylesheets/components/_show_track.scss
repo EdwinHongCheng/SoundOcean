@@ -170,3 +170,38 @@
     height: 40px;   
 }
 
+
+
+
+// - Buttons Below Comment (Edit Track, Delete Track)
+.all-track-mod-icons {
+    display: flex;
+    border: 1px solid red;
+}
+
+
+.track-modify-icon-parent {
+    width: 30px;
+    height: 26px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+#track-edit-button, #track-delete-button {
+    width: 15px;
+    height: 15px;
+}
+
+
+.track-modify-icon-parent:hover {
+    cursor: pointer;
+    border: 1px solid #cecece;
+}
+
+
+// Edit Track Form Modal (see _edit_track_form.scss)

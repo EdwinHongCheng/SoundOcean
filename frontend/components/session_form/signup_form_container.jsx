@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { receiveErrors } from '../../actions/session_actions'
+import { receiveErrors } from '../../actions/session_actions';
 
 const mSTP = ({ errors }) => {
     return {

@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
 // import { withRouter } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 // [WORKS] to create comment form
 import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
@@ -11,12 +11,20 @@ import CreateCommentFormContainer from '../create_comment/create_comment_form_co
 // [WORKS] show all comments + their delete buttons (if author of comment)
 import ShowCommentContainer from '../show_comments/show_comments_container';
 
+// [TEST]
+import Modal from '../modal/modal';
+
 
 class ShowTrack extends React.Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            isModalOpen: false,
+        }
+
         this.updateCurrentTrack = this.updateCurrentTrack.bind(this)
+        this.toggleEditTrackModal = this.toggleEditTrackModal.bind(this)
     }
 
     componentDidMount() {
@@ -39,6 +47,10 @@ class ShowTrack extends React.Component {
         e.preventDefault()
         this.props.receiveCurrentTrack(this.props.track.id)
         this.props.playTrack()
+    }
+
+    toggleEditTrackModal() {
+        this.setState({ isModalOpen: !this.state.isModalOpen })
     }
 
     render() {
@@ -109,68 +121,99 @@ class ShowTrack extends React.Component {
             }
             // -------------------------->
 
-            return (
-                <div className="showTrackBody">
-                    <div className="showTrack-padding-top"></div>
-                    <div className="show-track-banner">
-                        <div className="show-track-banner-margin">
-                            <div className="show-track-banner-left">
-                                <div className="show-track-banner-left-top"> 
-                                    {currentTrackButton}
+            // [WIP] Edit + Delete Buttons (if Current User = Track Creator)
+            let allButtons;
+            if (this.props.currentUser.id === currentTrack.creator_id
+                // everfall id = 2 -> has Admin Powers lol
+                || this.props.currentUser.id === 2) 
+            {
+                allButtons = (
+                    <div className="all-track-mod-icons">
+                        {/* [WIP] need to make modal for Edit Track Button */}
+                        <div className="track-modify-icon-parent">
+                            <FontAwesomeIcon id="track-edit-button" icon={faPencilAlt}
+                                onClick={this.props.openModal}
+                            />
+                        </div>
 
-                                    <div className="show-track-creator-and-title">
-                                        <div className="show-track-creator-and-date">
-                                            <Link to={`/users/${currentTrack.creator_id}`}
-                                                className="show-track-creator-parent">
-                                                <p className="show-track-creator">{currentTrack.creator}</p>
-                                            </Link>
-                                            <p className="show-track-creation-date">{dateCreated}</p>
+                        {/* [After Finishing Modal] turn back on Delete */}
+                        <div className="track-modify-icon-parent">
+                            <FontAwesomeIcon id="track-delete-button" icon={faTrash}
+                                // onClick={() => this.props.deleteTrack(this.props.track.id)
+                                //     .then(() => this.props.history.push("/"))}
+                            />
+                        </div>
+                    </div>
+                )
+            }
+
+            return (
+                <div>
+                    {/* [WIP] Edit Track Form Modal */}
+                    <Modal trackToEditId={this.props.track.id} />
+
+                    <div className="showTrackBody">
+                        <div className="showTrack-padding-top"></div>
+
+                        <div className="show-track-banner">
+                            <div className="show-track-banner-margin">
+                                <div className="show-track-banner-left">
+                                    <div className="show-track-banner-left-top"> 
+                                        {currentTrackButton}
+
+                                        <div className="show-track-creator-and-title">
+                                            <div className="show-track-creator-and-date">
+                                                <Link to={`/users/${currentTrack.creator_id}`}
+                                                    className="show-track-creator-parent">
+                                                    <p className="show-track-creator">{currentTrack.creator}</p>
+                                                </Link>
+                                                <p className="show-track-creation-date">{dateCreated}</p>
+                                            </div>
+                                            <p className="show-track-title">{currentTrack.title}</p>           
                                         </div>
-                                        <p className="show-track-title">{currentTrack.title}</p>           
                                     </div>
+
+                                </div>
+                                {/* Cover Art */}
+                                <img src={currentTrack.imageURL} className="track-show-coverArt"/>
+                            </div>
+                        </div>
+
+                        {/* [WIP] Create Comment Box, etc */}
+
+                        <div className="below-show-track-banner-all">
+
+                            <div className="below-show-track-banner-left">
+
+                                <div className="comment-prof-pic-and-input">
+                                    <img className="show-track-comment-mini-prof-pic" src={this.props.currentUser.profilePicURL} />
+                                    <CreateCommentFormContainer
+                                        trackId={this.props.track.id}
+                                    />
                                 </div>
 
-                            </div>
-                            {/* Cover Art */}
-                            <img src={currentTrack.imageURL} className="track-show-coverArt"/>
-                        </div>
-                    </div>
-
-                    {/* [WIP] Create Comment Box, etc */}
-                    <div className="below-show-track-banner-all">
-
-                        <div className="below-show-track-banner-left">
-
-                            <div className="comment-prof-pic-and-input">
-                                <Link to={`/users/${this.props.currentUser.id}`}>
-                                    <img className="show-track-comment-mini-prof-pic" src={this.props.currentUser.profilePicURL} />
-                                </Link>
-                                <CreateCommentFormContainer
-                                    trackId={this.props.track.id}
-                                />
+                                {allButtons}
                             </div>
 
-                            
 
+                            {/* [WIP] For Social Links + Language: English Footer */}
+                            <div className="below-show-track-banner-right">
+
+                            </div>
                         </div>
 
 
-                        {/* [WIP] For Social Links + Language: English Footer */}
-                        <div className="below-show-track-banner-right">
 
-                        </div>
+                        {/* [WORKS] Show All of a Track's Comments */}
+                        <ShowCommentContainer />
+
+
+
+                        {/* [Do Later] Edit Track Form */}
+                        {/* {canEditTrack} */}
+
+                    
                     </div>
-
-
-
-                    {/* [WORKS] Show All of a Track's Comments */}
-                    <ShowCommentContainer />
-
-
-
-                    {/* [Do Later] Edit Track Form */}
-                    {/* {canEditTrack} */}
-                  
                 </div>
             )
         }  

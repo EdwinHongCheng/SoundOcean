@@ -1,11 +1,13 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
-import { receiveErrors } from '../../actions/session_actions'
+import { receiveErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+// [TEST] Edit Track Form Modal
+import EditTrackFormContainer from '../edit_track/edit_track_form_container';
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, trackToEditId }) {
 
     if (!modal) {
         return null;
@@ -18,6 +20,12 @@ function Modal({ modal, closeModal }) {
         case 'signup':
             component = <SignupFormContainer />;
             break;
+        // [TEST] Edit Track Form Modal
+        case 'editTrack':
+            component = (<EditTrackFormContainer 
+                trackToEditId={trackToEditId}
+            />);
+            break;
         default:
             return null;
     }
@@ -29,9 +37,6 @@ function Modal({ modal, closeModal }) {
         }
     };
 
-
-    
-
     return (
         <div className="modal-background" onClick={closeModal}>
             <div onClick={closeModal} className="close-x">&#x2715;</div>
@@ -42,9 +47,11 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal,
+        // [WORKS] trackToEdit ONLY USED in show_track.jsx (using the 'editTrack' modal)
+        trackToEditId: ownProps.trackToEditId,
     };
 };
 

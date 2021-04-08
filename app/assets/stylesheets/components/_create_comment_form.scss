@@ -19,3 +19,12 @@
     padding-left: 10px;
     margin: 0px 5px;
 }
+
+.create-comment-input:hover {
+    cursor: pointer;
+}
+
+.create-comment-input:focus {
+    cursor: text;
+    border: 1px solid #cecece;
+}

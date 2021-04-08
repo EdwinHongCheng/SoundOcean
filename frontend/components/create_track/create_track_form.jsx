@@ -1,5 +1,4 @@
 import React from 'react'
-import NavbarContainer from "../navbar/navbar_container"
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
