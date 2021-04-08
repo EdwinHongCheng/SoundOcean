@@ -22,61 +22,36 @@ class CreateCommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        this.props.createComment(this.state)
-            // [!!! WORKS (JANKY) ] .then (fetch track again to update comment's new author name)
-            .then(() => this.props.fetchTrack(this.props.trackId))
-
-            .then(() => {
-                this.setState({
-                    body: '',
-                    track_id: this.props.trackId
+        if (this.state.body.length > 0) {
+            this.props.createComment(this.state)
+                // [!!! WORKS (JANKY) ] .then (fetch track again to update comment's new author name)
+                .then(() => this.props.fetchTrack(this.props.trackId))
+                .then(() => {
+                    this.setState({
+                        body: '',
+                        track_id: this.props.trackId
+                    })
                 })
-            })
+        }
     }
 
-
-    // [WORKS] rendering comment errors (if blank)
-    // [BUGGY - but WORKS] rendering Errors when uploading track
-    //------------------------------------------------------------------------->
-    // renderErrors() {
-    //     return (
-    //         <ul>
-    //             {this.props.errors.map((error, i) => (
-    //                 <>
-    //                     <li key={`error-${i}`} className="renderedErrors">
-    //                         {error}
-    //                     </li>
-    //                     <br />
-    //                 </>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
-    // componentWillUnmount() {
-    //     this.props.clearErrors()
-    // }
-    //------------------------------------------------------------------------->
-
     render() {
+        let submitComment = this.handleSubmit;
+        // Event Listener: hit "Enter" while Comment box has text -> creates New Comment
+        document.onkeydown = function(e) {
+            if (e.keyCode === 13) {
+                submitComment(e);
+            }
+        };
+
         return (
             <div>
-
-                <p>_____________________________________________</p>
-                <br />
-                
-                {/* [BUGGY - but WORKS] rendering Errors when uploading track */}
-                {/* [BUG] the Edit Form track also renders the same errors */}
-                {/* {this.renderErrors()} */}
-
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <textarea
                         placeholder="Write a comment"
                         value={this.state.body}
                         onChange={this.update('body')} 
                     />
-                    <br />
-                    <input type="submit" value="Create Comment" />
                 </form>
             </div>
         )
