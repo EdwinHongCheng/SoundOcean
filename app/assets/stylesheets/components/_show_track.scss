@@ -53,6 +53,10 @@
     align-items: center;
 }
 
+.track-show-button:hover {
+    background-color: #ff5757;
+}
+
 #show-track-play-icon, #show-track-pause-icon {
     width: 25px;
     height: 25px;
@@ -125,12 +129,10 @@
     text-overflow: ellipsis;
 }
 
-
-
-
-
 .track-show-coverArt {
     width: 340px;
     height: 340px;
 }
+
+// Below Show Track Banner Section (All)
 
