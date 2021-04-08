@@ -1,0 +1,21 @@
+.create-comment-input-parent {
+    width: 520px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    border: 1px solid#e5e5e5;
+}
+
+.create-comment-input {
+    outline: none;
+    height: 24px;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #fff;
+    padding-left: 10px;
+    margin: 0px 5px;
+}

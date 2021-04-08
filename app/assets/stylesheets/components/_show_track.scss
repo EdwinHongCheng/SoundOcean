@@ -135,5 +135,38 @@
     height: 340px;
 }
 
-// Below Show Track Banner Section (All)
+// Below Show Track Banner Section (All) -------------------------------------->
+
+.below-show-track-banner-all {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+// - Below Show Track Banner Left Side
+
+// Can use Min Height
+
+.below-show-track-banner-left {
+    width: 590px;
+    border-right: 1px solid #f2f2f2;
+
+    // for the very bottom, after All Comments (if no comments, can use min height?)
+    margin-bottom: 74px;
+}
+
+
+// -- Comment Prof Pic and Input (both)
+
+.comment-prof-pic-and-input {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+// --- Comment Form Profile Pic
+.show-track-comment-mini-prof-pic {
+    width: 40px;
+    height: 40px;   
+}
 

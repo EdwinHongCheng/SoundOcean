@@ -137,25 +137,40 @@ class ShowTrack extends React.Component {
                     </div>
 
                     {/* [WIP] Create Comment Box, etc */}
+                    <div className="below-show-track-banner-all">
+
+                        <div className="below-show-track-banner-left">
+
+                            <div className="comment-prof-pic-and-input">
+                                <Link to={`/users/${this.props.currentUser.id}`}>
+                                    <img className="show-track-comment-mini-prof-pic" src={this.props.currentUser.profilePicURL} />
+                                </Link>
+                                <CreateCommentFormContainer
+                                    trackId={this.props.track.id}
+                                />
+                            </div>
+
+                            
+
+                        </div>
 
 
-            
+                        {/* [WIP] For Social Links + Language: English Footer */}
+                        <div className="below-show-track-banner-right">
 
-                    {/* [WORKS] Create Comment */}
-                    <CreateCommentFormContainer
-                        trackId={this.props.track.id}
-                    />
+                        </div>
+                    </div>
+
+
 
                     {/* [WORKS] Show All of a Track's Comments */}
                     <ShowCommentContainer />
 
 
-                    {/* Edit Track Form */}
-                    {canEditTrack}
 
-                    <div>
-                        <Link to="/">Back to Main Page</Link>
-                    </div>                    
+                    {/* [Do Later] Edit Track Form */}
+                    {/* {canEditTrack} */}
+                  
                 </div>
             )
         }  

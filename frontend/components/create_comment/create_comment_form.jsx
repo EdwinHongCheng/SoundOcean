@@ -45,14 +45,12 @@ class CreateCommentForm extends React.Component {
         };
 
         return (
-            <div>
-                <form>
-                    <textarea
-                        placeholder="Write a comment"
-                        value={this.state.body}
-                        onChange={this.update('body')} 
-                    />
-                </form>
+            <div className="create-comment-input-parent">
+                <input type="text" className="create-comment-input"
+                    placeholder="Write a comment"
+                    value={this.state.body}
+                    onChange={this.update('body')} 
+                />
             </div>
         )
     }
