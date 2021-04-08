@@ -11,7 +11,7 @@ const mSTP = (state, ownProps) => {
         // NOTE: currentTrack refers to what's playing in Play Bar now
         currentTrack: state.entities.tracks[state.ui.currentTrack.id],
         // [WORKS] updating isPlaying state (Play Pause)
-        isPlaying: state.ui.isPlaying
+        isPlaying: state.ui.isPlaying,
     }
 }
 

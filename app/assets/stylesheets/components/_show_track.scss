@@ -1,4 +1,126 @@
 .showTrackBody {
-    max-width: 901px;
+    width: 960px;
     margin: auto;
+    background-color: white;
 }
+
+.showTrack-padding-top {
+    padding-top: 48px;
+}
+
+// Show Track Banner
+.show-track-banner {
+    width: 960px;
+    height: 380px;
+    // [Filler Gradient] - replace later
+    background: rgb(79,84,196);
+    background: linear-gradient(90deg, rgba(79,84,196,1) 30%, rgba(255,163,163,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-track-banner-margin {
+    // border: 1px solid red;
+    height: 340px;
+    width: 920px;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+}
+
+// [WIP] Show Track Banner Left (Play Button, title, creator, date, waveform)
+.show-track-banner-left {
+    // border: 1px solid red;
+    height: 340px;
+    width: 660px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.show-track-banner-left-top {
+    display: flex;
+}
+
+.track-show-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fd6c6c;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#show-track-play-icon, #show-track-pause-icon {
+    width: 25px;
+    height: 25px;
+    color: white;
+}
+
+#show-track-play-icon {
+    margin-left: 5px;
+}
+
+.track-show-button:hover {
+    cursor: pointer;
+    // background-color: #ff8b8b;
+}
+
+// - Show Track Creator and Title
+.show-track-creator-and-title {
+    width: 465px;
+    // border: 1px solid pink;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.show-track-creator-and-date {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.show-track-creator-parent {
+    margin-bottom: 8px;
+}
+
+.show-track-creator {
+    display: inline;
+    color: #CCCCCC;
+    font-size: 16px;
+    background-color: #000000CC;
+    padding: 2px 7px 3px;
+}
+
+.show-track-creator:hover {
+    color: #fff;
+}
+
+.show-track-creation-date {
+    color: #fff;
+    font-size: 16px;
+}
+
+.show-track-title {
+    display: inline;
+    color: #fff;
+    background-color: #000000CC;
+    font-size: 24px;
+    font-weight: lighter;
+    line-height: 37px;
+    padding: 4px 7px;
+}
+
+
+
+
+
+.track-show-coverArt {
+    width: 340px;
+    height: 340px;
+}
+
