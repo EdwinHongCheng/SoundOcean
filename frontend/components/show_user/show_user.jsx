@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 // [TEST] update profile pic form
 import EditUserFormContainer from '../edit_user/edit_user_form_container';
@@ -74,13 +76,22 @@ class ShowUser extends React.Component {
 
             return (
                 <div className="showUserBody">
-
                     <div className="showUser-padding-top"></div>
-
 
                     <div className="showUser-banner">
                         <div className="show-user-banner-margin">
-                            <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
+                            <div className="prof-pic-and-replace-button">
+                                <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
+
+                                {/* [WIP] Update Profile Pic */}
+                                <label className="update-profile-pic-all">
+                                    <FontAwesomeIcon id="update-profile-pic-camera-icon" icon={faCamera}/>
+                                    Update image    
+                                </label>
+                            </div>
+
+
+
                             <div className="showUser-banner-right">
                                 <p className="showUser-username">{this.props.showUser.username}</p>
                             </div>
