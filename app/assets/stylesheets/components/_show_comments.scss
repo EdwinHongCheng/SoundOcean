@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   width: 410px;
+  height: 100%;
+  border-bottom: 1px solid #f2f2f2;
   // border: 1px solid pink;
 }
 
@@ -144,12 +146,7 @@
 
 
 // Bottom Section --------------->
-
-.comments-section-bottom {
-  width: 100%;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #f2f2f2;
-}
+// - don't need anymore
 
 
 

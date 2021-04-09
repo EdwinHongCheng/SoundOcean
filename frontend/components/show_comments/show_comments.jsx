@@ -100,9 +100,7 @@ class ShowComments extends React.Component {
 
                     <div className="comments-section-middle">
                         {allComments}
-                    </div> 
-
-                    <div className="comments-section-bottom"></div>           
+                    </div>           
                 </div>
             )
         }
