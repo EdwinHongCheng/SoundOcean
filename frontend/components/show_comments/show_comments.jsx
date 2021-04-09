@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 
 class ShowComments extends React.Component {
 
@@ -46,6 +48,16 @@ class ShowComments extends React.Component {
                 </div>
             )    
         })
+
+        if (allComments.length === 0) {
+            allComments = (
+                <div className="no-comments-all">
+                    <FontAwesomeIcon id="no-comment-icon" icon={faCommentAlt}/>
+                    <p className="no-comment-top-text">Seems a little quiet over here</p>
+                    <p className="no-comment-bottom-text">Be the first to comment on this track</p>
+                </div>
+            )
+        }
         
         return (
             <div>
