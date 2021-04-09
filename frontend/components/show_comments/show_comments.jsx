@@ -49,21 +49,25 @@ class ShowComments extends React.Component {
             )    
         })
 
+        // No Comments Section ------------------------------------------------>
         if (allComments.length === 0) {
-            allComments = (
+            return (
                 <div className="no-comments-all">
                     <FontAwesomeIcon id="no-comment-icon" icon={faCommentAlt}/>
                     <p className="no-comment-top-text">Seems a little quiet over here</p>
                     <p className="no-comment-bottom-text">Be the first to comment on this track</p>
                 </div>
             )
+        } else {
+            
+            // Comments Section ----------------------------------------------->
+            return (
+                <div>
+                    {allComments}               
+                </div>
+            )
         }
         
-        return (
-            <div>
-                {allComments}               
-            </div>
-        )
     }
 }
 
