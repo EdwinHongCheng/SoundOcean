@@ -7,7 +7,7 @@ const mSTP = (state, ownProps) => {
     return {
         currentUserId: state.session.id,
         // [NOTE] ownProps has "showUser": passed down as ownProps in show_user.jsx
-        showPageUser: ownProps.showUser
+        showPageUser: state.entities.users[ownProps.showUserId]
     }
 }
 

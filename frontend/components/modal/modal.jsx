@@ -4,10 +4,11 @@ import { receiveErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
-// [TEST] Edit Track Form Modal
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
+// [TEST] Show/Update Profile Pic Modal
+import EditUserFormContainer from '../edit_user/edit_user_form_container'
 
-function Modal({ modal, closeModal, trackToEditId }) {
+function Modal({ modal, closeModal, trackToEditId, showUserId }) {
 
     if (!modal) {
         return null;
@@ -24,6 +25,11 @@ function Modal({ modal, closeModal, trackToEditId }) {
         case 'editTrack':
             component = (<EditTrackFormContainer 
                 trackToEditId={trackToEditId}
+            />);
+            break;
+        case 'editProfilePic':
+            component = (<EditUserFormContainer 
+                showUserId={showUserId}
             />);
             break;
         default:
@@ -52,6 +58,8 @@ const mapStateToProps = (state, ownProps) => {
         modal: state.ui.modal,
         // [WORKS] trackToEdit ONLY USED in show_track.jsx (using the 'editTrack' modal)
         trackToEditId: ownProps.trackToEditId,
+        // [TEST] only used for editUserInfo version of modal
+        showUserId: ownProps.showUserId,
     };
 };
 
