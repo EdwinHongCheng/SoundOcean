@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 410px;
-  border: 1px solid pink;
+  // border: 1px solid pink;
 }
 
 
@@ -52,7 +52,7 @@
 .indiv-comment-box-all {
   width: 400px;
   display: flex;
-  border: 1px solid blue;
+  // border: 1px solid blue;
 }
 
 
@@ -60,7 +60,7 @@
   width: 400px;
   display: flex;
   margin: 10px 0px;
-  border: 1px solid pink;
+  // border: 1px solid pink;
 }
 
 
@@ -78,7 +78,7 @@
 .commenter-name-and-comment {
   display: flex;
   width: 260px;
-  border: 1px solid red;
+  // border: 1px solid red;
   flex-direction: column;
 }
 
@@ -104,9 +104,11 @@
 
 .comment-created-date-and-delete-button {
   display: flex;
-  border: 1px solid green;
+  // border: 1px solid green;
   width: 80px;
   text-align: right;
+
+  position: relative;
 }
 
 .comment-created-date {
@@ -126,14 +128,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    // Note: corresponds to .comment-created-date-and-delete-button
+    // - Reason: since its position is relative, and is the parent of this element
+    position: absolute;
+    bottom: 0;
+    right: 0px;
     
-    position: relative;
-    right: 0;
 }
 
 #delete-comment-icon {
     width: 12px;
     height: 12px;
+
+
+
 }
 
 
