@@ -19,12 +19,7 @@ class ShowTrack extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            isModalOpen: false,
-        }
-
         this.updateCurrentTrack = this.updateCurrentTrack.bind(this)
-        this.toggleEditTrackModal = this.toggleEditTrackModal.bind(this)
     }
 
     componentDidMount() {
@@ -47,10 +42,6 @@ class ShowTrack extends React.Component {
         e.preventDefault()
         this.props.receiveCurrentTrack(this.props.track.id)
         this.props.playTrack()
-    }
-
-    toggleEditTrackModal() {
-        this.setState({ isModalOpen: !this.state.isModalOpen })
     }
 
     render() {
@@ -216,7 +207,6 @@ class ShowTrack extends React.Component {
                                         </ul>
                                         <p className="showTrack-language-text">Language: English (US)</p>
                                     </div>
-
 
                                 </div>
                             </div>

@@ -2,11 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
+// [TEST]
+import Modal from '../modal/modal';
 
 // [TEST] update profile pic form
 import EditUserFormContainer from '../edit_user/edit_user_form_container';
 
 class ShowUser extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            isModalOpen: false,
+        }
+
+    }
 
     componentDidMount() {
         // [WORKS] Lina's way - redirect if user URL = not valid
@@ -88,37 +98,39 @@ class ShowUser extends React.Component {
             }
 
             return (
-                <div className="showUserBody">
-                    <div className="showUser-padding-top"></div>
+                <div>
+                    {/* Update/Show User Profile Pic Modal */}
+                    <Modal showUserId={this.props.showUser.id} />
 
-                    <div className="showUser-banner">
-                        <div className="show-user-banner-margin">
-                            <div className="prof-pic-and-replace-button">
-                                <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
-                                {updateProfilePicButton}
-                            </div>
+                    <div className="showUserBody">
+                        <div className="showUser-padding-top"></div>
 
-                            <div className="showUser-banner-right">
-                                <p className="showUser-username">{this.props.showUser.username}</p>
+                        <div className="showUser-banner">
+                            <div className="show-user-banner-margin">
+                                <div className="prof-pic-and-replace-button">
+                                    <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
+                                    {updateProfilePicButton}
+                                </div>
+
+                                <div className="showUser-banner-right">
+                                    <p className="showUser-username">{this.props.showUser.username}</p>
+                                </div>
                             </div>
                         </div>
+
+
+
+                        
+                        {editProfilePic}
+                        
+
+
+                        {/* All Tracks */}
+                        {showUserTracks}
+                        
                     </div>
-
-
-
-                    
-
-                    
-
-
-                    {editProfilePic}
-                    
-
-
-                    {/* All Tracks */}
-                    {showUserTracks}
-                    
                 </div>
+                
             )
         }
 
