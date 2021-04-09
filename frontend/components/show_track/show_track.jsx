@@ -121,7 +121,7 @@ class ShowTrack extends React.Component {
             }
             // -------------------------->
 
-            // [WIP] Edit + Delete Buttons (if Current User = Track Creator)
+            // Edit + Delete Buttons (if Current User = Track Creator)
             let allButtons;
             if (this.props.currentUser.id === currentTrack.creator_id
                 // everfall id = 2 -> has Admin Powers lol
@@ -138,8 +138,8 @@ class ShowTrack extends React.Component {
 
                         {/* [After Finishing Modal] turn back on Delete */}
                         <div className="track-modify-icon-parent"
-                            // onClick={() => this.props.deleteTrack(this.props.track.id)
-                            //     .then(() => this.props.history.push("/"))}
+                            onClick={() => this.props.deleteTrack(this.props.track.id)
+                                .then(() => this.props.history.push("/"))}
                         >
                             <FontAwesomeIcon id="track-delete-button" icon={faTrash}/>
                         </div>
