@@ -194,12 +194,16 @@ class ShowTrack extends React.Component {
 
                                 <div className="below-edit-delete-buttons-all">
                                     <div className="creator-pic-and-name">
-                                        <img src={this.props.track.profilePicURL}
-                                            className="showTrack-creator-pic"
-                                        />
-                                        <p className="showTrack-creator-name">
-                                            {this.props.track.creator}
-                                        </p>
+                                        <Link to={`/users/${currentTrack.creator_id}`}>
+                                            <img src={this.props.track.profilePicURL}
+                                                className="showTrack-creator-pic"
+                                            />
+                                        </Link>
+                                        <Link to={`/users/${currentTrack.creator_id}`}>
+                                            <p className="showTrack-creator-name">
+                                                {this.props.track.creator}
+                                            </p>
+                                        </Link>
                                     </div>
 
                                     <div className="show-track-comments-section">

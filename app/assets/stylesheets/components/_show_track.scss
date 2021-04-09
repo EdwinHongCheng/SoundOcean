@@ -238,10 +238,15 @@
     font-size: 14px;
     line-height: 16px;
     max-width: 120px;
-    color: #333;
-
+    
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     word-break: normal;
+
+    color: #333;
+    &:hover {
+        // color: #333;
+    }
 }
+
