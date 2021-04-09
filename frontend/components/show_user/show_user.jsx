@@ -74,6 +74,18 @@ class ShowUser extends React.Component {
                 )
             }
 
+            let updateProfilePicButton;
+            if ((this.props.currentUser.id === showUser.id || this.props.currentUser.id === 2)
+                // && this.props.currentUser.id !== 1
+                ) {
+                    updateProfilePicButton = (
+                        <label className="update-profile-pic-all">
+                            <FontAwesomeIcon id="update-profile-pic-camera-icon" icon={faCamera}/>
+                            Update image    
+                        </label>
+                    )
+            }
+
             return (
                 <div className="showUserBody">
                     <div className="showUser-padding-top"></div>
@@ -82,12 +94,7 @@ class ShowUser extends React.Component {
                         <div className="show-user-banner-margin">
                             <div className="prof-pic-and-replace-button">
                                 <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
-
-                                {/* [WIP] Update Profile Pic */}
-                                <label className="update-profile-pic-all">
-                                    <FontAwesomeIcon id="update-profile-pic-camera-icon" icon={faCamera}/>
-                                    Update image    
-                                </label>
+                                {updateProfilePicButton}
                             </div>
 
 
