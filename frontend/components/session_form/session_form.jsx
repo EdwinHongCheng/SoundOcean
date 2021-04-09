@@ -83,7 +83,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'signup') { 
             email = (
                 <>
-                    <label>
+                    <label className="login-email-input-field">
                         <input 
                             className="login-input"
                             type="text"
@@ -92,7 +92,6 @@ class SessionForm extends React.Component {
                             placeholder="Please enter your email address"
                         />
                     </label>
-                    <br />
                     {passwordInputField}
                 </>
             )
@@ -104,7 +103,6 @@ class SessionForm extends React.Component {
             demoLoginButton = (
             <>
                 <button type="button" className="demo-button" onClick={this.demoSignIn}>Demo Sign in</button>
-                <br />
                 <p className="straightline">
                     <span>or</span>
                 </p>
@@ -132,15 +130,13 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'signup') {
             signInOrCreateAccountButton = (
             <>
-                <br />
-                <input className="submit-button" type="submit" value="Create account" />
+                <input className="submit-button1" type="submit" value="Create account" />
             </>
             )
         } else if (this.props.formType === 'login' && this.state.cont_state) {
             signInOrCreateAccountButton = (
                 <>
-                    <br />
-                    <input className="submit-button" type="submit" value="Sign in" />
+                    <input className="submit-button1" type="submit" value="Sign in" />
                 </>
             ) 
         }
@@ -150,17 +146,13 @@ class SessionForm extends React.Component {
         if (this.props.formType === "signup") {
             formBlurbAbove = (
                 <>
-                    <p className="modalBlurb">Join the SoundOcean community today!</p>
-                    <br />
-                    <br />
+                    <p className="modalBlurb1">Join the SoundOcean community today!</p>
                 </>
             ) 
         } else if (this.props.formType === "login") {
             formBlurbAbove = (
                 <>
-                    <p className="modalBlurb">Welcome back to SoundOcean!</p>
-                    <br />
-                    <br />
+                    <p className="modalBlurb1">Welcome back to SoundOcean!</p>
                 </>
             )
         }
@@ -172,17 +164,13 @@ class SessionForm extends React.Component {
         if (this.props.formType === "signup") {
             otherFormBlurb = (
                 <>
-                    <br />
-                    <br />
-                    <p className="modalBlurb">Already have an account? Sign in {here}!</p>
+                    <p className="modalBlurb2">Already have an account? Sign in {here}!</p>
                 </>
             )
         } else if (this.props.formType === "login") {
             otherFormBlurb = (
                 <>
-                    <br />
-                    <br />
-                    <p className="modalBlurb">Don't have an account? Sign up {here}!</p>
+                    <p className="modalBlurb2">Don't have an account? Sign up {here}!</p>
                 </>
             )
         }
@@ -199,7 +187,7 @@ class SessionForm extends React.Component {
                             {/* DEMO SIGN IN */}
                             {demoLoginButton}
                             {/* Username Input Field (always shows) */}
-                            <label>
+                            <label className="login-input-parent">
                                 <input type="text"
                                     value={this.state.username}
                                     onChange={this.update('username')}
@@ -207,7 +195,6 @@ class SessionForm extends React.Component {
                                     placeholder="Please enter your username"
                                 />
                             </label>
-                            <br />
                             {/* Email Input Field*/}
                             {email}
                             {/* Continue Button*/}

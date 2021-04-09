@@ -27,7 +27,7 @@
 
 
 // Submit Button + Demo Button
-.submit-button, .demo-button {
+.submit-button, .submit-button1, .demo-button {
   // Curved Borders
   border-radius: 4px;
   outline: none;
@@ -43,11 +43,19 @@
   cursor: pointer;
 }
 
+.submit-button1 {
+  margin-top: 16px;
+}
+
+.demo-button {
+  margin-bottom: 16px;
+}
+
 // Submit Button Colors
-.submit-button {
+.submit-button, .submit-button1 {
   background-color: #000573;
 }
-.submit-button:hover {
+.submit-button:hover, .submit-button1:hover  {
   background-color: #111abd;
 }
 
@@ -71,9 +79,18 @@
 }
 
 // Modal Blurb - center it
-.modalBlurb {
+.modalBlurb1, .modalBlurb2 {
   text-align: center;
 }
+
+.modalBlurb1 {
+  margin-bottom: 32px;
+}
+
+.modalBlurb2 {
+  margin-top: 32px;
+}
+
 
 
 // Rendered Errors - Red Text
@@ -91,6 +108,11 @@
 
 .here-button:hover { 
   color: black;
+}
+
+
+.login-email-input-field, .login-input-parent {
+  margin-bottom: 16px;
 }
 
 // ---------------------------------------------------------------------------->
