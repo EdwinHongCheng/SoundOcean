@@ -56,7 +56,6 @@ class SessionForm extends React.Component {
                         <li key={`error-${i}`} className="renderedErrors">
                             {error}
                         </li>
-                        <br />
                     </>
                 ))}
             </ul>
