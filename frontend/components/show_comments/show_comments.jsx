@@ -74,7 +74,9 @@ class ShowComments extends React.Component {
                         <p className="total-comments-text">{totalCommentsString}</p>
                     </div>
 
-                    {allComments}               
+                    {allComments}
+
+                    <div className="comments-section-bottom"></div>           
                 </div>
             )
         }
