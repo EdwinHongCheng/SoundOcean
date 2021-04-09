@@ -44,11 +44,11 @@ class PlayBar extends React.Component {
                 this.setState({ trackPlayed: progressBar.currentTime })
             }, 50);
 
-            this.setState({currentTrackId: this.props.currentTrack});
+            this.setState({currentTrackId: this.props.currentTrack.id});
 
-        } else if (this.state.currentTrackId !== this.props.currentTrack) {
+        } else if (this.state.currentTrackId !== this.props.currentTrack.id) {
             clearInterval(this.playTrack);
-            this.setState({currentTrackId: this.props.currentTrack});
+            this.setState({currentTrackId: this.props.currentTrack.id});
 
             this.setState({ trackLength: progressBar.duration })
 
