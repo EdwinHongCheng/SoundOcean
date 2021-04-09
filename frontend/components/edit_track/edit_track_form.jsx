@@ -92,12 +92,11 @@ class EditTrackForm extends React.Component {
 
         return (
             <div className="edit-track-form-modal-content">
-
+                
                 <div className="edit-track-form-margin">
                     <div className="edit-form-info-tab-parent">
                         <p className="edit-form-info-tab">Basic info</p>
                     </div>
-
 
                     <div className="edit-form-info">
                         <div className="edit-image-preview-and-input">
@@ -114,9 +113,7 @@ class EditTrackForm extends React.Component {
                             </label>
                         </div>
 
-
                         {/* Change Title Input */}
-
                         <div className="edit-track-title-input-all">
                             <div className="edit-track-title-and-star">
                                 <p className="edit-track-title-text">Title</p>
@@ -133,8 +130,6 @@ class EditTrackForm extends React.Component {
                         </div>
                     </div>
                     
-
-
                     <div className="edit-track-submit-section-parent">
                         <div className="edit-track-submit-section">
                             <div className="edit-track-submit-left">
