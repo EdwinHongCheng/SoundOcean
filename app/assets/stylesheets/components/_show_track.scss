@@ -176,7 +176,7 @@
 // - Buttons Below Comment (Edit Track, Delete Track)
 .all-track-mod-icons {
     display: flex;
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 
 
@@ -203,5 +203,44 @@
     border: 1px solid #cecece;
 }
 
+// Edit Track Form Modal (see _edit_track_form.scss) -------------------------->
 
-// Edit Track Form Modal (see _edit_track_form.scss)
+
+
+// Below Edit/Delete Buttons (Left Side) -------------------------------------->
+
+.below-edit-delete-buttons-all {
+    display: flex;
+    width: 562px;
+    // border: 1px solid red;
+    border-top: 1px solid #f2f2f2;
+    padding-top: 20px;
+}
+
+// - Creator Pic + Name Section
+.creator-pic-and-name {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
+
+.showTrack-creator-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+}
+
+.showTrack-creator-name {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 120px;
+    color: #333;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: normal;
+}
