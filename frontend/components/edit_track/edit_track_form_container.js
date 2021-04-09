@@ -4,8 +4,9 @@ import EditTrackForm from './edit_track_form';
 import { fetchTrack, updateTrack, receiveErrors, clearErrors } from '../../actions/track_actions';
 import { closeModal } from '../../actions/modal_actions';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     return {
+        track: state.entities.tracks[ownProps.trackToEditId],
         currentUserId: state.session.id,
         currentUser: state.entities.users[state.session.id],
         // [WORKS] Render Errors for edit
