@@ -56,20 +56,14 @@ class EditUserForm extends React.Component {
                 <>
                     <p>New Profile Pic Preview</p>
                     <img src={this.state.profilePicPreviewURL} className="previewArt" />
-                    <br />
-                    <br />
                 </>
             )
         }
 
         return (
-            <div>
-                <p>_____________________________________________________</p>
-                <br />
-
+            <div className="edit-form-body">
                 <form onSubmit={this.handleSubmit}>
                     <h1>Upload a New Profile Pic</h1>
-                    <br />
 
                     {/* Profile Pic Preview */}
                     {imagePreview}
@@ -78,15 +72,8 @@ class EditUserForm extends React.Component {
                         onChange={this.handleFile}
                     />
 
-                    <br />
-                    <br />
-
                     <input type="submit" value="Update Profile Pic" />
-                </form>
-
-                <p>_____________________________________________________</p>
-                <br />
-                
+                </form>                
             </div>
         );
     }

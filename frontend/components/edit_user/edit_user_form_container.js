@@ -6,7 +6,7 @@ import { updateUser } from '../../actions/user_actions';
 const mSTP = (state, ownProps) => {
     return {
         currentUserId: state.session.id,
-        // [NOTE] ownProps has "showUser": passed down as ownProps in show_user.jsx
+        // [NOTE] ownProps has "showUser": passed down as ownProps from modal.jsx
         showPageUser: state.entities.users[ownProps.showUserId]
     }
 }
