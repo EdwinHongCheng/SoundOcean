@@ -1,6 +1,5 @@
 .edit-track-form-modal-content {
     width: 850px;
-    height: 500px;
     background-color: white;
     border-radius: 5px;
 }
@@ -147,3 +146,70 @@
     line-height: 28px;
     color: rgb(206, 22, 22);
 }
+
+
+
+// -- Edit Track Submit ------------------------------------------------------->
+
+.edit-track-submit-section-parent {
+    border-top: 1px solid #f2f2f2;
+    width: 100%;
+}
+
+.edit-track-submit-section {
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-track-submit-left {
+    display: flex;
+}
+
+.edit-track-submit-star {
+    font-size: 14px;
+    line-height: 26px;
+    color: rgb(206, 22, 22);
+    margin-right: 2px;
+}
+
+.edit-track-submit-text {
+    font-size: 14px;
+    line-height: 26px;  
+    color: #333;
+}
+
+.edit-track-submit-right {
+    display: flex;
+    align-items: center;
+}
+
+.edit-track-submit-cancel-button, .edit-track-submit-button {
+    font-size: 14px;
+    line-height: 26px;
+    height: 26px;
+    padding: 0px 12px;
+}
+
+.edit-track-submit-cancel-button:hover, .edit-track-submit-button:hover {
+    cursor: pointer;
+}
+
+.edit-track-submit-button:hover {
+    // background-color:  #111abd;
+    background-color: #ff8b8b;
+}
+
+
+.edit-track-submit-cancel-button {
+    color: #333
+}
+
+.edit-track-submit-button {
+    color: white;
+    border-radius: 3px;
+    // background-color: #000573;
+    background-color: #fd6c6c;
+}
+

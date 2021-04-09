@@ -11,7 +11,8 @@ class EditTrackForm extends React.Component {
             id: this.props.track.id,
             creator_id: this.props.track.creator_id,
             cover_art: null, // for Cover Art File Upload
-            coverArtPreviewURL: null
+            coverArtPreviewURL: null,
+            updateSuccess: false,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -49,9 +50,13 @@ class EditTrackForm extends React.Component {
             formData.append('track[cover_art]', this.state.cover_art);
         }
 
-        this.props.updateTrack(formData);
+        this.props.updateTrack(formData)
+            .then(() => {
+                if (this.state.title) {
+                    this.props.closeModal();
+                }
+            })
     }
-
 
     //------------------------------------------------------------------------->
     // render errors when editing (such as title = blank)
@@ -68,7 +73,7 @@ class EditTrackForm extends React.Component {
     }
     // clears rendered errors if i click on another link, etc
     componentWillUnmount() {
-        this.props.clearErrors()
+        this.props.clearErrors();
     }
     //------------------------------------------------------------------------->
 
@@ -130,12 +135,21 @@ class EditTrackForm extends React.Component {
                     
 
 
+                    <div className="edit-track-submit-section-parent">
+                        <div className="edit-track-submit-section">
+                            <div className="edit-track-submit-left">
+                                <p className="edit-track-submit-star">*</p>
+                                <p className="edit-track-submit-text">Required fields</p>
+                            </div>
 
-
-                
-                    <br />
-                    <br />
-                    <p onClick={this.handleSubmit}>Update Track</p>
+                            <div className="edit-track-submit-right">
+                                <p className="edit-track-submit-cancel-button"
+                                    onClick={this.props.closeModal}
+                                >Cancel</p>
+                                <p className="edit-track-submit-button" onClick={this.handleSubmit}>Update Track</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
