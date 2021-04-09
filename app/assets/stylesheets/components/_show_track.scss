@@ -240,9 +240,10 @@
     max-width: 120px;
     
     overflow: hidden;
-    white-space: nowrap;
+    // white-space: nowrap;
+    white-space: wrap;
     text-overflow: ellipsis;
-    word-break: normal;
+    word-break: break-word;
 
     color: #333;
     &:hover {
