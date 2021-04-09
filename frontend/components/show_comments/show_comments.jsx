@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCommentAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 class ShowComments extends React.Component {
 
@@ -15,26 +15,49 @@ class ShowComments extends React.Component {
         let allComments = this.props.trackComments.map((comment, idx) => {
 
             return (
-                <div key={comment.id}>
-
-                    <Link to={`/users/${comment.author_id}`}>
-                        <img className="commentProfilePic" src={comment.profilePicURL} />
-                        <span> {comment.author}</span>
-                    </Link>
+                <div key={comment.id} className="indiv-comment-box-all">
 
 
+                    <div className="indiv-comment-box-all-margin">
 
-                    <p>{comment.body}</p>
+                        <Link to={`/users/${comment.author_id}`}>
+                            <img className="commentProfilePic" src={comment.profilePicURL} />
+                        </Link>
 
-                    {/* [WORKS] Conditional Delete Button (comments can only be deleted by their author) */}
-                    {/* ALSO: gave everfall admin powers (lol) */}
-                    {this.props.currentUserId === comment.author_id || this.props.currentUserId === 2 ?
 
-                        (<div>
-                            <button onClick={() => this.props.deleteComment(comment.id)}>Delete Comment</button>
-                        </div>)
 
-                    : null}
+
+                        <div className="commenter-name-and-comment">
+                            <Link to={`/users/${comment.author_id}`}>
+                                <p className="comment-author">{comment.author}</p>
+                            </Link>
+                            <p className="comment-body">{comment.body}</p>
+                        </div>
+
+
+
+
+                        <div className="comment-created-date-and-delete-button">
+                            <p>1/2/2003</p>
+
+
+                            {/* [WORKS] Conditional Delete Button (comments can only be deleted by their author) */}
+                            {/* ALSO: gave everfall admin powers (lol) */}
+                            {this.props.currentUserId === comment.author_id || this.props.currentUserId === 2 ?
+                                (<div>
+                                    <button onClick={() => this.props.deleteComment(comment.id)}>Delete</button>
+                                </div>)
+                            : null}
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
                 </div>
             )    
         })
@@ -64,7 +87,9 @@ class ShowComments extends React.Component {
                         <p className="total-comments-text">{totalCommentsString}</p>
                     </div>
 
-                    {allComments}
+                    <div className="comments-section-middle">
+                        {allComments}
+                    </div> 
 
                     <div className="comments-section-bottom"></div>           
                 </div>

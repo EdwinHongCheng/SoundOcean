@@ -41,7 +41,27 @@
 
 
 
-// -[WIP] Middle Section --------------->
+// * * * [WIP] Middle Section ------------------------------------------------>
+
+.comments-section-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.indiv-comment-box-all {
+  width: 400px;
+  display: flex;
+  border: 1px solid blue;
+}
+
+
+.indiv-comment-box-all-margin {
+  width: 400px;
+  display: flex;
+  margin: 10px 0px;
+  border: 1px solid pink;
+}
 
 
 .commentProfilePic {
@@ -49,12 +69,50 @@
   width: 40px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, .1);
-  margin: 10px 0px;
   margin-right: 10px;
 }
 
 
+// Commenter Name + Comment
 
+.commenter-name-and-comment {
+  display: flex;
+  width: 260px;
+  border: 1px solid red;
+  flex-direction: column;
+}
+
+
+.comment-author {
+  color: #999;
+  font-size: 14px;
+  line-height: 18px;
+  &:hover {
+    color: #333;
+  }
+}
+
+.comment-body {
+  color: #333;
+  font-size: 14px;
+  line-height: 18px;
+  word-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+// Create Date and Delete Button
+
+
+.comment-created-date-and-delete-button {
+  display: flex;
+  flex-direction: column;
+}
 
 
 
