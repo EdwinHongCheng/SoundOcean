@@ -4,6 +4,8 @@ import logo from "../../../app/assets/images/logo.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faAngellist } from '@fortawesome/free-brands-svg-icons';
+// [WIP] Dots
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = ({ currentUser, logout }) => {
 
