@@ -59,10 +59,10 @@ class ShowComments extends React.Component {
                 </div>
             )
         } else {
-            
+
             // Comments Section ----------------------------------------------->
             return (
-                <div>
+                <div className="comments-section-all-stuff">
                     {allComments}               
                 </div>
             )

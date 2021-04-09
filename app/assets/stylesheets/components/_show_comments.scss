@@ -11,7 +11,14 @@
 
 
 
+// [WIP] Comments Section All (Top, Middle, Bottom)
 
+.comments-section-all-stuff {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid pink;
+}
 
 
 // No Comments All ------------------------------------------------------------>
