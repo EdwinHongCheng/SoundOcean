@@ -1,4 +1,49 @@
-// [TEST] commenter's profile pics (super small
+// [WIP] Comments Section All (Top, Middle, Bottom) --------------------------->
+
+.comments-section-all-stuff {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid pink;
+}
+
+
+
+
+
+
+// - Top Section ---------------->
+
+.comments-section-top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 12px;
+}
+
+#tiny-comment-icon {
+  width: 14px;
+  height: 14px;
+  color: #999;
+  margin-right: 8px;
+}
+
+.total-comments-text {
+  color: #999;
+  font-size: 14px;
+  // font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+// - Middle Section
+
+
 .commentProfilePic {
   height: 40px;
   width: 40px;
@@ -11,14 +56,21 @@
 
 
 
-// [WIP] Comments Section All (Top, Middle, Bottom)
 
-.comments-section-all-stuff {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border: 1px solid pink;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // No Comments All ------------------------------------------------------------>

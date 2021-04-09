@@ -59,10 +59,21 @@ class ShowComments extends React.Component {
                 </div>
             )
         } else {
+            let totalCommentsString;
+            if (allComments.length === 1) {
+                totalCommentsString = "1 comment"
+            } else {
+                totalCommentsString = allComments.length.toString().concat(" comments")  
+            }
 
             // Comments Section ----------------------------------------------->
             return (
                 <div className="comments-section-all-stuff">
+                    <div className="comments-section-top">
+                        <FontAwesomeIcon id="tiny-comment-icon" icon={faCommentAlt}/>
+                        <p className="total-comments-text">{totalCommentsString}</p>
+                    </div>
+
                     {allComments}               
                 </div>
             )
