@@ -109,9 +109,7 @@ class ShowUser extends React.Component {
 
                         <div className="showUser-banner">
                             <div className="show-user-banner-margin">
-                                <div className="prof-pic-and-replace-button"
-                                    onClick={this.props.openModal}
-                                >
+                                <div className="prof-pic-and-replace-button">
                                     <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
                                     {updateProfilePicButton}
                                 </div>
