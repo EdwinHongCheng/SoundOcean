@@ -17,18 +17,11 @@ class ShowComments extends React.Component {
             return (
                 <div key={comment.id}>
 
-                    {/* [DONT NEED] Adding 1 so 1st comment = number 1, not 0 */}
-                    {/* <p>Comment #{idx + 1}</p> */}
-
-
-                    {/* [!!! JANK WORKS] NOTE: see create_comment_form.jsx */}
-
                     <Link to={`/users/${comment.author_id}`}>
                         <img className="commentProfilePic" src={comment.profilePicURL} />
                         <span> {comment.author}</span>
                     </Link>
-                    <br />
-                    <br />
+
 
 
                     <p>{comment.body}</p>
@@ -38,13 +31,10 @@ class ShowComments extends React.Component {
                     {this.props.currentUserId === comment.author_id || this.props.currentUserId === 2 ?
 
                         (<div>
-                            <br />
                             <button onClick={() => this.props.deleteComment(comment.id)}>Delete Comment</button>
                         </div>)
 
                     : null}
-
-                    <p>_____________________________________________</p>
                 </div>
             )    
         })
