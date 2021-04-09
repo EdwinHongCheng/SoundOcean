@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 class EditTrackForm extends React.Component {
     constructor(props) {
@@ -72,49 +74,63 @@ class EditTrackForm extends React.Component {
 
     render() {
         {/* [WORKS] Update Image Preview */ }
-        let imagePreview = null;
+        let imagePreview;
         if (this.state.coverArtPreviewURL) {
             imagePreview = (
-                <>
-                    <img src={this.state.coverArtPreviewURL} className="previewArt" />
-                </>
+                <img src={this.state.coverArtPreviewURL} className="edit-modal-preview-art" />
+            )
+        } else {
+            imagePreview = (
+                <img src={this.props.track.imageURL} className="edit-modal-preview-art" />
             )
         }
 
         return (
             <div className="edit-track-form-modal-content">
 
-                <div>
-                    <div>
-                        {/* Cover Art Preview */}
-                        <p>[Optional] Upload a New Cover Art</p>
-                        {imagePreview}
-                        <input
-                            type="file"
-                            onChange={this.handleFile}
-                        />
-
-                        
-                        <label>Title
-                            <input
-                                type="text"
-                                value={this.state.title}
-                                onChange={this.update('title')}
-                                placeholder="Name your track"
-                            />
-                        </label>
-
-
-                        {/* [WORKS] rendering Errors when uploading track */}
-                        {this.renderErrors()}
-
-
-
-                        <br />
-                        <br />
-                        <p onClick={this.handleSubmit}>Update Track</p>
+                <div className="edit-track-form-margin">
+                    <div className="edit-form-info-tab-parent">
+                        <p className="edit-form-info-tab">Basic info</p>
                     </div>
+
+                    <div className="edit-image-preview-and-input">
+                        <div className="edit-image-preview-parent">
+                            {imagePreview}
+                        </div>
+                        {/* Edit Upload Cover Art */}
+                        <label className="edit-upload-art-and-input-label">
+                            <FontAwesomeIcon id="edit-camera-icon" icon={faCamera}/>
+                            Replace image
+                            <input type="file" className="edit-upload-art-input"
+                                onChange={this.handleFile}
+                            />       
+                        </label>
+                    </div>
+
+
+
+
+                    
+                    <label>Title
+                        <input
+                            type="text"
+                            value={this.state.title}
+                            onChange={this.update('title')}
+                            placeholder="Name your track"
+                        />
+                    </label>
+
+
+                    {/* [WORKS] rendering Errors when uploading track */}
+                    {this.renderErrors()}
+
+
+
+                    <br />
+                    <br />
+                    <p onClick={this.handleSubmit}>Update Track</p>
                 </div>
+
             </div>
         )
     }

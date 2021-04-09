@@ -4,3 +4,85 @@
     background-color: white;
     border-radius: 5px;
 }
+
+.edit-track-form-margin {
+    margin: 0px 26px;
+}
+
+// "Basic Info" tab
+
+.edit-form-info-tab-parent {
+    width: 100%;
+    padding-top: 15px;
+    height: 40px;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 26px;
+}
+
+.edit-form-info-tab {
+    height: 40px;
+    width: 105px;
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #111abd;
+}
+
+// Edit Modal Preview Art + Input----------------------------------------------------->
+
+.edit-image-preview-and-input {
+    position: relative;
+    display: inline-block;
+    margin-right: 18px;
+}
+
+.edit-image-preview-parent {
+    width: 260px;
+    height: 260px;
+    background-color: white;
+    // border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.edit-modal-preview-art {
+    width: 260px;
+    height: 260px;
+}
+
+
+.edit-upload-art-and-input-label {
+  position: absolute;
+  left: 50%;
+  top: 224px;
+  transform: translate(-50%, -50%);
+
+  font-size: 14px;
+  padding: 6px 0px;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  background-color: hsla(0,0%,100%,.8);
+  width: 128px;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-upload-art-and-input-label:hover {
+    cursor: pointer;
+    border: 1px solid #cecece;
+    background-color: white;
+}
+
+#edit-camera-icon {
+    color: #333;
+    height: 14px;
+    width: 14px;
+    margin-right: 8px;
+}
+
+.edit-upload-art-input {
+    display: none;
+}
