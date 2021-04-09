@@ -100,6 +100,48 @@
 }
 
 
+// ------------------>
+
+.comment-created-date-and-delete-button {
+  display: flex;
+  border: 1px solid green;
+  width: 80px;
+  text-align: right;
+}
+
+.comment-created-date {
+  color: #999;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+
+// [WIP] Delete Comment Icon
+
+.delete-comment-icon-parent {
+    width: 24px;
+    height: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    right: 0;
+}
+
+#delete-comment-icon {
+    width: 12px;
+    height: 12px;
+}
+
+
+.delete-comment-icon-parent:hover {
+    cursor: pointer;
+    border: 1px solid #cecece;
+}
+
 
 
 

@@ -12,7 +12,21 @@ class ShowComments extends React.Component {
 
     render() {
 
+
+        // enter the track's created_at string -> converts to a date string
+        let creationDate = (trackDate) => {
+            let year = trackDate.slice(0, 4);
+            let month = trackDate.slice(5, 7);
+            if (month[0] === "0") month = month.slice(1);
+            let day = trackDate.slice(8, 10);
+            if (day[0] === "0") day = day.slice(1);
+            let newString = month.concat("/").concat(day).concat("/").concat(year);
+            return newString;
+        }
+
         let allComments = this.props.trackComments.map((comment, idx) => {
+
+            let dateCreated = creationDate(comment.created_at);
 
             return (
                 <div key={comment.id} className="indiv-comment-box-all">
@@ -24,9 +38,6 @@ class ShowComments extends React.Component {
                             <img className="commentProfilePic" src={comment.profilePicURL} />
                         </Link>
 
-
-
-
                         <div className="commenter-name-and-comment">
                             <Link to={`/users/${comment.author_id}`}>
                                 <p className="comment-author">{comment.author}</p>
@@ -35,17 +46,17 @@ class ShowComments extends React.Component {
                         </div>
 
 
-
-
                         <div className="comment-created-date-and-delete-button">
-                            <p>1/2/2003</p>
+                            <p className="comment-created-date">{dateCreated}</p>
 
 
                             {/* [WORKS] Conditional Delete Button (comments can only be deleted by their author) */}
                             {/* ALSO: gave everfall admin powers (lol) */}
                             {this.props.currentUserId === comment.author_id || this.props.currentUserId === 2 ?
-                                (<div>
-                                    <button onClick={() => this.props.deleteComment(comment.id)}>Delete</button>
+                                (<div className="delete-comment-icon-parent"
+                                    onClick={() => this.props.deleteComment(comment.id)}
+                                 >
+                                    <FontAwesomeIcon id="delete-comment-icon" icon={faTrash}/>
                                 </div>)
                             : null}
                         </div>
