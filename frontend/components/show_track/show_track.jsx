@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
 // import { withRouter } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faPencilAlt, faTrash, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 
 // [WORKS] to create comment form
 import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
@@ -201,6 +201,12 @@ class ShowTrack extends React.Component {
                                             {this.props.track.creator}
                                         </p>
                                     </div>
+
+                                    <div className="show-track-comments-section">
+                                        {/* [WORKS] Show All of a Track's Comments */}
+                                        <ShowCommentContainer />
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -217,8 +223,7 @@ class ShowTrack extends React.Component {
 
 
 
-                        {/* [WORKS] Show All of a Track's Comments */}
-                        <ShowCommentContainer />
+
 
 
                     
