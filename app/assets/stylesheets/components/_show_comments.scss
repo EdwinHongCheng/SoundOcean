@@ -1,4 +1,4 @@
-// [WIP] Comments Section All (Top, Middle, Bottom) --------------------------->
+// [Comments Section All (Top, Middle, Bottom) --------------------------->
 
 .comments-section-all-stuff {
   display: flex;
@@ -6,9 +6,6 @@
   width: 410px;
   // border: 1px solid pink;
 }
-
-
-
 
 
 
@@ -36,12 +33,7 @@
 
 
 
-
-
-
-
-
-// * * * [WIP] Middle Section ------------------------------------------------>
+// Middle Section ------------------------------------------------>
 
 .comments-section-middle {
   display: flex;
@@ -100,10 +92,11 @@
 }
 
 
-// ------------------>
+//// Create Date and Delete Button ------------------>
 
 .comment-created-date-and-delete-button {
   display: flex;
+  flex-direction: column;
   // border: 1px solid green;
   width: 80px;
   text-align: right;
@@ -118,7 +111,7 @@
 }
 
 
-// [WIP] Delete Comment Icon
+// Delete Comment Icon
 
 .delete-comment-icon-parent {
     width: 24px;
@@ -140,9 +133,6 @@
 #delete-comment-icon {
     width: 12px;
     height: 12px;
-
-
-
 }
 
 
@@ -150,26 +140,6 @@
     cursor: pointer;
     border: 1px solid #cecece;
 }
-
-
-
-
-
-
-
-// Create Date and Delete Button
-
-
-.comment-created-date-and-delete-button {
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-
-
-
 
 
 
@@ -183,9 +153,7 @@
 
 
 
-
-
-
+// * * *
 
 
 
