@@ -74,19 +74,6 @@ class ShowTrack extends React.Component {
 
             let dateCreated = creationDate(currentTrack.created_at);
 
-
-            let canEditTrack;
-            if (this.props.currentUser.id === currentTrack.creator_id
-                // everfall id = 2 -> has Admin Powers lol
-                || this.props.currentUser.id === 2) {
-                canEditTrack = (
-                    <EditTrackFormContainer 
-                        track={currentTrack}
-                        history={this.props.history}
-                    />
-                )
-            }
-
             // [WORKS] ------------------------------------------------->
             let currentTrackButton;
             if (this.props.track !== this.props.currentTrack) {

@@ -74,16 +74,17 @@ class ShowUser extends React.Component {
                 )
             }
 
+            // [AFTER FINISHING] Turn "Don't Let guest update Profile Pic" back on
             let updateProfilePicButton;
-            if ((this.props.currentUser.id === showUser.id || this.props.currentUser.id === 2)
-                // && this.props.currentUser.id !== 1
-                ) {
-                    updateProfilePicButton = (
-                        <label className="update-profile-pic-all">
-                            <FontAwesomeIcon id="update-profile-pic-camera-icon" icon={faCamera}/>
-                            Update image    
-                        </label>
-                    )
+            if ((this.props.currentUser.id === showUser.id 
+                    // && this.props.currentUser.id !== 1
+                ) || this.props.currentUser.id === 2) {
+                updateProfilePicButton = (
+                    <label className="update-profile-pic-all">
+                        <FontAwesomeIcon id="update-profile-pic-camera-icon" icon={faCamera}/>
+                        Update image    
+                    </label>
+                )
             }
 
             return (
@@ -96,8 +97,6 @@ class ShowUser extends React.Component {
                                 <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
                                 {updateProfilePicButton}
                             </div>
-
-
 
                             <div className="showUser-banner-right">
                                 <p className="showUser-username">{this.props.showUser.username}</p>

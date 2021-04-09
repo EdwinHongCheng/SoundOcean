@@ -29,7 +29,7 @@
     display: flex;
 }
 
-// Show User Banner Content (User Profile Pic, User Username) ---->
+// * * * Show User Banner Content (User Profile Pic, User Username) ---->
 .prof-pic-and-replace-button {
     position: relative;
     display: inline-block;
@@ -39,6 +39,12 @@
     }
 }
 
+// User Profile Pic
+.showUserProfilePic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
 
 // Update image ------>
 
@@ -79,21 +85,8 @@
 }
 
 
+/// --------------------------------------------------------------------------->
 
-.prof-pic-and-replace-button:hover {
-
-}
-
-
-/// -------->
-
-
-
-.showUserProfilePic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
 
 .showUser-banner-right {
     display: flex;
