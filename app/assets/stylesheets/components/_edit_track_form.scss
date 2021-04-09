@@ -29,6 +29,14 @@
     border-bottom: 1px solid #111abd;
 }
 
+// Edit Form Info (below the tab) All ----------------------------------------->
+
+.edit-form-info {
+    display: flex;
+    margin-bottom: 26px;
+}
+
+
 // Edit Modal Preview Art + Input----------------------------------------------------->
 
 .edit-image-preview-and-input {
@@ -85,4 +93,57 @@
 
 .edit-upload-art-input {
     display: none;
+}
+
+// Edit Track Title Input All ------------------------------------------------->
+
+.edit-track-title-input-all {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // border: 1px solid red;
+}
+
+.edit-track-title-and-star {
+    display: flex;
+    align-items: center;
+}
+
+.edit-track-title-text {
+    font-size: 14px;
+    line-height: 28px;
+    color: #333;
+    margin-right: 2px;
+}
+
+.edit-track-title-star {
+    font-size: 14px;
+    line-height: 28px;
+    color: rgb(206, 22, 22);
+}
+
+.edit-track-title-input {
+    width: 500px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.edit-track-title-input:focus {
+    border: 1px solid rgb(129, 129, 129);  
+}
+
+.edit-renderedErrors-parent {
+    margin-top: 14px;
+}
+
+.edit-renderedErrors {
+    font-size: 14px;
+    line-height: 28px;
+    color: rgb(206, 22, 22);
 }

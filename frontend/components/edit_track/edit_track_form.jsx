@@ -57,9 +57,9 @@ class EditTrackForm extends React.Component {
     // render errors when editing (such as title = blank)
     renderErrors() {
         return (
-            <ul>
+            <ul className="edit-renderedErrors-parent">
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`} className="renderedErrors">
+                    <li key={`error-${i}`} className="edit-renderedErrors">
                         {error}
                     </li>
                 ))}
@@ -93,39 +93,46 @@ class EditTrackForm extends React.Component {
                         <p className="edit-form-info-tab">Basic info</p>
                     </div>
 
-                    <div className="edit-image-preview-and-input">
-                        <div className="edit-image-preview-parent">
-                            {imagePreview}
+
+                    <div className="edit-form-info">
+                        <div className="edit-image-preview-and-input">
+                            <div className="edit-image-preview-parent">
+                                {imagePreview}
+                            </div>
+                            {/* Edit Upload Cover Art */}
+                            <label className="edit-upload-art-and-input-label">
+                                <FontAwesomeIcon id="edit-camera-icon" icon={faCamera}/>
+                                Replace image
+                                <input type="file" className="edit-upload-art-input"
+                                    onChange={this.handleFile}
+                                />       
+                            </label>
                         </div>
-                        {/* Edit Upload Cover Art */}
-                        <label className="edit-upload-art-and-input-label">
-                            <FontAwesomeIcon id="edit-camera-icon" icon={faCamera}/>
-                            Replace image
-                            <input type="file" className="edit-upload-art-input"
-                                onChange={this.handleFile}
-                            />       
-                        </label>
+
+
+                        {/* Change Title Input */}
+
+                        <div className="edit-track-title-input-all">
+                            <div className="edit-track-title-and-star">
+                                <p className="edit-track-title-text">Title</p>
+                                <p className="edit-track-title-star">*</p>
+                            </div>
+                            
+                            <input type="text"
+                                className="edit-track-title-input"
+                                value={this.state.title}
+                                onChange={this.update('title')}
+                                placeholder="Name your track"
+                            />
+                            {this.renderErrors()}
+                        </div>
                     </div>
-
-
-
-
                     
-                    <label>Title
-                        <input
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                            placeholder="Name your track"
-                        />
-                    </label>
-
-
-                    {/* [WORKS] rendering Errors when uploading track */}
-                    {this.renderErrors()}
 
 
 
+
+                
                     <br />
                     <br />
                     <p onClick={this.handleSubmit}>Update Track</p>
