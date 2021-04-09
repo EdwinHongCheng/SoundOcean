@@ -90,7 +90,9 @@ class ShowUser extends React.Component {
                     // && this.props.currentUser.id !== 1
                 ) || this.props.currentUser.id === 2) {
                 updateProfilePicButton = (
-                    <label className="update-profile-pic-all">
+                    <label className="update-profile-pic-all"
+                        onClick={this.props.openModal}
+                    >
                         <FontAwesomeIcon id="update-profile-pic-camera-icon" icon={faCamera}/>
                         Update image    
                     </label>

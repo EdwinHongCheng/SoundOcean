@@ -34,6 +34,11 @@
     position: relative;
     display: inline-block;
     margin-right: 30px;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
     &:hover {
         cursor: pointer;
     }
@@ -60,13 +65,12 @@
   border-radius: 3px;
   background-color: hsla(0,0%,100%,.8);
   width: 128px;
-//   display: flex;
   justify-content: center;
 
   display: none;
 }
 
-// Update Profile Pic Button only shows up if hovering over the Profile Pic
+
 .prof-pic-and-replace-button:hover .update-profile-pic-all {
     display: flex;
 }
