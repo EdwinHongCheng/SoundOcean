@@ -100,6 +100,7 @@ class EditTrackForm extends React.Component {
                                 type="text"
                                 value={this.state.title}
                                 onChange={this.update('title')}
+                                placeholder="Name your track"
                             />
                         </label>
 
