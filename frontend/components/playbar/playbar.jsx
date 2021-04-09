@@ -39,6 +39,7 @@ class PlayBar extends React.Component {
         if (this.state.currentTrackId === null || this.state.currentTrackId === this.props.currentTrack.id) {
             if (this.playTrack) clearInterval(this.playTrack);
             if (this.state.muted) progressBar.muted = true;
+            if (this.state.looping) progressBar.loop = true;
 
             progressBar.volume = this.state.volume;
 
