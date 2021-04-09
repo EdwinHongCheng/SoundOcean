@@ -129,7 +129,7 @@ class ShowTrack extends React.Component {
             {
                 allButtons = (
                     <div className="all-track-mod-icons">
-                        {/* [WIP] need to make modal for Edit Track Button */}
+                        {/* Opens Modal for Edit Track */}
                         <div className="track-modify-icon-parent"
                             onClick={this.props.openModal}
                         >
@@ -149,7 +149,7 @@ class ShowTrack extends React.Component {
 
             return (
                 <div>
-                    {/* [WIP] Edit Track Form Modal */}
+                    {/* Edit Track Form Modal */}
                     <Modal trackToEditId={this.props.track.id} />
 
                     <div className="showTrackBody">
@@ -179,8 +179,7 @@ class ShowTrack extends React.Component {
                             </div>
                         </div>
 
-                        {/* [WIP] Create Comment Box, etc */}
-
+                        {/* Create Comment Box, etc */}
                         <div className="below-show-track-banner-all">
 
                             <div className="below-show-track-banner-left">
@@ -212,25 +211,29 @@ class ShowTrack extends React.Component {
                                     </div>
 
                                 </div>
+
+
                             </div>
 
-
-
-
-
-
-                            {/* [WIP] For Social Links + Language: English Footer */}
+                            {/* [WIP] Show Track Right Side (Below Banner) */}
                             <div className="below-show-track-banner-right">
+                                <div className="below-show-track-banner-right-margin">
 
+                                    <div className="showTrack-footer">
+                                        <ul className="showTrack-footer-links">
+                                            <a className="showTrack-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                                            <li> - </li>
+                                            <a className="showTrack-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
+                                            <li> - </li>
+                                            <a className="showTrack-footer-socials" target="_blank" href="https://angel.co/u/edwin-cheng-5">AngelList</a>
+                                        </ul>
+                                        <p className="showTrack-language-text">Language: English (US)</p>
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
-
-
-
-
-
-
-                    
                     </div>
                 </div>
             )

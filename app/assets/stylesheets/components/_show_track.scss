@@ -140,7 +140,6 @@
 .below-show-track-banner-all {
     margin: 0px 20px;
     display: flex;
-    flex-direction: column;
 }
 
 
@@ -250,3 +249,56 @@
     }
 }
 
+
+
+// Show Track Right Side (Below Banner) -------------------------------------->
+// - For Social Links + Language: English Footer 
+
+
+.below-show-track-banner-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid red;
+}
+
+.below-show-track-banner-right-margin {
+    margin: 0 30px;
+    // border: 1px solid blue;
+}
+
+
+
+// "Footer"
+
+.showTrack-footer {
+  border-top: 1px solid #f2f2f2;
+  margin-top: 55px;
+}
+
+.showTrack-footer-links {
+  display: flex;
+}
+
+.showTrack-footer-links a, .showTrack-footer-links li {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 12px;
+}
+
+.showTrack-footer-links li {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.showTrack-footer-socials:hover {
+  color: #b8b8b8;
+}
+
+.showTrack-language-text {
+  color: #333;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 6px;
+}
