@@ -40,18 +40,15 @@ class ShowUser extends React.Component {
 
                     <div key={track.id}>
 
-                        <br/>
+
                         {/* <span>Track Title: </span> */}
                         <Link to={`/tracks/${track.id}`}>
                             <span>{track.title}</span>
                         </Link>
-
-                        <br/>
                         
                         <Link to={`/tracks/${track.id}`}>
                             <img className="showUserTrackArt" src={track.imageURL}/>
                         </Link>
-                        <br />
                     </div>
 
                     // return null if the show page user isn't the track's creator
@@ -78,36 +75,37 @@ class ShowUser extends React.Component {
             return (
                 <div className="showUserBody">
 
-                    <br />
-                    <p>{this.props.showUser.username}'s Show Page</p>
-                    <br />
-                    <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
-                    <br />
-                    <br />
+                    <div className="showUser-padding-top"></div>
+
+
+                    <div className="showUser-banner">
+                        <div className="show-user-banner-margin">
+                            <img className="showUserProfilePic" src={this.props.showUser.profilePicURL}/>
+                            <div className="showUser-banner-right">
+                                <p className="showUser-username">{this.props.showUser.username}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+
+                    
+
 
                     {editProfilePic}
                     
-                    <br />
-                    <p>_____________________________________________________</p>
-                    <br />
-                    <p>All Tracks</p>
-                    <p>_____________________________________________________</p>
-                    
+
+
+                    {/* All Tracks */}
                     {showUserTracks}
-                    <br />
-
-                    <p>_____________________________________________________</p>
-                    <br />
-
-                    <div>
-                        <Link to="/">Back to Main Page</Link>
-                    </div>
-                    <br />
                     
                 </div>
             )
         }
-        // *** [if showUser = now exists + passed down from global state] ----->
+
+
     }
 }
 

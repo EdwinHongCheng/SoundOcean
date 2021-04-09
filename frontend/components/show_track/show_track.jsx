@@ -165,7 +165,7 @@ class ShowTrack extends React.Component {
                                             <div className="show-track-creator-and-date">
                                                 <Link to={`/users/${currentTrack.creator_id}`}
                                                     className="show-track-creator-parent">
-                                                    <p className="show-track-creator">{currentTrack.creator}</p>
+                                                        <p className="show-track-creator">{currentTrack.creator}</p>
                                                 </Link>
                                                 <p className="show-track-creation-date">{dateCreated}</p>
                                             </div>
