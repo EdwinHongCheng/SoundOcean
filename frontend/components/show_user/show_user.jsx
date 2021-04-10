@@ -6,14 +6,6 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../modal/modal';
 
 class ShowUser extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            isModalOpen: false,
-        }
-
-    }
 
     componentDidMount() {
         // [WORKS] Lina's way - redirect if user URL = not valid
