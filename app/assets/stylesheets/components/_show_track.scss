@@ -130,10 +130,10 @@
     padding: 0px 7px;
 
     max-width: 350px;
-    max-height: 180px;
+    max-height: 175px; // cuz 1 line = 35px times 5 = 175px
     white-space: wrap;
     word-break: break-word;
-    // overflow: hidden;
+    overflow: hidden;
     // text-overflow: ellipsis;
 }
 
