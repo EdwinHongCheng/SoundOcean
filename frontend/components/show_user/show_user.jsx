@@ -68,6 +68,7 @@ class ShowUser extends React.Component {
                     </label>
                 )
             }
+            console.log(this.props.showUser)
 
             return (
                 <div>
@@ -85,7 +86,12 @@ class ShowUser extends React.Component {
                                 </div>
 
                                 <div className="showUser-banner-right">
-                                    <p className="showUser-username">{this.props.showUser.username}</p>
+                                    <div>
+                                        <p className="showUser-username">{this.props.showUser.username}</p>
+                                    </div>
+                                    <div>
+                                        <p className="showUser-join-date">Member since {this.props.showUser.created_at}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

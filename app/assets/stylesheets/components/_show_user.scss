@@ -104,8 +104,8 @@
     background-color: #000000CC;
     font-size: 24px;
     font-weight: lighter;
-    line-height: 37px;
-    padding: 4px 7px;
+    line-height: 36px;
+    padding: 5px 7px;
 
     max-width: 450px;
     white-space: nowrap;
@@ -113,6 +113,17 @@
     text-overflow: ellipsis;
 }
 
+
+
+.showUser-join-date {
+    margin-top: 4px;
+
+    color: #ccc;
+    background-color: #000000CC;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0px 7px;
+}
 
 
 

@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :email
+json.extract! user, :id, :username, :email, :created_at
 
 # [TEST] NOTE: buggy cuz one user has a "profile pic attached"
 # -> BUT, i prob dont have the url attached to it yet (from AWS)
