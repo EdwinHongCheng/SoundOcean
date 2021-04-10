@@ -3,4 +3,60 @@
     width: 410px; 
     height: 560px;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid purple;
+}
+
+.edit-form-body-margin {
+    width: 360px; 
+    height: 510px;
+    border: 1px solid pink;
+}
+
+.edit-form-username {
+    font-size: 22px;
+    line-height: 24px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #f2f2f2;
+
+    max-width: 360px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    margin-bottom: 24px;
+}
+
+.edit-form-top-text {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+
+// Edit User Profile Pic Section
+
+.edit-user-prof-pic-parent {
+    width: 360px;
+    height: 360px;
+    position: relative;
+}
+
+.edit-user-prof-pic, .edit-user-prof-pic-opaque {
+    width: 360px;
+    height: 360px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.edit-user-prof-pic {
+    border-radius: 50%;
+}
+
+.edit-user-prof-pic-opaque {
+    opacity: 0.25;
 }

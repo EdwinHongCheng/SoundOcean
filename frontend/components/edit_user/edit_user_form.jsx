@@ -53,27 +53,43 @@ class EditUserForm extends React.Component {
         let imagePreview = null;
         if (this.state.profilePicPreviewURL) {
             imagePreview = (
-                <>
-                    <p>New Profile Pic Preview</p>
-                    <img src={this.state.profilePicPreviewURL} className="previewArt" />
-                </>
+                <div className="edit-user-prof-pic-parent">
+                    <img src={this.state.profilePicPreviewURL} className="edit-user-prof-pic" />
+                </div>
+            )
+        } else {
+            imagePreview = (
+                <div className="edit-user-prof-pic-parent">
+                    <img className="edit-user-prof-pic"
+                        src={this.props.showPageUser.profilePicURL}
+                    />
+                    <img className="edit-user-prof-pic-opaque"
+                    src={this.props.showPageUser.profilePicURL} />
+                </div>
             )
         }
 
         return (
             <div className="edit-form-body">
-                <form onSubmit={this.handleSubmit}>
-                    <h1>Upload a New Profile Pic</h1>
+                <div className="edit-form-body-margin">
 
-                    {/* Profile Pic Preview */}
+                    <p className="edit-form-username">
+                        {this.props.showPageUser.username}
+                    </p>
+
+                    <p className="edit-form-top-text">
+                        For best results, upload images of at least 1000x1000 pixels.
+                    </p>
+
                     {imagePreview}
-                    <input
-                        type="file"
-                        onChange={this.handleFile}
-                    />
 
-                    <input type="submit" value="Update Profile Pic" />
-                </form>                
+
+
+
+                </div>
+
+
+            
             </div>
         );
     }
