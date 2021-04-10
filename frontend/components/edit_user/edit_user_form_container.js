@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import EditUserForm from './edit_user_form';
 import { updateUser } from '../../actions/user_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
     return {
@@ -13,7 +14,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        updateUser: user => dispatch(updateUser(user))
+        updateUser: user => dispatch(updateUser(user)),
+        closeModal: () => dispatch(closeModal()),
     }
 }
 

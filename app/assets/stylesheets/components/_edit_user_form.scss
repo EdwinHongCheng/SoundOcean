@@ -6,13 +6,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid purple;
+    // border: 1px solid purple;
 }
 
 .edit-form-body-margin {
     width: 360px; 
     height: 510px;
-    border: 1px solid pink;
+    // border: 1px solid pink;
 }
 
 .edit-form-username {
@@ -67,7 +67,7 @@
     width: 360px;
     height: 32px;
     margin-top: 28px;
-    border: 1px solid green;
+    // border: 1px solid green;
     display: flex;
     justify-content: space-between;
 }
@@ -75,7 +75,17 @@
 // - Left Side
 
 .select-new-prof-pic-button {
-    border: 1px solid gold;
+    font-size: 14px;
+    line-height: 26px;
+    height: 26px;
+    padding: 0px 12px;
+    color: white;
+    border-radius: 3px;
+    background-color: #000573;
+    &:hover {
+        cursor: pointer;
+        background-color: #111abd;
+    }
 }
 
 
@@ -87,5 +97,46 @@
 // Right Side
 
 .edit-form-bottom-section-right {
+    display: flex;
+}
 
+
+
+
+
+.edit-prof-pic-cancel-button, .edit-prof-pic-save-button {
+    font-size: 14px;
+    line-height: 26px;
+    height: 26px;
+    padding: 0px 12px;
+}
+
+.edit-prof-pic-cancel-button:hover, .edit-prof-pic-save-button:hover {
+    cursor: pointer;
+}
+
+.edit-prof-pic-save-button:hover {
+    // background-color:  #111abd;
+    background-color: #ff8b8b;
+}
+
+
+.edit-prof-pic-cancel-button {
+    color: #333
+}
+
+.edit-prof-pic-save-button {
+    color: white;
+    border-radius: 3px;
+    // background-color: #000573;
+    background-color: #fd6c6c;
+}
+
+
+.updating-image-in-progress-text {
+    font-size: 14px;
+    line-height: 26px;
+    height: 26px;
+    padding: 0px 12px;
+    color: #333;
 }

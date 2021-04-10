@@ -7,11 +7,13 @@ class EditUserForm extends React.Component {
         this.state = {
             id: this.props.showPageUser.id,
             profile_pic: null,
-            profilePicPreviewURL: null
+            profilePicPreviewURL: null,
+            updatingInProgress: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
     }
 
     update(field) {
@@ -36,6 +38,9 @@ class EditUserForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
+        this.setState({ updatingInProgress: true })
+
         const formData = new FormData();
         formData.append('user[id]', this.state.id);
 
@@ -43,12 +48,28 @@ class EditUserForm extends React.Component {
             formData.append('user[profile_pic]', this.state.profile_pic);
         }
 
-        this.props.updateUser(formData);
+        this.props.updateUser(formData)
+            .then(() => {
+                this.setState({ updatingInProgress: false });
+                if (this.state.profile_pic) {
+                    this.props.closeModal();
+                }
+            })
+    }
+
+
+    handleCancel(e) {
+        e.preventDefault();
+        this.setState({ 
+            profile_pic: null,
+            profilePicPreviewURL: null
+        })
+
+        this.props.closeModal();
     }
 
 
     render() {
-
         {/* [WORKS] Update Image Preview */ }
         let imagePreview = null;
         if (this.state.profilePicPreviewURL) {
@@ -74,6 +95,26 @@ class EditUserForm extends React.Component {
             )
         }
 
+
+        // [TEST]
+
+        // Updating Pic in Progress
+        let updateStart;
+        if (!this.state.updatingInProgress) {
+            updateStart = (
+                <>
+                    <p className="edit-prof-pic-cancel-button"
+                        onClick={this.handleCancel}
+                    >Cancel</p>
+                    <p className="edit-prof-pic-save-button"
+                        onClick={this.handleSubmit}
+                    >Save</p>
+                </>
+            )
+        } else {
+            updateStart = <p className="updating-image-in-progress-text">Updating image...</p>
+        }
+
         return (
             <div className="edit-form-body">
                 <div className="edit-form-body-margin">
@@ -86,9 +127,9 @@ class EditUserForm extends React.Component {
                     {imagePreview}
 
                     <div className="edit-form-bottom-section">
-                        
+
                         <label className="select-new-prof-pic-button">
-                            Select an image
+                            Select image
                             <input type="file" className="select-new-prof-pic-button-input"
                             onChange={this.handleFile}
                             />
@@ -96,7 +137,7 @@ class EditUserForm extends React.Component {
 
 
                         <div className="edit-form-bottom-section-right">
-
+                            {updateStart}
                         </div>
 
                     </div>
