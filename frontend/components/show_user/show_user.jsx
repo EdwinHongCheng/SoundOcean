@@ -57,7 +57,7 @@ class ShowUser extends React.Component {
             // [AFTER FINISHING] Turn "Don't Let guest update Profile Pic" back on
             let updateProfilePicButton;
             if ((this.props.currentUser.id === showUser.id 
-                    // && this.props.currentUser.id !== 1
+                    && this.props.currentUser.id !== 1
                 ) || this.props.currentUser.id === 2) {
                 updateProfilePicButton = (
                     <label className="update-profile-pic-all"
