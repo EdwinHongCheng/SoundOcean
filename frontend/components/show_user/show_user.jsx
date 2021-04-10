@@ -68,7 +68,7 @@ class ShowUser extends React.Component {
                     </label>
                 )
             }
-            
+
             // enter the users's created_at string -> converts to a date string
             let creationDate = (joinDate) => {
                 let year = joinDate.slice(0, 4);
@@ -108,6 +108,12 @@ class ShowUser extends React.Component {
                                 </div>
                             </div>
                         </div>
+
+
+                        
+
+
+
 
                         {/* All Tracks */}
                         {showUserTracks}
