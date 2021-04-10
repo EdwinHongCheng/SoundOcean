@@ -30,8 +30,6 @@ class ShowComments extends React.Component {
 
             return (
                 <div key={comment.id} className="indiv-comment-box-all">
-
-
                     <div className="indiv-comment-box-all-margin">
 
                         <Link to={`/users/${comment.author_id}`}>
@@ -60,18 +58,13 @@ class ShowComments extends React.Component {
                                 </div>)
                             : null}
                         </div>
-
-
-
                     </div>
-
-
-
-
-
                 </div>
             )    
         })
+
+        // Reversed Order - Newest Comment Appears 1st
+        let allCommentsReversed = allComments.reverse();
 
         // No Comments Section ------------------------------------------------>
         if (allComments.length === 0) {
@@ -99,7 +92,7 @@ class ShowComments extends React.Component {
                     </div>
 
                     <div className="comments-section-middle">
-                        {allComments}
+                        {allCommentsReversed}
                     </div>           
                 </div>
             )
