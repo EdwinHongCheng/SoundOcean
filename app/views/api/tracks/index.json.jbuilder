@@ -12,7 +12,7 @@ end
 json.users do
     @tracks.each do |track|
         json.set! track.creator.id do
-            json.extract! track.creator, :id, :username, :email
+            json.extract! track.creator, :id, :username, :email, :created_at
         end
     end
 end

@@ -68,7 +68,20 @@ class ShowUser extends React.Component {
                     </label>
                 )
             }
-            console.log(this.props.showUser)
+            
+            // enter the users's created_at string -> converts to a date string
+            let creationDate = (joinDate) => {
+                let year = joinDate.slice(0, 4);
+                let month = joinDate.slice(5, 7);
+                if (month[0] === "0") month = month.slice(1);
+                let day = joinDate.slice(8, 10);
+                if (day[0] === "0") day = day.slice(1);
+                let newString = month.concat("/").concat(day).concat("/").concat(year);
+
+                return newString;
+            }
+
+            let dateJoined = creationDate(this.props.showUser.created_at);
 
             return (
                 <div>
@@ -90,7 +103,7 @@ class ShowUser extends React.Component {
                                         <p className="showUser-username">{this.props.showUser.username}</p>
                                     </div>
                                     <div>
-                                        <p className="showUser-join-date">Member since {this.props.showUser.created_at}</p>
+                                        <p className="showUser-join-date">Member since {dateJoined}</p>
                                     </div>
                                 </div>
                             </div>
