@@ -43,6 +43,7 @@
 
 .show-track-banner-left-top {
     display: flex;
+    // border: 1px solid red;
 }
 
 .track-show-button {
@@ -89,18 +90,20 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    // border: 1px solid pink;
 }
 
 .show-track-creator-parent {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .show-track-creator {
     display: inline;
     color: #CCCCCC;
     font-size: 16px;
+    line-height: 19px;
     background-color: #000000CC;
-    padding: 2px 7px 3px;
+    padding: 0px 7px 3px;
 
     max-width: 210px;
     white-space: nowrap;
@@ -121,10 +124,10 @@
     display: inline;
     color: #fff;
     background-color: #000000CC;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: lighter;
-    line-height: 37px;
-    padding: 4px 7px;
+    line-height: 35px;
+    padding: 0px 7px;
 
     max-width: 445px;
     white-space: nowrap;
