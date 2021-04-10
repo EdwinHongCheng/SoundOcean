@@ -32,7 +32,7 @@
 .edit-form-top-text {
     font-size: 13px;
     color: #666;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 
@@ -59,4 +59,33 @@
 
 .edit-user-prof-pic-opaque {
     opacity: 0.25;
+}
+
+// Edit Form Modal Bottom Part
+
+.edit-form-bottom-section {
+    width: 360px;
+    height: 32px;
+    margin-top: 28px;
+    border: 1px solid green;
+    display: flex;
+    justify-content: space-between;
+}
+
+// - Left Side
+
+.select-new-prof-pic-button {
+    border: 1px solid gold;
+}
+
+
+.select-new-prof-pic-button-input {
+    display: none;
+}
+
+
+// Right Side
+
+.edit-form-bottom-section-right {
+
 }

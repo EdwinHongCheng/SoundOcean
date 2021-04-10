@@ -54,7 +54,12 @@ class EditUserForm extends React.Component {
         if (this.state.profilePicPreviewURL) {
             imagePreview = (
                 <div className="edit-user-prof-pic-parent">
-                    <img src={this.state.profilePicPreviewURL} className="edit-user-prof-pic" />
+                    <img className="edit-user-prof-pic" 
+                        src={this.state.profilePicPreviewURL} 
+                    />
+                    <img className="edit-user-prof-pic-opaque" 
+                        src={this.state.profilePicPreviewURL} 
+                    />
                 </div>
             )
         } else {
@@ -72,16 +77,29 @@ class EditUserForm extends React.Component {
         return (
             <div className="edit-form-body">
                 <div className="edit-form-body-margin">
-
                     <p className="edit-form-username">
                         {this.props.showPageUser.username}
                     </p>
-
                     <p className="edit-form-top-text">
                         For best results, upload images of at least 1000x1000 pixels.
                     </p>
-
                     {imagePreview}
+
+                    <div className="edit-form-bottom-section">
+                        
+                        <label className="select-new-prof-pic-button">
+                            Select an image
+                            <input type="file" className="select-new-prof-pic-button-input"
+                            onChange={this.handleFile}
+                            />
+                        </label>
+
+
+                        <div className="edit-form-bottom-section-right">
+
+                        </div>
+
+                    </div>
 
 
 
