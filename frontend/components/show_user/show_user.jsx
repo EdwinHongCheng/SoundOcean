@@ -2,11 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
-// [TEST]
+// [WORKING] for Update Profile Pic Modal
 import Modal from '../modal/modal';
-
-// [TEST] update profile pic form
-import EditUserFormContainer from '../edit_user/edit_user_form_container';
 
 class ShowUser extends React.Component {
     constructor(props) {
@@ -51,9 +48,6 @@ class ShowUser extends React.Component {
                 (this.props.showUser.id === track.creator_id ?
 
                     <div key={track.id}>
-
-
-                        {/* <span>Track Title: </span> */}
                         <Link to={`/tracks/${track.id}`}>
                             <span>{track.title}</span>
                         </Link>
@@ -67,22 +61,6 @@ class ShowUser extends React.Component {
                     : null 
                 )
             )
-
-            // [TEST] if current user = same as showpage's user -> let them update profile pic
-            let editProfilePic;
-            // [ALSO] giving user 2 (everfall) admin powers (lol)
-            // [AlSO] not letting demo guest upload a new profile pic (note the parentheses)
-            if (
-                (this.props.currentUser.id === showUser.id || this.props.currentUser.id === 2)
-                && this.props.currentUser.id !== 1) 
-                {
-                editProfilePic = (
-                    <EditUserFormContainer
-                        // [NOTE] must pass down currentUser as ownProps
-                        showUser={showUser}
-                    />
-                )
-            }
 
             // [AFTER FINISHING] Turn "Don't Let guest update Profile Pic" back on
             let updateProfilePicButton;
@@ -119,13 +97,6 @@ class ShowUser extends React.Component {
                                 </div>
                             </div>
                         </div>
-
-
-
-                        
-                        {editProfilePic}
-                        
-
 
                         {/* All Tracks */}
                         {showUserTracks}

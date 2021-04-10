@@ -5,6 +5,7 @@ import { updateUser } from '../../actions/user_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
+    console.log(state.entities.users)
     return {
         currentUserId: state.session.id,
         // [NOTE] ownProps has "showUser": passed down as ownProps from modal.jsx
