@@ -36,6 +36,8 @@ class ShowUser extends React.Component {
         // *** [if showUser = now exists + passed down from global state] ----->
         } else {
 
+
+
             let showUserTracks = this.props.tracks
             .filter(track => track.creator_id === this.props.showUser.id)
             .map(track => 
@@ -50,6 +52,12 @@ class ShowUser extends React.Component {
                 </div>
                 )
             )
+
+            // [WIP] Below "All Tracks" Tab Left Side
+            let belowTabLeftSide;
+
+
+
 
             // [AFTER FINISHING] Turn "Don't Let guest update Profile Pic" back on
             let updateProfilePicButton;
@@ -122,19 +130,17 @@ class ShowUser extends React.Component {
                             {/* Below "All Tracks" Tab (All: Left + Right) */}
                             <div className="below-all-tracks-tab-all">
 
-                                <div className="below-all-tracks-tab-left">
-                                    {/* All Tracks */}
-                                    {showUserTracks}
+                                <div className="below-all-tracks-tab-left-parent">
+
+                                    <div className="below-all-tracks-tab-left">
+                                        {/* All Tracks */}
+                                        {showUserTracks}
+                                    </div>
                                 </div>
 
 
-
-
-
-                                {/* [WIP] Show Track Right Side (Below Banner) */}
+                                {/* Below "All Tracks" Tab Right Side (All) */}
                                 <div className="below-showAllTrack-tab-right">
-
-
                                     <div className="show-user-info-all">
                                         <div className="show-user-info-total-tracks-parent">
                                             <p className="show-user-info-total-tracks-text">Tracks</p>
@@ -142,8 +148,6 @@ class ShowUser extends React.Component {
                                         </div>
 
                                     </div>
-
-
                                     <div className="below-showAllTrack-tab-footer">
                                         <ul className="below-showAllTrack-tab-footer-links">
                                             <a className="below-showAllTrack-tab-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
@@ -154,9 +158,7 @@ class ShowUser extends React.Component {
                                         </ul>
                                         <p className="below-showAllTrack-tab-language-text">Language: English (US)</p>
                                     </div>
-
                                 </div>
-
 
                             </div>
 
