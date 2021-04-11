@@ -104,7 +104,7 @@ class ShowUser extends React.Component {
 
 
                             {/* [CURRENT WIP] All Tracks */}
-                            {showUserTracks}
+                            {showUserTracks.reverse()}
 
 
 

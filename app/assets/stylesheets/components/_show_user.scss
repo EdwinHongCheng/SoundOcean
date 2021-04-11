@@ -212,11 +212,11 @@
 
 // ---- Below Left v1 Middle Section (aka All Indiv Tracks) ------------------------>
 .showUser-indiv-track-all {
-    height: 160px;
+    height: 100%;
     width: 580px;
     display: flex;
     margin-bottom: 44px;
-    border: 1px solid coral;
+    border: 1px solid pink;
 }
 
 
@@ -266,7 +266,7 @@
 
 
 
-// Right Bottom Section: Comment Bar (just that for now) -------->
+// Right Bottom Section: Comment Bar / Edit + Delete Buttons -------->
 
 .indiv-track-right-bottom-section {
     width: 404px;
