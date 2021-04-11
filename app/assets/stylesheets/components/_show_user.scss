@@ -182,9 +182,25 @@
 
 
 
-// Show Track Right Side (Below Banner) -------------------------------------->
-// - For Social Links + Language: English Footer 
 
+// ----> 
+// - Placeholder: remove later
+
+.showUserTrackArt {
+    height: 64px;
+    width: 64px;
+}
+
+
+
+
+
+
+
+
+
+// "All Tracks" Tab Right Side  -------------------------------------->
+// - For User Info (Total Tracks, etc) + "Footer" (Social Links + Language: English)
 
 .below-showAllTrack-tab-right {
     width: 300px;
@@ -194,8 +210,7 @@
     // border: 1px solid red;
 }
 
-
-// Show User Info (Number of Tracks Created, etc)
+// -- Show User Info (Number of Tracks Created, etc)
 
 .show-user-info-all {
     // border: 1px solid green;
@@ -258,25 +273,4 @@
   font-size: 13px;
   line-height: 18px;
   margin-top: 6px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ----> 
-// - PLaceholder: remove later
-
-.showUserTrackArt {
-    height: 64px;
-    width: 64px;
 }
