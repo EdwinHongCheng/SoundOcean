@@ -191,21 +191,22 @@
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 
 
 // Show User Info (Number of Tracks Created, etc)
 
 .show-user-info-all {
-    border: 1px solid green;
+    // border: 1px solid green;
+    margin-top: 4px;
 }
 
 .show-user-info-total-tracks-parent {
     height: 46px;
     display: flex;
     flex-direction: column;
-    border: 1px solid gold;
+    // border: 1px solid gold;
 }
 
 .show-user-info-total-tracks-text {
@@ -221,18 +222,15 @@
     font-size: 22px;
     font-weight: 340;
     line-height: 26px;
+    margin-left: 4px;
 }
-
-
-
-
-
 
 // "Footer" (Show User Page Ver)
 
 .below-showAllTrack-tab-footer {
   border-top: 1px solid #f2f2f2;
-  margin-top: 20px;
+//   margin-top: 20px;
+    margin-top: 5px;
 }
 
 .below-showAllTrack-tab-footer-links {
