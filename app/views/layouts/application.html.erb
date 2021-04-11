@@ -6,6 +6,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Meta Tags for LinkedIn Post Inspector -->
+    <meta name="image" property='og:image' content="<%= image_url('SoundOcean_v1.png') %>"/>
+    <meta property="og:description"
+      content="A simple and elegant SoundCloud clone."
+    />
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
