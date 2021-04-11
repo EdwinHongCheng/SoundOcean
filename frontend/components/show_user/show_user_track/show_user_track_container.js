@@ -5,6 +5,8 @@ import { fetchTrack, fetchTracks, deleteTrack } from '../../../actions/track_act
 import { receiveCurrentTrack, playTrack, pauseTrack } from '../../../actions/ui_actions';
 import { openModal, closeModal } from '../../../actions/modal_actions';
 
+import { createComment } from '../../../actions/comment_actions';
+
 
 const mSTP = (state, ownProps) => {
     return {
@@ -31,6 +33,8 @@ const mDTP = dispatch => {
         // [TEST] Open/Close Edit Track Form Modal (see session form container)
         openModal: () => { dispatch(openModal('editTrack')) },
         closeModal: () => { dispatch(closeModal()) },
+        // [TEST]
+        createComment: comment => dispatch(createComment(comment)),
     }
 }
 

@@ -9,8 +9,39 @@ class ShowUserTrack extends React.Component {
     constructor(props) {
         super(props)
 
-        this.updateCurrentTrack = this.updateCurrentTrack.bind(this)
+        // [TEST] comment box
+        this.state = {
+            body: '',
+            track_id: this.props.track.id
+        }
+
+        this.updateCurrentTrack = this.updateCurrentTrack.bind(this);
+        // [TEST] submit Comment
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+
+    // [TEST] Create + Submit Comment --------------------->
+    update(field) {
+        return e => {
+            this.setState({ [field]: e.target.value })
+        };
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        if (this.state.body.length > 0) {
+            this.props.createComment(this.state)
+                // [!!! WORKS (JANKY) ] .then (fetch track again to update comment's new author name)
+                .then(() => this.props.fetchTrack(this.props.track.id))
+                .then(() => {
+                    this.setState({
+                        body: ''
+                    })
+                })
+        }
+    }
+    //  ----------------------------------------------------------------------->
 
 
     // [TEST] for my Play This Track button
@@ -77,6 +108,19 @@ class ShowUserTrack extends React.Component {
 
 
             // [WIP] Comment Box OR Edit/Delete Buttons
+
+
+            // [-- TEST] Comment Submit
+            let submitComment = this.handleSubmit;
+            // Event Listener: hit "Enter" while Comment box has text -> creates New Comment
+            document.onkeydown = function(e) {
+                console.log(e)
+                if (e.keyCode === 13) {
+                    submitComment(e);
+                }
+            };
+
+
             let bottomSection;
             if (this.props.currentUser.id === track.creator_id || 2 ) {
                 // Current User owns Track OR is Admin everfall -> show Edit/Delete Buttons
@@ -92,7 +136,15 @@ class ShowUserTrack extends React.Component {
                     <img className="comment-box-prof-pic"
                         src={this.props.currentUser.profilePicURL}
                     />
-                    <div></div>
+
+                    
+                    <input type="text" className="show-user-track-create-comment-input"
+                        placeholder="Write a comment"
+                        value={this.state.body}
+                        onChange={this.update('body')} 
+                    />
+                    
+
                 </div>
             )
             
