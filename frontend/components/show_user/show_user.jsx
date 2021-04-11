@@ -38,6 +38,8 @@ class ShowUser extends React.Component {
 
 
 
+
+            // [CURRENT WIP] All Tracks (indiv Track CSS, etc.)
             let showUserTracks = this.props.tracks
             .filter(track => track.creator_id === this.props.showUser.id)
             .map(track => 
@@ -53,10 +55,14 @@ class ShowUser extends React.Component {
                 )
             )
 
-            // [WIP] Below "All Tracks" Tab Left Side
+
+
+
+
+            
+            // Below "All Tracks" Tab Left Side (All)
             let belowTabLeftSide;
             // - Version 1: 1+ Tracks version (display all tracks, etc)
-            // - * * * [CURRENT WIP]
             if (showUserTracks.length != 0) {
 
                 belowTabLeftSide = (
@@ -64,8 +70,13 @@ class ShowUser extends React.Component {
                         <div className="below-all-tracks-tab-left-v1">
                             <p className="below-left-v1-recent-text">Recent</p>
 
-                            {/* All Tracks */}
+
+
+
+                            {/* [CURRENT WIP] All Tracks */}
                             {showUserTracks}
+
+
 
 
                             <div className="below-left-v1-bottom-section">
