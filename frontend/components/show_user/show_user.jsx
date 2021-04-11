@@ -65,27 +65,29 @@ class ShowUser extends React.Component {
             // - Version 1: 1+ Tracks version (display all tracks, etc)
             if (showUserTracks.length != 0) {
 
+                // Shows Only If Current User = Show Page User AND if has 1+ tracks already uploaded
+                let uploadMoreSection;
+                if (this.props.currentUser.id === this.props.showUser.id) {
+                    uploadMoreSection = (
+                        <div className="below-left-v1-bottom-section">
+                            <p className="below-left-v1-bottom-section-top-text">More uploads means more listeners.</p>
+                            <Link to={`/upload`}>
+                                <p className="below-left-v1-upload-more-button">Upload more</p>
+                            </Link>
+                        </div>
+                    )
+                }
+
                 belowTabLeftSide = (
                     <div className="below-all-tracks-tab-left-parent-v1">
                         <div className="below-all-tracks-tab-left-v1">
                             <p className="below-left-v1-recent-text">Recent</p>
 
-
-
-
                             {/* [CURRENT WIP] All Tracks */}
                             {showUserTracks.reverse()}
-
-
-
-
-                            <div className="below-left-v1-bottom-section">
-                                <p className="below-left-v1-bottom-section-top-text">More uploads means more listeners.</p>
-                                <Link to={`/upload`}>
-                                    <p className="below-left-v1-upload-more-button">Upload more</p>
-                                </Link>
-                            </div>
                         </div>
+
+                        {uploadMoreSection}
                     </div>
                 );
 
