@@ -168,13 +168,21 @@
 // - Below Show Track Banner Left Side
 
 
-.below-all-tracks-tab-left-parent {
-    // height: 900px;
-    width: 580px;
+.below-all-tracks-tab-left-parent-v1, 
+.below-all-tracks-tab-left-parent-v2, 
+.below-all-tracks-tab-left-parent-v3 {
     border: 1px solid pink;
     border-right: 1px solid #f2f2f2;
     padding-right: 20px;
+
+}
+
+.below-all-tracks-tab-left-parent-v2 {
     margin-bottom: 90px;
+}
+
+.below-all-tracks-tab-left-parent-v3 {
+    margin-bottom: 75px;
 }
 
 .below-all-tracks-tab-left {
@@ -197,9 +205,10 @@
 
 
 // - Version 2: No Tracks + Show User Page belongs to Current User
+// - Version 3: No Tracks + Show User Page Does NOT Belong to Current User
 // [WIP - Currently Working On]
 
-.below-all-tracks-tab-left-v2 {
+.below-all-tracks-tab-left-v2, .below-all-tracks-tab-left-v3 {
     width: 580px;
     display: flex;
     flex-direction: column;
@@ -215,23 +224,28 @@
     margin-bottom: 20px;
 }
 
-.below-left-v2-top-text {
+.below-left-v2-top-text, .below-left-v3-top-text {
     font-size: 18px;
     color: #333;
     margin-bottom: 12px;
 }
 
 
-.below-left-v2-bottom-text {
+.below-left-v2-bottom-text, .below-left-v3-bottom-text {
     font-size: 15px;
     color: #38d;
     &:hover {
         color: #333;     
     }
-    margin-bottom: 16px;
+}
+
+.below-left-v3-bottom-text {
+    margin-bottom: 125px;
 }
 
 .below-left-v2-upload-now-button {
+    margin-top: 16px;
+
     font-size: 16px;
     line-height: 40px;
     height: 40px;
@@ -245,8 +259,6 @@
 
     margin-bottom: 120px;
 }
-
-
 
 
 

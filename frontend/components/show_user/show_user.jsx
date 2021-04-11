@@ -59,30 +59,46 @@ class ShowUser extends React.Component {
             // - * * * [DO LATER = AFTER no track versions]
             if (showUserTracks.length != 0) {
                 belowTabLeftSide = (
-                    <div className="below-all-tracks-tab-left-v1">
-                        {/* All Tracks */}
-                        {showUserTracks}
+                    <div className="below-all-tracks-tab-left-parent-v1">
+                        <div className="below-all-tracks-tab-left-v1">
+                            {/* All Tracks */}
+                            {showUserTracks}
+                        </div>
                     </div>
                 );
             } else if (this.props.currentUser.id === this.props.showUser.id) {
                 // - Version 2: No Tracks + Show User Page belongs to Current User
                 // -- have Upload button below, etc.
                 belowTabLeftSide = (
-                    <div className="below-all-tracks-tab-left-v2">
-                        <FontAwesomeIcon id="below-all-tracks-tab-left-music-icon" icon={faMusic}/>
 
-                        <p className="below-left-v2-top-text">Seems a little quiet over here</p>
-                        <Link to={`/upload`}>
-                            <p className="below-left-v2-bottom-text">Upload a track to share it with the SoundOcean community.</p>
-                        </Link>
+                    <div className="below-all-tracks-tab-left-parent-v2">
+                        <div className="below-all-tracks-tab-left-v2">
+                            <FontAwesomeIcon id="below-all-tracks-tab-left-music-icon" icon={faMusic}/>
 
-                        <Link to={`/upload`}>
-                            <p className="below-left-v2-upload-now-button">Upload now</p>
-                        </Link>
+                            <p className="below-left-v2-top-text">Seems a little quiet over here</p>
+                            <Link to={`/upload`}>
+                                <p className="below-left-v2-bottom-text">Upload a track to share it with the SoundOcean community.</p>
+                            </Link>
+
+                            <Link to={`/upload`}>
+                                <p className="below-left-v2-upload-now-button">Upload now</p>
+                            </Link>
+                        </div>
                     </div>
                 )
             } else {
                 // - Version 3: No Tracks + Show User Page IS NOT Current User
+                belowTabLeftSide = (
+                    <div className="below-all-tracks-tab-left-parent-v3">
+                        <div className="below-all-tracks-tab-left-v3">
+                            <FontAwesomeIcon id="below-all-tracks-tab-left-music-icon" icon={faMusic}/>
+                            <p className="below-left-v3-top-text">Nothing to hear here</p>
+                            <Link to={`/discover`}>
+                                <p className="below-left-v3-bottom-text">Check out what other members have uploaded.</p>
+                            </Link>
+                        </div>
+                    </div>
+                )
             }
 
 
@@ -159,12 +175,10 @@ class ShowUser extends React.Component {
                             {/* Below "All Tracks" Tab (All: Left + Right) */}
                             <div className="below-all-tracks-tab-all">
 
-                                <div className="below-all-tracks-tab-left-parent">
-                                    {belowTabLeftSide}
-                                </div>
+                                {/* 1. Below "All Tracks" Tab Left Side (All) */}
+                                {belowTabLeftSide}
 
-
-                                {/* Below "All Tracks" Tab Right Side (All) */}
+                                {/* 2. Below "All Tracks" Tab Right Side (All) */}
                                 <div className="below-showAllTrack-tab-right">
                                     <div className="show-user-info-all">
                                         <div className="show-user-info-total-tracks-parent">
