@@ -5,6 +5,9 @@ import { faCamera, faMusic } from '@fortawesome/free-solid-svg-icons';
 // [WORKING] for Update Profile Pic Modal
 import Modal from '../modal/modal';
 
+// [TEST] Show User Track (Indiv Tracks)
+import ShowUserTrackContainer from './show_user_track/show_user_track_container';
+
 class ShowUser extends React.Component {
 
     componentDidMount() {
@@ -43,44 +46,11 @@ class ShowUser extends React.Component {
             let showUserTracks = this.props.tracks
             .filter(track => track.creator_id === this.props.showUser.id)
             .map(track => 
-
-                (<div className="showUser-indiv-track-all" key={track.id}>
-
-
-                    <div className="showUser-indiv-track-left">
-                        <Link to={`/tracks/${track.id}`}>
-                            <img className="showUser-indiv-track-art" src={track.imageURL}/>
-                        </Link>
-                    </div>
-
-
-
-                    <div className="showUser-indiv-track-right">
-
-
-
-                        {/* [NOTE] the Play Button, etc */}
-                        <div className="indiv-track-right-top-section">
-
-                            <Link to={`/tracks/${track.id}`}>
-                                <p>{track.title}</p>
-                            </Link>
-                        </div>
-
-
-
-
-
-                        {/* [NOTE] Comment Bar / Edit + Delete Buttons */}
-                        <div className="indiv-track-right-bottom-section">
-
-                        </div>
-
-                    </div>
-
-
-    
-                </div>
+                (
+                    <ShowUserTrackContainer 
+                        track={track} 
+                        key={track.id}
+                    />
                 )
 
             )
