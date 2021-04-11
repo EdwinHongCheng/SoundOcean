@@ -76,15 +76,22 @@ class ShowUserTrack extends React.Component {
     
                     <div className="showUser-indiv-track-right">
     
-                        {/* [NOTE] the Play Button, etc */}
+                        {/* [NOTE] Play/Pause Button, Title + Creation Date, etc. */}
                         <div className="indiv-track-right-top-section">
-
-
                             {playPauseButton}
+
+                            <div className="indiv-track-right-top-rightside">
+
+                                <div className="track-righttop-rightside-top">
+                                    <p>{track.creator}</p>
+                                    <p>{track.created_at}</p>
+                                </div>
+
+                                <Link to={`/tracks/${track.id}`}>
+                                    <p>{track.title}</p>
+                                </Link>
+                            </div>
     
-                            <Link to={`/tracks/${track.id}`}>
-                                <p>{track.title}</p>
-                            </Link>
                         </div>
     
                         {/* [NOTE] Comment Bar / Edit + Delete Buttons */}

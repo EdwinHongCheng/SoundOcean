@@ -45,18 +45,17 @@
 
 
 
-
-
-
+// -- Play/Pause Button
 .showUser-track-button {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     background-color: #fd6c6c;
-    margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-right: 6px;
 }
 
 .showUser-track-button:hover {
@@ -72,5 +71,22 @@
 }
 
 #showUser-track-play-icon {
-    margin-left: 1px;
+    margin-left: 3px;
+}
+
+
+// -- Indiv Track Title, Creator + Creation Date (All)
+.indiv-track-right-top-rightside {
+    height: 36px;
+    width: 362px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid limegreen;
+}
+
+// ---- Track Creator + Track Creation Date (Top)
+.track-righttop-rightside-top {
+    display: flex;
+    justify-content: space-between;
+
 }
