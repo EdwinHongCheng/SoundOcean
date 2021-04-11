@@ -107,10 +107,10 @@ class ShowUserTrack extends React.Component {
             let dateCreated = creationDate(track.created_at);
 
 
-            // [WIP] Comment Box OR Edit/Delete Buttons
+            // [WIP] Bonus: Edit/Delete Buttons (if owner of track OR Admin)
 
-
-            // [-- TEST] Comment Submit
+            
+            // [WORKS] Comment Submit
             let submitComment = this.handleSubmit;
             // Event Listener: hit "Enter" while Comment box has text -> creates New Comment
             document.onkeydown = function(e) {
@@ -122,13 +122,13 @@ class ShowUserTrack extends React.Component {
 
 
             let bottomSection;
-            if (this.props.currentUser.id === track.creator_id || 2 ) {
-                // Current User owns Track OR is Admin everfall -> show Edit/Delete Buttons
+            // if (this.props.currentUser.id === track.creator_id || 2 ) {
+            //     // Current User owns Track OR is Admin everfall -> show Edit/Delete Buttons
 
-            } else {
+            // } else {
+            //     // Current User doesn't own Track -> show Comment Box
 
-            }
-
+            // }
 
             // Current User doesn't own Track -> show Comment Box
             bottomSection = (
@@ -136,20 +136,15 @@ class ShowUserTrack extends React.Component {
                     <img className="comment-box-prof-pic"
                         src={this.props.currentUser.profilePicURL}
                     />
-
                     
                     <input type="text" className="show-user-track-create-comment-input"
                         placeholder="Write a comment"
                         value={this.state.body}
                         onChange={this.update('body')} 
                     />
-                    
-
                 </div>
             )
             
-
-
             return (
                 <div className="showUser-indiv-track-all">
     
