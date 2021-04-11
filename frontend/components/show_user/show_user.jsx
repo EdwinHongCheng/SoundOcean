@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faMusic } from '@fortawesome/free-solid-svg-icons';
 // [WORKING] for Update Profile Pic Modal
 import Modal from '../modal/modal';
 
@@ -55,6 +55,35 @@ class ShowUser extends React.Component {
 
             // [WIP] Below "All Tracks" Tab Left Side
             let belowTabLeftSide;
+            // - Version 1: 1+ Tracks version (display all tracks, etc)
+            // - * * * [DO LATER = AFTER no track versions]
+            if (showUserTracks.length != 0) {
+                belowTabLeftSide = (
+                    <div className="below-all-tracks-tab-left-v1">
+                        {/* All Tracks */}
+                        {showUserTracks}
+                    </div>
+                );
+            } else if (this.props.currentUser.id === this.props.showUser.id) {
+                // - Version 2: No Tracks + Show User Page belongs to Current User
+                // -- have Upload button below, etc.
+                belowTabLeftSide = (
+                    <div className="below-all-tracks-tab-left-v2">
+                        <FontAwesomeIcon id="below-all-tracks-tab-left-music-icon" icon={faMusic}/>
+
+                        <p className="below-left-v2-top-text">Seems a little quiet over here</p>
+                        <Link to={`/upload`}>
+                            <p className="below-left-v2-bottom-text">Upload a track to share it with the SoundOcean community.</p>
+                        </Link>
+
+                        <Link to={`/upload`}>
+                            <p className="below-left-v2-upload-now-button">Upload now</p>
+                        </Link>
+                    </div>
+                )
+            } else {
+                // - Version 3: No Tracks + Show User Page IS NOT Current User
+            }
 
 
 
@@ -131,11 +160,7 @@ class ShowUser extends React.Component {
                             <div className="below-all-tracks-tab-all">
 
                                 <div className="below-all-tracks-tab-left-parent">
-
-                                    <div className="below-all-tracks-tab-left">
-                                        {/* All Tracks */}
-                                        {showUserTracks}
-                                    </div>
+                                    {belowTabLeftSide}
                                 </div>
 
 

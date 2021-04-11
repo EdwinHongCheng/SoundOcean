@@ -174,12 +174,76 @@
     border: 1px solid pink;
     border-right: 1px solid #f2f2f2;
     padding-right: 20px;
+    margin-bottom: 90px;
 }
 
 .below-all-tracks-tab-left {
     width: 580px;
     border: 1px solid red;
     border-bottom: 1px solid #f2f2f2;
+}
+
+// - Version 1: Left Side - User has created 1+ Tracks
+// [WIP DO LATER]
+
+.below-all-tracks-tab-left-v1 {
+    width: 580px;
+    border: 1px solid red;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+
+
+
+
+// - Version 2: No Tracks + Show User Page belongs to Current User
+// [WIP - Currently Working On]
+
+.below-all-tracks-tab-left-v2 {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: 1px solid red;
+}
+
+#below-all-tracks-tab-left-music-icon {
+    width: 160px;
+    height: 160px;
+    color: #f2f2f2;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.below-left-v2-top-text {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+
+.below-left-v2-bottom-text {
+    font-size: 15px;
+    color: #38d;
+    &:hover {
+        color: #333;     
+    }
+    margin-bottom: 16px;
+}
+
+.below-left-v2-upload-now-button {
+    font-size: 16px;
+    line-height: 40px;
+    height: 40px;
+    padding: 0px 15px;
+    border-radius: 3px;
+    color: white;
+    background-color: #000573;
+    &:hover {
+        background-color: #111abd;       
+    }
+
+    margin-bottom: 120px;
 }
 
 
