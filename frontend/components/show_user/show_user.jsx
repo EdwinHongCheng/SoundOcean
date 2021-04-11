@@ -66,6 +66,14 @@ class ShowUser extends React.Component {
 
                             {/* All Tracks */}
                             {showUserTracks}
+
+
+                            <div className="below-left-v1-bottom-section">
+                                <p className="below-left-v1-bottom-section-top-text">More uploads means more listeners.</p>
+                                <Link to={`/upload`}>
+                                    <p className="below-left-v1-upload-more-button">Upload more</p>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 );
