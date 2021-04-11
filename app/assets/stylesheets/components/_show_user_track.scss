@@ -35,12 +35,11 @@
 
 // Right Top Section: Play/Pause Button, Track Creation Date, etc. ------->
 
-// [CURRENT WIP] 
 .indiv-track-right-top-section {
     width: 404px;
     height: 36px;
     display: flex;
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 
 
@@ -81,7 +80,7 @@
     width: 362px;
     display: flex;
     flex-direction: column;
-    border: 1px solid limegreen;
+    // border: 1px solid limegreen;
 }
 
 // ---- Track Creator + Track Creation Date (Top)
@@ -90,3 +89,38 @@
     justify-content: space-between;
 
 }
+
+.track-rightside-top-creator-name, .track-rightside-top-date {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.track-rightside-top-creator-name {
+    color: #999;
+
+    max-width: 270px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-rightside-top-date {
+    color: #ccc;
+}
+
+// ----- Track Title
+.track-rightside-track-title {
+    font-size: 15px;
+    line-height: 20px;
+    color: #333;
+    &:hover { color: black; }
+
+    max-width: 270px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+// ---- Comment Box / Edit + Delete Buttons (Indiv Track Bottom Section) ------>
+// [CURRENT WIP] 

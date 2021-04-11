@@ -61,6 +61,21 @@ class ShowUserTrack extends React.Component {
                 )
             }
             // -------------------------->
+
+
+            // enter the track's created_at string -> converts to a date string
+            let creationDate = (trackDate) => {
+                let year = trackDate.slice(0, 4);
+                let month = trackDate.slice(5, 7);
+                if (month[0] === "0") month = month.slice(1);
+                let day = trackDate.slice(8, 10);
+                if (day[0] === "0") day = day.slice(1);
+                let newString = month.concat("/").concat(day).concat("/").concat(year);
+
+                return newString;
+            }
+
+            let dateCreated = creationDate(track.created_at);
             
 
 
@@ -81,14 +96,15 @@ class ShowUserTrack extends React.Component {
                             {playPauseButton}
 
                             <div className="indiv-track-right-top-rightside">
-
                                 <div className="track-righttop-rightside-top">
-                                    <p>{track.creator}</p>
-                                    <p>{track.created_at}</p>
+                                    <p className="track-rightside-top-creator-name">{track.creator}</p>
+                                    <p className="track-rightside-top-date">{dateCreated}</p>
                                 </div>
 
                                 <Link to={`/tracks/${track.id}`}>
-                                    <p>{track.title}</p>
+                                    <p className="track-rightside-track-title">
+                                        {track.title}
+                                    </p>
                                 </Link>
                             </div>
     
