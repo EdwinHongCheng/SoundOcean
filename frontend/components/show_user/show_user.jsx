@@ -112,6 +112,21 @@ class ShowUser extends React.Component {
 
                         {/* [WIP] Below Show User Banner (All) */}
 
+                        <div className="below-show-user-banner-all">
+                            <div className="below-show-user-banner-all-margin">
+                                <div className="show-user-all-tracks-tab-parent">
+                                    <div className="show-user-all-tracks-tab">
+                                        All Tracks
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+
 
 
 
