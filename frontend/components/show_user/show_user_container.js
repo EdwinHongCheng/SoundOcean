@@ -5,6 +5,7 @@ import { fetchUser } from '../../actions/user_actions'
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
+
     return {
         currentUser: state.entities.users[state.session.id],
         showUser: state.entities.users[ownProps.match.params.userId],

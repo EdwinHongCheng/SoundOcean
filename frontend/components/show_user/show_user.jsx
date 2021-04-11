@@ -36,21 +36,18 @@ class ShowUser extends React.Component {
         // *** [if showUser = now exists + passed down from global state] ----->
         } else {
 
-            let showUserTracks = this.props.tracks.map(track => 
-                (this.props.showUser.id === track.creator_id ?
-
-                    <div key={track.id}>
-                        <Link to={`/tracks/${track.id}`}>
-                            <span>{track.title}</span>
-                        </Link>
-                        
-                        <Link to={`/tracks/${track.id}`}>
-                            <img className="showUserTrackArt" src={track.imageURL}/>
-                        </Link>
-                    </div>
-
-                    // return null if the show page user isn't the track's creator
-                    : null 
+            let showUserTracks = this.props.tracks
+            .filter(track => track.creator_id === this.props.showUser.id)
+            .map(track => 
+                (<div key={track.id}>
+                    <Link to={`/tracks/${track.id}`}>
+                        <span>{track.title}</span>
+                    </Link>
+                    
+                    <Link to={`/tracks/${track.id}`}>
+                        <img className="showUserTrackArt" src={track.imageURL}/>
+                    </Link>
+                </div>
                 )
             )
 
@@ -122,6 +119,48 @@ class ShowUser extends React.Component {
                             </div>
 
 
+                            {/* Below "All Tracks" Tab (All: Left + Right) */}
+                            <div className="below-all-tracks-tab-all">
+
+                                <div className="below-all-tracks-tab-left">
+                                    {/* All Tracks */}
+                                    {showUserTracks}
+                                </div>
+
+
+
+
+
+                                {/* [WIP] Show Track Right Side (Below Banner) */}
+                                <div className="below-showAllTrack-tab-right">
+
+
+                                    <div className="show-user-info-all">
+                                        <div className="show-user-info-total-tracks-parent">
+                                            <p className="show-user-info-total-tracks-text">Tracks</p>
+                                            <p className="show-user-info-total-tracks-number">{showUserTracks.length}</p>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div className="below-showAllTrack-tab-footer">
+                                        <ul className="below-showAllTrack-tab-footer-links">
+                                            <a className="below-showAllTrack-tab-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                                            <li> - </li>
+                                            <a className="below-showAllTrack-tab-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
+                                            <li> - </li>
+                                            <a className="below-showAllTrack-tab-footer-socials" target="_blank" href="https://angel.co/u/edwin-cheng-5">AngelList</a>
+                                        </ul>
+                                        <p className="below-showAllTrack-tab-language-text">Language: English (US)</p>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
 
                         </div>
 
@@ -130,8 +169,7 @@ class ShowUser extends React.Component {
 
 
 
-                        {/* All Tracks */}
-                        {showUserTracks}
+
                         
                     </div>
                 </div>

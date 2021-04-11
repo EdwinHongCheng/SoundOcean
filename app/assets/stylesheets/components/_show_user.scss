@@ -145,7 +145,7 @@
 
 .show-user-all-tracks-tab {
     display: inline-block;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 34px;
     height: 34px;
     color: #333;
@@ -155,7 +155,128 @@
 
 // - Below "All Tracks" Tab (All: Left + Right Sections) ---------------------->
 
+.below-all-tracks-tab-all {
+    margin: 23px 20px 0px;
+    display: flex;
+}
 
+
+// C+P (must edit) * * * * * * * 
+
+
+
+// - Below Show Track Banner Left Side
+
+
+.below-all-tracks-tab-left {
+    height: 900px;
+    width: 580px;
+    border: 1px solid pink;
+    border-right: 1px solid #f2f2f2;
+    padding-right: 20px;
+}
+
+
+
+
+
+
+
+// Show Track Right Side (Below Banner) -------------------------------------->
+// - For Social Links + Language: English Footer 
+
+
+.below-showAllTrack-tab-right {
+    width: 300px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+
+// Show User Info (Number of Tracks Created, etc)
+
+.show-user-info-all {
+    border: 1px solid green;
+}
+
+.show-user-info-total-tracks-parent {
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gold;
+}
+
+.show-user-info-total-tracks-text {
+    display: inline-block;
+    color: #999;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 1px;
+}
+
+.show-user-info-total-tracks-number {
+    color: #999;
+    font-size: 22px;
+    font-weight: 340;
+    line-height: 26px;
+}
+
+
+
+
+
+
+// "Footer" (Show User Page Ver)
+
+.below-showAllTrack-tab-footer {
+  border-top: 1px solid #f2f2f2;
+  margin-top: 20px;
+}
+
+.below-showAllTrack-tab-footer-links {
+  display: flex;
+}
+
+.below-showAllTrack-tab-footer-links a, .below-showAllTrack-tab-footer-links li {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 12px;
+}
+
+.below-showAllTrack-tab-footer-links li {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.below-showAllTrack-tab-footer-socials:hover {
+  color: #b8b8b8;
+}
+
+.below-showAllTrack-tab-language-text {
+  color: #333;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ----> 
+// - PLaceholder: remove later
 
 .showUserTrackArt {
     height: 64px;
