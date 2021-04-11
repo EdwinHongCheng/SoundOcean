@@ -43,16 +43,46 @@ class ShowUser extends React.Component {
             let showUserTracks = this.props.tracks
             .filter(track => track.creator_id === this.props.showUser.id)
             .map(track => 
-                (<div key={track.id}>
-                    <Link to={`/tracks/${track.id}`}>
-                        <span>{track.title}</span>
-                    </Link>
-                    
-                    <Link to={`/tracks/${track.id}`}>
-                        <img className="showUserTrackArt" src={track.imageURL}/>
-                    </Link>
+
+                (<div className="showUser-indiv-track-all" key={track.id}>
+
+
+                    <div className="showUser-indiv-track-left">
+                        <Link to={`/tracks/${track.id}`}>
+                            <img className="showUser-indiv-track-art" src={track.imageURL}/>
+                        </Link>
+                    </div>
+
+
+
+                    <div className="showUser-indiv-track-right">
+
+
+
+                        {/* [NOTE] the Play Button, etc */}
+                        <div className="indiv-track-right-top-section">
+
+                            <Link to={`/tracks/${track.id}`}>
+                                <p>{track.title}</p>
+                            </Link>
+                        </div>
+
+
+
+
+
+                        {/* [NOTE] just the Comment Bar */}
+                        <div className="indiv-track-right-bottom-section">
+
+                        </div>
+
+                    </div>
+
+
+    
                 </div>
                 )
+
             )
 
 

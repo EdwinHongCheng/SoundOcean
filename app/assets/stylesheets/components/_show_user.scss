@@ -207,16 +207,67 @@
 
 
 
-// ---- Below Left v1 Middle Section (aka Tracks) --------------->
-// [CURRENT WIP] Indiv Track CSS, etc.
+// ---------------------------------------------------------------------------->
+// ---------------------------------------------------------------------------->
+
+// ---- Below Left v1 Middle Section (aka All Indiv Tracks) ------------------------>
+.showUser-indiv-track-all {
+    height: 160px;
+    width: 580px;
+    display: flex;
+    margin-bottom: 44px;
+    border: 1px solid coral;
+}
+
+
+// -- Left Side: Just Track Cover Art ---------->
+.showUser-indiv-track-left {
+    height: 160px;
+    width: 160px;
+    margin-right: 16px;
+}
+
+.showUser-indiv-track-art {
+    height: 158px;
+    width: 158px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+// -- Right Side All (Top + Bottom Sections) ---------->
+
+.showUser-indiv-track-right {
+    height: 160px; 
+    width: 404px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+// [CURRENT WIP] Right Top Section: Play/Pause Button, Track Creation Date, etc.
+
+.indiv-track-right-top-section {
+    width: 404px;
+    height: 36px;
+    border: 1px solid red;
+}
 
 
 
 
 
 
+.indiv-track-right-bottom-section {
+    width: 404px;
+    height: 34px;
+    border: 1px solid blue;
+}
 
 
+
+// ---------------------------------------------------------------------------->
+// ---------------------------------------------------------------------------->
 
 
 
@@ -313,13 +364,7 @@
 
 
 
-// ----> 
-// - Placeholder: remove later
 
-.showUserTrackArt {
-    height: 64px;
-    width: 64px;
-}
 
 
 
