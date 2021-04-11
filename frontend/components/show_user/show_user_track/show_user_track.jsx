@@ -27,8 +27,7 @@ class ShowUserTrack extends React.Component {
             return null;
         } else {
 
-
-            // [WIP Play/Pause Button -------------------------------------->
+            // Play/Pause Button -------------------------------------->
             let playPauseButton;
             if (this.props.track !== this.props.currentTrack) {
                 playPauseButton = (
@@ -62,7 +61,6 @@ class ShowUserTrack extends React.Component {
             }
             // -------------------------->
 
-
             // enter the track's created_at string -> converts to a date string
             let creationDate = (trackDate) => {
                 let year = trackDate.slice(0, 4);
@@ -76,6 +74,27 @@ class ShowUserTrack extends React.Component {
             }
 
             let dateCreated = creationDate(track.created_at);
+
+
+            // [WIP] Comment Box OR Edit/Delete Buttons
+            let bottomSection;
+            if (this.props.currentUser.id === track.creator_id || 2 ) {
+                // Current User owns Track OR is Admin everfall -> show Edit/Delete Buttons
+
+            } else {
+
+            }
+
+
+            // Current User doesn't own Track -> show Comment Box
+            bottomSection = (
+                <div className="bottomSection-comment-box-all">
+                    <img className="comment-box-prof-pic"
+                        src={this.props.currentUser.profilePicURL}
+                    />
+                    <div></div>
+                </div>
+            )
             
 
 
@@ -110,9 +129,9 @@ class ShowUserTrack extends React.Component {
     
                         </div>
     
-                        {/* [NOTE] Comment Bar / Edit + Delete Buttons */}
+                        {/* [WIP] Bottom Section: Comment Bar / Edit + Delete Buttons */}
                         <div className="indiv-track-right-bottom-section">
-    
+                            {bottomSection}
                         </div>
     
                     </div>    
