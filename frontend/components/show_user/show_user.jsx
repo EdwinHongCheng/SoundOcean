@@ -71,7 +71,7 @@ class ShowUser extends React.Component {
 
 
 
-                        {/* [NOTE] just the Comment Bar */}
+                        {/* [NOTE] Comment Bar / Edit + Delete Buttons */}
                         <div className="indiv-track-right-bottom-section">
 
                         </div>
