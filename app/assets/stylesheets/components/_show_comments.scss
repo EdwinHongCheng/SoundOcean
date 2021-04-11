@@ -94,6 +94,11 @@
   &:hover {
     color: #333;
   }
+
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .comment-body {
