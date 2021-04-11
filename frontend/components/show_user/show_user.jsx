@@ -56,16 +56,20 @@ class ShowUser extends React.Component {
             // [WIP] Below "All Tracks" Tab Left Side
             let belowTabLeftSide;
             // - Version 1: 1+ Tracks version (display all tracks, etc)
-            // - * * * [DO LATER = AFTER no track versions]
+            // - * * * [CURRENT WIP]
             if (showUserTracks.length != 0) {
+
                 belowTabLeftSide = (
                     <div className="below-all-tracks-tab-left-parent-v1">
                         <div className="below-all-tracks-tab-left-v1">
+                            <p className="below-left-v1-recent-text">Recent</p>
+
                             {/* All Tracks */}
                             {showUserTracks}
                         </div>
                     </div>
                 );
+
             } else if (this.props.currentUser.id === this.props.showUser.id) {
                 // - Version 2: No Tracks + Show User Page belongs to Current User
                 // -- have Upload button below, etc.
