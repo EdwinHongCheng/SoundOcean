@@ -32,7 +32,9 @@ class ShowComments extends React.Component {
                 <div key={comment.id} className="indiv-comment-box-all">
                     <div className="indiv-comment-box-all-margin">
 
-                        <Link to={`/users/${comment.author_id}`}>
+                        <Link to={`/users/${comment.author_id}`}
+                            className="commentProfilePic-link"
+                        >
                             <img className="commentProfilePic" src={comment.profilePicURL} />
                         </Link>
 

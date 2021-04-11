@@ -57,13 +57,24 @@
   // border: 1px solid pink;
 }
 
+.commentProfilePic-link {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-right: 10px;
+}
+
 
 .commentProfilePic {
   height: 40px;
   width: 40px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, .1);
-  margin-right: 10px;
+
 }
 
 
