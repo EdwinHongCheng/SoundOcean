@@ -114,7 +114,11 @@ class SessionForm extends React.Component {
         let contButton;
         if (this.props.formType === 'login') {
             contButton = (
-                <button className="submit-button" onClick={this.contMethod}>Continue</button>
+                // <button className="submit-button" onClick={this.contMethod}>Continue</button>
+                <input className="submit-button" type="submit" 
+                    onClick={this.contMethod} 
+                    value="Continue" 
+                />
             )
         }
         if (this.state.cont_state === true) {
