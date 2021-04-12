@@ -187,7 +187,7 @@
 }
 
 
-.track-modify-icon-parent {
+.track-edit-icon-parent, .track-delete-icon-parent {
     width: 30px;
     height: 26px;
     border: 1px solid #e5e5e5;
@@ -199,13 +199,17 @@
     margin-bottom: 10px;
 }
 
+.track-delete-icon-parent:hover {
+    background-color: red;
+}
+
 #track-edit-button, #track-delete-button {
     width: 15px;
     height: 15px;
 }
 
 
-.track-modify-icon-parent:hover {
+.track-edit-icon-parent:hover, .track-delete-icon-parent:hover {
     cursor: pointer;
     border: 1px solid #cecece;
 }

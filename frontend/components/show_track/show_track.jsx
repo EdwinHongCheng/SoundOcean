@@ -108,14 +108,14 @@ class ShowTrack extends React.Component {
                 allButtons = (
                     <div className="all-track-mod-icons">
                         {/* Opens Modal for Edit Track */}
-                        <div className="track-modify-icon-parent"
+                        <div className="track-edit-icon-parent"
                             onClick={this.props.openModal}
                         >
                             <FontAwesomeIcon id="track-edit-button" icon={faPencilAlt}/>
                         </div>
 
                         {/* [After Finishing Modal] turn back on Delete */}
-                        <div className="track-modify-icon-parent"
+                        <div className="track-delete-icon-parent"
                             onClick={() => this.props.deleteTrack(this.props.track.id)
                                 .then(() => this.props.history.push("/"))}
                         >
