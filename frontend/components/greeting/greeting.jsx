@@ -4,16 +4,10 @@ import logo from "../../../app/assets/images/logo.png"
 
 const Greeting = ({ currentUser, logout, openModal }) => {
 
-    const soundOceanLogo = (
-        <Link to="/">
-            <img className="logo" src={logo} alt="Logo" />
-        </Link>
-    )
-
     const sessionLinks = () => (
         <div className="signin-navbar">
             <div className="navbar-login-left-sect">
-                {soundOceanLogo}
+                <img className="homepage-logo" src={logo} alt="Logo" />
                 <p className="soundOcean-greeting-text">SoundOcean</p>
             </div>
             
