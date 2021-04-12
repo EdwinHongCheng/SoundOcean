@@ -5,7 +5,7 @@ import logo from "../../../app/assets/images/logo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faAngellist } from '@fortawesome/free-brands-svg-icons';
 // [WIP] Dots
-import { faEllipsisH, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisH, faUser, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 class Navbar extends React.Component {
