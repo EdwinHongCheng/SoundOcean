@@ -97,7 +97,8 @@ class Navbar extends React.Component {
                                 <p onClick={dropdownFunc2} className="dropbtn2">{currentUser.username}</p>
                                 <div id="myDropdown2" className="dropdown-content2">
                                     {/* <FontAwesomeIcon id="navbar-user-icon" icon={faUser}/> */}
-                                    <Link to={`/users/${currentUser.id}`}>
+                                    <Link className="dropdown-content2-child" to={`/users/${currentUser.id}`}>
+                                        <FontAwesomeIcon id="navbar-user-profile-icon" icon={faUser}/>
                                         <p>Profile</p>
                                     </Link>
                                 </div>

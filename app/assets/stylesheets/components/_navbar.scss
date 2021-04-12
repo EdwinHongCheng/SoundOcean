@@ -240,29 +240,42 @@
 .dropdown-content2 {
   // will display: changed by toggle from "dropdownFunc"
   display: none; 
+  width: 100px;
   position: absolute;
-  background-color:white;
   z-index: 1;
   cursor: pointer;
 }
 
 /* Links inside the dropdown */
-.dropdown-content2 p {
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
+.dropdown-content2-child {
+  display: flex;
+  width: 80px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  // [TEST]
-  // line-height: 32px;
-  // text-align: center;
-  padding: 10px 10px 10px 10px;
+  background-color:white;
+  &:hover {  background-color: #ccc }
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content2 p:hover {background-color: #ccc}
+#navbar-user-profile-icon {
+  width: 12px;
+  height: 12px;
+  color: black;
+  margin-right: 5px;
+}
+
+.dropdown-content2 p {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 32px;
+}
+
+
+
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show2 {
