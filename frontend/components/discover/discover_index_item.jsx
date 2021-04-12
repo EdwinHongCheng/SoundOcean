@@ -51,7 +51,9 @@ class DiscoverIndexItem extends React.Component {
         return (
             <div className="discoverIndexItem">
                 <div className="coverArt-and-button">
-                    <img onClick={this.updateCurrentTrack} src={currentTrack.imageURL} className="discover-coverArt" />
+                    <Link to={`/tracks/${currentTrack.id}`}>
+                        <img src={currentTrack.imageURL} className="discover-coverArt" />
+                    </Link>
                     {playPauseButton}
                 </div>
 
