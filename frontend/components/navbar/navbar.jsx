@@ -75,8 +75,8 @@ const Navbar = ({ currentUser, logout }) => {
                     <div className="navbar-left">
                         {soLogo}
                         <Link to="/discover" className="home-button">Home</Link>
-                        <Link to="/stream"className="nav-button" >Stream</ Link>
-                        <Link to="/library" className="nav-button" >Library</ Link>
+                        {/* <Link to="/stream"className="nav-button" >Stream</ Link> */}
+                        {/* <Link to="/library" className="nav-button" >Library</ Link> */}
                     </div>
 
                     {/* <input className="searchBar" type="input" placeholder="Search" /> */}
