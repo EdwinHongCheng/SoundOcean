@@ -102,7 +102,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'login' && !this.state.cont_state) {
             demoLoginButton = (
             <>
-                <button type="button" className="demo-button" onClick={this.demoSignIn}>Demo Sign in</button>
+                <p className="demo-button" onClick={this.demoSignIn}>Demo Sign in</p>
                 <p className="straightline">
                     <span>or</span>
                 </p>
