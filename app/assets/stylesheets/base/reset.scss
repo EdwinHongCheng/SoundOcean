@@ -64,7 +64,7 @@ input[type="submit"] {
     -webkit-appearance: none;
 }
 
-// [TEST] reset text input -> hoping it would fix issue on iPad
-input[type="text"] {
-	-webkit-appearance: none; 
-}
+// [didnt work...] reset text input -> hoping it would fix issue on iPad
+// input[type="text"] {
+// 	-webkit-appearance: none; 
+// }
