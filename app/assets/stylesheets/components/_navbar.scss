@@ -247,7 +247,7 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content2 div {
+.dropdown-content2 p {
   color: black;
   text-decoration: none;
   font-size: 16px;
@@ -255,11 +255,14 @@
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  padding: 10px;
+  // [TEST]
+  // line-height: 32px;
+  // text-align: center;
+  padding: 10px 10px 10px 10px;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content2 div:hover {background-color: #ccc}
+.dropdown-content2 p:hover {background-color: #ccc}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show2 {
