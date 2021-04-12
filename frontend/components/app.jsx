@@ -11,6 +11,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
  
 import HomePageContainer from "./homepage/homepage_container";
 import DiscoverContainer from "./discover/discover_container";
+// [TEST] Stream (modified version of Discover)
+import StreamContainer from "./stream/stream_container";
 import CreateTrackFormContainer from "./create_track/create_track_form_container";
 import ShowTrackContainer from "./show_track/show_track_container";
 import NavbarContainer from "./navbar/navbar_container"
@@ -31,6 +33,7 @@ class App extends React.Component {
                 <Switch>
                     {/* protected route since: must be signed in for NavBar to appear */}
                     <ProtectedRoute exact path="/discover" component={DiscoverContainer} />
+                    <ProtectedRoute exact path="/stream" component={StreamContainer} />
                     <ProtectedRoute exact path="/upload" component={CreateTrackFormContainer} />
                     <ProtectedRoute exact path="/tracks/:trackId" component={ShowTrackContainer} />
 
