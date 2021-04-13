@@ -19,9 +19,3 @@ guest = User.create!(
   email: 'guest@gmail.com',
   password: '123456'
 )
-
-everfall = User.create!(
-  username: 'everfall',
-  email: 'everfall@gmail.com',
-  password: '123456'
-)
