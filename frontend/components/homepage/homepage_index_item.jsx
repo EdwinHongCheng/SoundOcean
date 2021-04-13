@@ -8,10 +8,14 @@ class HomepageIndexItem extends React.Component {
         let currentCover;
         if ((this.props.idx + 1) % 6 === 0) {
             // currentCover = (<Link to={`/tracks/${currentTrack.id}`}><img src={currentTrack.imageURL} className="homepageCoverArtLast" /></Link>)
-            currentCover = (<div onClick={() => this.props.openModal('login')}><img src={currentTrack.imageURL} className="homepageCoverArtLast" /></div>)
+            currentCover = (<img className="homepageCoverArtLast"
+                    onClick={() => this.props.openModal('login')} 
+                    src={currentTrack.imageURL} />)
         } else {
             // currentCover = (<Link to={`/tracks/${currentTrack.id}`}><img src={currentTrack.imageURL} className="homepageCoverArt" /></Link>)
-            currentCover = (<div onClick={() => this.props.openModal('login')}><img src={currentTrack.imageURL} className="homepageCoverArt" /></div>)
+            currentCover = (<img className="homepageCoverArt"
+                    onClick={() => this.props.openModal('login')} 
+                    src={currentTrack.imageURL} />)
         }
         
         return (
