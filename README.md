@@ -33,15 +33,19 @@
 
     Afterwards, users can listen to their uploaded track, and track creators can make changes to their own tracks through the track     edit form on their tracks' individual show pages.
     
-    ![upload](https://i.imgur.com/eDt6sFA.png)
+    ![upload](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/Upload/02.png)
 
 - ### Continuous Play Bar
 
-    The continuous play bar pops up when a user plays a track from the track's show page, by pressing the `Play This Track` button.     Then, the play bar will display the title of the track being currently played, and the track will keep playing even if the user     navigates away from the track's show page and does other things (such as uploading or editing a track, writing comments, or         updating their user profile).
+    The continuous play bar pops up when a user plays a track from the track's show page, by pressing the play button.     
+    Then, the play bar will display the title of the track being currently played, and the track will keep playing even if the user  
+    navigates away from the track's show page and does other things (such as uploading or editing a track, writing comments, or         
+    updating their user profile).
     
-    The play bar also allows users to pause and resume track playback. Visiting a new track's show page and pressing their `Play         This Track` button replaces the current track with the selected track.
+    The play bar also allows users to pause and resume track playback. Visiting a new track's show page and pressing their play button
+    replaces the current track with the selected track. Finally, users can adjust and mute the track's volume, toggle on/off looping for       the track, and rewind back to the beginning.
     
-    ![playbar](https://i.imgur.com/ycG9hwo.png)
+    ![playbar](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/PlayBar/01.png)
     
 - ### Comments
     
