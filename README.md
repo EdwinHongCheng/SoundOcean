@@ -23,9 +23,9 @@
 
 - ### Discover Page
 
-    After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each       track is a clickable link which leads to each track's show page. 
+    After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each       track is a clickable link which leads to each track's show page. Hovering over the cover art shows that track's play/pause button, which can be clicked to play the track and display a playbar below to manipulate the current track.
     
-    ![discover](https://i.imgur.com/FiJWObv.png)
+    ![discover](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/Discover/01.png)
 
 - ### Track Upload
 
