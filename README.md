@@ -55,9 +55,12 @@
     
 - ### User Show Page
 
-    Users have their own unique show pages, which displays all the tracks they have uploaded. Users (aside from the demo user) can upload       their own custom profile picture.       
+    Users have their own unique show pages, which displays all the tracks they have uploaded.   
     
-    ![userShowPage1](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/01.png)
+    ![userShowPage3](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/03.png)
+    
+    Users (aside from the Demo user) can upload their own custom profile picture.    
+    
     ![userShowPage2](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/02.png)
     
 ## Planned Features
