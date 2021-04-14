@@ -51,14 +51,18 @@
     
     Users can comment on specific tracks on the track's show page. Users can also delete their own comments.
     
-    <img src=https://i.imgur.com/FmJlEZx.png width="360">
+    ![playbar](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/Comments/01.png)
+    
+- ### User Show Page
+
+    Users have their own unique show pages, which displays all the tracks they have uploaded. Users (aside from the demo user) can upload       their own custom profile picture.       
+    
+    ![userShowPage1](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/01.png)
+    ![userShowPage2](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/02.png)
     
 ## Planned Features
 
 Here is a list of planned features to be implemented later:
 
-- Vastly-improved UI/UX
-- Volume and playtime controls (Continuous Play Bar)
 - Likes: users can like tracks, and their liked tracks will all be displayed on their show page
 - Functioning Search Bar: allows users to search for tracks and users in the database
-- Splash page: featuring vibrant pictures and music-related text
