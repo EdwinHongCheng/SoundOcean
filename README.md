@@ -48,7 +48,8 @@
     updating their user profile).
     
     The play bar also allows users to pause and resume track playback. Visiting a new track's show page and pressing their play button
-    replaces the current track with the selected track. Finally, users can adjust and mute the track's volume, toggle on/off looping       for the track, and rewind back to the beginning.
+    replaces the current track with the selected track. Also, users can adjust and mute the track's volume, toggle on/off looping 
+    for the track, and rewind back to the beginning.
     
     ![playbar](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/PlayBar/01.png)
     
