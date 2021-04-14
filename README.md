@@ -59,6 +59,7 @@
     
     ![userShowPage3](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/03.png)
     
+    
     Users (aside from the Demo user) can upload their own custom profile picture.    
     
     ![userShowPage2](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/02.png)
