@@ -23,15 +23,20 @@
 
 - ### Discover Page
 
-    After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each       track is a clickable link which leads to each track's show page. Hovering over the cover art shows that track's play/pause button, which can be clicked to play the track and display a playbar below to manipulate the current track.
+    After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each  
+    track is a clickable link which leads to each track's show page. Hovering over the cover art shows that track's play/pause button,
+    which can be clicked to play the track and display a playbar below to manipulate the current track.
     
     ![discover](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/Discover/01.png)
 
 - ### Track Upload
 
-    Users can upload a new track by logging in and clicking the `Upload` button on the navigation bar at the top. To do so, enter a     title, choose an audio file to upload, select a cover art for the track (optional), and press the `Create Track` button. After       the track is fully uploaded, the upload page displays an `UPLOAD SUCCESS` message.
+    Users can upload a new track by logging in and clicking the `Upload` button on the navigation bar at the top. To do so, enter a     
+    title, choose an audio file to upload, select a cover art for the track (optional), and press the `Create Track` button. After
+    the track is fully uploaded, the upload page displays an `UPLOAD SUCCESS` message.
 
-    Afterwards, users can listen to their uploaded track, and track creators can make changes to their own tracks through the track     edit form on their tracks' individual show pages.
+    Afterwards, users can listen to their uploaded track, and track creators can make changes to their own tracks through the track     
+    edit form on their tracks' individual show pages.
     
     ![upload](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/Upload/02.png)
 
@@ -43,7 +48,7 @@
     updating their user profile).
     
     The play bar also allows users to pause and resume track playback. Visiting a new track's show page and pressing their play button
-    replaces the current track with the selected track. Finally, users can adjust and mute the track's volume, toggle on/off looping for       the track, and rewind back to the beginning.
+    replaces the current track with the selected track. Finally, users can adjust and mute the track's volume, toggle on/off looping       for the track, and rewind back to the beginning.
     
     ![playbar](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/PlayBar/01.png)
     
@@ -59,8 +64,7 @@
     
     ![userShowPage3](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/03.png)
     
-    
-    Users (aside from the Demo user) can upload their own custom profile picture.    
+    Also, users (aside from the Demo user) can upload their own custom profile picture.    
     
     ![userShowPage2](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/02.png)
     
@@ -68,5 +72,5 @@
 
 Here is a list of planned features to be implemented later:
 
-- Likes: users can like tracks, and their liked tracks will all be displayed on their show page
-- Functioning Search Bar: allows users to search for tracks and users in the database
+- Likes: Users can like tracks, and their liked tracks will all be displayed on their Show page
+- Search Bar: Allows users to search for tracks and users in the database
