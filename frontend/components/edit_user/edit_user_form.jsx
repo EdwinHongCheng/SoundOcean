@@ -130,8 +130,10 @@ class EditUserForm extends React.Component {
 
                         <label className="select-new-prof-pic-button">
                             Select image
-                            <input type="file" className="select-new-prof-pic-button-input"
-                            onChange={this.handleFile}
+                            <input type="file" 
+                                accept=".png, .jgp, .jpeg"
+                                className="select-new-prof-pic-button-input"
+                                onChange={this.handleFile}
                             />
                         </label>
 

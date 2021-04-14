@@ -107,7 +107,9 @@ class EditTrackForm extends React.Component {
                             <label className="edit-upload-art-and-input-label">
                                 <FontAwesomeIcon id="edit-camera-icon" icon={faCamera}/>
                                 Replace image
-                                <input type="file" className="edit-upload-art-input"
+                                <input type="file" 
+                                    accept=".png, .jpg, .jpeg"
+                                    className="edit-upload-art-input"
                                     onChange={this.handleFile}
                                 />       
                             </label>

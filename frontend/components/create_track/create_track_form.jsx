@@ -183,6 +183,7 @@ class CreateTrackForm extends React.Component {
                     <label className="upload-track-input-parent">
                         Upload a Track
                         <input type="file"
+                            accept=".mp3, .ogg"
                             className="upload-track-input"
                             onChange={this.handleAudioFile}
                         />            
@@ -198,6 +199,7 @@ class CreateTrackForm extends React.Component {
                         <p className="replace-track-left">Replace the current audio track</p>
                         <label className="replace-track-right">Replace File
                             <input className="replace-track-input"
+                                accept=".mp3, .ogg"
                                 type="file"
                                 onChange={this.handleAudioFile}
                             /> 
@@ -221,7 +223,9 @@ class CreateTrackForm extends React.Component {
                                     <label className="upload-art-and-input-label">
                                         <FontAwesomeIcon id="camera-icon" icon={faCamera}/>
                                         Upload image
-                                        <input type="file" className="upload-art-input"
+                                        <input type="file" 
+                                            accept=".png, .jpg, .jpeg"
+                                            className="upload-art-input"
                                             onChange={this.handleFile}
                                         />       
                                     </label>
@@ -273,6 +277,7 @@ class CreateTrackForm extends React.Component {
                                 <label className="upload-track-input-parent2">
                                     Upload a Track
                                     <input type="file"
+                                        accept=".mp3, .ogg"
                                         className="upload-track-input"
                                         onChange={this.handleAudioFile2}
                                     />            
