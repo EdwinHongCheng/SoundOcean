@@ -23,8 +23,8 @@
 
 - ### Discover Page
 
-    After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each  
-    track is a clickable link which leads to each track's show page. Hovering over the cover art shows that track's play/pause button,
+    After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each track is a 
+    clickable link which leads to each track's show page. Hovering over the cover art shows that track's play/pause button,
     which can be clicked to play the track and display a playbar below to manipulate the current track.
     
     ![discover](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/Discover/01.png)
@@ -32,8 +32,8 @@
 - ### Track Upload
 
     Users can upload a new track by logging in and clicking the `Upload` button on the navigation bar at the top. To do so, enter a     
-    title, choose an audio file to upload, select a cover art for the track (optional), and press the `Create Track` button. After
-    the track is fully uploaded, the upload page displays an `UPLOAD SUCCESS` message.
+    title, choose an audio file to upload, select a cover art for the track (optional), and press the `Upload` button. After the track is fully 
+    uploaded, the upload page displays an `UPLOAD SUCCESS` message.
 
     Afterwards, users can listen to their uploaded track, and track creators can make changes to their own tracks through the track     
     edit form on their tracks' individual show pages.
