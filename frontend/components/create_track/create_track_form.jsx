@@ -146,7 +146,8 @@ class CreateTrackForm extends React.Component {
                         onClick={this.handleCancel}
                     >Cancel</p>
                     <p className="upload-track-submit-upload-button"
-                        onClick={this.handleSubmit}
+                        onClick={this.handleCancel} // [Note] can remove + enable Uploads
+                        // onClick={this.handleSubmit} // [Note] disabled Upload for Live Heroku Ver
                     >Upload</p>
                 </>
             )
