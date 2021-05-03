@@ -55,6 +55,8 @@ Users can upload a new track by logging in and clicking the `Upload` button on t
 
 The function `handleSubmit` is used to upload the new track, and toggles on the `uploadingInProgress` local state. When `uploadingInProgress` is true, the Upload Track/Cancel buttons are temporarily replaced with a `Uploading...` message, signifying to the user that the track is currently being uploaded. Once that process is either complete, or if something went wrong and the track failed to upload (hence the use of `.fail()`), `uploadingInProgress` is toggled back to false, and the Upload Track/Cancel buttons are swapped back in.
 
+Side-Note: Uploading tracks is currently disabled to preserve the limited free storage space offered by AWS.
+
 ```js
 // create_track_form.jsx
 
@@ -157,7 +159,37 @@ let dateJoined = creationDate(this.props.showUser.created_at);
 
 ![userShowPage3](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/03.png)
 
-Also, users (aside from the Demo user) can upload their own custom profile picture.    
+Also, users (aside from the Demo user) can upload their own custom profile picture.
+
+To display the current profile picture in a similar way as SoundCloud, two profile images are placed on top of one another, and one of these images (`className="edit-user-prof-pic"`) has its `border-radius` set to 50% to created the circular look, while the other (`className="edit-user-prof-pic-opaque"`) has its `opacity` set to 0.25.
+
+```js
+// edit_user_form.jsx
+
+let imagePreview = null;
+if (this.state.profilePicPreviewURL) {
+    imagePreview = (
+        <div className="edit-user-prof-pic-parent">
+            <img className="edit-user-prof-pic" 
+                src={this.state.profilePicPreviewURL} 
+            />
+            <img className="edit-user-prof-pic-opaque" 
+                src={this.state.profilePicPreviewURL} 
+            />
+        </div>
+    )
+} else {
+    imagePreview = (
+        <div className="edit-user-prof-pic-parent">
+            <img className="edit-user-prof-pic"
+                src={this.props.showPageUser.profilePicURL}
+            />
+            <img className="edit-user-prof-pic-opaque"
+            src={this.props.showPageUser.profilePicURL} />
+        </div>
+    )
+}
+```
 
 ![userShowPage2](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/02.png)
     
