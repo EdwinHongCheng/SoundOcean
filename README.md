@@ -88,12 +88,47 @@ Afterwards, users can listen to their uploaded track, and track creators can mak
 The continuous play bar pops up when a user plays a track from the track's show page, by pressing the play button. Then, the play bar will display the title of the track being currently played, and the track will keep playing even if the user navigates away from the track's show page and does other things (such as uploading or editing a track, writing comments, or updating their user profile).
     
 The play bar also allows users to pause and resume track playback. Visiting a new track's show page and pressing their play button replaces the current track with the selected track. Also, users can adjust and mute the track's volume, toggle on/off looping for the track, and rewind back to the beginning.
+
+The HTML `audio` element is used to render and play the selected track. Once the track has been successfully loaded from the cloud, the function `this.getTrackLength` updates the playbar's Track Length to display the current track's total track runtime. As the track finishes playing, the function `this.handleEnd` is used to either reset the track's progress back to the beginning (aka 0:00), or, if the user has chosen to loop the track (represented by a pink-highlighted Loop button right next to the Play/Pause button), the track replays.
+
+```js
+// playbar.jsx
+
+let audio = (
+    <audio id="audio" autoPlay key={this.props.currentTrack.id}
+        onLoadedMetadata={this.getTrackLength}
+        onPlaying={this.handleTrackPlay}
+        onEnded={this.handleEnd}
+        src={this.props.currentTrack.audioURL}
+    />
+)
+```
     
 ![playbar](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/PlayBar/01.png)
     
 ### Comments
     
 Users can comment on specific tracks on the track's show page. Users can also delete their own comments.
+
+A simple `if` statement is used to check whether the submitted comment string is not empty, and if so, the function `     this.props.createComment(this.state)` is used to create a new comment for the current track. Afterwards, the local state's comment body is reset to an empty string, for the user to create additional comments.
+
+```js
+// create_comment_form.jsx
+
+handleSubmit(e) {
+    e.preventDefault();
+    if (this.state.body.length > 0) {
+        this.props.createComment(this.state)
+            .then(() => this.props.fetchTrack(this.props.trackId))
+            .then(() => {
+                this.setState({
+                    body: '',
+                    track_id: this.props.trackId
+                })
+            })
+    }
+}
+```
 
 ![playbar](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/Comments/01.png)
    
