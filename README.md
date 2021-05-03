@@ -25,11 +25,59 @@
 
 After logging in, users can see the Discover page, which displays all tracks currently in the database. The cover art of each track is a clickable link which leads to each track's show page. Hovering over the cover art shows that track's play/pause button, which can be clicked to play the track and display a playbar below to manipulate the current track.
 
+The constant ```allTracks``` is an array which contains all the tracks from the database, mapped as individual unique React components. Slices of the global state are passed down to each mapped track component in order to dynamically update their status as a track is selected and played/paused.
+
+```js
+// discover.jsx
+
+const allTracks = this.props.tracks.map((track, idx) => {            
+    return (
+        <DiscoverIndexItem
+            key={track.id}
+            track={track}
+            idx={idx}
+
+            receiveCurrentTrack={this.props.receiveCurrentTrack}
+            playTrack={this.props.playTrack}
+            pauseTrack={this.props.pauseTrack}
+            currentTrack={this.props.currentTrack}
+            isPlaying={this.props.isPlaying}
+        />
+    )
+})
+```
+
 ![discover](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/Discover/01.png)
 
 ### Track Upload
 
-Users can upload a new track by logging in and clicking the `Upload` button on the navigation bar at the top. To do so, enter a title, choose an audio file to upload, select a cover art for the track (optional), and press the `Upload` button. After the track is fully uploaded, the upload page displays an `UPLOAD SUCCESS` message.
+Users can upload a new track by logging in and clicking the `Upload` button on the navigation bar at the top. To do so, enter a title, choose an audio file to upload, select a cover art for the track (optional), and press the `Upload` button. After the track is fully uploaded, the upload page displays an `Upload complete.` message.
+
+The function `handleSubmit` is used to upload the new track, and toggles on the `uploadingInProgress` local state. When `uploadingInProgress` is true, the Upload Track/Cancel buttons are temporarily replaced with a `Uploading...` message, signifying to the user that the track is currently being uploaded. Once that process is either complete, or if something went wrong and the track failed to upload (hence the use of `.fail()`), `uploadingInProgress` is toggled back to false, and the Upload Track/Cancel buttons are swapped back in.
+
+```js
+// create_track_form.jsx
+
+handleSubmit(e) {
+    e.preventDefault();
+    this.setState( { uploadingInProgress: true })
+    const formData = new FormData();
+    formData.append('track[title]', this.state.title);
+    formData.append('track[creator_id]', this.state.creator_id)
+
+    if (this.state.cover_art) {
+        formData.append('track[cover_art]', this.state.cover_art);;
+    }
+
+    if (this.state.audio_file) {
+        formData.append('track[audio_file]', this.state.audio_file);;
+    }
+
+    this.props.createTrack(formData)
+        .fail(() => this.setState({ uploadingInProgress: false }))
+        .then(this.afterUpload)
+}
+```
 
 Afterwards, users can listen to their uploaded track, and track creators can make changes to their own tracks through the track edit form on their tracks' individual show pages.
 
