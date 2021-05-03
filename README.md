@@ -134,7 +134,26 @@ handleSubmit(e) {
    
 ### User Show Page
 
-Users have their own unique show pages, which displays all the tracks they have uploaded.   
+Users have their own unique show pages, which displays all the tracks they have uploaded.
+
+The function `creationDate` is used to convert the user's join date string (aka `this.props.showUser.created_at`) into a more readable format. For example, by using this function, `created_at: "2021-02-15T09:32:03.950Z"` will be displayed as `2/15/2021`. The same function is used to display the creation dates of every uploaded track.
+
+```js
+// show_user.jsx
+
+let creationDate = (joinDate) => {
+    let year = joinDate.slice(0, 4);
+    let month = joinDate.slice(5, 7);
+    if (month[0] === "0") month = month.slice(1);
+    let day = joinDate.slice(8, 10);
+    if (day[0] === "0") day = day.slice(1);
+    let newString = month.concat("/").concat(day).concat("/").concat(year);
+
+    return newString;
+}
+
+let dateJoined = creationDate(this.props.showUser.created_at);
+```
 
 ![userShowPage3](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/03.png)
 
