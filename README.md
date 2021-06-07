@@ -166,29 +166,23 @@ To display the current profile picture in a similar way as SoundCloud, two profi
 ```js
 // edit_user_form.jsx
 
-let imagePreview = null;
+let imageSource;
 if (this.state.profilePicPreviewURL) {
-    imagePreview = (
-        <div className="edit-user-prof-pic-parent">
-            <img className="edit-user-prof-pic" 
-                src={this.state.profilePicPreviewURL} 
-            />
-            <img className="edit-user-prof-pic-opaque" 
-                src={this.state.profilePicPreviewURL} 
-            />
-        </div>
-    )
+    imageSource = this.state.profilePicPreviewURL;
 } else {
-    imagePreview = (
-        <div className="edit-user-prof-pic-parent">
-            <img className="edit-user-prof-pic"
-                src={this.props.showPageUser.profilePicURL}
-            />
-            <img className="edit-user-prof-pic-opaque"
-            src={this.props.showPageUser.profilePicURL} />
-        </div>
-    )
+    imageSource = this.props.showPageUser.profilePicURL;
 }
+
+let imagePreview = (
+    <div className="edit-user-prof-pic-parent">
+        <img className="edit-user-prof-pic" 
+            src={imageSource} 
+        />
+        <img className="edit-user-prof-pic-opaque" 
+            src={imageSource} 
+        />
+    </div>
+)
 ```
 
 ![userShowPage2](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/readme_screenshots/UserShowPage/02.png)
