@@ -71,30 +71,23 @@ class EditUserForm extends React.Component {
 
     render() {
         {/* [WORKS] Update Image Preview */ }
-        let imagePreview = null;
+        let imageSource;
         if (this.state.profilePicPreviewURL) {
-            imagePreview = (
-                <div className="edit-user-prof-pic-parent">
-                    <img className="edit-user-prof-pic" 
-                        src={this.state.profilePicPreviewURL} 
-                    />
-                    <img className="edit-user-prof-pic-opaque" 
-                        src={this.state.profilePicPreviewURL} 
-                    />
-                </div>
-            )
+            imageSource = this.state.profilePicPreviewURL;
         } else {
-            imagePreview = (
-                <div className="edit-user-prof-pic-parent">
-                    <img className="edit-user-prof-pic"
-                        src={this.props.showPageUser.profilePicURL}
-                    />
-                    <img className="edit-user-prof-pic-opaque"
-                    src={this.props.showPageUser.profilePicURL} />
-                </div>
-            )
+            imageSource = this.props.showPageUser.profilePicURL;
         }
 
+        let imagePreview = (
+            <div className="edit-user-prof-pic-parent">
+                <img className="edit-user-prof-pic" 
+                    src={imageSource} 
+                />
+                <img className="edit-user-prof-pic-opaque" 
+                    src={imageSource} 
+                />
+            </div>
+        )
 
         // [TEST]
 
