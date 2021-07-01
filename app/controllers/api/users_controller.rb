@@ -20,14 +20,13 @@ class Api::UsersController < ApplicationController
         end
     end
 
-    # [TEST] update user's profile pic
+    # Update user's profile pic
     def update
         @user = User.find(params[:user][:id])
 
         if @user.update(user_params)
             render :show
         else
-            # [TESTING] Note: don't want to render anything if update fails
             render json: {} 
         end
     end
