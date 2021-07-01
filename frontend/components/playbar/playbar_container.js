@@ -14,7 +14,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     receiveCurrentTrack: trackId => dispatch(receiveCurrentTrack(trackId)),
-    // [TEST] updating isPlaying state (Play Pause)
+    // Updates "isPlaying" state (Play / Pause)
     playTrack: () => dispatch(playTrack()),
     pauseTrack: () => dispatch(pauseTrack())
 });

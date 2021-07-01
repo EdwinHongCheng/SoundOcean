@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import EditTrackFormContainer from '../edit_track/edit_track_form_container';
-// [TEST] Show/Update Profile Pic Modal
+
+// Show/Update Profile Pic Modal
 import EditUserFormContainer from '../edit_user/edit_user_form_container'
 
 function Modal({ modal, closeModal, trackToEditId, showUserId }) {
@@ -18,20 +19,24 @@ function Modal({ modal, closeModal, trackToEditId, showUserId }) {
         case 'login':
             component = <LoginFormContainer />;
             break;
+            
         case 'signup':
             component = <SignupFormContainer />;
             break;
-        // [TEST] Edit Track Form Modal
+
+        // Edit Track Form Modal
         case 'editTrack':
             component = (<EditTrackFormContainer 
                 trackToEditId={trackToEditId}
             />);
             break;
+
         case 'editProfilePic':
             component = (<EditUserFormContainer 
                 showUserId={showUserId}
             />);
             break;
+
         default:
             return null;
     }
@@ -56,9 +61,9 @@ function Modal({ modal, closeModal, trackToEditId, showUserId }) {
 const mapStateToProps = (state, ownProps) => {
     return {
         modal: state.ui.modal,
-        // [WORKS] trackToEdit ONLY USED in show_track.jsx (using the 'editTrack' modal)
+        // Note: trackToEdit ONLY USED in show_track.jsx (using the 'editTrack' modal)
         trackToEditId: ownProps.trackToEditId,
-        // [TEST] only used for editUserInfo version of modal
+        // Note: only used for editUserInfo version of modal
         showUserId: ownProps.showUserId,
     };
 };

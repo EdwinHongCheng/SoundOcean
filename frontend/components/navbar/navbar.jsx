@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from "../../../app/assets/images/logo.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faAngellist } from '@fortawesome/free-brands-svg-icons';
-// [WIP] Dots
 import { faEllipsisH, faUser, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 
 

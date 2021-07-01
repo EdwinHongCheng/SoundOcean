@@ -35,7 +35,7 @@ class PlayBar extends React.Component {
         const progressBar = document.getElementById('audio');
         const scrubber = document.getElementById('scrubber');
 
-        // [WORKING] modified a bit to avoid bug -> now volume bar has "memory"that works, even after signing out (and not refreshing)
+        // Note: volume bar "remembers", even after signing out
         if (this.state.currentTrackId === null || this.state.currentTrackId === this.props.currentTrack.id) {
             if (this.playTrack) clearInterval(this.playTrack);
             if (this.state.muted) progressBar.muted = true;
@@ -113,7 +113,6 @@ class PlayBar extends React.Component {
         const progressBar = document.getElementById('audio');
         progressBar.volume = e.target.value / 1000.0;
         this.setState({ volume: e.target.value / 1000.0 })
-        // console.log(e.target.value);
     }
 
     render() {
@@ -220,7 +219,7 @@ class PlayBar extends React.Component {
                 )
             }
 
-            // PROGRESS BAR --------------------------------------------------->
+            // PROGRESS BAR
             let formatTrackTime = (time) => {
                 let sec = Math.floor(parseFloat(time));
                 let min = Math.floor(sec / 60);
@@ -238,7 +237,7 @@ class PlayBar extends React.Component {
                 </div>
             )
 
-            // PlayBar (All) -------------------------------------------------->
+            // PlayBar (All)
             playbarAll = (
                 <div className="playbar-parent-parent">
                     <div className="playbar-parent">
