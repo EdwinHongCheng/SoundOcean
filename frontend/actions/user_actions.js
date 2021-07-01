@@ -11,14 +11,12 @@ const receiveUser = user => {
     })
 }
 
-// Thunk Action Creator
+// Thunk Action Creators
 export const fetchUser = userId => dispatch => {
     return UserApiUtil.fetchUser(userId)
         .then(user => dispatch(receiveUser(user)))
 }
 
-
-// [TEST] Update User
 export const updateUser = user => dispatch => {
     return UserApiUtil.updateUser(user)
         .then(user => dispatch(receiveUser(user)))
