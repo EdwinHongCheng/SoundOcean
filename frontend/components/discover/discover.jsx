@@ -7,8 +7,8 @@ class Discover extends React.Component {
         this.props.fetchTracks();
     }
 
-    render() {        
-        const users = this.props.users
+    render() {
+
         const allTracks = this.props.tracks.map((track, idx) => {            
             return (
                 <DiscoverIndexItem
@@ -50,6 +50,7 @@ class Discover extends React.Component {
                 </div>
             </div>
         )
+        
     }
 };
 
