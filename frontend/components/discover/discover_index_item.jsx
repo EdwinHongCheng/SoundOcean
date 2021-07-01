@@ -10,7 +10,7 @@ class DiscoverIndexItem extends React.Component {
         this.updateCurrentTrack = this.updateCurrentTrack.bind(this)
     }
 
-    // [WORKS] for my Play This Track button
+    // For "Play This Track" button
     updateCurrentTrack(e) {
         e.preventDefault()
 
@@ -31,22 +31,19 @@ class DiscoverIndexItem extends React.Component {
     render() {
         let currentTrack = this.props.track;
 
-        let playPauseButton;
+        let playPauseIcon;
         if (this.props.currentTrack === this.props.track && this.props.isPlaying) {
-            playPauseButton = (
-                <div className="discover-idx-button"
-                    onClick={this.updateCurrentTrack}>
-                    <FontAwesomeIcon id="discover-idx-pause-icon" icon={faPause}/>
-                </div>
-            )
+            playPauseIcon = <FontAwesomeIcon id="discover-idx-pause-icon" icon={faPause}/>
         } else {
-            playPauseButton = (
-                <div className="discover-idx-button"
-                    onClick={this.updateCurrentTrack}>
-                    <FontAwesomeIcon id="discover-idx-play-icon" icon={faPlay}/>
-                </div>
-            )
+            playPauseIcon = <FontAwesomeIcon id="discover-idx-play-icon" icon={faPlay}/>
         }
+
+        let playPauseButton = (
+            <div className="discover-idx-button"
+                onClick={this.updateCurrentTrack}>
+                {playPauseIcon}
+            </div>
+        )
 
         return (
             <div className="discoverIndexItem">
