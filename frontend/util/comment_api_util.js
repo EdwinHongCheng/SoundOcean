@@ -1,4 +1,3 @@
-// NOTE: why do we nest data?
 export const createComment = comment => {
     return $.ajax({
         url: '/api/comments',
