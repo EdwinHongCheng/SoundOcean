@@ -57,7 +57,6 @@ class EditUserForm extends React.Component {
             })
     }
 
-
     handleCancel(e) {
         e.preventDefault();
         this.setState({ 
@@ -70,7 +69,7 @@ class EditUserForm extends React.Component {
 
 
     render() {
-        {/* [WORKS] Update Image Preview */ }
+        {/* Update Image Preview */ }
         let imageSource;
         if (this.state.profilePicPreviewURL) {
             imageSource = this.state.profilePicPreviewURL;
@@ -88,8 +87,6 @@ class EditUserForm extends React.Component {
                 />
             </div>
         )
-
-        // [TEST]
 
         // Updating Pic in Progress
         let updateStart;
@@ -111,6 +108,7 @@ class EditUserForm extends React.Component {
         return (
             <div className="edit-form-body">
                 <div className="edit-form-body-margin">
+
                     <p className="edit-form-username">
                         {this.props.showPageUser.username}
                     </p>
@@ -130,20 +128,13 @@ class EditUserForm extends React.Component {
                             />
                         </label>
 
-
                         <div className="edit-form-bottom-section-right">
                             {updateStart}
                         </div>
 
                     </div>
 
-
-
-
                 </div>
-
-
-            
             </div>
         );
     }
