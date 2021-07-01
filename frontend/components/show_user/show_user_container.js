@@ -17,7 +17,7 @@ const mDTP = dispatch => {
     return {
         fetchTracks: () => dispatch(fetchTracks()),
         fetchUser: userId => dispatch(fetchUser(userId)),
-        // [TEST] Open/Close Edit Track Form Modal (see session form container)
+        // Open/Close Edit Track Form Modal (see: session form container)
         openModal: () => { dispatch(openModal('editProfilePic')) },
         closeModal: () => { dispatch(closeModal()) },
     }

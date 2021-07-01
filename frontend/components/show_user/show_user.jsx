@@ -2,26 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faMusic } from '@fortawesome/free-solid-svg-icons';
-// [WORKING] for Update Profile Pic Modal
+//  for Update Profile Pic Modal
 import Modal from '../modal/modal';
-
-// [TEST] Show User Track (Indiv Tracks)
+// Show User Track (Indiv Tracks)
 import ShowUserTrackContainer from './show_user_track/show_user_track_container';
 
 class ShowUser extends React.Component {
 
     componentDidMount() {
-        // [WORKS] Lina's way - redirect if user URL = not valid
+        // redirect if user URL = not valid
         this.props.fetchUser(this.props.match.params.userId)
-            .fail(() => this.props.history.push("/discover"))
-
-        // [TEST] want to fetch all tracks -> only display those owned by user
+            .fail(() => this.props.history.push("/discover"));
+        // fetch all tracks -> only display those owned by user
         this.props.fetchTracks();
     }
 
-    // [WORKS] based on show_track.jsx way (Lina)
-    // - if my URL wildcard changes -> this triggers
-    // -> Redirect: should be a redirect
+    // - if my URL wildcard changes -> this triggers a Redirect
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.userId !== this.props.match.params.userId) {
             this.props.fetchUser(this.props.match.params.userId)
@@ -29,37 +25,16 @@ class ShowUser extends React.Component {
         }
     }
 
-
     render () {
         let showUser = this.props.showUser;
 
         if (!showUser) {
             return null;
-
-        // *** [if showUser = now exists + passed down from global state] ----->
         } else {
-
-
-
-
-            // [CURRENT WIP] All Tracks (indiv Track CSS, etc.)
             let showUserTracks = this.props.tracks
             .filter(track => track.creator_id === this.props.showUser.id)
-            .map(track => 
-                (
-                    <ShowUserTrackContainer 
-                        track={track} 
-                        key={track.id}
-                    />
-                )
+            .map(track => (<ShowUserTrackContainer track={track} key={track.id} />))
 
-            )
-
-
-
-
-
-            
             // Below "All Tracks" Tab Left Side (All)
             let belowTabLeftSide;
             // - Version 1: 1+ Tracks version (display all tracks, etc)
@@ -83,7 +58,7 @@ class ShowUser extends React.Component {
                         <div className="below-all-tracks-tab-left-v1">
                             <p className="below-left-v1-recent-text">Recent</p>
 
-                            {/* [CURRENT WIP] All Tracks */}
+                            {/* All Tracks */}
                             {showUserTracks.reverse()}
                         </div>
 
@@ -93,7 +68,7 @@ class ShowUser extends React.Component {
 
             } else if (this.props.currentUser.id === this.props.showUser.id) {
                 // - Version 2: No Tracks + Show User Page belongs to Current User
-                // -- have Upload button below, etc.
+                //   - >have Upload button below, etc.
                 belowTabLeftSide = (
 
                     <div className="below-all-tracks-tab-left-parent-v2">
@@ -126,10 +101,6 @@ class ShowUser extends React.Component {
                 )
             }
 
-
-
-
-            // [AFTER FINISHING] Turn "Don't Let guest update Profile Pic" back on
             let updateProfilePicButton;
             if ((this.props.currentUser.id === showUser.id 
                     && this.props.currentUser.id !== 1
@@ -160,6 +131,7 @@ class ShowUser extends React.Component {
 
             return (
                 <div>
+                    
                     {/* Update/Show User Profile Pic Modal */}
                     <Modal showUserId={this.props.showUser.id} />
 
@@ -184,10 +156,9 @@ class ShowUser extends React.Component {
                             </div>
                         </div>
 
-
-                        {/* [WIP] Below Show User Banner (All) */}
-
+                        {/* Below Show User Banner (All) */}
                         <div className="below-show-user-banner-all">
+
                             <div className="below-show-user-banner-all-margin">
                                 <div className="show-user-all-tracks-tab-parent">
                                     <div className="show-user-all-tracks-tab">
@@ -195,7 +166,6 @@ class ShowUser extends React.Component {
                                     </div>
                                 </div>
                             </div>
-
 
                             {/* Below "All Tracks" Tab (All: Left + Right) */}
                             <div className="below-all-tracks-tab-all">
@@ -226,24 +196,12 @@ class ShowUser extends React.Component {
 
                             </div>
 
-
-
                         </div>
 
-
-
-
-
-
-
-                        
                     </div>
                 </div>
-                
             )
         }
-
-
     }
 }
 
