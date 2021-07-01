@@ -9,19 +9,18 @@ class ShowUserTrack extends React.Component {
     constructor(props) {
         super(props)
 
-        // [TEST] comment box
+        // Comment box
         this.state = {
             body: '',
             track_id: this.props.track.id
         }
 
         this.updateCurrentTrack = this.updateCurrentTrack.bind(this);
-        // [TEST] submit Comment
+        // Submit Comment
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
-    // [TEST] Create + Submit Comment --------------------->
+    // Create + Submit Commen
     update(field) {
         return e => {
             this.setState({ [field]: e.target.value })
@@ -32,7 +31,7 @@ class ShowUserTrack extends React.Component {
         e.preventDefault();
         if (this.state.body.length > 0) {
             this.props.createComment(this.state)
-                // [!!! WORKS (JANKY) ] .then (fetch track again to update comment's new author name)
+                // Note: .then (fetch track again to update comment's new author name)
                 .then(() => this.props.fetchTrack(this.props.track.id))
                 .then(() => {
                     this.setState({
@@ -41,10 +40,8 @@ class ShowUserTrack extends React.Component {
                 })
         }
     }
-    //  ----------------------------------------------------------------------->
 
-
-    // [TEST] for my Play This Track button
+    // For "Play This Track" button
     updateCurrentTrack(e) {
         e.preventDefault();
         this.props.receiveCurrentTrack(this.props.track.id);
@@ -58,7 +55,6 @@ class ShowUserTrack extends React.Component {
             return null;
         } else {
 
-            // Play/Pause Button -------------------------------------->
             let playPauseButton;
             if (this.props.track !== this.props.currentTrack) {
                 playPauseButton = (
@@ -90,7 +86,7 @@ class ShowUserTrack extends React.Component {
                     </div>
                 )
             }
-            // -------------------------->
+
 
             // enter the track's created_at string -> converts to a date string
             let creationDate = (trackDate) => {
@@ -107,10 +103,7 @@ class ShowUserTrack extends React.Component {
             let dateCreated = creationDate(track.created_at);
 
 
-            // [WIP] Bonus: Edit/Delete Buttons (if owner of track OR Admin)
-
-            
-            // [WORKS] Comment Submit
+            // Comment Submit
             let submitComment = this.handleSubmit;
             // Event Listener: hit "Enter" while Comment box has text -> creates New Comment
             document.onkeydown = function(e) {
@@ -121,17 +114,7 @@ class ShowUserTrack extends React.Component {
             };
 
 
-            let bottomSection;
-            // if (this.props.currentUser.id === track.creator_id || 2 ) {
-            //     // Current User owns Track OR is Admin everfall -> show Edit/Delete Buttons
-
-            // } else {
-            //     // Current User doesn't own Track -> show Comment Box
-
-            // }
-
-            // Current User doesn't own Track -> show Comment Box
-            bottomSection = (
+            let bottomSection = (
                 <div className="bottomSection-comment-box-all">
                     <img className="comment-box-prof-pic"
                         src={this.props.currentUser.profilePicURL}
@@ -154,10 +137,9 @@ class ShowUserTrack extends React.Component {
                         </Link>
                     </div>
     
-    
                     <div className="showUser-indiv-track-right">
     
-                        {/* [NOTE] Play/Pause Button, Title + Creation Date, etc. */}
+                        {/* Play/Pause Button, Title + Creation Date, etc. */}
                         <div className="indiv-track-right-top-section">
                             {playPauseButton}
 
@@ -176,7 +158,7 @@ class ShowUserTrack extends React.Component {
     
                         </div>
     
-                        {/* [WIP] Bottom Section: Comment Bar / Edit + Delete Buttons */}
+                        {/* Bottom Section: Comment Bar / Edit + Delete Buttons */}
                         <div className="indiv-track-right-bottom-section">
                             {bottomSection}
                         </div>
@@ -186,7 +168,6 @@ class ShowUserTrack extends React.Component {
             )
         }
     }
-
 }
 
 export default ShowUserTrack;
