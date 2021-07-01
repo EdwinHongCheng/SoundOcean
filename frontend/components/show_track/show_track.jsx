@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faPencilAlt, faTrash, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
 import ShowCommentContainer from '../show_comments/show_comments_container';

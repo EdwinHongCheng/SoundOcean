@@ -5,13 +5,11 @@ import { faCommentAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 class ShowComments extends React.Component {
 
-    // [TEST] want to clear global state of comments once exiting show page
     componentWillUnmount() {
         this.props.clearComments()
     }
 
     render() {
-
 
         // enter the track's created_at string -> converts to a date string
         let creationDate = (trackDate) => {
@@ -50,8 +48,7 @@ class ShowComments extends React.Component {
                             <p className="comment-created-date">{dateCreated}</p>
 
 
-                            {/* [WORKS] Conditional Delete Button (comments can only be deleted by their author) */}
-                            {/* ALSO: gave everfall admin powers (lol) */}
+                            {/* Conditional Delete Button (comments can only be deleted by author OR admin AKA everfall) */}
                             {this.props.currentUserId === comment.author_id || this.props.currentUserId === 2 ?
                                 (<div className="delete-comment-icon-parent"
                                     onClick={() => this.props.deleteComment(comment.id)}
@@ -68,7 +65,8 @@ class ShowComments extends React.Component {
         // Reversed Order - Newest Comment Appears 1st
         let allCommentsReversed = allComments.reverse();
 
-        // No Comments Section ------------------------------------------------>
+
+        // Section: if No Comments
         if (allComments.length === 0) {
             return (
                 <div className="no-comments-all">
@@ -78,6 +76,8 @@ class ShowComments extends React.Component {
                 </div>
             )
         } else {
+
+            // Section: if Comment(s) Exist
             let totalCommentsString;
             if (allComments.length === 1) {
                 totalCommentsString = "1 comment"
@@ -85,7 +85,6 @@ class ShowComments extends React.Component {
                 totalCommentsString = allComments.length.toString().concat(" comments")  
             }
 
-            // Comments Section ----------------------------------------------->
             return (
                 <div className="comments-section-all-stuff">
                     <div className="comments-section-top">
