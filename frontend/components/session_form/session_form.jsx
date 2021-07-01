@@ -9,13 +9,11 @@ class SessionForm extends React.Component {
             username: '',
             password: '',
             email: '',
-            cont_state: false // NOTE: "Continue State" - if "Continue" buttons shows or not
+            cont_state: false // AKA: "Continue State" - if "Continue" buttons shows or not
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        // Demo Log In - Bind
         this.demoSignIn = this.demoSignIn.bind(this)
-        // Continue Method - Bind
         this.contMethod = this.contMethod.bind(this)
     }
 
@@ -62,8 +60,8 @@ class SessionForm extends React.Component {
         );
     }  
 
-    //------------------------------------------------------------------------->
     render() {
+
         // Password Input Field
         let passwordInputField = (
             <>
@@ -78,6 +76,7 @@ class SessionForm extends React.Component {
                 </label>
             </>
         )
+
         // Email Input Field (for Create Account)
         let email;
         if (this.props.formType === 'signup') { 
@@ -114,13 +113,13 @@ class SessionForm extends React.Component {
         let contButton;
         if (this.props.formType === 'login') {
             contButton = (
-                // <button className="submit-button" onClick={this.contMethod}>Continue</button>
                 <input className="submit-button" type="submit" 
                     onClick={this.contMethod} 
                     value="Continue" 
                 />
             )
         }
+
         if (this.state.cont_state === true) {
             contButton = (
                 <div>
@@ -179,8 +178,7 @@ class SessionForm extends React.Component {
             )
         }
 
-
-        //--------------------------------------------------------------------->
+        
         return (
             <>
                 <div className="login-form-container">
