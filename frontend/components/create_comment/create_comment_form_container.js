@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import CreateCommentForm from './create_comment_form';
 import { createComment } from '../../actions/comment_actions';
 
-// [NOTE] fetch track (and new comment + comment author info) w it
+// [NOTE] After Creating New Comment: fetch track (and new comment + comment author info) w it
 import { fetchTrack } from '../../actions/track_actions';
 import { clearErrors } from '../../actions/comment_actions'
 
