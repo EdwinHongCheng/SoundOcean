@@ -1,8 +1,4 @@
 import React from "react";
-import {
-    Link,
-    Switch,
-} from 'react-router-dom';
 
 import GreetingContainer from "../greeting/greeting_container";
 import Modal from '../modal/modal';
