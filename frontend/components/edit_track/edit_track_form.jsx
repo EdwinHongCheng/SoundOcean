@@ -26,7 +26,7 @@ class EditTrackForm extends React.Component {
     }
 
     handleFile(e) {
-        // Testing Preview
+        // Cover Art Preview
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
 
@@ -58,7 +58,6 @@ class EditTrackForm extends React.Component {
             })
     }
 
-    //------------------------------------------------------------------------->
     // render errors when editing (such as title = blank)
     renderErrors() {
         return (
@@ -71,14 +70,15 @@ class EditTrackForm extends React.Component {
             </ul>
         );
     }
+
     // clears rendered errors if i click on another link, etc
     componentWillUnmount() {
         this.props.clearErrors();
     }
-    //------------------------------------------------------------------------->
+
 
     render() {
-        {/* [WORKS] Update Image Preview */ }
+        {/* Update Image Preview */ }
         let imagePreview;
         if (this.state.coverArtPreviewURL) {
             imagePreview = (
