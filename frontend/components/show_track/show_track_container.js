@@ -11,9 +11,8 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         // NOTE: currentTrack refers to what's playing in Play Bar now
         currentTrack: state.entities.tracks[state.ui.currentTrack.id],
-        // [WORKS] updating isPlaying state (Play Pause)
+        // Updates isPlaying state (Play Pause)
         isPlaying: state.ui.isPlaying,
-        // [TEST]
         history: ownProps.history
     }
 }
@@ -22,13 +21,12 @@ const mDTP = dispatch => {
     return {
         fetchTrack: trackId => dispatch(fetchTrack(trackId)),
         receiveCurrentTrack: trackId => dispatch(receiveCurrentTrack(trackId)),
-        // [WORKS] updating isPlaying state (Play Pause)
+        // Updates isPlaying state (Play Pause)
         playTrack: () => dispatch(playTrack()),
         pauseTrack: () => dispatch(pauseTrack()),
-        // [TEST] want to not crash when fetching page
         fetchTracks: () => dispatch(fetchTracks()),
         deleteTrack: trackId => dispatch(deleteTrack(trackId)),
-        // [TEST] Open/Close Edit Track Form Modal (see session form container)
+        // Open/Close Edit Track Form Modal (see session form container)
         openModal: () => { dispatch(openModal('editTrack')) },
         closeModal: () => { dispatch(closeModal()) },
     }

@@ -1,17 +1,11 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import EditTrackFormContainer from '../edit_track/edit_track_form_container';
-// import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faPencilAlt, faTrash, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 
-// [WORKS] to create comment form
 import CreateCommentFormContainer from '../create_comment/create_comment_form_container';
-
-// [WORKS] show all comments + their delete buttons (if author of comment)
 import ShowCommentContainer from '../show_comments/show_comments_container';
-
-// [TEST]
 import Modal from '../modal/modal';
 
 
@@ -23,13 +17,12 @@ class ShowTrack extends React.Component {
     }
 
     componentDidMount() {
-        // [WORKS] Lina's way - redirect if track URL = not valid
+        // Note: Redirect if track URL = not valid
         this.props.fetchTrack(this.props.match.params.trackId)
             .fail(() => this.props.history.push("/discover"))
     }
 
-    // [WORKS perfectly w the above added code] 
-    // - Lina: if my URL wildcard changes -> this triggers
+    // Note: if my URL wildcard changes -> this triggers
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.trackId !== this.props.match.params.trackId) {
             this.props.fetchTrack(this.props.match.params.trackId)
@@ -37,7 +30,7 @@ class ShowTrack extends React.Component {
         }
     }
 
-    // [WORKS] for my Play This Track button
+    // for my Play This Track button
     updateCurrentTrack(e) {
         e.preventDefault()
         this.props.receiveCurrentTrack(this.props.track.id)
@@ -45,10 +38,9 @@ class ShowTrack extends React.Component {
     }
 
     render() {
-        let currentTrack = this.props.track; // if no such track -> currentTrack = null
+        let currentTrack = this.props.track;
         if (!currentTrack) {
-            return null;
-        // *** [if currentTrack exists]---------------------------------------->    
+            return null;  
         } else {
 
             // enter the track's created_at string -> converts to a date string
@@ -65,7 +57,6 @@ class ShowTrack extends React.Component {
 
             let dateCreated = creationDate(currentTrack.created_at);
 
-            // [WORKS] ------------------------------------------------->
             let currentTrackButton;
             if (this.props.track !== this.props.currentTrack) {
                 currentTrackButton = (
@@ -97,7 +88,7 @@ class ShowTrack extends React.Component {
                     </div>
                 )
             }
-            // -------------------------->
+
 
             // Edit + Delete Buttons (if Current User = Track Creator)
             let allButtons;
@@ -114,7 +105,7 @@ class ShowTrack extends React.Component {
                             <FontAwesomeIcon id="track-edit-button" icon={faPencilAlt}/>
                         </div>
 
-                        {/* [After Finishing Modal] turn back on Delete */}
+                        {/* Track Delete */}
                         <div className="track-delete-icon-parent"
                             onClick={() => this.props.deleteTrack(this.props.track.id)
                                 .then(() => this.props.history.push("/"))}
@@ -186,7 +177,7 @@ class ShowTrack extends React.Component {
                                     </div>
 
                                     <div className="show-track-comments-section">
-                                        {/* [WORKS] Show All of a Track's Comments */}
+                                        {/* Show All of a Track's Comments */}
                                         <ShowCommentContainer />
                                     </div>
 
@@ -195,7 +186,7 @@ class ShowTrack extends React.Component {
 
                             </div>
 
-                            {/* [WIP] Show Track Right Side (Below Banner) */}
+                            {/* Show Track Right Side (Below Banner) */}
                             <div className="below-show-track-banner-right">
                                 <div className="below-show-track-banner-right-margin">
 
@@ -220,5 +211,4 @@ class ShowTrack extends React.Component {
     }
 }
 
-// export default withRouter(ShowTrack);
 export default ShowTrack;
