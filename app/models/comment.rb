@@ -1,8 +1,8 @@
 class Comment < ApplicationRecord
     validates :body, :track_id, :author_id, presence: true
 
-    # [TEST] Goal: render errors for empty body (minimum 1 char long to post comment)
-    # [FOR FUN] setting maximum to 20 chars or w/e
+    # Goal: render errors for empty body (minimum 1 char long to post comment)
+    # - can setting maximum to 20 chars, etc.
     validates :body, length: { minimum: 1 }
 
     # Associations

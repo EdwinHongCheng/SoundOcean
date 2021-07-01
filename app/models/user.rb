@@ -9,10 +9,10 @@ class User < ApplicationRecord
     attr_reader :password
 
 
-    # [WORKS] Assoc to Attach a Profile Pic to a User
+    # Assoc to Attach a Profile Pic to a User
     has_one_attached :profile_pic
 
-
+    
     # Associations
     has_many :tracks,
         primary_key: :id,
@@ -35,9 +35,9 @@ class User < ApplicationRecord
         through: :likes,
         source: :track
     
-        
 
     # (A)SPIRE ------------------------------------------------>
+
     after_initialize :ensure_session_token
 
     def self.find_by_credentials(username, password)
