@@ -5,7 +5,7 @@ export const RECEIVE_TRACKS = "RECEIVE_TRACKS";
 export const RECEIVE_TRACK = "RECEIVE_TRACK";
 export const REMOVE_TRACK = "REMOVE_TRACK";
 
-// [WORKS] Render Upload/Edit Errors
+// Render Upload/Edit Errors
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
@@ -33,8 +33,7 @@ const removeTrack = trackId => {
 }
 
 
-
-// Testing - Action Creators Rendering Upload/Edit Errors (from Michelle)
+// Action Creators Rendering Upload/Edit Errors
 export const receiveErrors = errors => {
     return {
         type: RECEIVE_ERRORS,
@@ -49,9 +48,8 @@ export const clearErrors = () => {
 }
 
 
-
-
 // Thunk Action Creators
+
 export const fetchTracks = () => dispatch => {
     return TrackApiUtil.fetchTracks()
         .then(payload => dispatch(receiveTracks(payload)))
@@ -80,4 +78,3 @@ export const deleteTrack = trackId => dispatch => {
     return TrackApiUtil.deleteTrack(trackId)
         .then(() => dispatch(removeTrack(trackId)))
 }
-
