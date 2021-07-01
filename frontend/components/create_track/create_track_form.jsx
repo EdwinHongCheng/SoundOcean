@@ -146,15 +146,14 @@ class CreateTrackForm extends React.Component {
                         onClick={this.handleCancel}
                     >Cancel</p>
                     <p className="upload-track-submit-upload-button"
-                        onClick={this.handleCancel} // [Note] can remove + enable Uploads
-                        // onClick={this.handleSubmit} // [Note] disabled Upload for Live Heroku Ver
+                        onClick={this.handleCancel} // [NOTE] can remove + enable Uploads
+                        // onClick={this.handleSubmit} // [NOTE] disabled Upload for Live Heroku Ver
                     >Upload</p>
                 </>
             )
         } else {
             uploadStart = <p className="uploading-in-progress-text">Uploading...</p>
         }
-
 
         {/* Image Preview Post-Upload */ }
         let postUploadImagePreview = null;
@@ -176,7 +175,7 @@ class CreateTrackForm extends React.Component {
         )
 
         let uploadForm;
-        // Phase 1: Upload a Track
+        // [PHASE 1] Upload a Track
         if (this.state.audio_file === null) {
             uploadForm = (
                 <div className="upload-phase-1-parent">
@@ -192,7 +191,7 @@ class CreateTrackForm extends React.Component {
                 </div>
             )
         } else if (!this.state.uploaded) {
-            // Phase 2: Edit Track Info + Submit Form
+            // [PHASE 2] Edit Track Info + Submit Form
             uploadForm = (
                 <div>
                     {/* Audio Upload (Update) */}
@@ -268,7 +267,7 @@ class CreateTrackForm extends React.Component {
 
             )
         } else {
-            // Phase 3: Successful Upload (waits after good upload)
+            // [PHASE 3] Successful Upload (waits after good upload)
             uploadForm = (
                 <div className="upload-phase-3-parent">
                     <div className="upload-phase-3">

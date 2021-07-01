@@ -1,14 +1,10 @@
 import { connect } from 'react-redux';
-
 import CreateTrackForm from './create_track_form';
 import { createTrack, fetchTrack, clearErrors } from '../../actions/track_actions';
 
 
-// mSTP = mapStateToProps, mDTP = mapDispatchToProps
-
 const mSTP = state => {
     let tracksArr = Object.keys(state.entities.tracks);
-    // console.log(tracksArr)
     let newestTrackId = Math.max(...tracksArr);
 
     return {
