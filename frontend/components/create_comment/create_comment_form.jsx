@@ -22,7 +22,7 @@ class CreateCommentForm extends React.Component {
         e.preventDefault();
         if (this.state.body.length > 0) {
             this.props.createComment(this.state)
-                // [NOTE] .then (fetch track again to update comment's new author name)
+                // [NOTE] .then (fetch track again to update new comment's author name)
                 .then(() => this.props.fetchTrack(this.props.trackId))
                 .then(() => {
                     this.setState({
@@ -34,8 +34,8 @@ class CreateCommentForm extends React.Component {
     }
 
     render() {
+
         let submitComment = this.handleSubmit;
-        // [NOTE] hit "Enter" key while "Comment" box has text -> creates New Comment
         document.onkeydown = function(e) {
             if (e.keyCode === 13) {
                 submitComment(e);
