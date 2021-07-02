@@ -68,11 +68,11 @@ handleSubmit(e) {
     formData.append('track[creator_id]', this.state.creator_id)
 
     if (this.state.cover_art) {
-        formData.append('track[cover_art]', this.state.cover_art);;
+        formData.append('track[cover_art]', this.state.cover_art);
     }
 
     if (this.state.audio_file) {
-        formData.append('track[audio_file]', this.state.audio_file);;
+        formData.append('track[audio_file]', this.state.audio_file);
     }
 
     this.props.createTrack(formData)
