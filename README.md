@@ -6,6 +6,8 @@
 
 [SoundOcean](https://soundocean.herokuapp.com/#/) is a clone of [SoundCloud](https://soundcloud.com), an audio/music sharing website. Users can browse, listen, upload, and comment on tracks, as well as update their uploaded tracks' information.
 
+![homepage](https://github.com/EdwinHongCheng/SoundOcean/blob/main/app/assets/images/screenshots/SoundOcean_v2.png)
+
 ## Technologies Used
 
 - Ruby / Rails
