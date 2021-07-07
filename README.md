@@ -14,7 +14,6 @@
 - React.js
 - Redux
 - Ruby / Ruby on Rails
-- Node.js
 - HTML5 / CSS3
 - AJAX
 - Jbuilder
