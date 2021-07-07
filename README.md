@@ -10,15 +10,15 @@
 
 ## Technologies Used
 
-- Ruby / Rails
-- React.js
-- AJAX
-- JBuilder
-- Redux
 - JavaScript
-- Webpack
+- React.js
+- Redux
+- Ruby / Ruby on Rails
 - Node.js
 - HTML5 / CSS3
+- AJAX
+- Jbuilder
+- Webpack
 - Amazon Web Service (S3)
 
 ## Main Features
