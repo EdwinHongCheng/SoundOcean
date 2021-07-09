@@ -9,9 +9,8 @@ const mSTP = ({ session, entities, ui }) => {
         currentUser: entities.users[session.id],
         tracks: Object.values(entities.tracks),
         users: entities.users,
-        // [TESTING]
         currentTrack: entities.tracks[ui.currentTrack.id],
-        // [WORKS] updating isPlaying state (Play Pause)
+        // [Note] updating isPlaying state (Play Pause)
         isPlaying: ui.isPlaying
     };
 };
@@ -19,10 +18,8 @@ const mSTP = ({ session, entities, ui }) => {
 const mDTP = dispatch => {
     return {
         fetchTracks: () => dispatch(fetchTracks()),
-
-         // [TESTING] 
         receiveCurrentTrack: track => dispatch(receiveCurrentTrack(track)),
-        // [WORKS] updating isPlaying state (Play Pause)
+        // [Note] updating isPlaying state (Play Pause)
         playTrack: () => dispatch(playTrack()),
         pauseTrack: () => dispatch(pauseTrack()),
     }
