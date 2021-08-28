@@ -323,7 +323,7 @@ class CreateTrackForm extends React.Component {
                 <div className="upload-footer-parent">
                     <div className="upload-footer">
                         <ul className="upload-footer-links">
-                            <a className="upload-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                            <a className="upload-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-hong-cheng/">LinkedIn</a>
                             <li> - </li>
                             <a className="upload-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
                             <li> - </li>

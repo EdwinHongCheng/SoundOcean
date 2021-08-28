@@ -192,7 +192,7 @@ class ShowTrack extends React.Component {
 
                                     <div className="showTrack-footer">
                                         <ul className="showTrack-footer-links">
-                                            <a className="showTrack-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                                            <a className="showTrack-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-hong-cheng/">LinkedIn</a>
                                             <li> - </li>
                                             <a className="showTrack-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
                                             <li> - </li>

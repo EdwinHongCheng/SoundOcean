@@ -41,7 +41,7 @@ class Stream extends React.Component {
                     <div className="discover-footer-parent">
                         <div className="discover-footer">
                             <ul className="discover-footer-links">
-                                <a className="discover-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                                <a className="discover-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-hong-cheng/">LinkedIn</a>
                                 <li> - </li>
                                 <a className="discover-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
                                 <li> - </li>

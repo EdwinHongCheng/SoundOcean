@@ -184,7 +184,7 @@ class ShowUser extends React.Component {
                                     </div>
                                     <div className="below-showAllTrack-tab-footer">
                                         <ul className="below-showAllTrack-tab-footer-links">
-                                            <a className="below-showAllTrack-tab-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                                            <a className="below-showAllTrack-tab-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-hong-cheng/">LinkedIn</a>
                                             <li> - </li>
                                             <a className="below-showAllTrack-tab-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
                                             <li> - </li>

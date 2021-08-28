@@ -108,7 +108,7 @@ class Navbar extends React.Component {
                                 <FontAwesomeIcon id="navbar-gh-icon" icon={faGithub}/>
                             </a>
     
-                            <a className="navbar-gh-icon-parent" href="https://www.linkedin.com/in/edwin-cheng-a603819b/" target="_blank">
+                            <a className="navbar-gh-icon-parent" href="https://www.linkedin.com/in/edwin-hong-cheng/" target="_blank">
                                 <FontAwesomeIcon id="navbar-gh-icon" icon={faLinkedin}/>
                             </a>
     
@@ -116,14 +116,14 @@ class Navbar extends React.Component {
                                 <FontAwesomeIcon id="navbar-gh-icon" icon={faAngellist}/>
                             </a>
     
-                            {/* <a className="nav-button" href="https://www.linkedin.com/in/edwin-cheng-a603819b/" target="_blank">LinkedIn</a> */}
+                            {/* <a className="nav-button" href="https://www.linkedin.com/in/edwin-hong-cheng/" target="_blank">LinkedIn</a> */}
     
                             {/* DropDown Button for "..." (w3schools): How TO - Clickable Dropdown  */}
                             <div className="dropdown">
                                 <p onClick={dropdownFunc} className="dropbtn nav-button">...</p>
                                 <div id="myDropdown" className="dropdown-content">
                                     <a href="https://github.com/EdwinHongCheng/SoundOcean" target="_blank">GitHub</a>
-                                    <a href="https://www.linkedin.com/in/edwin-cheng-a603819b/" target="_blank">LinkedIn</a>
+                                    <a href="https://www.linkedin.com/in/edwin-hong-cheng/" target="_blank">LinkedIn</a>
                                     <a href="https://angel.co/u/edwin-cheng-5" target="_blank">AngelList</a>
                                     <div onClick={logout}>Sign out</div>
                                 </div>

@@ -95,7 +95,7 @@ class HomePage extends React.Component {
                     <div className="homepage-footer-parent">
                         <div className="homepage-footer">
                             <ul className="homepage-footer-links">
-                                <a className="homepage-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-cheng-a603819b/">LinkedIn</a>
+                                <a className="homepage-footer-socials" target="_blank" href="https://www.linkedin.com/in/edwin-hong-cheng/">LinkedIn</a>
                                 <li> - </li>
                                 <a className="homepage-footer-socials" target="_blank" href="https://github.com/EdwinHongCheng/SoundOcean">GitHub</a>
                                 <li> - </li>
