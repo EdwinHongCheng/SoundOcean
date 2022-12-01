@@ -1,6 +1,6 @@
 # SoundOcean
 
-[Check out the Live Site!](https://soundocean.herokuapp.com/#/)
+Outdated: [SoundOcean Live Link](https://soundocean.herokuapp.com/#/)
 
 ## Introduction
 
