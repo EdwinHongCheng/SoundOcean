@@ -1,6 +1,6 @@
 # SoundOcean
 
-Outdated: [SoundOcean Live Link](https://soundocean.herokuapp.com/#/)
+[SoundOcean Live Link](https://soundocean.herokuapp.com/#/) (Outdated)
 
 ## Introduction
 
