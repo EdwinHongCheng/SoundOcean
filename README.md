@@ -1,7 +1,5 @@
 # SoundOcean
 
-[~~SoundOcean Live Link~~](https://soundocean.herokuapp.com/#/) (Outdated)
-
 ## Introduction
 
 [SoundOcean](https://soundocean.herokuapp.com/#/) is a clone of [SoundCloud](https://soundcloud.com), an audio/music sharing website. Users can browse, listen, upload, and comment on tracks, as well as update their uploaded tracks' information.
